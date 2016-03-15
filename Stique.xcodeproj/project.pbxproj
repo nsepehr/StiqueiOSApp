@@ -1,0 +1,507 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5BA967B61C98CBEF00EDC126 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA967B51C98CBEE00EDC126 /* AppDelegate.swift */; };
+		5BA967B81C98CBF600EDC126 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA967B71C98CBF600EDC126 /* ViewController.swift */; };
+		5BA967BB1C98CBF700EDC126 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BA967B91C98CBF700EDC126 /* Main.storyboard */; };
+		5BA967BD1C98CBF800EDC126 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BA967BC1C98CBF800EDC126 /* Assets.xcassets */; };
+		5BA967C01C98CBF800EDC126 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BA967BE1C98CBF800EDC126 /* LaunchScreen.storyboard */; };
+		5BA967CB1C98CC0000EDC126 /* StiqueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA967CA1C98CC0000EDC126 /* StiqueTests.swift */; };
+		5BA967D61C98CC0100EDC126 /* StiqueUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA967D51C98CC0100EDC126 /* StiqueUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5BA967C71C98CBFF00EDC126 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5BA967AA1C98CBE100EDC126 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5BA967B11C98CBE700EDC126;
+			remoteInfo = Stique;
+		};
+		5BA967D21C98CC0000EDC126 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5BA967AA1C98CBE100EDC126 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5BA967B11C98CBE700EDC126;
+			remoteInfo = Stique;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5BA967B21C98CBE900EDC126 /* Stique.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stique.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BA967B51C98CBEE00EDC126 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5BA967B71C98CBF600EDC126 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5BA967BA1C98CBF700EDC126 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5BA967BC1C98CBF800EDC126 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5BA967BF1C98CBF800EDC126 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5BA967C11C98CBF800EDC126 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5BA967C61C98CBFF00EDC126 /* StiqueTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StiqueTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BA967CA1C98CC0000EDC126 /* StiqueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StiqueTests.swift; sourceTree = "<group>"; };
+		5BA967CC1C98CC0000EDC126 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5BA967D11C98CC0000EDC126 /* StiqueUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StiqueUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BA967D51C98CC0100EDC126 /* StiqueUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StiqueUITests.swift; sourceTree = "<group>"; };
+		5BA967D71C98CC0100EDC126 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5BA967AF1C98CBE700EDC126 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BA967C31C98CBFF00EDC126 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BA967CE1C98CC0000EDC126 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5BA967A91C98CBDE00EDC126 = {
+			isa = PBXGroup;
+			children = (
+				5BA967B41C98CBED00EDC126 /* Stique */,
+				5BA967C91C98CC0000EDC126 /* StiqueTests */,
+				5BA967D41C98CC0100EDC126 /* StiqueUITests */,
+				5BA967B31C98CBEA00EDC126 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5BA967B31C98CBEA00EDC126 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5BA967B21C98CBE900EDC126 /* Stique.app */,
+				5BA967C61C98CBFF00EDC126 /* StiqueTests.xctest */,
+				5BA967D11C98CC0000EDC126 /* StiqueUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5BA967B41C98CBED00EDC126 /* Stique */ = {
+			isa = PBXGroup;
+			children = (
+				5BA967B51C98CBEE00EDC126 /* AppDelegate.swift */,
+				5BA967B71C98CBF600EDC126 /* ViewController.swift */,
+				5BA967B91C98CBF700EDC126 /* Main.storyboard */,
+				5BA967BC1C98CBF800EDC126 /* Assets.xcassets */,
+				5BA967BE1C98CBF800EDC126 /* LaunchScreen.storyboard */,
+				5BA967C11C98CBF800EDC126 /* Info.plist */,
+			);
+			path = Stique;
+			sourceTree = "<group>";
+		};
+		5BA967C91C98CC0000EDC126 /* StiqueTests */ = {
+			isa = PBXGroup;
+			children = (
+				5BA967CA1C98CC0000EDC126 /* StiqueTests.swift */,
+				5BA967CC1C98CC0000EDC126 /* Info.plist */,
+			);
+			path = StiqueTests;
+			sourceTree = "<group>";
+		};
+		5BA967D41C98CC0100EDC126 /* StiqueUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5BA967D51C98CC0100EDC126 /* StiqueUITests.swift */,
+				5BA967D71C98CC0100EDC126 /* Info.plist */,
+			);
+			path = StiqueUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5BA967B11C98CBE700EDC126 /* Stique */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5BA967DA1C98CC0100EDC126 /* Build configuration list for PBXNativeTarget "Stique" */;
+			buildPhases = (
+				5BA967AE1C98CBE700EDC126 /* Sources */,
+				5BA967AF1C98CBE700EDC126 /* Frameworks */,
+				5BA967B01C98CBE700EDC126 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Stique;
+			productName = Stique;
+			productReference = 5BA967B21C98CBE900EDC126 /* Stique.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5BA967C51C98CBFF00EDC126 /* StiqueTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5BA967DD1C98CC0100EDC126 /* Build configuration list for PBXNativeTarget "StiqueTests" */;
+			buildPhases = (
+				5BA967C21C98CBFF00EDC126 /* Sources */,
+				5BA967C31C98CBFF00EDC126 /* Frameworks */,
+				5BA967C41C98CBFF00EDC126 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5BA967C81C98CBFF00EDC126 /* PBXTargetDependency */,
+			);
+			name = StiqueTests;
+			productName = StiqueTests;
+			productReference = 5BA967C61C98CBFF00EDC126 /* StiqueTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5BA967D01C98CC0000EDC126 /* StiqueUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5BA967E01C98CC0100EDC126 /* Build configuration list for PBXNativeTarget "StiqueUITests" */;
+			buildPhases = (
+				5BA967CD1C98CC0000EDC126 /* Sources */,
+				5BA967CE1C98CC0000EDC126 /* Frameworks */,
+				5BA967CF1C98CC0000EDC126 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5BA967D31C98CC0000EDC126 /* PBXTargetDependency */,
+			);
+			name = StiqueUITests;
+			productName = StiqueUITests;
+			productReference = 5BA967D11C98CC0000EDC126 /* StiqueUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5BA967AA1C98CBE100EDC126 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = StiqueApp;
+				TargetAttributes = {
+					5BA967B11C98CBE700EDC126 = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+					5BA967C51C98CBFF00EDC126 = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = 5BA967B11C98CBE700EDC126;
+					};
+					5BA967D01C98CC0000EDC126 = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = 5BA967B11C98CBE700EDC126;
+					};
+				};
+			};
+			buildConfigurationList = 5BA967AD1C98CBE300EDC126 /* Build configuration list for PBXProject "Stique" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5BA967A91C98CBDE00EDC126;
+			productRefGroup = 5BA967B31C98CBEA00EDC126 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5BA967B11C98CBE700EDC126 /* Stique */,
+				5BA967C51C98CBFF00EDC126 /* StiqueTests */,
+				5BA967D01C98CC0000EDC126 /* StiqueUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5BA967B01C98CBE700EDC126 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BA967C01C98CBF800EDC126 /* LaunchScreen.storyboard in Resources */,
+				5BA967BD1C98CBF800EDC126 /* Assets.xcassets in Resources */,
+				5BA967BB1C98CBF700EDC126 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BA967C41C98CBFF00EDC126 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BA967CF1C98CC0000EDC126 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5BA967AE1C98CBE700EDC126 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BA967B81C98CBF600EDC126 /* ViewController.swift in Sources */,
+				5BA967B61C98CBEF00EDC126 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BA967C21C98CBFF00EDC126 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BA967CB1C98CC0000EDC126 /* StiqueTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BA967CD1C98CC0000EDC126 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BA967D61C98CC0100EDC126 /* StiqueUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5BA967C81C98CBFF00EDC126 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5BA967B11C98CBE700EDC126 /* Stique */;
+			targetProxy = 5BA967C71C98CBFF00EDC126 /* PBXContainerItemProxy */;
+		};
+		5BA967D31C98CC0000EDC126 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5BA967B11C98CBE700EDC126 /* Stique */;
+			targetProxy = 5BA967D21C98CC0000EDC126 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5BA967B91C98CBF700EDC126 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5BA967BA1C98CBF700EDC126 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5BA967BE1C98CBF800EDC126 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5BA967BF1C98CBF800EDC126 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5BA967D81C98CC0100EDC126 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5BA967D91C98CC0100EDC126 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5BA967DB1C98CC0100EDC126 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Stique/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = stiqueApp.Stique;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		5BA967DC1C98CC0100EDC126 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Stique/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = stiqueApp.Stique;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		5BA967DE1C98CC0100EDC126 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = StiqueTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = stiqueApp.StiqueTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Stique.app/Stique";
+			};
+			name = Debug;
+		};
+		5BA967DF1C98CC0100EDC126 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = StiqueTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = stiqueApp.StiqueTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Stique.app/Stique";
+			};
+			name = Release;
+		};
+		5BA967E11C98CC0100EDC126 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = StiqueUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = stiqueApp.StiqueUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Stique;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		5BA967E21C98CC0100EDC126 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = StiqueUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = stiqueApp.StiqueUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Stique;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5BA967AD1C98CBE300EDC126 /* Build configuration list for PBXProject "Stique" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BA967D81C98CC0100EDC126 /* Debug */,
+				5BA967D91C98CC0100EDC126 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5BA967DA1C98CC0100EDC126 /* Build configuration list for PBXNativeTarget "Stique" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BA967DB1C98CC0100EDC126 /* Debug */,
+				5BA967DC1C98CC0100EDC126 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		5BA967DD1C98CC0100EDC126 /* Build configuration list for PBXNativeTarget "StiqueTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BA967DE1C98CC0100EDC126 /* Debug */,
+				5BA967DF1C98CC0100EDC126 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		5BA967E01C98CC0100EDC126 /* Build configuration list for PBXNativeTarget "StiqueUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BA967E11C98CC0100EDC126 /* Debug */,
+				5BA967E21C98CC0100EDC126 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5BA967AA1C98CBE100EDC126 /* Project object */;
+}
