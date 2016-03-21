@@ -7,13 +7,47 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B52A0F5A6C879264D7B493A /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE983693D02536BD15189D7C /* Pods.framework */; };
 		5BA967B61C98CBEF00EDC126 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA967B51C98CBEE00EDC126 /* AppDelegate.swift */; };
 		5BA967B81C98CBF600EDC126 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA967B71C98CBF600EDC126 /* ViewController.swift */; };
-		5BA967BB1C98CBF700EDC126 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BA967B91C98CBF700EDC126 /* Main.storyboard */; };
 		5BA967BD1C98CBF800EDC126 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BA967BC1C98CBF800EDC126 /* Assets.xcassets */; };
-		5BA967C01C98CBF800EDC126 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BA967BE1C98CBF800EDC126 /* LaunchScreen.storyboard */; };
 		5BA967CB1C98CC0000EDC126 /* StiqueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA967CA1C98CC0000EDC126 /* StiqueTests.swift */; };
 		5BA967D61C98CC0100EDC126 /* StiqueUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA967D51C98CC0100EDC126 /* StiqueUITests.swift */; };
+		5BA967E41CA080B700EDC126 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA967E31CA080B700EDC126 /* MainViewController.swift */; };
+		5BA967E61CA083CC00EDC126 /* words.json in Resources */ = {isa = PBXBuildFile; fileRef = 5BA967E51CA083CC00EDC126 /* words.json */; };
+		5BA9680C1CA085BC00EDC126 /* beers.json in Resources */ = {isa = PBXBuildFile; fileRef = 5BA967E91CA085BB00EDC126 /* beers.json */; };
+		5BA9680D1CA085BC00EDC126 /* crawl.rb in Resources */ = {isa = PBXBuildFile; fileRef = 5BA967EA1CA085BB00EDC126 /* crawl.rb */; };
+		5BA9680E1CA085BC00EDC126 /* CheckoutCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA967EB1CA085BB00EDC126 /* CheckoutCellView.swift */; };
+		5BA9680F1CA085BC00EDC126 /* Icon-60.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BA967EE1CA085BB00EDC126 /* Icon-60.png */; };
+		5BA968101CA085BC00EDC126 /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BA967EF1CA085BB00EDC126 /* Icon-60@2x.png */; };
+		5BA968111CA085BC00EDC126 /* Icon-60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BA967F01CA085BB00EDC126 /* Icon-60@3x.png */; };
+		5BA968121CA085BC00EDC126 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BA967F11CA085BB00EDC126 /* Icon-72.png */; };
+		5BA968131CA085BC00EDC126 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BA967F21CA085BB00EDC126 /* Icon-72@2x.png */; };
+		5BA968141CA085BC00EDC126 /* Icon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BA967F31CA085BB00EDC126 /* Icon-76.png */; };
+		5BA968151CA085BC00EDC126 /* Icon-76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BA967F41CA085BB00EDC126 /* Icon-76@2x.png */; };
+		5BA968161CA085BC00EDC126 /* Icon-83.5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BA967F51CA085BB00EDC126 /* Icon-83.5@2x.png */; };
+		5BA968171CA085BC00EDC126 /* Icon-Small-29.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BA967F61CA085BB00EDC126 /* Icon-Small-29.png */; };
+		5BA968181CA085BC00EDC126 /* Icon-Small-29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BA967F71CA085BB00EDC126 /* Icon-Small-29@2x.png */; };
+		5BA968191CA085BC00EDC126 /* Icon-Small-29@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BA967F81CA085BB00EDC126 /* Icon-Small-29@3x.png */; };
+		5BA9681A1CA085BC00EDC126 /* Icon-Small-40.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BA967F91CA085BB00EDC126 /* Icon-Small-40.png */; };
+		5BA9681B1CA085BC00EDC126 /* Icon-Small-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BA967FA1CA085BB00EDC126 /* Icon-Small-40@2x.png */; };
+		5BA9681C1CA085BC00EDC126 /* Icon-Small-40@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BA967FB1CA085BB00EDC126 /* Icon-Small-40@3x.png */; };
+		5BA9681D1CA085BC00EDC126 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BA967FC1CA085BB00EDC126 /* Icon-Small-50.png */; };
+		5BA9681E1CA085BC00EDC126 /* Icon-Small-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BA967FD1CA085BC00EDC126 /* Icon-Small-50@2x.png */; };
+		5BA9681F1CA085BC00EDC126 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BA967FE1CA085BC00EDC126 /* Icon.png */; };
+		5BA968201CA085BC00EDC126 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BA967FF1CA085BC00EDC126 /* Icon@2x.png */; };
+		5BA968211CA085BC00EDC126 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BA968001CA085BC00EDC126 /* iTunesArtwork.png */; };
+		5BA968221CA085BC00EDC126 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BA968011CA085BC00EDC126 /* iTunesArtwork@2x.png */; };
+		5BA968231CA085BC00EDC126 /* Default-568h@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BA968031CA085BC00EDC126 /* Default-568h@2x~iphone.png */; };
+		5BA968241CA085BC00EDC126 /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BA968041CA085BC00EDC126 /* Default-Landscape@2x~ipad.png */; };
+		5BA968251CA085BC00EDC126 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BA968051CA085BC00EDC126 /* Default-Landscape~ipad.png */; };
+		5BA968261CA085BC00EDC126 /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BA968061CA085BC00EDC126 /* Default-Portrait@2x~ipad.png */; };
+		5BA968271CA085BC00EDC126 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BA968071CA085BC00EDC126 /* Default-Portrait~ipad.png */; };
+		5BA968281CA085BC00EDC126 /* Default@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BA968081CA085BC00EDC126 /* Default@2x~iphone.png */; };
+		5BA968291CA085BC00EDC126 /* Default~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BA968091CA085BC00EDC126 /* Default~iphone.png */; };
+		5BA9682A1CA085BC00EDC126 /* FoldingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA9680A1CA085BC00EDC126 /* FoldingView.swift */; };
+		5BA9682B1CA085BC00EDC126 /* SingleItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA9680B1CA085BC00EDC126 /* SingleItemController.swift */; };
+		5BA9682D1CA0930600EDC126 /* SimpleCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA9682C1CA0930600EDC126 /* SimpleCellView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,12 +68,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0CC7030A217AEBB824BFDE92 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		58D3D35904F04B62401FEE6F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		5BA967B21C98CBE900EDC126 /* Stique.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stique.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BA967B51C98CBEE00EDC126 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5BA967B71C98CBF600EDC126 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		5BA967BA1C98CBF700EDC126 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5BA967BC1C98CBF800EDC126 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		5BA967BF1C98CBF800EDC126 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5BA967C11C98CBF800EDC126 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5BA967C61C98CBFF00EDC126 /* StiqueTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StiqueTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BA967CA1C98CC0000EDC126 /* StiqueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StiqueTests.swift; sourceTree = "<group>"; };
@@ -47,6 +81,42 @@
 		5BA967D11C98CC0000EDC126 /* StiqueUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StiqueUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BA967D51C98CC0100EDC126 /* StiqueUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StiqueUITests.swift; sourceTree = "<group>"; };
 		5BA967D71C98CC0100EDC126 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5BA967E31CA080B700EDC126 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		5BA967E51CA083CC00EDC126 /* words.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = words.json; sourceTree = "<group>"; };
+		5BA967E91CA085BB00EDC126 /* beers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = beers.json; sourceTree = "<group>"; };
+		5BA967EA1CA085BB00EDC126 /* crawl.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = crawl.rb; sourceTree = "<group>"; };
+		5BA967EB1CA085BB00EDC126 /* CheckoutCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckoutCellView.swift; sourceTree = "<group>"; };
+		5BA967EE1CA085BB00EDC126 /* Icon-60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60.png"; sourceTree = "<group>"; };
+		5BA967EF1CA085BB00EDC126 /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@2x.png"; sourceTree = "<group>"; };
+		5BA967F01CA085BB00EDC126 /* Icon-60@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@3x.png"; sourceTree = "<group>"; };
+		5BA967F11CA085BB00EDC126 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
+		5BA967F21CA085BB00EDC126 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
+		5BA967F31CA085BB00EDC126 /* Icon-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-76.png"; sourceTree = "<group>"; };
+		5BA967F41CA085BB00EDC126 /* Icon-76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-76@2x.png"; sourceTree = "<group>"; };
+		5BA967F51CA085BB00EDC126 /* Icon-83.5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-83.5@2x.png"; sourceTree = "<group>"; };
+		5BA967F61CA085BB00EDC126 /* Icon-Small-29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-29.png"; sourceTree = "<group>"; };
+		5BA967F71CA085BB00EDC126 /* Icon-Small-29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-29@2x.png"; sourceTree = "<group>"; };
+		5BA967F81CA085BB00EDC126 /* Icon-Small-29@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-29@3x.png"; sourceTree = "<group>"; };
+		5BA967F91CA085BB00EDC126 /* Icon-Small-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-40.png"; sourceTree = "<group>"; };
+		5BA967FA1CA085BB00EDC126 /* Icon-Small-40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-40@2x.png"; sourceTree = "<group>"; };
+		5BA967FB1CA085BB00EDC126 /* Icon-Small-40@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-40@3x.png"; sourceTree = "<group>"; };
+		5BA967FC1CA085BB00EDC126 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
+		5BA967FD1CA085BC00EDC126 /* Icon-Small-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50@2x.png"; sourceTree = "<group>"; };
+		5BA967FE1CA085BC00EDC126 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		5BA967FF1CA085BC00EDC126 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		5BA968001CA085BC00EDC126 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
+		5BA968011CA085BC00EDC126 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
+		5BA968031CA085BC00EDC126 /* Default-568h@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x~iphone.png"; sourceTree = "<group>"; };
+		5BA968041CA085BC00EDC126 /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
+		5BA968051CA085BC00EDC126 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
+		5BA968061CA085BC00EDC126 /* Default-Portrait@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait@2x~ipad.png"; sourceTree = "<group>"; };
+		5BA968071CA085BC00EDC126 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad.png"; sourceTree = "<group>"; };
+		5BA968081CA085BC00EDC126 /* Default@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x~iphone.png"; sourceTree = "<group>"; };
+		5BA968091CA085BC00EDC126 /* Default~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default~iphone.png"; sourceTree = "<group>"; };
+		5BA9680A1CA085BC00EDC126 /* FoldingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoldingView.swift; sourceTree = "<group>"; };
+		5BA9680B1CA085BC00EDC126 /* SingleItemController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleItemController.swift; sourceTree = "<group>"; };
+		5BA9682C1CA0930600EDC126 /* SimpleCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleCellView.swift; sourceTree = "<group>"; };
+		FE983693D02536BD15189D7C /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B52A0F5A6C879264D7B493A /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +152,8 @@
 				5BA967C91C98CC0000EDC126 /* StiqueTests */,
 				5BA967D41C98CC0100EDC126 /* StiqueUITests */,
 				5BA967B31C98CBEA00EDC126 /* Products */,
+				9B777ED90FD14E1CD87265D7 /* Pods */,
+				8B7CD2DF2CE7742DCAB23D0F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,12 +170,14 @@
 		5BA967B41C98CBED00EDC126 /* Stique */ = {
 			isa = PBXGroup;
 			children = (
+				5BA967E71CA085BB00EDC126 /* images */,
+				5BA967E51CA083CC00EDC126 /* words.json */,
 				5BA967B51C98CBEE00EDC126 /* AppDelegate.swift */,
 				5BA967B71C98CBF600EDC126 /* ViewController.swift */,
-				5BA967B91C98CBF700EDC126 /* Main.storyboard */,
 				5BA967BC1C98CBF800EDC126 /* Assets.xcassets */,
-				5BA967BE1C98CBF800EDC126 /* LaunchScreen.storyboard */,
 				5BA967C11C98CBF800EDC126 /* Info.plist */,
+				5BA967E31CA080B700EDC126 /* MainViewController.swift */,
+				5BA9682C1CA0930600EDC126 /* SimpleCellView.swift */,
 			);
 			path = Stique;
 			sourceTree = "<group>";
@@ -125,6 +200,94 @@
 			path = StiqueUITests;
 			sourceTree = "<group>";
 		};
+		5BA967E71CA085BB00EDC126 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				5BA967E81CA085BB00EDC126 /* beer */,
+				5BA967EB1CA085BB00EDC126 /* CheckoutCellView.swift */,
+				5BA967EC1CA085BB00EDC126 /* dst */,
+				5BA9680A1CA085BC00EDC126 /* FoldingView.swift */,
+				5BA9680B1CA085BC00EDC126 /* SingleItemController.swift */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		5BA967E81CA085BB00EDC126 /* beer */ = {
+			isa = PBXGroup;
+			children = (
+				5BA967E91CA085BB00EDC126 /* beers.json */,
+				5BA967EA1CA085BB00EDC126 /* crawl.rb */,
+			);
+			path = beer;
+			sourceTree = "<group>";
+		};
+		5BA967EC1CA085BB00EDC126 /* dst */ = {
+			isa = PBXGroup;
+			children = (
+				5BA967ED1CA085BB00EDC126 /* icon */,
+				5BA968021CA085BC00EDC126 /* screen */,
+			);
+			path = dst;
+			sourceTree = "<group>";
+		};
+		5BA967ED1CA085BB00EDC126 /* icon */ = {
+			isa = PBXGroup;
+			children = (
+				5BA967EE1CA085BB00EDC126 /* Icon-60.png */,
+				5BA967EF1CA085BB00EDC126 /* Icon-60@2x.png */,
+				5BA967F01CA085BB00EDC126 /* Icon-60@3x.png */,
+				5BA967F11CA085BB00EDC126 /* Icon-72.png */,
+				5BA967F21CA085BB00EDC126 /* Icon-72@2x.png */,
+				5BA967F31CA085BB00EDC126 /* Icon-76.png */,
+				5BA967F41CA085BB00EDC126 /* Icon-76@2x.png */,
+				5BA967F51CA085BB00EDC126 /* Icon-83.5@2x.png */,
+				5BA967F61CA085BB00EDC126 /* Icon-Small-29.png */,
+				5BA967F71CA085BB00EDC126 /* Icon-Small-29@2x.png */,
+				5BA967F81CA085BB00EDC126 /* Icon-Small-29@3x.png */,
+				5BA967F91CA085BB00EDC126 /* Icon-Small-40.png */,
+				5BA967FA1CA085BB00EDC126 /* Icon-Small-40@2x.png */,
+				5BA967FB1CA085BB00EDC126 /* Icon-Small-40@3x.png */,
+				5BA967FC1CA085BB00EDC126 /* Icon-Small-50.png */,
+				5BA967FD1CA085BC00EDC126 /* Icon-Small-50@2x.png */,
+				5BA967FE1CA085BC00EDC126 /* Icon.png */,
+				5BA967FF1CA085BC00EDC126 /* Icon@2x.png */,
+				5BA968001CA085BC00EDC126 /* iTunesArtwork.png */,
+				5BA968011CA085BC00EDC126 /* iTunesArtwork@2x.png */,
+			);
+			path = icon;
+			sourceTree = "<group>";
+		};
+		5BA968021CA085BC00EDC126 /* screen */ = {
+			isa = PBXGroup;
+			children = (
+				5BA968031CA085BC00EDC126 /* Default-568h@2x~iphone.png */,
+				5BA968041CA085BC00EDC126 /* Default-Landscape@2x~ipad.png */,
+				5BA968051CA085BC00EDC126 /* Default-Landscape~ipad.png */,
+				5BA968061CA085BC00EDC126 /* Default-Portrait@2x~ipad.png */,
+				5BA968071CA085BC00EDC126 /* Default-Portrait~ipad.png */,
+				5BA968081CA085BC00EDC126 /* Default@2x~iphone.png */,
+				5BA968091CA085BC00EDC126 /* Default~iphone.png */,
+			);
+			path = screen;
+			sourceTree = "<group>";
+		};
+		8B7CD2DF2CE7742DCAB23D0F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FE983693D02536BD15189D7C /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9B777ED90FD14E1CD87265D7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				58D3D35904F04B62401FEE6F /* Pods.debug.xcconfig */,
+				0CC7030A217AEBB824BFDE92 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +295,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5BA967DA1C98CC0100EDC126 /* Build configuration list for PBXNativeTarget "Stique" */;
 			buildPhases = (
+				2B5331EF0824D7E665C97409 /* Check Pods Manifest.lock */,
 				5BA967AE1C98CBE700EDC126 /* Sources */,
 				5BA967AF1C98CBE700EDC126 /* Frameworks */,
 				5BA967B01C98CBE700EDC126 /* Resources */,
+				AF571BFFC9D96C8A6CA9E7DA /* Embed Pods Frameworks */,
+				31B77618297A77F824300D3B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -229,9 +395,37 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BA967C01C98CBF800EDC126 /* LaunchScreen.storyboard in Resources */,
+				5BA968281CA085BC00EDC126 /* Default@2x~iphone.png in Resources */,
+				5BA9681D1CA085BC00EDC126 /* Icon-Small-50.png in Resources */,
+				5BA9680F1CA085BC00EDC126 /* Icon-60.png in Resources */,
+				5BA9681E1CA085BC00EDC126 /* Icon-Small-50@2x.png in Resources */,
+				5BA968171CA085BC00EDC126 /* Icon-Small-29.png in Resources */,
 				5BA967BD1C98CBF800EDC126 /* Assets.xcassets in Resources */,
-				5BA967BB1C98CBF700EDC126 /* Main.storyboard in Resources */,
+				5BA968201CA085BC00EDC126 /* Icon@2x.png in Resources */,
+				5BA968131CA085BC00EDC126 /* Icon-72@2x.png in Resources */,
+				5BA9681C1CA085BC00EDC126 /* Icon-Small-40@3x.png in Resources */,
+				5BA968291CA085BC00EDC126 /* Default~iphone.png in Resources */,
+				5BA9681A1CA085BC00EDC126 /* Icon-Small-40.png in Resources */,
+				5BA968251CA085BC00EDC126 /* Default-Landscape~ipad.png in Resources */,
+				5BA968211CA085BC00EDC126 /* iTunesArtwork.png in Resources */,
+				5BA967E61CA083CC00EDC126 /* words.json in Resources */,
+				5BA9681B1CA085BC00EDC126 /* Icon-Small-40@2x.png in Resources */,
+				5BA9680C1CA085BC00EDC126 /* beers.json in Resources */,
+				5BA968161CA085BC00EDC126 /* Icon-83.5@2x.png in Resources */,
+				5BA9681F1CA085BC00EDC126 /* Icon.png in Resources */,
+				5BA968151CA085BC00EDC126 /* Icon-76@2x.png in Resources */,
+				5BA968191CA085BC00EDC126 /* Icon-Small-29@3x.png in Resources */,
+				5BA968181CA085BC00EDC126 /* Icon-Small-29@2x.png in Resources */,
+				5BA968111CA085BC00EDC126 /* Icon-60@3x.png in Resources */,
+				5BA968221CA085BC00EDC126 /* iTunesArtwork@2x.png in Resources */,
+				5BA968271CA085BC00EDC126 /* Default-Portrait~ipad.png in Resources */,
+				5BA968121CA085BC00EDC126 /* Icon-72.png in Resources */,
+				5BA968231CA085BC00EDC126 /* Default-568h@2x~iphone.png in Resources */,
+				5BA968141CA085BC00EDC126 /* Icon-76.png in Resources */,
+				5BA968261CA085BC00EDC126 /* Default-Portrait@2x~ipad.png in Resources */,
+				5BA968241CA085BC00EDC126 /* Default-Landscape@2x~ipad.png in Resources */,
+				5BA9680D1CA085BC00EDC126 /* crawl.rb in Resources */,
+				5BA968101CA085BC00EDC126 /* Icon-60@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,13 +445,66 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2B5331EF0824D7E665C97409 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		31B77618297A77F824300D3B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AF571BFFC9D96C8A6CA9E7DA /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5BA967AE1C98CBE700EDC126 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BA967E41CA080B700EDC126 /* MainViewController.swift in Sources */,
 				5BA967B81C98CBF600EDC126 /* ViewController.swift in Sources */,
+				5BA9680E1CA085BC00EDC126 /* CheckoutCellView.swift in Sources */,
 				5BA967B61C98CBEF00EDC126 /* AppDelegate.swift in Sources */,
+				5BA9682D1CA0930600EDC126 /* SimpleCellView.swift in Sources */,
+				5BA9682B1CA085BC00EDC126 /* SingleItemController.swift in Sources */,
+				5BA9682A1CA085BC00EDC126 /* FoldingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,25 +538,6 @@
 			targetProxy = 5BA967D21C98CC0000EDC126 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		5BA967B91C98CBF700EDC126 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5BA967BA1C98CBF700EDC126 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		5BA967BE1C98CBF800EDC126 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5BA967BF1C98CBF800EDC126 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		5BA967D81C98CC0100EDC126 /* Debug */ = {
@@ -397,6 +625,7 @@
 		};
 		5BA967DB1C98CC0100EDC126 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58D3D35904F04B62401FEE6F /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Stique/Info.plist;
@@ -408,6 +637,7 @@
 		};
 		5BA967DC1C98CC0100EDC126 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0CC7030A217AEBB824BFDE92 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Stique/Info.plist;
@@ -484,6 +714,7 @@
 				5BA967DC1C98CC0100EDC126 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5BA967DD1C98CC0100EDC126 /* Build configuration list for PBXNativeTarget "StiqueTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +723,7 @@
 				5BA967DF1C98CC0100EDC126 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5BA967E01C98CC0100EDC126 /* Build configuration list for PBXNativeTarget "StiqueUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +732,7 @@
 				5BA967E21C98CC0100EDC126 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
