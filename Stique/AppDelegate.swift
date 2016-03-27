@@ -55,7 +55,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = tabBarController
         myVC1.tabBarItem = UITabBarItem(
             title: "",
-            image: UIImage.fontAwesomeIconWithName(.ShoppingCart, textColor: UIColor.blackColor(), size: CGSizeMake(30, 30)),
+            image: UIImage.fontAwesomeIconWithName(.Home, textColor: UIColor.blackColor(), size: CGSizeMake(30, 30)),
             tag: 1)
         myVC2.tabBarItem = UITabBarItem(
             title: "",
@@ -71,7 +71,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             tag: 1)
         myVC5.tabBarItem = UITabBarItem(
             title: "",
-            image: UIImage.fontAwesomeIconWithName(.Home, textColor: UIColor.blackColor(), size: CGSizeMake(30, 30)),
+            image: UIImage.fontAwesomeIconWithName(.ShoppingCart, textColor: UIColor.blackColor(), size: CGSizeMake(30, 30)),
             tag: 1)
         myVC1.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0)
         myVC2.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0)
