@@ -20,7 +20,9 @@ PODS:
   - AFNetworking/UIKit (2.6.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - Eureka (1.4.1)
+  - Crashlytics (3.7.0):
+    - Fabric (~> 1.6.3)
+  - Fabric (1.6.7)
   - FLAnimatedImage (1.0.12)
   - FoldingCell (0.7.3)
   - FontAwesome.swift (0.7.1)
@@ -42,7 +44,8 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
-  - Eureka
+  - Crashlytics
+  - Fabric
   - FoldingCell
   - FontAwesome.swift
   - LocationPicker
@@ -54,7 +57,8 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
-  Eureka: 2f1921d3162491921d2fef3b516bc4ef93a05122
+  Crashlytics: c3a2333dea9e2733d2777f730910321fc9e25c0d
+  Fabric: caf7580c725e64db144f610ac65cd60956911dc7
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   FoldingCell: 8d7674d9ff51ae40408b99a17798bc0ec20a3654
   FontAwesome.swift: 21ec9db57af8b92d4b4d6ca8208b9ae07031e828

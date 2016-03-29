@@ -24,21 +24,23 @@ class SimpleCellView : UITableViewCell {
         //        self.containerView.backgroundColor = UIColor.grayColor()
         //        self.containerView.constraints.append(FoldingCell::C)
         
-        icon = UIImageView(frame: CGRectMake(10, 10, 90, 90))
+        icon = UIImageView(frame: CGRectMake(5, 0, 50, 50))
         icon.contentMode = UIViewContentMode.ScaleAspectFit
-        label = UILabel(frame: CGRectMake(110, 0, 180, 120))
-        label.font = UIFont.systemFontOfSize(14.0)
+        icon.image = UIImage.fontAwesomeIconWithName(.YouTubePlay, textColor: UIColor.blackColor(), size: CGSizeMake(50, 50))
+        
+        label = UILabel(frame: CGRectMake(65, 0, 180, 50))
+//        label.font = UIFont.systemFontOfSize(15.0)
         label.numberOfLines = 2
-
+        
         
         contentView.addSubview(icon)
         contentView.addSubview(label)
         
-        
-        rightButton = UIButton(frame: CGRectMake(130, 10, 30, 30))
+        let screenSize: CGRect = UIScreen.mainScreen().bounds
+        rightButton = UIButton(frame: CGRectMake(screenSize.width - 50, 0, 50, 50))
         rightButton.setTitle(String.fontAwesomeIconWithName(.EllipsisV), forState: UIControlState.Normal)
         rightButton.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
-        rightButton.titleLabel?.font = UIFont.fontAwesomeOfSize(15)
+        rightButton.titleLabel?.font = UIFont.fontAwesomeOfSize(18)
         contentView.addSubview(rightButton)
         
     }

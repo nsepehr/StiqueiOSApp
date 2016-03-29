@@ -85,7 +85,6 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods/AFNetworking.framework"
-  install_framework "Pods/Eureka.framework"
   install_framework "Pods/FLAnimatedImage.framework"
   install_framework "Pods/FoldingCell.framework"
   install_framework "Pods/FontAwesome_swift.framework"
@@ -99,7 +98,6 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods/AFNetworking.framework"
-  install_framework "Pods/Eureka.framework"
   install_framework "Pods/FLAnimatedImage.framework"
   install_framework "Pods/FoldingCell.framework"
   install_framework "Pods/FontAwesome_swift.framework"

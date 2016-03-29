@@ -10,6 +10,8 @@ import UIKit
 import SlideMenuControllerSwift
 import Stripe
 import FontAwesome_swift
+import Fabric
+import Crashlytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,6 +20,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
+        application.setStatusBarHidden(false, withAnimation: UIStatusBarAnimation.Fade)
+
+        Fabric.with([STPAPIClient.self, Crashlytics.self])
+
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
         let mainViewController = MainViewController()
@@ -39,7 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.tintColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1.0) /* Change tint color using custom RGB values copied from respective raster image editor like Photoshop or Pixelmator */
         
         //        UIButton.appearance().font = UIFont.systemFontOfSize(11)
-        window!.tintColor = UIColor(netHex: 0x34495e)
+        window!.tintColor = UIColor(netHex: 0x34495f)
         
         
         let tabBarController = UITabBarController()

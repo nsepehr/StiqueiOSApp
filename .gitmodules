@@ -1,0 +1,3 @@
+[submodule "MenuItemKit"]
+	path = MenuItemKit
+	url = https://github.com/cxa/MenuItemKit.git

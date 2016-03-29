@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "F4FB85F4CD42F218FF48F7E2A275B6936C239286",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "94871700B4AB9D0DBAA62009C74762AF42CD1A9A" : 0,
+    "F4FB85F4CD42F218FF48F7E2A275B6936C239286" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "49223A20-F402-4CDF-87EF-4E2400E91A56",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "94871700B4AB9D0DBAA62009C74762AF42CD1A9A" : "stiqueiOS\/MenuItemKit\/",
+    "F4FB85F4CD42F218FF48F7E2A275B6936C239286" : "stiqueiOS\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Stique",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Stique.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/cxa\/MenuItemKit.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "94871700B4AB9D0DBAA62009C74762AF42CD1A9A"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "gitlab.com:stiqueApp\/stiqueiOS.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "F4FB85F4CD42F218FF48F7E2A275B6936C239286"
+    }
+  ]
+}

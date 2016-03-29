@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:MenuItemKit/MenuItemKit.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Stique.xcodeproj">
    </FileRef>
    <FileRef

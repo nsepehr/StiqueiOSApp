@@ -169,7 +169,7 @@ class MainViewController: UITableViewController {
         //        }
         
         //        cell.textLabel?.text = myItem["name"] as? String
-        cell?.textLabel?.text = myItem["word"] as? String
+        cell?.label.text = myItem["word"] as? String
         
 //        let url = myItem["url"] as! String
         //        cell.imageView?.pin_setImageFromURL(NSURL(string: url), placeholderImage: UIImage(), processorKey: "Ball", processor: { (result, cost) -> UIImage! in
@@ -187,15 +187,57 @@ class MainViewController: UITableViewController {
         
 //            }, completion: { (result) -> Void in })
         //        cell.contentView.addSubview(v)
+        cell.rightButton.addTarget(self, action: #selector(rightCellButtonPressed), forControlEvents: UIControlEvents.TouchUpInside)
+        
         return cell!
     }
+    
+    func rightCellButtonPressed(button: UIButton) {
+        let indexPath = tableView.indexPathForCell(button.superview?.superview as! UITableViewCell)
+        
+        let controller = UIMenuController.sharedMenuController()
+        let textItem1 = UIMenuItem(title: "Add to study", action: #selector(contextButton1))
+        let textItem2 = UIMenuItem(title: "Share", action: #selector(contextButton2))
+        let textItem3 = UIMenuItem(title: "Add to playlist", action: #selector(contextButton3))
+//        let image = UIImage(named: "Image")!
+//        let imageItem = UIMenuItem(image: image) { [weak self] _ in
+//            self?.showAlertWithTitle("image item tapped")
+//        }
+//        
+//        let nextItem = UIMenuItem(title: "Show More Items...") { _ in
+//            let handler: MenuItemHandler = { [weak self] in self?.showAlertWithTitle($0.title + " tapped") }
+//            let item1 = UIMenuItem(title: "1", handler: handler)
+//            let item2 = UIMenuItem(title: "2", handler: handler)
+//            let item3 = UIMenuItem(title: "3", handler: handler)
+//            controller.menuItems = [item1, item2, item3]
+//            controller.setMenuVisible(true, animated: true)
+//        }
+//        
+        controller.menuItems = [textItem1, textItem2, textItem3]
+        controller.setTargetRect(button.bounds, inView: button)
+        controller.setMenuVisible(true, animated: true)
+    }
+    
+    func contextButton1() {
+        
+    }
+    
+    func contextButton2() {
+        
+    }
+    
+    func contextButton3() {
+        
+    }
+    
+    
     override func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         footerView = UIView(frame: CGRectMake(0, 0, tableView.frame.size.width, 50))
         footerView.backgroundColor = UIColor.whiteColor()
         
         orderBtn.setTitle("View Order", forState: UIControlState.Normal)
         orderBtn.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-        orderBtn.addTarget(self, action: "orderBtnPressed", forControlEvents: UIControlEvents.TouchUpInside)
+        orderBtn.addTarget(self, action: #selector(orderBtnPressed), forControlEvents: UIControlEvents.TouchUpInside)
         orderBtn.backgroundColor = UIColor(netHex: 0x2ecc71)
         orderBtn.titleLabel?.font = UIFont.boldSystemFontOfSize(20)
         footerView.addSubview(orderBtn)
@@ -223,7 +265,7 @@ class MainViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 40//cellHeights[indexPath.row]
+        return 50//cellHeights[indexPath.row]
     }
     
     override func didReceiveMemoryWarning() {
