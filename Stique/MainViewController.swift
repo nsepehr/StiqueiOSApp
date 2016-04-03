@@ -195,10 +195,10 @@ class MainViewController: UITableViewController {
     func rightCellButtonPressed(button: UIButton) {
         let indexPath = tableView.indexPathForCell(button.superview?.superview as! UITableViewCell)
         
-        let controller = UIMenuController.sharedMenuController()
-        let textItem1 = UIMenuItem(title: "Add to study", action: #selector(contextButton1))
-        let textItem2 = UIMenuItem(title: "Share", action: #selector(contextButton2))
-        let textItem3 = UIMenuItem(title: "Add to playlist", action: #selector(contextButton3))
+//        let controller = UIMenuController.sharedMenuController()
+//        let textItem1 = UIMenuItem(title: "Add to study", action: #selector(contextButton1))
+//        let textItem2 = UIMenuItem(title: "Share", action: #selector(contextButton2))
+//        let textItem3 = UIMenuItem(title: "Add to playlist", action: #selector(contextButton3))
 //        let image = UIImage(named: "Image")!
 //        let imageItem = UIMenuItem(image: image) { [weak self] _ in
 //            self?.showAlertWithTitle("image item tapped")
@@ -213,9 +213,9 @@ class MainViewController: UITableViewController {
 //            controller.setMenuVisible(true, animated: true)
 //        }
 //        
-        controller.menuItems = [textItem1, textItem2, textItem3]
-        controller.setTargetRect(button.bounds, inView: button)
-        controller.setMenuVisible(true, animated: true)
+//        controller.menuItems = [textItem1, textItem2, textItem3]
+//        controller.setTargetRect(button.bounds, inView: button)
+//        controller.setMenuVisible(true, animated: true)
     }
     
     func contextButton1() {

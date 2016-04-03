@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
 //        let leftViewController = LeftPanelController()
         let leftViewController = UIViewController()
-        leftViewController.view.backgroundColor = UIColor.whiteColor()
+        leftViewController.view.backgroundColor = UIColor.grayColor()
         let rightViewController = UIViewController()
         rightViewController.view.backgroundColor = UIColor.whiteColor()
         

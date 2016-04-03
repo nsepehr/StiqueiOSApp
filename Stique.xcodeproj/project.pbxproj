@@ -12,8 +12,6 @@
 		5B0A22051CA83A1100F3CA08 /* Default-667h@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B0A22011CA83A1100F3CA08 /* Default-667h@2x~iphone.png */; };
 		5B0A22061CA83A1100F3CA08 /* Default-736h@3x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B0A22021CA83A1100F3CA08 /* Default-736h@3x~iphone.png */; };
 		5B0A22071CA83A1100F3CA08 /* Default@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B0A22031CA83A1100F3CA08 /* Default@2x~iphone.png */; };
-		5B0A220E1CA84F8A00F3CA08 /* MenuItemKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B0A220D1CA84F8A00F3CA08 /* MenuItemKit.framework */; };
-		5B0A220F1CA84F8A00F3CA08 /* MenuItemKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5B0A220D1CA84F8A00F3CA08 /* MenuItemKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5BA967B61C98CBEF00EDC126 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA967B51C98CBEE00EDC126 /* AppDelegate.swift */; };
 		5BA967B81C98CBF600EDC126 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA967B71C98CBF600EDC126 /* ViewController.swift */; };
 		5BA967BD1C98CBF800EDC126 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BA967BC1C98CBF800EDC126 /* Assets.xcassets */; };
@@ -53,7 +51,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5B0A220F1CA84F8A00F3CA08 /* MenuItemKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -68,7 +65,6 @@
 		5B0A22021CA83A1100F3CA08 /* Default-736h@3x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-736h@3x~iphone.png"; sourceTree = "<group>"; };
 		5B0A22031CA83A1100F3CA08 /* Default@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x~iphone.png"; sourceTree = "<group>"; };
 		5B0A22091CA8412500F3CA08 /* MenuItemKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MenuItemKit.framework; path = "MenuItemKit/build/Debug-iphoneos/MenuItemKit.framework"; sourceTree = "<group>"; };
-		5B0A220D1CA84F8A00F3CA08 /* MenuItemKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = MenuItemKit.framework; path = "/Users/soheil/Library/Developer/Xcode/DerivedData/Stique-fmpuwiogitfodrhiqipiaiskrdwk/Build/Products/Debug-iphoneos/MenuItemKit.framework"; sourceTree = "<absolute>"; };
 		5BA967B21C98CBE900EDC126 /* Stique.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stique.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BA967B51C98CBEE00EDC126 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5BA967B71C98CBF600EDC126 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -97,7 +93,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B52A0F5A6C879264D7B493A /* Pods.framework in Frameworks */,
-				5B0A220E1CA84F8A00F3CA08 /* MenuItemKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,7 +116,6 @@
 		5BA967A91C98CBDE00EDC126 = {
 			isa = PBXGroup;
 			children = (
-				5B0A220D1CA84F8A00F3CA08 /* MenuItemKit.framework */,
 				5BA967B41C98CBED00EDC126 /* Stique */,
 				5BA967C91C98CC0000EDC126 /* StiqueTests */,
 				5BA967D41C98CC0100EDC126 /* StiqueUITests */,
@@ -568,6 +562,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MenuItemKit/build/Debug-iphoneos",
@@ -576,7 +571,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = stiqueApp.Stique;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "5b2b60dd-4b4a-4ad1-80c9-32fba98eccef";
+				PROVISIONING_PROFILE = "5d79cc9d-3578-43e8-ac6d-9714f086d87a";
 			};
 			name = Debug;
 		};
@@ -587,6 +582,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MenuItemKit/build/Debug-iphoneos",
@@ -595,7 +591,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = stiqueApp.Stique;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "5b2b60dd-4b4a-4ad1-80c9-32fba98eccef";
+				PROVISIONING_PROFILE = "5d79cc9d-3578-43e8-ac6d-9714f086d87a";
 			};
 			name = Release;
 		};

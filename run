@@ -1,0 +1,5 @@
+# see ../s9splashgen for splash gen
+# see Bladefile for icon generation
+./blade
+# build and upload
+gym --use_legacy_build_api --scheme Stique && pilot upload
