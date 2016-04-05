@@ -10,7 +10,7 @@ import UIKit
 import FoldingCell
 import PINRemoteImage
 
-class MainViewController: UITableViewController {
+class MainViewController: UITableViewController, UIActionSheetDelegate {
     
     var cellHeights = [CGFloat]()
     var TableData = [[String: AnyObject]]()
@@ -123,7 +123,9 @@ class MainViewController: UITableViewController {
         
 //        let s = SingleItemController()
 //        s.item = TableData[indexPath.row]
-//        navigationController?.pushViewController(s, animated: true)
+        let vc = ViewController()
+        vc.item = TableData[indexPath.row]
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
@@ -194,7 +196,9 @@ class MainViewController: UITableViewController {
     
     func rightCellButtonPressed(button: UIButton) {
         let indexPath = tableView.indexPathForCell(button.superview?.superview as! UITableViewCell)
+        let actionSheet = UIActionSheet(title: "Choose Option", delegate: self, cancelButtonTitle: "Cancel", destructiveButtonTitle: nil, otherButtonTitles: "Add to study", "Share", "Add to playlist")
         
+        actionSheet.showInView(self.view)
 //        let controller = UIMenuController.sharedMenuController()
 //        let textItem1 = UIMenuItem(title: "Add to study", action: #selector(contextButton1))
 //        let textItem2 = UIMenuItem(title: "Share", action: #selector(contextButton2))
@@ -216,6 +220,11 @@ class MainViewController: UITableViewController {
 //        controller.menuItems = [textItem1, textItem2, textItem3]
 //        controller.setTargetRect(button.bounds, inView: button)
 //        controller.setMenuVisible(true, animated: true)
+    }
+    
+    func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int)
+    {
+        
     }
     
     func contextButton1() {
