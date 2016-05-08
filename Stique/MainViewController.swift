@@ -10,10 +10,9 @@ import UIKit
 import FoldingCell
 import PINRemoteImage
 
-class MainViewController: UITableViewController, UIActionSheetDelegate {
+class MainViewController: BaseController {
     
     var cellHeights = [CGFloat]()
-    var TableData = [[String: AnyObject]]()
     var orderBtn = UIButton()
     var count = UILabel()
     var footerView = UIView()
@@ -47,20 +46,20 @@ class MainViewController: UITableViewController, UIActionSheetDelegate {
         //        navigationBar.tintColor = UIColor.blueColor()
         //
         //        let leftButton =  UIBarButtonItem(title: "Left Button", style: UIBarButtonItemStyle.Plain, target: self, action: nil)
-        let rightButton = UIBarButtonItem(title: "MY STASH", style: UIBarButtonItemStyle.Plain, target: self, action: "rightButtonPressed")
-        let leftButton = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: self, action: "leftButtonPressed")
-        let attributes = [NSFontAttributeName: UIFont.fontAwesomeOfSize(16)] as Dictionary!
-        leftButton.setTitleTextAttributes(attributes, forState: .Normal)
-        leftButton.title = String.fontAwesomeIconWithName(.Bars)
-        let attributesRight = [NSFontAttributeName: UIFont.fontAwesomeOfSize(16)] as Dictionary!
-        rightButton.setTitleTextAttributes(attributesRight, forState: .Normal)
-        rightButton.title = String.fontAwesomeIconWithName(.Search)
-        
-        navigationItem.leftBarButtonItem = leftButton
-        navigationItem.rightBarButtonItem = rightButton
-        view.backgroundColor = UIColor.whiteColor()
-        
-        self.title = "Stique"
+//        let rightButton = UIBarButtonItem(title: "MY STASH", style: UIBarButtonItemStyle.Plain, target: self, action: "rightButtonPressed")
+//        let leftButton = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: self, action: "leftButtonPressed")
+//        let attributes = [NSFontAttributeName: UIFont.fontAwesomeOfSize(16)] as Dictionary!
+//        leftButton.setTitleTextAttributes(attributes, forState: .Normal)
+//        leftButton.title = String.fontAwesomeIconWithName(.Bars)
+//        let attributesRight = [NSFontAttributeName: UIFont.fontAwesomeOfSize(16)] as Dictionary!
+//        rightButton.setTitleTextAttributes(attributesRight, forState: .Normal)
+//        rightButton.title = String.fontAwesomeIconWithName(.Search)
+//        
+//        navigationItem.leftBarButtonItem = leftButton
+//        navigationItem.rightBarButtonItem = rightButton
+//        view.backgroundColor = UIColor.whiteColor()
+//        
+//        self.title = "Stique"
         
         //        let navigationBar = UINavigationBar(frame: CGRectMake(0, 0, self.view.frame.size.width, 44))
         //        navigationBar.backgroundColor = UIColor.grayColor()
@@ -89,17 +88,18 @@ class MainViewController: UITableViewController, UIActionSheetDelegate {
             // error handling
             print("error2")
         }
+        tableView.tableHeaderView = searchController.searchBar
         
     }
     
-    func leftButtonPressed() {
-        slideMenuController()?.openLeft()
-    }
-    
-    func rightButtonPressed() {
-//        let vc = RightPanelController()
-//        navigationController?.pushViewController(vc, animated: true)
-    }
+//    func leftButtonPressed() {
+//        slideMenuController()?.openLeft()
+//    }
+//    
+//    func rightButtonPressed() {
+////        let vc = RightPanelController()
+////        navigationController?.pushViewController(vc, animated: true)
+//    }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
@@ -164,8 +164,12 @@ class MainViewController: UITableViewController, UIActionSheetDelegate {
 //            cell = SimpleCellView(style:.Default, reuseIdentifier: kLCellIdentifier)
             cell = SimpleCellView(style:.Default, reuseIdentifier: kLCellIdentifier)
         }
-        let myItem = TableData[indexPath.row]
-        
+        var myItem = [String: AnyObject]()
+        if searchController.active && searchController.searchBar.text != "" {
+            myItem = FilteredTableData[indexPath.row]
+        } else {
+            myItem = TableData[indexPath.row]
+        }
         //        if cell == nil {
         //            cell = CellView()
         //        }
@@ -262,21 +266,6 @@ class MainViewController: UITableViewController, UIActionSheetDelegate {
         return footerView
     }
     
-    override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 50
-    }
-    
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return TableData.count
-    }
-    
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 50//cellHeights[indexPath.row]
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -297,6 +286,4 @@ class MainViewController: UITableViewController, UIActionSheetDelegate {
 //        let nav = UINavigationController(rootViewController: orderController)
 //        presentViewController(nav, animated: true, completion: nil)
     }
-    
 }
-

@@ -12,6 +12,7 @@
 		5B0A22051CA83A1100F3CA08 /* Default-667h@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B0A22011CA83A1100F3CA08 /* Default-667h@2x~iphone.png */; };
 		5B0A22061CA83A1100F3CA08 /* Default-736h@3x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B0A22021CA83A1100F3CA08 /* Default-736h@3x~iphone.png */; };
 		5B0A22071CA83A1100F3CA08 /* Default@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B0A22031CA83A1100F3CA08 /* Default@2x~iphone.png */; };
+		5B8A25EC1CBC081000AFEAF8 /* LeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8A25EB1CBC081000AFEAF8 /* LeftViewController.swift */; };
 		5BA967B61C98CBEF00EDC126 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA967B51C98CBEE00EDC126 /* AppDelegate.swift */; };
 		5BA967B81C98CBF600EDC126 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA967B71C98CBF600EDC126 /* ViewController.swift */; };
 		5BA967BD1C98CBF800EDC126 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BA967BC1C98CBF800EDC126 /* Assets.xcassets */; };
@@ -25,6 +26,18 @@
 		5BA9682A1CA085BC00EDC126 /* FoldingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA9680A1CA085BC00EDC126 /* FoldingView.swift */; };
 		5BA9682B1CA085BC00EDC126 /* SingleItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA9680B1CA085BC00EDC126 /* SingleItemController.swift */; };
 		5BA9682D1CA0930600EDC126 /* SimpleCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA9682C1CA0930600EDC126 /* SimpleCellView.swift */; };
+		5BBDCD391CDA8A1700CCFF08 /* gmat.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BBDCD361CDA8A1700CCFF08 /* gmat.png */; };
+		5BBDCD3A1CDA8A1700CCFF08 /* gre.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BBDCD371CDA8A1700CCFF08 /* gre.png */; };
+		5BBDCD3B1CDA8A1700CCFF08 /* lsat.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BBDCD381CDA8A1700CCFF08 /* lsat.png */; };
+		5BBDCD3D1CDA8A9500CCFF08 /* ThreeImageCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBDCD3C1CDA8A9500CCFF08 /* ThreeImageCellView.swift */; };
+		5BF7391E1CB9908C008C41BD /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BF7391D1CB9908C008C41BD /* AVKit.framework */; };
+		5BF739201CB990C5008C41BD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BF7391F1CB990C5008C41BD /* AVFoundation.framework */; };
+		5BF739221CB99B27008C41BD /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF739211CB99B27008C41BD /* PlayerViewController.swift */; };
+		5BF739241CB9A12E008C41BD /* ShoppingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF739231CB9A12E008C41BD /* ShoppingController.swift */; };
+		5BF739261CB9A5D3008C41BD /* PlaylistController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF739251CB9A5D3008C41BD /* PlaylistController.swift */; };
+		5BF739281CB9A5E4008C41BD /* PracticeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF739271CB9A5E4008C41BD /* PracticeController.swift */; };
+		5BF7392A1CB9A5F1008C41BD /* FilterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF739291CB9A5F1008C41BD /* FilterController.swift */; };
+		5BF7392C1CB9A628008C41BD /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF7392B1CB9A628008C41BD /* BaseController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +78,7 @@
 		5B0A22021CA83A1100F3CA08 /* Default-736h@3x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-736h@3x~iphone.png"; sourceTree = "<group>"; };
 		5B0A22031CA83A1100F3CA08 /* Default@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x~iphone.png"; sourceTree = "<group>"; };
 		5B0A22091CA8412500F3CA08 /* MenuItemKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MenuItemKit.framework; path = "MenuItemKit/build/Debug-iphoneos/MenuItemKit.framework"; sourceTree = "<group>"; };
+		5B8A25EB1CBC081000AFEAF8 /* LeftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftViewController.swift; sourceTree = "<group>"; };
 		5BA967B21C98CBE900EDC126 /* Stique.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stique.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BA967B51C98CBEE00EDC126 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5BA967B71C98CBF600EDC126 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +98,19 @@
 		5BA9680A1CA085BC00EDC126 /* FoldingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoldingView.swift; sourceTree = "<group>"; };
 		5BA9680B1CA085BC00EDC126 /* SingleItemController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleItemController.swift; sourceTree = "<group>"; };
 		5BA9682C1CA0930600EDC126 /* SimpleCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleCellView.swift; sourceTree = "<group>"; };
+		5BBDCD361CDA8A1700CCFF08 /* gmat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gmat.png; sourceTree = "<group>"; };
+		5BBDCD371CDA8A1700CCFF08 /* gre.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gre.png; sourceTree = "<group>"; };
+		5BBDCD381CDA8A1700CCFF08 /* lsat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lsat.png; sourceTree = "<group>"; };
+		5BBDCD3C1CDA8A9500CCFF08 /* ThreeImageCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreeImageCellView.swift; sourceTree = "<group>"; };
+		5BF7391B1CB98E55008C41BD /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		5BF7391D1CB9908C008C41BD /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		5BF7391F1CB990C5008C41BD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		5BF739211CB99B27008C41BD /* PlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
+		5BF739231CB9A12E008C41BD /* ShoppingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingController.swift; sourceTree = "<group>"; };
+		5BF739251CB9A5D3008C41BD /* PlaylistController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistController.swift; sourceTree = "<group>"; };
+		5BF739271CB9A5E4008C41BD /* PracticeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PracticeController.swift; sourceTree = "<group>"; };
+		5BF739291CB9A5F1008C41BD /* FilterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterController.swift; sourceTree = "<group>"; };
+		5BF7392B1CB9A628008C41BD /* BaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
 		FE983693D02536BD15189D7C /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -92,6 +119,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BF739201CB990C5008C41BD /* AVFoundation.framework in Frameworks */,
+				5BF7391E1CB9908C008C41BD /* AVKit.framework in Frameworks */,
 				3B52A0F5A6C879264D7B493A /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -145,7 +174,15 @@
 				5BA967BC1C98CBF800EDC126 /* Assets.xcassets */,
 				5BA967C11C98CBF800EDC126 /* Info.plist */,
 				5BA967E31CA080B700EDC126 /* MainViewController.swift */,
+				5BBDCD3C1CDA8A9500CCFF08 /* ThreeImageCellView.swift */,
 				5BA9682C1CA0930600EDC126 /* SimpleCellView.swift */,
+				5BF739211CB99B27008C41BD /* PlayerViewController.swift */,
+				5BF739251CB9A5D3008C41BD /* PlaylistController.swift */,
+				5BF739271CB9A5E4008C41BD /* PracticeController.swift */,
+				5BF739291CB9A5F1008C41BD /* FilterController.swift */,
+				5BF739231CB9A12E008C41BD /* ShoppingController.swift */,
+				5BF7392B1CB9A628008C41BD /* BaseController.swift */,
+				5B8A25EB1CBC081000AFEAF8 /* LeftViewController.swift */,
 			);
 			path = Stique;
 			sourceTree = "<group>";
@@ -171,6 +208,9 @@
 		5BA967E71CA085BB00EDC126 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				5BBDCD361CDA8A1700CCFF08 /* gmat.png */,
+				5BBDCD371CDA8A1700CCFF08 /* gre.png */,
+				5BBDCD381CDA8A1700CCFF08 /* lsat.png */,
 				5BA967E81CA085BB00EDC126 /* beer */,
 				5BA967EB1CA085BB00EDC126 /* CheckoutCellView.swift */,
 				5BA967EC1CA085BB00EDC126 /* dst */,
@@ -211,6 +251,9 @@
 		8B7CD2DF2CE7742DCAB23D0F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5BF7391F1CB990C5008C41BD /* AVFoundation.framework */,
+				5BF7391D1CB9908C008C41BD /* AVKit.framework */,
+				5BF7391B1CB98E55008C41BD /* MediaPlayer.framework */,
 				5B0A22091CA8412500F3CA08 /* MenuItemKit.framework */,
 				FE983693D02536BD15189D7C /* Pods.framework */,
 			);
@@ -336,8 +379,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BBDCD3A1CDA8A1700CCFF08 /* gre.png in Resources */,
+				5BBDCD3B1CDA8A1700CCFF08 /* lsat.png in Resources */,
 				5B0A22051CA83A1100F3CA08 /* Default-667h@2x~iphone.png in Resources */,
 				5B0A22061CA83A1100F3CA08 /* Default-736h@3x~iphone.png in Resources */,
+				5BBDCD391CDA8A1700CCFF08 /* gmat.png in Resources */,
 				5BA967BD1C98CBF800EDC126 /* Assets.xcassets in Resources */,
 				5B0A22071CA83A1100F3CA08 /* Default@2x~iphone.png in Resources */,
 				5BA967E61CA083CC00EDC126 /* words.json in Resources */,
@@ -431,10 +477,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BA967E41CA080B700EDC126 /* MainViewController.swift in Sources */,
+				5BF739221CB99B27008C41BD /* PlayerViewController.swift in Sources */,
 				5BA967B81C98CBF600EDC126 /* ViewController.swift in Sources */,
+				5BF7392C1CB9A628008C41BD /* BaseController.swift in Sources */,
+				5BF7392A1CB9A5F1008C41BD /* FilterController.swift in Sources */,
+				5B8A25EC1CBC081000AFEAF8 /* LeftViewController.swift in Sources */,
 				5BA9680E1CA085BC00EDC126 /* CheckoutCellView.swift in Sources */,
 				5BA967B61C98CBEF00EDC126 /* AppDelegate.swift in Sources */,
+				5BBDCD3D1CDA8A9500CCFF08 /* ThreeImageCellView.swift in Sources */,
+				5BF739241CB9A12E008C41BD /* ShoppingController.swift in Sources */,
+				5BF739281CB9A5E4008C41BD /* PracticeController.swift in Sources */,
 				5BA9682D1CA0930600EDC126 /* SimpleCellView.swift in Sources */,
+				5BF739261CB9A5D3008C41BD /* PlaylistController.swift in Sources */,
 				5BA9682B1CA085BC00EDC126 /* SingleItemController.swift in Sources */,
 				5BA9682A1CA085BC00EDC126 /* FoldingView.swift in Sources */,
 			);

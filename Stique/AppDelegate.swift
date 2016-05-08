@@ -12,30 +12,39 @@ import Stripe
 import FontAwesome_swift
 import Fabric
 import Crashlytics
+import AVFoundation
+
+struct Globals {
+    static var landscape = false
+}
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        
-        application.setStatusBarHidden(false, withAnimation: UIStatusBarAnimation.Fade)
-
-        Fabric.with([STPAPIClient.self, Crashlytics.self])
-
-        window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        
-        let mainViewController = MainViewController()
+    func page(className: UITableViewController.Type) -> UIViewController {
+        let grouped = className.classForCoder() == PracticeController.classForCoder() || className.classForCoder() == FilterController.classForCoder()
+        let mainViewController = grouped ? className.init(style: UITableViewStyle.Grouped) : className.init()
         let navController = UINavigationController(rootViewController: mainViewController)
         
-//        let leftViewController = LeftPanelController()
-        let leftViewController = UIViewController()
-        leftViewController.view.backgroundColor = UIColor.grayColor()
+        //        let leftViewController = LeftPanelController()
+        let leftViewController = LeftViewController(style: UITableViewStyle.Grouped)
         let rightViewController = UIViewController()
         rightViewController.view.backgroundColor = UIColor.whiteColor()
         
         let slideMenuController = SlideMenuController(mainViewController: navController, leftMenuViewController: leftViewController, rightMenuViewController: rightViewController)
+        
+        return slideMenuController
+    }
+
+    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+//        application.setStatusBarHidden(false, withAnimation: UIStatusBarAnimation.Fade)
+
+        Fabric.with([STPAPIClient.self, Crashlytics.self])
+
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
 //        window!.rootViewController = slideMenuController
         window!.backgroundColor = UIColor.whiteColor()
@@ -49,13 +58,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         let tabBarController = UITabBarController()
-        let myVC1 = slideMenuController
-        let myVC2 = UIViewController()
-        let myVC3 = UIViewController()
-        let myVC4 = UIViewController()
-//        let myVC5 = MainViewController()
-        let myVC5 = UIViewController()
-//        let myVC2 = PizzaVC(nibName: "PizzaVC", bundle: nil)
+        let myVC1 = page(MainViewController)
+        let myVC2 = page(PlaylistController)
+        let myVC3 = page(PracticeController)
+        let myVC4 = page(FilterController)
+        let myVC5 = page(ShoppingController)
+
         let controllers = [myVC1, myVC2, myVC3, myVC4, myVC5]
         tabBarController.viewControllers = controllers
         window?.rootViewController = tabBarController
@@ -92,7 +100,55 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         return true
     }
-
+    
+//    func application (application: UIApplication, supportedInterfaceOrientationsForWindow window: UIWindow?) -> UIInterfaceOrientationMask {
+//        print(self.window?.rootViewController)
+//        return Globals.landscape ? UIInterfaceOrientationMask.AllButUpsideDown : UIInterfaceOrientationMask.Portrait
+//    }
+    
+    func application(application: UIApplication, supportedInterfaceOrientationsForWindow window: UIWindow?) -> UIInterfaceOrientationMask {
+        
+        if let currentVC = getCurrentViewController(self.window?.rootViewController) {
+            //VideoVC is the name of your class that should support landscape
+            if NSStringFromClass(currentVC.classForCoder) == "AVFullScreenViewController" {
+                Globals.landscape = true
+                let value = UIInterfaceOrientation.LandscapeLeft.rawValue
+                UIDevice.currentDevice().setValue(value, forKey: "orientation")
+                return UIInterfaceOrientationMask.All
+            }
+        }
+        if Globals.landscape {
+            Globals.landscape = false
+            let value = UIInterfaceOrientation.Portrait.rawValue
+            UIDevice.currentDevice().setValue(value, forKey: "orientation")
+        }
+        return UIInterfaceOrientationMask.Portrait
+    }
+    
+    func getCurrentViewController(viewController:UIViewController?)-> UIViewController?{
+        
+        if let slideMenuController = viewController as? SlideMenuController{
+            
+            return getCurrentViewController(slideMenuController.mainViewController)
+        }
+        if let tabBarController = viewController as? UITabBarController{
+            
+            return getCurrentViewController(tabBarController.selectedViewController)
+        }
+        
+        if let navigationController = viewController as? UINavigationController{
+            return getCurrentViewController(navigationController.visibleViewController)
+        }
+        
+        if let viewController = viewController?.presentedViewController {
+            
+            return getCurrentViewController(viewController)
+            
+        }else{
+            
+            return viewController
+        }
+    }
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
