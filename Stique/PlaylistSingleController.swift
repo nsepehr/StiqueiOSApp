@@ -10,16 +10,30 @@ import UIKit
 import FoldingCell
 import PINRemoteImage
 
-class PlaylistController: BaseController {
+class PlaylistSingleController: BaseController {
     
+    var type = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationItem.rightBarButtonItem = nil
+        navigationItem.leftBarButtonItem = nil
         
-        TableData = [["name":"Smart Playlist","type":0],["name":"User Playlist","type":1],]
         
-        title = "Playlists"
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        if let playlist = userDefaults.stringForKey("playlist" + String(type)) {
+            do {
+                let jsonData = try NSJSONSerialization.JSONObjectWithData(playlist.dataUsingEncoding(NSUTF8StringEncoding)!, options: .AllowFragments) as? [[String: AnyObject]]
+                if let jsonData = jsonData {
+                    TableData = jsonData
+                }
+            } catch _ {
+                // error handling
+                print("error2")
+            }
+        }
+        
+        title = type == 0 ? "Smart Playlist" : "User Playlist"
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -32,7 +46,7 @@ class PlaylistController: BaseController {
             cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         }
         let myItem = TableData[indexPath.row]
-        cell?.textLabel?.text = myItem["name"] as? String
+        cell?.textLabel?.text = myItem["word"] as? String
 //        let type = myItem["type"] as? Int
         
 //        cell?.icon.image = UIImage.fontAwesomeIconWithName(type == 1 ? .PlayCircle : .Cog, textColor: UIColor.blackColor(), size: CGSizeMake(50, 50))
@@ -42,8 +56,8 @@ class PlaylistController: BaseController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        let vc = PlaylistSingleController()
-        vc.type = indexPath.row
+        let vc = ViewController()
+        vc.item = TableData[indexPath.row]
         navigationController?.pushViewController(vc, animated: true)
     }
     

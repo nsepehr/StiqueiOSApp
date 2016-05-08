@@ -9,8 +9,9 @@
 import UIKit
 import AVKit
 import AVFoundation
+import MessageUI
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
     
     var item = [String: AnyObject]()
     
@@ -75,6 +76,7 @@ class ViewController: UIViewController {
         
         let icon1 = UIButton()
         icon1.setAttributedTitle(NSAttributedString(string: String.fontAwesomeIconWithName(.Book), attributes: [NSFontAttributeName: UIFont.fontAwesomeOfSize(20)]), forState: .Normal)
+        icon1.addTarget(self, action: #selector(addToPlaylist), forControlEvents: UIControlEvents.TouchUpInside)
         icons.addSubview(icon1)
         
         icon1.width = iconSize
@@ -90,6 +92,7 @@ class ViewController: UIViewController {
         
         let icon3 = UIButton()
         icon3.setAttributedTitle(NSAttributedString(string: String.fontAwesomeIconWithName(.Share), attributes: [NSFontAttributeName: UIFont.fontAwesomeOfSize(20)]), forState: .Normal)
+        icon3.addTarget(self, action: #selector(sendEmailButtonTapped), forControlEvents: UIControlEvents.TouchUpInside)
         icons.addSubview(icon3)
         
         icon3.width = iconSize
@@ -218,6 +221,55 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func sendEmailButtonTapped() {
+        let mailComposeViewController = configuredMailComposeViewController()
+        if MFMailComposeViewController.canSendMail() {
+            self.presentViewController(mailComposeViewController, animated: true, completion: nil)
+        } else {
+            self.showSendMailErrorAlert()
+        }
+    }
+    
+    func configuredMailComposeViewController() -> MFMailComposeViewController {
+        let mailComposerVC = MFMailComposeViewController()
+        mailComposerVC.mailComposeDelegate = self // Extremely important to set the --mailComposeDelegate-- property, NOT the --delegate-- property
+        
+        //        mailComposerVC.setToRecipients(["nurdin@gmail.com"])
+        mailComposerVC.setSubject("Sharing a Video With You")
+        mailComposerVC.setMessageBody("Download the Stique app on iOS to view this cool video.", isHTML: false)
+        
+        return mailComposerVC
+    }
+    
+    func showSendMailErrorAlert() {
+        let sendMailErrorAlert = UIAlertView(title: "Could Not Send Email", message: "Your device could not send e-mail.  Please check e-mail configuration and try again.", delegate: self, cancelButtonTitle: "OK")
+        sendMailErrorAlert.show()
+    }
+    
+    // MARK: MFMailComposeViewControllerDelegate
+    
+    func mailComposeController(controller: MFMailComposeViewController!, didFinishWithResult result: MFMailComposeResult, error: NSError!) {
+        controller.dismissViewControllerAnimated(true, completion: nil)
+        
+    }
+
+    func addToPlaylist() {
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        var TableData = [[String: AnyObject]]()
+        TableData = [item]
+        do {
+            if let playlist = userDefaults.stringForKey("playlist1") {
+                let jsonData = try NSJSONSerialization.JSONObjectWithData(playlist.dataUsingEncoding(NSUTF8StringEncoding)!, options: .AllowFragments) as? [[String: AnyObject]]
+                if let jsonData = jsonData {
+                    TableData += jsonData
+                }
+            }
+            let jsonData2 = try NSJSONSerialization.dataWithJSONObject(TableData, options: NSJSONWritingOptions.PrettyPrinted)
+            userDefaults.setObject(NSString(data: jsonData2, encoding: NSASCIIStringEncoding), forKey: "playlist1")
+            userDefaults.synchronize()
+        } catch _ {}
     }
 
 
