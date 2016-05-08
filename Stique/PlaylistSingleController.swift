@@ -14,15 +14,6 @@ class PlaylistSingleController: BaseController {
     
     var type = 0
     override func viewDidAppear(animated: Bool) {
-        tableView.reloadData()
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        navigationItem.rightBarButtonItem = nil
-        navigationItem.leftBarButtonItem = nil
-        
         
         let userDefaults = NSUserDefaults.standardUserDefaults()
         if let playlist = userDefaults.stringForKey("playlist" + String(type)) {
@@ -36,6 +27,15 @@ class PlaylistSingleController: BaseController {
                 print("error2")
             }
         }
+        tableView.reloadData()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        navigationItem.rightBarButtonItem = nil
+        navigationItem.leftBarButtonItem = nil
+        
         
         title = type == 0 ? "Smart Playlist" : "User Playlist"
     }
@@ -81,7 +81,7 @@ class PlaylistSingleController: BaseController {
                 let jsonData2 = try NSJSONSerialization.dataWithJSONObject(TableData, options: NSJSONWritingOptions.PrettyPrinted)
                 userDefaults.setObject(NSString(data: jsonData2, encoding: NSASCIIStringEncoding), forKey: "playlist1")
                 userDefaults.synchronize()
-                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Bottom)
+                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Left)
             } catch _ {}
         }
     }
