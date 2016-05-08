@@ -13,6 +13,10 @@ import PINRemoteImage
 class PlaylistSingleController: BaseController {
     
     var type = 0
+    override func viewDidAppear(animated: Bool) {
+        tableView.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -63,6 +67,23 @@ class PlaylistSingleController: BaseController {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return TableData.count
+    }
+    
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.Delete) {
+            let userDefaults = NSUserDefaults.standardUserDefaults()
+            do {
+                TableData.removeAtIndex(indexPath.row)
+                let jsonData2 = try NSJSONSerialization.dataWithJSONObject(TableData, options: NSJSONWritingOptions.PrettyPrinted)
+                userDefaults.setObject(NSString(data: jsonData2, encoding: NSASCIIStringEncoding), forKey: "playlist1")
+                userDefaults.synchronize()
+                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Bottom)
+            } catch _ {}
+        }
     }
 
 }
