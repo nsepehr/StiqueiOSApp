@@ -26,7 +26,7 @@ class FilterController: BaseController {
                 "items":[["name":"Ascending"],["name":"Descending"]]
             ],[
                 "name":"Filter By",
-                "items":[["name":"Watched / Not"],["name":"Purchased / Not"],["name":"Top Rating -> Sort"]]
+                "items":[["name":"Watched"],["name":"Purchased"],["name":"Top Rating"]]
             ]
         ]
         

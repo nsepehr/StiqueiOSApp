@@ -20,7 +20,7 @@ class PracticeController: BaseController {
         TableData = [
                 [
                     "name":"Master Practice",
-                    "items":[["name":"Smart Playlist"]]
+                    "items":[["name":"Master Practice"]]
                 ],[
                     "name":"Standard Practice",
                     "items":[["name":"GRE Practice"],["name":"GMAT Practice"],["name":"LSAT Practice"]]
@@ -44,6 +44,9 @@ class PracticeController: BaseController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        let vc = PlaylistSingleController()
+        vc.type = 1
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     func rowsInSection(section: Int) -> [[String:AnyObject]] {

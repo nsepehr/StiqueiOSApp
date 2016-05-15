@@ -1,1 +1,389 @@
-[{"word":"yo"},{"word":"howdy"},{"word":"howdy"},{"word":"howdy"},{"word":"howdy"},{"word":"howdy"},{"word":"howdy"},{"word":"howdy"},{"word":"howdy"},{"word":"howdy"},{"word":"howdy"},{"word":"howdy"},{"word":"howdy"},{"word":"howdy"},{"word":"howdy"},{"word":"howdy"},{"word":"howdy"},{"word":"howdy"},{"word":"howdy"},{"word":"howdy"},{"word":"howdy"},{"word":"howdy"},{"word":"howdy"},{"word":"howdy"},{"word":"howdy"},{"word":"howdy"},{"word":"howdy"},{"word":"howdy"},{"word":"howdy"},{"word":"howdy"},{"word":"howdy"},{"word":"howdy"},{"word":"howdy"},{"word":"howdy"},{"word":"howdy"},{"word":"howdy"},{"word":"howdy"},{"word":"howdy"},{"word":"howdy"},{"word":"howdy"},{"word":"howdy"},{"word":"howdy"},{"word":"howdy"},{"word":"howdy"},{"word":"howdy"},{"word":"howdy"},{"word":"howdy"},{"word":"howdy"},{"word":"howdy"},{"word":"howdy"}]
+{
+    "Abate":{
+        "Pronounciation Text":"/əˈbāt/",
+        "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/abate.mp3",
+        "Suffix":"verb",
+        "Definition":"become less intense or widespread.",
+        "Example":"the storm suddenly abated",
+        "Video URL":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Abate/Abate.mp4",
+        "Video Thumbnail":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Abate/Abate-00002.png"
+    },
+    "Abscond":{
+        "Pronounciation Text":"/əbˈskänd/",
+        "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/abscond.mp3",
+        "Suffix":"verb",
+        "Definition":"leave hurriedly and secretly, typically to avoid detection of or arrest for an unlawful action such as theft.",
+        "Example":"she absconded with the remaining thousand dollars",
+        "Video URL":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Abscond/Abscond.mp4",
+        "Video Thumbnail":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Abscond/Abscond-00002.png"
+    },
+    "Ameliorate":{
+        "Pronounciation Text":"/əˈmēlyəˌrāt/",
+        "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/ameliorate.mp3",
+        "Suffix":"verb",
+        "Definition":"make (something bad or unsatisfactory) better.",
+        "Example":"the reform did much to ameliorate living standards",
+        "Video URL":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Amelaiorate/Amelaiorate.mp4",
+        "Video Thumbnail":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Amelaiorate/Amelaiorate-00002.png"
+    },
+    "Arduous":{
+        "Pronounciation Text":"/ˈärjo͞oəs/",
+        "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/arduous.mp3",
+        "Suffix":"adjective",
+        "Definition":"involving or requiring strenuous effort; difficult and tiring.",
+        "Example":"an arduous journey",
+        "Video URL":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Arduous/Arduous.mp4",
+        "Video Thumbnail":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Arduous/Arduous-00002.png"
+    },
+    "Assuage":{
+        "Pronounciation Text":"/əˈswāj/",
+        "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/assuage.mp3",
+        "Suffix":"verb",
+        "Definition":"make (an unpleasant feeling) less intense.",
+        "Example":"the letter assuaged the fears of most members",
+        "Video URL":0,
+        "Video Thumbnail":0
+    },
+    "Belie":{
+        "Pronounciation Text":"/bəˈlī/",
+        "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/belie.mp3",
+        "Suffix":"verb",
+        "Definition":"(of an appearance) fail to give a true notion or impression of (something); disguise or contradict.",
+        "Example":"his lively alert manner belied his years",
+        "Video URL":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Belie/Belie.mp4",
+        "Video Thumbnail":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Belie/Belie-00002.png"
+    },
+    "Burgeon":{
+        "Pronounciation Text":"/ˈbərjən/",
+        "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/burgeon.mp3",
+        "Suffix":"verb",
+        "Definition":"begin to grow or increase rapidly; flourish.",
+        "Example":"manufacturers are keen to cash in on the burgeoning demand",
+        "Video URL":0,
+        "Video Thumbnail":0
+    },
+    "Cacophony":{
+        "Pronounciation Text":"/kəˈkäfənē/",
+        "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/cacophony.mp3",
+        "Suffix":"noun",
+        "Definition":"a harsh, discordant mixture of sounds.",
+        "Example":"a cacophony of deafening alarm bells",
+        "Video URL":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Cacophony/Cacophony.mp4",
+        "Video Thumbnail":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Cacophony/Cacophony-00002.png"
+    },
+    "Capricious":{
+        "Pronounciation Text":"/kəˈpriSHəs,kəˈprēSHəs/",
+        "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/capricious.mp3",
+        "Suffix":"adjective",
+        "Definition":"given to sudden and unaccountable changes of mood or behavior.",
+        "Example":"a capricious and often brutal administration",
+        "Video URL":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Capricius/Capricius.mp4",
+        "Video Thumbnail":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Capricius/Capricius-00002.png"
+    },
+    "Chicanery":{
+        "Pronounciation Text":"/SHiˈkānərē,CHi-/",
+        "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/chicanery.mp3",
+        "Suffix":"noun",
+        "Definition":"the use of trickery to achieve a political, financial, or legal purpose.",
+        "Example":"an underhanded person who schemes corruption and political chicanery behind closed doors",
+        "Video URL":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Chicanery/Chicanery.mp4",
+        "Video Thumbnail":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Chicanery/Chicanery-00002.png"
+    },
+    "Cogent":{
+        "Pronounciation Text":"/ˈkōjənt/",
+        "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/cogent.mp3",
+        "Suffix":"adjective",
+        "Definition":"(of an argument or case) clear, logical, and convincing.",
+        "Example":"(of an argument or case) clear, logical, and convincing.",
+        "Video URL":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Cogent/Cogent.mp4",
+        "Video Thumbnail":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Cogent/Cogent-00002.png"
+    },
+    "Complaisant":{
+        "Pronounciation Text":"/kəmˈplāsənt/",
+        "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/complaisant.mp3",
+        "Suffix":"adjective",
+        "Definition":"willing to please others; obliging; agreeable.",
+        "Example":"when unharnessed, Northern dogs are peaceful and complaisant",
+        "Video URL":0,
+        "Video Thumbnail":0
+    },
+    "Connoisseur":{
+        "Pronounciation Text":"/ˌkänəˈsər,ˌkänəˈso͝or/",
+        "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/connoisseur.mp3",
+        "Suffix":"noun",
+        "Definition":"an expert judge in matters of taste.",
+        "Example":"a connoisseur of music",
+        "Video URL":0,
+        "Video Thumbnail":0
+    },
+    "Daunt":{
+        "Pronounciation Text":"/dônt,dänt/",
+        "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/daunt.mp3",
+        "Suffix":"verb",
+        "Definition":"make (someone) feel intimidated or apprehensive.",
+        "Example":"some people are daunted by technology",
+        "Video URL":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Duant/Duant.mp4",
+        "Video Thumbnail":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Duant/Duant-00002.png"
+    },
+    "Dogmatic":{
+        "Pronounciation Text":"/dôɡˈmadik/",
+        "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/dogmatic.mp3",
+        "Suffix":"adjective",
+        "Definition":"inclined to lay down principles as incontrovertibly true",
+        "Example":"he gives his opinion without trying to be dogmatic",
+        "Video URL":0,
+        "Video Thumbnail":0
+    },
+    "Ebullient":{
+        "Pronounciation Text":"/iˈbo͝olyənt,iˈbəlyənt/",
+        "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/ebullient.mp3",
+        "Suffix":"adjective",
+        "Definition":"cheerful and full of energy.",
+        "Example":"she sounded ebullient and happy",
+        "Video URL":0,
+        "Video Thumbnail":0
+    },
+    "Effrontery":{
+        "Pronounciation Text":"/əˈfrən(t)ərē/",
+        "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/effrontery.mp3",
+        "Suffix":"noun",
+        "Definition":"insolent or impertinent behavior.",
+        "Example":"one juror had the effrontery to challenge the coroner's decision",
+        "Video URL":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Effrontery/Effrontery.mp4",
+        "Video Thumbnail":0
+    },
+    "Enervate":{
+        "Pronounciation Text":"/ˈenərˌvāt/",
+        "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/enervate.mp3",
+        "Suffix":"verb",
+        "Definition":"cause (someone) to feel drained of energy or vitality; weaken.",
+        "Example":"the enervate slightness of his frail form",
+        "Video URL":0,
+        "Video Thumbnail":0
+    },
+    "Exigent":{
+        "Pronounciation Text":"/ˈekzəjənt/",
+        "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/exigent.mp3",
+        "Suffix":"adjective",
+        "Definition":"pressing; demanding.",
+        "Example":"the exigent demands of the music took a toll on her voice",
+        "Video URL":0,
+        "Video Thumbnail":0
+    },
+    "Fortuitous":{
+        "Pronounciation Text":"/fôrˈto͞oədəs/",
+        "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/fortuitous.mp3",
+        "Suffix":"adjective",
+        "Definition":"happening by accident or chance rather than design.",
+        "Example":"the similarity between the paintings may not be simply fortuitous",
+        "Video URL":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Futuitous/Futuitous.mp4",
+        "Video Thumbnail":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Futuitous/Futuitous-00002.png"
+    },
+    "Hackneyed":{
+        "Pronounciation Text":"/ˈhaknēd/",
+        "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/hackneyed.mp3",
+        "Suffix":"adjective",
+        "Definition":"(of a phrase or idea) lacking significance through having been overused; unoriginal and trite.",
+        "Example":"hackneyed old sayings",
+        "Video URL":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Hackneyed/Hackneyed.mp4",
+        "Video Thumbnail":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Hackneyed/Hackneyed-00002.png"
+    },
+    "Halcyon":{
+        "Pronounciation Text":"/ˈhalsēən/",
+        "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/halcyon.mp3",
+        "Suffix":"adjective",
+        "Definition":"denoting a period of time in the past that was idyllically happy and peaceful.",
+        "Example":"the halcyon days of the mid-1980s, when profits were soaring",
+        "Video URL":0,
+        "Video Thumbnail":0
+    },
+    "Iconoclast":{
+        "Pronounciation Text":"/īˈkänəˌklast/",
+        "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/iconoclast.mp3",
+        "Suffix":"noun",
+        "Definition":"person who attacks cherished beliefs or institutions.",
+        "Example":"Because Jared was an iconoclast and dared to question the company’s mission, he was fired from his job.",
+        "Video URL":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Iconoclast/Iconoclast.mp4",
+        "Video Thumbnail":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Iconoclast/Iconoclast-00002.png"
+    },
+    "Insipid":{
+        "Pronounciation Text":"/inˈsipid/",
+        "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/insipid.mp3",
+        "Suffix":"adjective",
+        "Definition":"lacking flavor.",
+        "Example":"mugs of insipid coffee",
+        "Video URL":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Insipid/Insipid.mp4",
+        "Video Thumbnail":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Insipid/Insipid-00002.png"
+    },
+    "Lethargic":{
+        "Pronounciation Text":"/ləˈTHärjik/",
+        "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/lethargic.mp3",
+        "Suffix":"adjective",
+        "Definition":"affected by lethargy; sluggish and apathetic.",
+        "Example":"I felt tired and a little lethargic",
+        "Video URL":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Lethargic/Lethargic.mp4",
+        "Video Thumbnail":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Lethargic/Lethargic-00002.png"
+    },
+    "Lucid":{
+        "Pronounciation Text":"/ˈlo͞osəd/",
+        "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/lucid.mp3",
+        "Suffix":"adjective",
+        "Definition":"expressed clearly; easy to understand.",
+        "Example":"a lucid account",
+        "Video URL":0,
+        "Video Thumbnail":0
+    },
+    "Magnanimous":{
+        "Pronounciation Text":"/maɡˈnanəməs/",
+        "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/magnanimous.mp3",
+        "Suffix":"adjective",
+        "Definition":"very generous or forgiving, especially toward a rival or someone less powerful than oneself.",
+        "Example":"You are very magnanimous to give me permission to do whatever I want in my own house",
+        "Video URL":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Magnanimous/Magnanimous.mp4",
+        "Video Thumbnail":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Magnanimous/Magnanimous-00002.png"
+    },
+    "Mercurial":{
+        "Pronounciation Text":"/ˌmərˈkyo͝orēəl/",
+        "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/mercurial.mp3",
+        "Suffix":"adjective",
+        "Definition":"(of a person) subject to sudden or unpredictable changes of mood or mind.",
+        "Example":"his mercurial temperament",
+        "Video URL":0,
+        "Video Thumbnail":0
+    },
+    "Misanthrope":{
+        "Pronounciation Text":"/ˈmis(ə)nˌTHrōp,ˈmiz(ə)nˌTHrōp/",
+        "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/misanthrope.mp3",
+        "Suffix":"noun",
+        "Definition":"a person who dislikes humankind and avoids human society.",
+        "Example":"After I was kidnapped and held hostage for a week, I became a misanthrope and distrusted everyone.",
+        "Video URL":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Misanthrope/Misanthrope.mp4",
+        "Video Thumbnail":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Misanthrope/Misanthrope-00002.png"
+    },
+    "Morose":{
+        "Pronounciation Text":"/məˈrōs/",
+        "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/morose.mp3",
+        "Suffix":"adjective",
+        "Definition":"sullen and ill-tempered.",
+        "Example":"I don't mean to sound morose, he said with a smile.",
+        "Video URL":0,
+        "Video Thumbnail":0
+    },
+    "Mundane":{
+        "Pronounciation Text":"/ˌmənˈdān/",
+        "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/mundane.mp3",
+        "Suffix":"adjective",
+        "Definition":"lacking interest or excitement; dull.",
+        "Example":"seeking a way out of his mundane, humdrum existence",
+        "Video URL":0,
+        "Video Thumbnail":0
+    },
+    "Orthodox":{
+        "Pronounciation Text":"/ˈôrTHəˌdäks/",
+        "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/orthodox.mp3",
+        "Suffix":"adjective",
+        "Definition":"(of a person or their views, especially religious or political ones, or other beliefs or practices) conforming to what is generally or traditionally accepted as right or true; established and approved.",
+        "Example":"the orthodox economics of today",
+        "Video URL":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Ortudox/Ortudox.mp4",
+        "Video Thumbnail":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Ortudox/Ortudox-00002.png"
+    },
+    "Perfunctory":{
+        "Pronounciation Text":"/pərˈfəNG(k)t(ə)rē/",
+        "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/perfunctory.mp3",
+        "Suffix":"adjective",
+        "Definition":"(of an action or gesture) carried out with a minimum of effort or reflection.",
+        "Example":"he gave a perfunctory nod",
+        "Video URL":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Perfunctory/Perfunctory.mp4",
+        "Video Thumbnail":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Perfunctory/Perfunctory-00002.png"
+    },
+    "Placate":{
+        "Pronounciation Text":"/ˈplākāt/",
+        "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/placate.mp3",
+        "Suffix":"verb",
+        "Definition":"make (someone) less angry or hostile.",
+        "Example":"they attempted to placate the students with promises",
+        "Video URL":0,
+        "Video Thumbnail":0
+    },
+    "Pragmatic":{
+        "Pronounciation Text":"/praɡˈmadik/",
+        "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/pragmatic.mp3",
+        "Suffix":"adjective",
+        "Definition":"dealing with things sensibly and realistically in a way that is based on practical rather than theoretical considerations.",
+        "Example":"a pragmatic approach to politics",
+        "Video URL":0,
+        "Video Thumbnail":0
+    },
+    "Prolific":{
+        "Pronounciation Text":"/prəˈlifik/",
+        "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/prolific.mp3",
+        "Suffix":"adjective",
+        "Definition":"(of a plant, animal, or person) producing much fruit or foliage or many offspring.",
+        "Example":"in captivity, tigers are prolific breeders",
+        "Video URL":0,
+        "Video Thumbnail":0
+    },
+    "Prudent":{
+        "Pronounciation Text":"/ˈpro͞odnt/",
+        "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/prudent.mp3",
+        "Suffix":"adjective",
+        "Definition":"acting with or showing care and thought for the future.",
+        "Example":"no prudent money manager would authorize a loan without first knowing its purpose",
+        "Video URL":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/PRUDENT/PRUDENT.mp4",
+        "Video Thumbnail":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/PRUDENT/PRUDENT-00002.png"
+    },
+    "Quaff":{
+        "Pronounciation Text":"/kwäf/",
+        "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/quaff.mp3",
+        "Suffix":"verb",
+        "Definition":"drink (something, especially an alcoholic drink) heartily.",
+        "Example":"The huge athlete was able to quaff down a gallon of water in less than two minutes.",
+        "Video URL":0,
+        "Video Thumbnail":0
+    },
+    "Redundant":{
+        "Pronounciation Text":"/rəˈdəndənt/",
+        "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/redundant.mp3",
+        "Suffix":"adjective",
+        "Definition":"not or no longer needed or useful; superfluous.",
+        "Example":"this redundant brewery has been converted into a library",
+        "Video URL":0,
+        "Video Thumbnail":0
+    },
+    "Sanguine":{
+        "Pronounciation Text":"/ˈsaNGɡwən/",
+        "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/sanguine.mp3",
+        "Suffix":"adjective",
+        "Definition":"optimistic or positive, especially in an apparently bad or difficult situation.",
+        "Example":"he is sanguine about prospects for the global economy",
+        "Video URL":0,
+        "Video Thumbnail":0
+    },
+    "Scrupulous":{
+        "Pronounciation Text":"/ˈskro͞opyələs/",
+        "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/scrupulous.mp3",
+        "Suffix":"adjective",
+        "Definition":"(of a person or process) diligent, thorough, and extremely attentive to details.",
+        "Example":"the research has been carried out with scrupulous attention to detail",
+        "Video URL":0,
+        "Video Thumbnail":0
+    },
+    "Stupefy":{
+        "Pronounciation Text":"/ˈst(y)o͞opəˌfī/",
+        "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/stupefy.mp3",
+        "Suffix":"verb",
+        "Definition":"make (someone) unable to think or feel properly.",
+        "Example":"the offense of administering drugs to a woman with intent to stupefy her",
+        "Video URL":0,
+        "Video Thumbnail":0
+    },
+    "Tortuous":{
+        "Pronounciation Text":"/ˈtôrCH(o͞o)əs/",
+        "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/tortuous.mp3",
+        "Suffix":"adjective",
+        "Definition":"full of twists and turns.",
+        "Example":"the route is remote and tortuous",
+        "Video URL":0,
+        "Video Thumbnail":0
+    }
+}

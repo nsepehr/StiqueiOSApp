@@ -37,7 +37,7 @@ class PlaylistSingleController: BaseController {
         navigationItem.leftBarButtonItem = nil
         
         
-        title = type == 0 ? "Smart Playlist" : "User Playlist"
+        title = type == 0 ? "Smart Playlist" : "Master Practice"
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

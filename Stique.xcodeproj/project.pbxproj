@@ -12,6 +12,7 @@
 		5B0A22051CA83A1100F3CA08 /* Default-667h@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B0A22011CA83A1100F3CA08 /* Default-667h@2x~iphone.png */; };
 		5B0A22061CA83A1100F3CA08 /* Default-736h@3x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B0A22021CA83A1100F3CA08 /* Default-736h@3x~iphone.png */; };
 		5B0A22071CA83A1100F3CA08 /* Default@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B0A22031CA83A1100F3CA08 /* Default@2x~iphone.png */; };
+		5B5C27831CE90A5B00CACF37 /* words.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B5C27821CE90A5B00CACF37 /* words.json */; };
 		5B674D9B1CDF235200980E60 /* PlaylistSingleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B674D9A1CDF235200980E60 /* PlaylistSingleController.swift */; };
 		5B8A25EC1CBC081000AFEAF8 /* LeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8A25EB1CBC081000AFEAF8 /* LeftViewController.swift */; };
 		5BA967B61C98CBEF00EDC126 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA967B51C98CBEE00EDC126 /* AppDelegate.swift */; };
@@ -20,7 +21,6 @@
 		5BA967CB1C98CC0000EDC126 /* StiqueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA967CA1C98CC0000EDC126 /* StiqueTests.swift */; };
 		5BA967D61C98CC0100EDC126 /* StiqueUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA967D51C98CC0100EDC126 /* StiqueUITests.swift */; };
 		5BA967E41CA080B700EDC126 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA967E31CA080B700EDC126 /* MainViewController.swift */; };
-		5BA967E61CA083CC00EDC126 /* words.json in Resources */ = {isa = PBXBuildFile; fileRef = 5BA967E51CA083CC00EDC126 /* words.json */; };
 		5BA9680C1CA085BC00EDC126 /* beers.json in Resources */ = {isa = PBXBuildFile; fileRef = 5BA967E91CA085BB00EDC126 /* beers.json */; };
 		5BA9680D1CA085BC00EDC126 /* crawl.rb in Resources */ = {isa = PBXBuildFile; fileRef = 5BA967EA1CA085BB00EDC126 /* crawl.rb */; };
 		5BA9680E1CA085BC00EDC126 /* CheckoutCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA967EB1CA085BB00EDC126 /* CheckoutCellView.swift */; };
@@ -79,6 +79,7 @@
 		5B0A22021CA83A1100F3CA08 /* Default-736h@3x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-736h@3x~iphone.png"; sourceTree = "<group>"; };
 		5B0A22031CA83A1100F3CA08 /* Default@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x~iphone.png"; sourceTree = "<group>"; };
 		5B0A22091CA8412500F3CA08 /* MenuItemKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MenuItemKit.framework; path = "MenuItemKit/build/Debug-iphoneos/MenuItemKit.framework"; sourceTree = "<group>"; };
+		5B5C27821CE90A5B00CACF37 /* words.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = words.json; sourceTree = "<group>"; };
 		5B674D9A1CDF235200980E60 /* PlaylistSingleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistSingleController.swift; sourceTree = "<group>"; };
 		5B8A25EB1CBC081000AFEAF8 /* LeftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftViewController.swift; sourceTree = "<group>"; };
 		5BA967B21C98CBE900EDC126 /* Stique.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stique.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,7 +94,6 @@
 		5BA967D51C98CC0100EDC126 /* StiqueUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StiqueUITests.swift; sourceTree = "<group>"; };
 		5BA967D71C98CC0100EDC126 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5BA967E31CA080B700EDC126 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		5BA967E51CA083CC00EDC126 /* words.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = words.json; sourceTree = "<group>"; };
 		5BA967E91CA085BB00EDC126 /* beers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = beers.json; sourceTree = "<group>"; };
 		5BA967EA1CA085BB00EDC126 /* crawl.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = crawl.rb; sourceTree = "<group>"; };
 		5BA967EB1CA085BB00EDC126 /* CheckoutCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckoutCellView.swift; sourceTree = "<group>"; };
@@ -170,8 +170,8 @@
 			isa = PBXGroup;
 			children = (
 				5BA967E71CA085BB00EDC126 /* images */,
-				5BA967E51CA083CC00EDC126 /* words.json */,
 				5BA967B51C98CBEE00EDC126 /* AppDelegate.swift */,
+				5B5C27821CE90A5B00CACF37 /* words.json */,
 				5BA967B71C98CBF600EDC126 /* ViewController.swift */,
 				5BA967BC1C98CBF800EDC126 /* Assets.xcassets */,
 				5BA967C11C98CBF800EDC126 /* Info.plist */,
@@ -389,7 +389,7 @@
 				5BBDCD391CDA8A1700CCFF08 /* gmat.png in Resources */,
 				5BA967BD1C98CBF800EDC126 /* Assets.xcassets in Resources */,
 				5B0A22071CA83A1100F3CA08 /* Default@2x~iphone.png in Resources */,
-				5BA967E61CA083CC00EDC126 /* words.json in Resources */,
+				5B5C27831CE90A5B00CACF37 /* words.json in Resources */,
 				5BA9680C1CA085BC00EDC126 /* beers.json in Resources */,
 				5B0A22041CA83A1100F3CA08 /* Default-568h@2x~iphone.png in Resources */,
 				5BA9680D1CA085BC00EDC126 /* crawl.rb in Resources */,
