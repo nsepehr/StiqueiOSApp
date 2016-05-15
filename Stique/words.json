@@ -1,5 +1,5 @@
-{
-    "Abate":{
+[
+    {   "word":"Abate",
         "Pronounciation Text":"/əˈbāt/",
         "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/abate.mp3",
         "Suffix":"verb",
@@ -8,7 +8,7 @@
         "Video URL":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Abate/Abate.mp4",
         "Video Thumbnail":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Abate/Abate-00002.png"
     },
-    "Abscond":{
+    {   "word":"Abscond",
         "Pronounciation Text":"/əbˈskänd/",
         "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/abscond.mp3",
         "Suffix":"verb",
@@ -17,7 +17,7 @@
         "Video URL":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Abscond/Abscond.mp4",
         "Video Thumbnail":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Abscond/Abscond-00002.png"
     },
-    "Ameliorate":{
+    {   "word":"Ameliorate",
         "Pronounciation Text":"/əˈmēlyəˌrāt/",
         "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/ameliorate.mp3",
         "Suffix":"verb",
@@ -26,7 +26,7 @@
         "Video URL":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Amelaiorate/Amelaiorate.mp4",
         "Video Thumbnail":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Amelaiorate/Amelaiorate-00002.png"
     },
-    "Arduous":{
+    {   "word":"Arduous",
         "Pronounciation Text":"/ˈärjo͞oəs/",
         "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/arduous.mp3",
         "Suffix":"adjective",
@@ -35,7 +35,7 @@
         "Video URL":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Arduous/Arduous.mp4",
         "Video Thumbnail":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Arduous/Arduous-00002.png"
     },
-    "Assuage":{
+    {   "word":"Assuage",
         "Pronounciation Text":"/əˈswāj/",
         "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/assuage.mp3",
         "Suffix":"verb",
@@ -44,7 +44,7 @@
         "Video URL":0,
         "Video Thumbnail":0
     },
-    "Belie":{
+    {   "word":"Belie",
         "Pronounciation Text":"/bəˈlī/",
         "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/belie.mp3",
         "Suffix":"verb",
@@ -53,7 +53,7 @@
         "Video URL":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Belie/Belie.mp4",
         "Video Thumbnail":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Belie/Belie-00002.png"
     },
-    "Burgeon":{
+    {   "word":"Burgeon",
         "Pronounciation Text":"/ˈbərjən/",
         "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/burgeon.mp3",
         "Suffix":"verb",
@@ -62,7 +62,7 @@
         "Video URL":0,
         "Video Thumbnail":0
     },
-    "Cacophony":{
+    {   "word":"Cacophony",
         "Pronounciation Text":"/kəˈkäfənē/",
         "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/cacophony.mp3",
         "Suffix":"noun",
@@ -71,7 +71,7 @@
         "Video URL":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Cacophony/Cacophony.mp4",
         "Video Thumbnail":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Cacophony/Cacophony-00002.png"
     },
-    "Capricious":{
+    {   "word":"Capricious",
         "Pronounciation Text":"/kəˈpriSHəs,kəˈprēSHəs/",
         "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/capricious.mp3",
         "Suffix":"adjective",
@@ -80,7 +80,7 @@
         "Video URL":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Capricius/Capricius.mp4",
         "Video Thumbnail":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Capricius/Capricius-00002.png"
     },
-    "Chicanery":{
+    {   "word":"Chicanery",
         "Pronounciation Text":"/SHiˈkānərē,CHi-/",
         "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/chicanery.mp3",
         "Suffix":"noun",
@@ -89,7 +89,7 @@
         "Video URL":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Chicanery/Chicanery.mp4",
         "Video Thumbnail":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Chicanery/Chicanery-00002.png"
     },
-    "Cogent":{
+    {   "word":"Cogent",
         "Pronounciation Text":"/ˈkōjənt/",
         "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/cogent.mp3",
         "Suffix":"adjective",
@@ -98,7 +98,7 @@
         "Video URL":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Cogent/Cogent.mp4",
         "Video Thumbnail":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Cogent/Cogent-00002.png"
     },
-    "Complaisant":{
+    {   "word":"Complaisant",
         "Pronounciation Text":"/kəmˈplāsənt/",
         "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/complaisant.mp3",
         "Suffix":"adjective",
@@ -107,7 +107,7 @@
         "Video URL":0,
         "Video Thumbnail":0
     },
-    "Connoisseur":{
+    {   "word":"Connoisseur",
         "Pronounciation Text":"/ˌkänəˈsər,ˌkänəˈso͝or/",
         "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/connoisseur.mp3",
         "Suffix":"noun",
@@ -116,7 +116,7 @@
         "Video URL":0,
         "Video Thumbnail":0
     },
-    "Daunt":{
+    {   "word":"Daunt",
         "Pronounciation Text":"/dônt,dänt/",
         "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/daunt.mp3",
         "Suffix":"verb",
@@ -125,7 +125,7 @@
         "Video URL":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Duant/Duant.mp4",
         "Video Thumbnail":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Duant/Duant-00002.png"
     },
-    "Dogmatic":{
+    {   "word":"Dogmatic",
         "Pronounciation Text":"/dôɡˈmadik/",
         "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/dogmatic.mp3",
         "Suffix":"adjective",
@@ -134,7 +134,7 @@
         "Video URL":0,
         "Video Thumbnail":0
     },
-    "Ebullient":{
+    {   "word":"Ebullient",
         "Pronounciation Text":"/iˈbo͝olyənt,iˈbəlyənt/",
         "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/ebullient.mp3",
         "Suffix":"adjective",
@@ -143,7 +143,7 @@
         "Video URL":0,
         "Video Thumbnail":0
     },
-    "Effrontery":{
+    {   "word":"Effrontery",
         "Pronounciation Text":"/əˈfrən(t)ərē/",
         "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/effrontery.mp3",
         "Suffix":"noun",
@@ -152,7 +152,7 @@
         "Video URL":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Effrontery/Effrontery.mp4",
         "Video Thumbnail":0
     },
-    "Enervate":{
+    {   "word":"Enervate",
         "Pronounciation Text":"/ˈenərˌvāt/",
         "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/enervate.mp3",
         "Suffix":"verb",
@@ -161,7 +161,7 @@
         "Video URL":0,
         "Video Thumbnail":0
     },
-    "Exigent":{
+    {   "word":"Exigent",
         "Pronounciation Text":"/ˈekzəjənt/",
         "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/exigent.mp3",
         "Suffix":"adjective",
@@ -170,7 +170,7 @@
         "Video URL":0,
         "Video Thumbnail":0
     },
-    "Fortuitous":{
+    {   "word":"Fortuitous",
         "Pronounciation Text":"/fôrˈto͞oədəs/",
         "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/fortuitous.mp3",
         "Suffix":"adjective",
@@ -179,7 +179,7 @@
         "Video URL":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Futuitous/Futuitous.mp4",
         "Video Thumbnail":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Futuitous/Futuitous-00002.png"
     },
-    "Hackneyed":{
+    {   "word":"Hackneyed",
         "Pronounciation Text":"/ˈhaknēd/",
         "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/hackneyed.mp3",
         "Suffix":"adjective",
@@ -188,7 +188,7 @@
         "Video URL":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Hackneyed/Hackneyed.mp4",
         "Video Thumbnail":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Hackneyed/Hackneyed-00002.png"
     },
-    "Halcyon":{
+    {   "word":"Halcyon",
         "Pronounciation Text":"/ˈhalsēən/",
         "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/halcyon.mp3",
         "Suffix":"adjective",
@@ -197,7 +197,7 @@
         "Video URL":0,
         "Video Thumbnail":0
     },
-    "Iconoclast":{
+    {   "word":"Iconoclast",
         "Pronounciation Text":"/īˈkänəˌklast/",
         "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/iconoclast.mp3",
         "Suffix":"noun",
@@ -206,7 +206,7 @@
         "Video URL":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Iconoclast/Iconoclast.mp4",
         "Video Thumbnail":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Iconoclast/Iconoclast-00002.png"
     },
-    "Insipid":{
+    {   "word":"Insipid",
         "Pronounciation Text":"/inˈsipid/",
         "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/insipid.mp3",
         "Suffix":"adjective",
@@ -215,7 +215,7 @@
         "Video URL":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Insipid/Insipid.mp4",
         "Video Thumbnail":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Insipid/Insipid-00002.png"
     },
-    "Lethargic":{
+    {   "word":"Lethargic",
         "Pronounciation Text":"/ləˈTHärjik/",
         "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/lethargic.mp3",
         "Suffix":"adjective",
@@ -224,7 +224,7 @@
         "Video URL":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Lethargic/Lethargic.mp4",
         "Video Thumbnail":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Lethargic/Lethargic-00002.png"
     },
-    "Lucid":{
+    {   "word":"Lucid",
         "Pronounciation Text":"/ˈlo͞osəd/",
         "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/lucid.mp3",
         "Suffix":"adjective",
@@ -233,7 +233,7 @@
         "Video URL":0,
         "Video Thumbnail":0
     },
-    "Magnanimous":{
+    {   "word":"Magnanimous",
         "Pronounciation Text":"/maɡˈnanəməs/",
         "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/magnanimous.mp3",
         "Suffix":"adjective",
@@ -242,7 +242,7 @@
         "Video URL":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Magnanimous/Magnanimous.mp4",
         "Video Thumbnail":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Magnanimous/Magnanimous-00002.png"
     },
-    "Mercurial":{
+    {   "word":"Mercurial",
         "Pronounciation Text":"/ˌmərˈkyo͝orēəl/",
         "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/mercurial.mp3",
         "Suffix":"adjective",
@@ -251,7 +251,7 @@
         "Video URL":0,
         "Video Thumbnail":0
     },
-    "Misanthrope":{
+    {   "word":"Misanthrope",
         "Pronounciation Text":"/ˈmis(ə)nˌTHrōp,ˈmiz(ə)nˌTHrōp/",
         "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/misanthrope.mp3",
         "Suffix":"noun",
@@ -260,7 +260,7 @@
         "Video URL":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Misanthrope/Misanthrope.mp4",
         "Video Thumbnail":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Misanthrope/Misanthrope-00002.png"
     },
-    "Morose":{
+    {   "word":"Morose",
         "Pronounciation Text":"/məˈrōs/",
         "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/morose.mp3",
         "Suffix":"adjective",
@@ -269,7 +269,7 @@
         "Video URL":0,
         "Video Thumbnail":0
     },
-    "Mundane":{
+    {   "word":"Mundane",
         "Pronounciation Text":"/ˌmənˈdān/",
         "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/mundane.mp3",
         "Suffix":"adjective",
@@ -278,7 +278,7 @@
         "Video URL":0,
         "Video Thumbnail":0
     },
-    "Orthodox":{
+    {   "word":"Orthodox",
         "Pronounciation Text":"/ˈôrTHəˌdäks/",
         "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/orthodox.mp3",
         "Suffix":"adjective",
@@ -287,7 +287,7 @@
         "Video URL":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Ortudox/Ortudox.mp4",
         "Video Thumbnail":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Ortudox/Ortudox-00002.png"
     },
-    "Perfunctory":{
+    {   "word":"Perfunctory",
         "Pronounciation Text":"/pərˈfəNG(k)t(ə)rē/",
         "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/perfunctory.mp3",
         "Suffix":"adjective",
@@ -296,7 +296,7 @@
         "Video URL":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Perfunctory/Perfunctory.mp4",
         "Video Thumbnail":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/Perfunctory/Perfunctory-00002.png"
     },
-    "Placate":{
+    {   "word":"Placate",
         "Pronounciation Text":"/ˈplākāt/",
         "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/placate.mp3",
         "Suffix":"verb",
@@ -305,7 +305,7 @@
         "Video URL":0,
         "Video Thumbnail":0
     },
-    "Pragmatic":{
+    {   "word":"Pragmatic",
         "Pronounciation Text":"/praɡˈmadik/",
         "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/pragmatic.mp3",
         "Suffix":"adjective",
@@ -314,7 +314,7 @@
         "Video URL":0,
         "Video Thumbnail":0
     },
-    "Prolific":{
+    {   "word":"Prolific",
         "Pronounciation Text":"/prəˈlifik/",
         "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/prolific.mp3",
         "Suffix":"adjective",
@@ -323,7 +323,7 @@
         "Video URL":0,
         "Video Thumbnail":0
     },
-    "Prudent":{
+    {   "word":"Prudent",
         "Pronounciation Text":"/ˈpro͞odnt/",
         "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/prudent.mp3",
         "Suffix":"adjective",
@@ -332,7 +332,7 @@
         "Video URL":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/PRUDENT/PRUDENT.mp4",
         "Video Thumbnail":"https://s3-us-west-1.amazonaws.com/stiquevocabs/transcoded/PRUDENT/PRUDENT-00002.png"
     },
-    "Quaff":{
+    {   "word":"Quaff",
         "Pronounciation Text":"/kwäf/",
         "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/quaff.mp3",
         "Suffix":"verb",
@@ -341,7 +341,7 @@
         "Video URL":0,
         "Video Thumbnail":0
     },
-    "Redundant":{
+    {   "word":"Redundant",
         "Pronounciation Text":"/rəˈdəndənt/",
         "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/redundant.mp3",
         "Suffix":"adjective",
@@ -350,7 +350,7 @@
         "Video URL":0,
         "Video Thumbnail":0
     },
-    "Sanguine":{
+    {   "word":"Sanguine",
         "Pronounciation Text":"/ˈsaNGɡwən/",
         "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/sanguine.mp3",
         "Suffix":"adjective",
@@ -359,7 +359,7 @@
         "Video URL":0,
         "Video Thumbnail":0
     },
-    "Scrupulous":{
+    {   "word":"Scrupulous",
         "Pronounciation Text":"/ˈskro͞opyələs/",
         "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/scrupulous.mp3",
         "Suffix":"adjective",
@@ -368,7 +368,7 @@
         "Video URL":0,
         "Video Thumbnail":0
     },
-    "Stupefy":{
+    {   "word":"Stupefy",
         "Pronounciation Text":"/ˈst(y)o͞opəˌfī/",
         "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/stupefy.mp3",
         "Suffix":"verb",
@@ -377,7 +377,7 @@
         "Video URL":0,
         "Video Thumbnail":0
     },
-    "Tortuous":{
+    {   "word":"Tortuous",
         "Pronounciation Text":"/ˈtôrCH(o͞o)əs/",
         "Pronounciation Audio":"https://ssl.gstatic.com/dictionary/static/sounds/de/0/tortuous.mp3",
         "Suffix":"adjective",
@@ -386,4 +386,4 @@
         "Video URL":0,
         "Video Thumbnail":0
     }
-}
+]

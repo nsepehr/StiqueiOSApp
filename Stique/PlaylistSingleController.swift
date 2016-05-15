@@ -60,9 +60,15 @@ class PlaylistSingleController: BaseController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        let vc = ViewController()
-        vc.item = TableData[indexPath.row]
-        navigationController?.pushViewController(vc, animated: true)
+        if type == 1 {
+            let vc = FlashCardController()
+            vc.item = TableData[indexPath.row]
+            navigationController?.pushViewController(vc, animated: true)
+        } else {
+            let vc = ViewController()
+            vc.item = TableData[indexPath.row]
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -33,7 +33,7 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
         vocab.height = 50
         
         let type = UILabel()
-        type.text = "adjective"//item["type"] as? String
+        type.text = item["Suffix"] as? String
         type.font = UIFont.italicSystemFontOfSize(12)
         type.textColor = UIColor.grayColor()
         view.addSubview(type)
@@ -54,7 +54,7 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
 
         
         let pronounce = UILabel()
-        pronounce.text = "/'Pronounciation/"//item["type"] as? String
+        pronounce.text = item["Pronounciation Text"] as? String
         pronounce.font = UIFont.systemFontOfSize(12)
         pronounce.textColor = UIColor.grayColor()
         view.addSubview(pronounce)
@@ -118,7 +118,7 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
         def.height = 12
         
         let def1 = UILabel()
-        def1.text = "1. Here we will put the definition for each word"
+        def1.text = item["Definition"] as? String
         def1.font = UIFont.systemFontOfSize(10.0)
         def1.textAlignment = NSTextAlignment.Left
         view.addSubview(def1)
@@ -132,7 +132,7 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
         def2.text = "2. Definition is take from a dictionary"
         def2.font = UIFont.systemFontOfSize(10.0)
         def2.textAlignment = NSTextAlignment.Left
-        view.addSubview(def2)
+//        view.addSubview(def2)
         
         def2.widthPercent = 100
         def2.marginTop = 17
@@ -159,7 +159,7 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
         ex.height = 12
         
         let ex1 = UILabel()
-        ex1.text = "1. Here we will put the example"
+        ex1.text = item["Example"] as? String
         ex1.font = UIFont.systemFontOfSize(10.0)
         ex1.textAlignment = NSTextAlignment.Left
         view.addSubview(ex1)
@@ -181,7 +181,7 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
         rating.height = 15
         
         let video = UIView()
-        let url = NSURL(string: "https://s3-us-west-1.amazonaws.com/smvtestvideotranscoded/01-Exigent.mp4")
+        let url = NSURL(string: item["Video URL"] as! String)
         video.backgroundColor = UIColor.grayColor()
         view.addSubview(video)
         
