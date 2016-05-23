@@ -12,6 +12,7 @@ class FlashCardController: UIViewController {
     
     var item = [String: AnyObject]()
     var blackbar = UIView()
+    var mainController = BaseController()
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -77,6 +78,28 @@ class FlashCardController: UIViewController {
         viewBtn.height = 30
         viewBtn.marginTop = 10
         
+        let xBtn = UIButton()
+        xBtn.setAttributedTitle(NSAttributedString(string: String.fontAwesomeIconWithName(.Close), attributes: [NSFontAttributeName: UIFont.fontAwesomeOfSize(35)]), forState: .Normal)
+        xBtn.setTitleColor(UIColor.blueColor(), forState: .Normal)
+        xBtn.addTarget(self, action: #selector(x), forControlEvents: UIControlEvents.TouchUpInside)
+        card.addSubview(xBtn)
+        
+        xBtn.width = 70
+        xBtn.marginLeftAbsolute = 20
+        xBtn.height = 30
+        xBtn.marginTop = 10
+        
+        let okBtn = UIButton()
+        okBtn.setAttributedTitle(NSAttributedString(string: String.fontAwesomeIconWithName(.Check), attributes: [NSFontAttributeName: UIFont.fontAwesomeOfSize(35)]), forState: .Normal)
+        okBtn.setTitleColor(UIColor.blueColor(), forState: .Normal)
+        okBtn.addTarget(self, action: #selector(ok), forControlEvents: UIControlEvents.TouchUpInside)
+        card.addSubview(okBtn)
+        
+        okBtn.width = 70
+        okBtn.marginRightAbsolute = 20
+        okBtn.height = 30
+        okBtn.marginTop = -30
+        
         let speaker = UIButton()
         speaker.setAttributedTitle(NSAttributedString(string: String.fontAwesomeIconWithName(.VolumeUp), attributes: [NSFontAttributeName: UIFont.fontAwesomeOfSize(35)]), forState: .Normal)
         card.addSubview(speaker)
@@ -90,11 +113,30 @@ class FlashCardController: UIViewController {
         
     }
     
+    func x() {
+        nextOrQuit()
+    }
+    
+    func ok() {
+        true
+        mainController.removeItem(mainController.indexPath2)
+        nextOrQuit()
+    }
+    
+    func nextOrQuit() {
+        mainController.goNext = mainController.TableData.count > mainController.indexPath2.row + 1
+        exitFuncWithAnimation(!mainController.goNext)
+    }
+    
     func exitFunc() {
+        exitFuncWithAnimation(true)
+    }
+    
+    func exitFuncWithAnimation(animated: Bool) {
         blackbar.removeFromSuperview()
         self.navigationController?.navigationBar.hidden = false
         
-        navigationController?.popViewControllerAnimated(true)
+        navigationController?.popViewControllerAnimated(animated)
     }
     
     func viewFunc() {
@@ -103,6 +145,7 @@ class FlashCardController: UIViewController {
         
         let vc = ViewController()
         vc.item = item
+        vc.mainController = mainController
         navigationController?.pushViewController(vc, animated: true)
     }
     

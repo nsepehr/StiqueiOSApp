@@ -10,21 +10,9 @@ import UIKit
 import FoldingCell
 import PINRemoteImage
 
-class PlaylistSingleController: BaseController {
+class UserPlaylistSingleController: BaseController {
     
-    var type = 0
-    
-    override func viewWillAppear(animated: Bool) {
-        if goNext {
-            goNext = false
-            indexPath2 = NSIndexPath(forRow: indexPath2.row + 1, inSection: indexPath2.section)
-            
-            let vc = FlashCardController()
-            vc.item = TableData[indexPath2.row]
-            vc.mainController = self
-            navigationController?.pushViewController(vc, animated: false)
-        }
-    }
+    var playlist = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,10 +21,12 @@ class PlaylistSingleController: BaseController {
         navigationItem.leftBarButtonItem = nil
         
         
-        title = type == 0 ? "Smart Playlist" : "Master Practice"
+        title = playlist
+        
+        
         
         let userDefaults = NSUserDefaults.standardUserDefaults()
-        if let playlist = userDefaults.stringForKey("playlist" + String(type)) {
+        if let playlist = userDefaults.stringForKey(playlist) {
             do {
                 let jsonData = try NSJSONSerialization.JSONObjectWithData(playlist.dataUsingEncoding(NSUTF8StringEncoding)!, options: .AllowFragments) as? [[String: AnyObject]]
                 if let jsonData = jsonData {
@@ -70,17 +60,16 @@ class PlaylistSingleController: BaseController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         indexPath2 = indexPath
-        if type == 1 {
-            let vc = FlashCardController()
-            vc.item = TableData[indexPath.row]
-            vc.mainController = self
-            navigationController?.pushViewController(vc, animated: true)
-        } else {
+//        if type == 1 {
+//            let vc = FlashCardController()
+//            vc.item = TableData[indexPath.row]
+//            navigationController?.pushViewController(vc, animated: true)
+//        } else {
             let vc = ViewController()
             vc.item = TableData[indexPath.row]
             vc.mainController = self
             navigationController?.pushViewController(vc, animated: true)
-        }
+//        }
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -93,7 +82,14 @@ class PlaylistSingleController: BaseController {
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.Delete) {
-            removeItem(indexPath)
+            let userDefaults = NSUserDefaults.standardUserDefaults()
+            do {
+                TableData.removeAtIndex(indexPath.row)
+                let jsonData2 = try NSJSONSerialization.dataWithJSONObject(TableData, options: NSJSONWritingOptions.PrettyPrinted)
+                userDefaults.setObject(NSString(data: jsonData2, encoding: NSASCIIStringEncoding), forKey: playlist)
+                userDefaults.synchronize()
+                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Left)
+            } catch _ {}
         }
     }
 

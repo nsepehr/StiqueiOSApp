@@ -17,7 +17,6 @@ class MainViewController: BaseController, MFMailComposeViewControllerDelegate {
     var orderBtn = UIButton()
     var count = UILabel()
     var footerView = UIView()
-    var indexPath2 = NSIndexPath()
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
@@ -105,6 +104,8 @@ class MainViewController: BaseController, MFMailComposeViewControllerDelegate {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        indexPath2 = indexPath
         //
         //        var duration = 0.0
         //        if cellHeights[indexPath.row] == 10.0 { // open cell
@@ -126,6 +127,7 @@ class MainViewController: BaseController, MFMailComposeViewControllerDelegate {
 //        s.item = TableData[indexPath.row]
         let vc = ViewController()
         vc.item = TableData[indexPath.row]
+        vc.mainController = self
         navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -201,7 +203,7 @@ class MainViewController: BaseController, MFMailComposeViewControllerDelegate {
     
     func rightCellButtonPressed(button: UIButton) {
         indexPath2 = tableView.indexPathForCell(button.superview?.superview as! UITableViewCell)!
-        let actionSheet = UIActionSheet(title: "Choose Option", delegate: self, cancelButtonTitle: "Cancel", destructiveButtonTitle: nil, otherButtonTitles: "Add to study", "Share", "Add to playlist")
+        let actionSheet = UIActionSheet(title: "Choose Option", delegate: self, cancelButtonTitle: "Cancel", destructiveButtonTitle: nil, otherButtonTitles: "Add to Master Study", "Share", "Add to Playlist")
         
         actionSheet.showInView(self.view)
 //        let controller = UIMenuController.sharedMenuController()
@@ -228,12 +230,17 @@ class MainViewController: BaseController, MFMailComposeViewControllerDelegate {
     }
     
     func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
-        if buttonIndex == 1 {
-            
-        } else if buttonIndex == 2 {
-            sendEmailButtonTapped()
-        } else if buttonIndex == 3 {
-            addToPlaylist(indexPath2.row)
+        if isAddingToPlaylist {
+            isAddingToPlaylist = false
+            addToUserPlaylist(buttonIndex)
+        } else {
+            if buttonIndex == 1 {
+                addToMaster()
+            } else if buttonIndex == 2 {
+                sendEmailButtonTapped()
+            } else if buttonIndex == 3 {
+                addToPlaylist()
+            }
         }
     }
     
@@ -323,22 +330,5 @@ class MainViewController: BaseController, MFMailComposeViewControllerDelegate {
     func mailComposeController(controller: MFMailComposeViewController!, didFinishWithResult result: MFMailComposeResult, error: NSError!) {
         controller.dismissViewControllerAnimated(true, completion: nil)
         
-    }
-    
-    func addToPlaylist(i: Int) {
-        let userDefaults = NSUserDefaults.standardUserDefaults()
-        var TableData2 = [[String: AnyObject]]()
-        TableData2 = [TableData[i]]
-        do {
-            if let playlist = userDefaults.stringForKey("playlist1") {
-                let jsonData = try NSJSONSerialization.JSONObjectWithData(playlist.dataUsingEncoding(NSUTF8StringEncoding)!, options: .AllowFragments) as? [[String: AnyObject]]
-                if let jsonData = jsonData {
-                    TableData2 += jsonData
-                }
-            }
-            let jsonData2 = try NSJSONSerialization.dataWithJSONObject(TableData2, options: NSJSONWritingOptions.PrettyPrinted)
-            userDefaults.setObject(NSString(data: jsonData2, encoding: NSASCIIStringEncoding), forKey: "playlist1")
-            userDefaults.synchronize()
-        } catch _ {}
     }
 }

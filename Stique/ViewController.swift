@@ -14,6 +14,7 @@ import MessageUI
 class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
     
     var item = [String: AnyObject]()
+    var mainController = BaseController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,7 +77,7 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
         
         let icon1 = UIButton()
         icon1.setAttributedTitle(NSAttributedString(string: String.fontAwesomeIconWithName(.Book), attributes: [NSFontAttributeName: UIFont.fontAwesomeOfSize(20)]), forState: .Normal)
-        icon1.addTarget(self, action: #selector(addToPlaylist), forControlEvents: UIControlEvents.TouchUpInside)
+        icon1.addTarget(mainController, action: Selector("addToMaster"), forControlEvents: UIControlEvents.TouchUpInside)
         icons.addSubview(icon1)
         
         icon1.width = iconSize
@@ -84,6 +85,7 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
         
         let icon2 = UIButton()
         icon2.setAttributedTitle(NSAttributedString(string: String.fontAwesomeIconWithName(.List), attributes: [NSFontAttributeName: UIFont.fontAwesomeOfSize(20)]), forState: .Normal)
+        icon2.addTarget(mainController, action: Selector("addToPlaylist"), forControlEvents: UIControlEvents.TouchUpInside)
         icons.addSubview(icon2)
         
         icon2.width = iconSize
@@ -194,7 +196,7 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
         playerController.videoGravity = AVLayerVideoGravityResizeAspectFill
         
 //        playerController.showsPlaybackControls = false
-        player.seekToTime(CMTime(seconds: 2.0, preferredTimescale: 1))
+        player.seekToTime(CMTime(seconds: 1.5, preferredTimescale: 1))
         
         playerController.player = player
         self.addChildViewController(playerController)
@@ -254,24 +256,5 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
         controller.dismissViewControllerAnimated(true, completion: nil)
         
     }
-
-    func addToPlaylist() {
-        let userDefaults = NSUserDefaults.standardUserDefaults()
-        var TableData = [[String: AnyObject]]()
-        TableData = [item]
-        do {
-            if let playlist = userDefaults.stringForKey("playlist1") {
-                let jsonData = try NSJSONSerialization.JSONObjectWithData(playlist.dataUsingEncoding(NSUTF8StringEncoding)!, options: .AllowFragments) as? [[String: AnyObject]]
-                if let jsonData = jsonData {
-                    TableData += jsonData
-                }
-            }
-            let jsonData2 = try NSJSONSerialization.dataWithJSONObject(TableData, options: NSJSONWritingOptions.PrettyPrinted)
-            userDefaults.setObject(NSString(data: jsonData2, encoding: NSASCIIStringEncoding), forKey: "playlist1")
-            userDefaults.synchronize()
-        } catch _ {}
-    }
-
-
 }
 
