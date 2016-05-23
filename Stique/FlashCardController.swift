@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import AVFoundation
 
 class FlashCardController: UIViewController {
     
     var item = [String: AnyObject]()
     var blackbar = UIView()
     var mainController = BaseController()
+    var player: AVPlayer?
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -102,6 +104,7 @@ class FlashCardController: UIViewController {
         
         let speaker = UIButton()
         speaker.setAttributedTitle(NSAttributedString(string: String.fontAwesomeIconWithName(.VolumeUp), attributes: [NSFontAttributeName: UIFont.fontAwesomeOfSize(35)]), forState: .Normal)
+        speaker.addTarget(self, action: Selector("play"), forControlEvents: UIControlEvents.TouchUpInside)
         card.addSubview(speaker)
         
         speaker.widthPercent = 20
@@ -171,6 +174,20 @@ class FlashCardController: UIViewController {
         } catch _ {}
     }
     
-    
+    func play() {
+        do {
+            let url = NSURL(string: item["Pronounciation Audio"] as! String)!
+            let playerItem = AVPlayerItem(URL: url)
+            
+            self.player = try AVPlayer(playerItem:playerItem)
+            player!.volume = 1.0
+            player!.play()
+        } catch let error as NSError {
+            self.player = nil
+            print(error.localizedDescription)
+        } catch {
+            print("AVAudioPlayer init failed")
+        }
+    }
 }
 

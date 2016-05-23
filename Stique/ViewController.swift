@@ -15,6 +15,7 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
     
     var item = [String: AnyObject]()
     var mainController = BaseController()
+    var player: AVPlayer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +47,7 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
         
         let speaker = UIButton()
         speaker.setAttributedTitle(NSAttributedString(string: String.fontAwesomeIconWithName(.VolumeUp), attributes: [NSFontAttributeName: UIFont.fontAwesomeOfSize(35)]), forState: .Normal)
+        speaker.addTarget(self, action: Selector("play"), forControlEvents: UIControlEvents.TouchUpInside)
         view.addSubview(speaker)
         
         speaker.widthPercent = 20
@@ -119,16 +121,12 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
         def.marginLeftAbsolute = 20
         def.height = 12
         
-        let def1 = UILabel()
+        let def1 = UITextView(frame: CGRectMake(20, def.frame.origin.y + 17, view.frame.width - 40, 40))
+        def1.editable = false
         def1.text = item["Definition"] as? String
         def1.font = UIFont.systemFontOfSize(10.0)
-        def1.textAlignment = NSTextAlignment.Left
         view.addSubview(def1)
         
-        def1.widthPercent = 100
-        def1.marginTop = 17
-        def1.marginLeftAbsolute = 20
-        def1.height = 10
         
         let def2 = UILabel()
         def2.text = "2. Definition is take from a dictionary"
@@ -160,16 +158,11 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
         ex.marginLeftAbsolute = 20
         ex.height = 12
         
-        let ex1 = UILabel()
+        let ex1 = UITextView(frame: CGRectMake(20, ex.frame.origin.y + 17, view.frame.width - 40, 20))
+        ex1.editable = false
         ex1.text = item["Example"] as? String
         ex1.font = UIFont.systemFontOfSize(10.0)
-        ex1.textAlignment = NSTextAlignment.Left
         view.addSubview(ex1)
-        
-        ex1.widthPercent = 100
-        ex1.marginTop = 17
-        ex1.marginLeftAbsolute = 20
-        ex1.height = 10
         
         let rating = UILabel()
         rating.text = "[Rating]"
@@ -196,7 +189,7 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
         playerController.videoGravity = AVLayerVideoGravityResizeAspectFill
         
 //        playerController.showsPlaybackControls = false
-        player.seekToTime(CMTime(seconds: 1.5, preferredTimescale: 1))
+        player.seekToTime(CMTime(seconds: 2.5, preferredTimescale: 1))
         
         playerController.player = player
         self.addChildViewController(playerController)
@@ -255,6 +248,22 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
     func mailComposeController(controller: MFMailComposeViewController!, didFinishWithResult result: MFMailComposeResult, error: NSError!) {
         controller.dismissViewControllerAnimated(true, completion: nil)
         
+    }
+    
+    func play() {
+        do {
+            let url = NSURL(string: item["Pronounciation Audio"] as! String)!
+            let playerItem = AVPlayerItem(URL: url)
+            
+            self.player = try AVPlayer(playerItem:playerItem)
+            player!.volume = 1.0
+            player!.play()
+        } catch let error as NSError {
+            self.player = nil
+            print(error.localizedDescription)
+        } catch {
+            print("AVAudioPlayer init failed")
+        }
     }
 }
 
