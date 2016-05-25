@@ -126,7 +126,12 @@ class MainViewController: BaseController, MFMailComposeViewControllerDelegate {
 //        let s = SingleItemController()
 //        s.item = TableData[indexPath.row]
         let vc = ViewController()
-        vc.item = TableData[indexPath.row]
+        
+        if searchController.active && searchController.searchBar.text != "" {
+            vc.item = FilteredTableData[indexPath.row]
+        } else {
+            vc.item = TableData[indexPath.row]
+        }
         vc.mainController = self
         navigationController?.pushViewController(vc, animated: true)
     }

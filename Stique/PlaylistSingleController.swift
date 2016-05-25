@@ -23,6 +23,8 @@ class PlaylistSingleController: BaseController {
             vc.item = TableData[indexPath2.row]
             vc.mainController = self
             navigationController?.pushViewController(vc, animated: false)
+        } else {
+            loadData()
         }
     }
     
@@ -35,6 +37,10 @@ class PlaylistSingleController: BaseController {
         
         title = type == 0 ? "Smart Playlist" : "Master Practice"
         
+        loadData()
+    }
+    
+    func loadData() {
         let userDefaults = NSUserDefaults.standardUserDefaults()
         if let playlist = userDefaults.stringForKey("playlist" + String(type)) {
             do {
@@ -47,6 +53,7 @@ class PlaylistSingleController: BaseController {
                 print("error2")
             }
         }
+        tableView.reloadData()
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -95,6 +102,38 @@ class PlaylistSingleController: BaseController {
         if (editingStyle == UITableViewCellEditingStyle.Delete) {
             removeItem(indexPath)
         }
+    }
+    
+    override func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let footerView = UIView(frame: CGRectMake(0, 0, tableView.frame.size.width, 40))
+        footerView.backgroundColor = UIColor.whiteColor()
+        
+        
+        let viewBtn = UIButton()
+        viewBtn.setTitle("Start", forState: .Normal)
+        viewBtn.setTitleColor(UIColor.blueColor(), forState: .Normal)
+        viewBtn.addTarget(self, action: #selector(startFunc), forControlEvents: UIControlEvents.TouchUpInside)
+        if (TableData.count > 0 ) {
+            footerView.addSubview(viewBtn)
+        }
+        
+        viewBtn.widthPercent = 100
+        viewBtn.height = 40
+        viewBtn.marginTop   = 0
+        
+        return footerView
+    }
+    
+    override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 40.0
+    }
+    
+    func startFunc() {
+        indexPath2 = NSIndexPath(forRow: 0, inSection: 0)
+        let vc = FlashCardController()
+        vc.item = TableData[indexPath2.row]
+        vc.mainController = self
+        navigationController?.pushViewController(vc, animated: true)
     }
 
 }
