@@ -48,12 +48,76 @@ class FilterController: BaseController {
         } else {
             cell?.textLabel?.text = myItem["name"] as? String
         }
+        var shouldCheck = false
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        if (indexPath.section == 1) {
+            if (indexPath.row == 0) {
+                shouldCheck = !userDefaults.boolForKey("sort")
+            }
+            if (indexPath.row == 1) {
+                shouldCheck = userDefaults.boolForKey("sort")
+            }
+        }
+        if (indexPath.section == 2) {
+            if (indexPath.row == 0) {
+                shouldCheck = userDefaults.boolForKey("watched")
+            }
+            if (indexPath.row == 1) {
+                shouldCheck = userDefaults.boolForKey("purchased")
+            }
+            if (indexPath.row == 2) {
+                shouldCheck = userDefaults.boolForKey("top")
+            }
+        }
+        
+        let checked = UILabel()
+        checked.tag = 1
+        checked.font = UIFont.fontAwesomeOfSize(20)
+        checked.text = String.fontAwesomeIconWithName(.Check)
+        checked.textColor = UIColor.grayColor()
+        if (shouldCheck) {
+            cell?.addSubview(checked)
+        }
+        
+        checked.width = 20
+        checked.marginTopAbsolute = 15
+        checked.marginRightAbsolute = 15
+        checked.height = 20
         
         return cell!
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        
+        if (indexPath.section == 1) {
+            tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 1))?.viewWithTag(1)?.removeFromSuperview()
+            tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 1, inSection: 1))?.viewWithTag(1)?.removeFromSuperview()
+            if (indexPath.row == 0) {
+                userDefaults.setBool(false, forKey: "sort")
+            }
+            if (indexPath.row == 1) {
+                userDefaults.setBool(true, forKey: "sort")
+            }
+        }
+        if (indexPath.section == 2) {
+            tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 2))?.viewWithTag(1)?.removeFromSuperview()
+            tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 1, inSection: 2))?.viewWithTag(1)?.removeFromSuperview()
+            tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 2, inSection: 2))?.viewWithTag(1)?.removeFromSuperview()
+            if (indexPath.row == 0) {
+                userDefaults.setBool(!userDefaults.boolForKey("watched"), forKey: "watched")
+            }
+            if (indexPath.row == 1) {
+                userDefaults.setBool(!userDefaults.boolForKey("purchased"), forKey: "purchased")
+            }
+            if (indexPath.row == 2) {
+                userDefaults.setBool(!userDefaults.boolForKey("top"), forKey: "top")
+            }
+        }
+        userDefaults.synchronize()
+        tableView.reloadData()
     }
     
     func rowsInSection(section: Int) -> [[String:AnyObject]] {

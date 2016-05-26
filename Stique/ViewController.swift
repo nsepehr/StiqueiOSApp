@@ -251,6 +251,12 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
     }
     
     func play() {
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        if var words = userDefaults.arrayForKey("watched_words") {
+            words += [item["word"]!]
+            userDefaults.setObject(words, forKey: "watched_words")
+            userDefaults.synchronize()
+        }
         do {
             let url = NSURL(string: item["Pronounciation Audio"] as! String)!
             let playerItem = AVPlayerItem(URL: url)

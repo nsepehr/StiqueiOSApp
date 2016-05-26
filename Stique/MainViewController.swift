@@ -30,6 +30,7 @@ class MainViewController: BaseController, MFMailComposeViewControllerDelegate {
             }
         }
         count.text = String(_count)
+        reloadData()
     }
     
     override func viewDidLoad() {
@@ -77,18 +78,7 @@ class MainViewController: BaseController, MFMailComposeViewControllerDelegate {
         
         //        let leftButton : UIBarButtonItem = UIBarButtonItem(title: "LeftButtonTitle", style: UIBarButtonItemStyle.Plain, target: self, action: "")
         //        navigationItem.leftBarButtonItem = leftButton
-        do {
-            let path = NSBundle.mainBundle().pathForResource("words", ofType: "json")
-            let data: NSData? = NSData(contentsOfFile: path!)
-            let jsonData = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as? [[String: AnyObject]]
-            if let jsonData = jsonData {
-                TableData = jsonData
-                tableView.reloadData()
-            }
-        } catch _ {
-            // error handling
-            print("error2")
-        }
+        reloadData()
         tableView.tableHeaderView = searchController.searchBar
         
     }
@@ -101,6 +91,25 @@ class MainViewController: BaseController, MFMailComposeViewControllerDelegate {
 ////        let vc = RightPanelController()
 ////        navigationController?.pushViewController(vc, animated: true)
 //    }
+    func reloadData() {
+        do {
+            let path = NSBundle.mainBundle().pathForResource("words", ofType: "json")
+            let data: NSData? = NSData(contentsOfFile: path!)
+            let jsonData = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as? [[String: AnyObject]]
+            if let jsonData = jsonData {
+                TableData = jsonData
+                
+                let userDefaults = NSUserDefaults.standardUserDefaults()
+                if (userDefaults.boolForKey("sort")) {
+                    TableData = TableData.reverse()
+                }
+                tableView.reloadData()
+            }
+        } catch _ {
+            // error handling
+            print("error2")
+        }
+    }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
