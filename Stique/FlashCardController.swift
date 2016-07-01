@@ -31,7 +31,7 @@ class FlashCardController: UIViewController {
         super.viewDidLoad()
         
         let card = UIView()
-        card.frame = CGRectMake(0, 0, view.frame.width, view.frame.height/2)
+        card.frame = CGRectMake(0, 0, view.frame.width, view.frame.height)
         card.backgroundColor = UIColor.whiteColor()
         
         
@@ -189,5 +189,10 @@ class FlashCardController: UIViewController {
             print("AVAudioPlayer init failed")
         }
     }
+    
+//    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+//        return [.Landscape]
+//    }
+    
 }
 

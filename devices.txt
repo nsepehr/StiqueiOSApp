@@ -1,0 +1,5 @@
+Device ID	Device Name
+70cabfb25a9a5d999bf93093f49b7f8b2e79bb5e	Eido2 - iPhone 6s
+2eac4c2226ff0a879a09bbf161b2c3dfed99f8da	Hondo - iPhone 6
+ab2cdb0c88d3e0c55d02e2269e65bb38f3629d2f	Soheil - iPhone 5s
+cc843e309012b230415892b4c910e8895df3b7e2	Hondo - iPhone 6s Plus

@@ -92,6 +92,13 @@ class MainViewController: BaseController, MFMailComposeViewControllerDelegate {
 ////        navigationController?.pushViewController(vc, animated: true)
 //    }
     func reloadData() {
+        
+        
+//        let userDefaults = NSUserDefaults.standardUserDefaults()
+//        
+//        userDefaults.setBool(!userDefaults.boolForKey("watched"), forKey: "watched")
+//        userDefaults.setBool(!userDefaults.boolForKey("purchased"), forKey: "purchased")
+//        userDefaults.setBool(!userDefaults.boolForKey("top"), forKey: "top")
         do {
             let path = NSBundle.mainBundle().pathForResource("words", ofType: "json")
             let data: NSData? = NSData(contentsOfFile: path!)

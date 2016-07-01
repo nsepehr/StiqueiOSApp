@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import SlideMenuControllerSwift
 
-class BaseController: UITableViewController, UIActionSheetDelegate {
+class BaseController: UITableViewController, UIActionSheetDelegate, SlideMenuControllerDelegate {
     
     var TableData = [[String: AnyObject]]()
     var FilteredTableData = [[String: AnyObject]]()
@@ -44,6 +45,12 @@ class BaseController: UITableViewController, UIActionSheetDelegate {
     
     func leftButtonPressed() {
         slideMenuController()?.openLeft()
+        view.userInteractionEnabled = false
+        slideMenuController()?.delegate = self
+    }
+    
+    func leftDidClose() {
+        view.userInteractionEnabled = true
     }
     
     func rightButtonPressed() {
@@ -85,6 +92,9 @@ class BaseController: UITableViewController, UIActionSheetDelegate {
     
     
     func addToUserPlaylist(i: Int) {
+        if i == 0 {
+            return
+        }
         let userDefaults = NSUserDefaults.standardUserDefaults()
         
         var TableData2 = [[String: AnyObject]]()
@@ -169,6 +179,11 @@ class BaseController: UITableViewController, UIActionSheetDelegate {
             userDefaults.setObject(NSString(data: jsonData2, encoding: NSASCIIStringEncoding), forKey: "playlist1")
             userDefaults.synchronize()
         } catch _ {}
+        
+        
+        let alert = UIAlertController(title: "Master Study", message: "Added to Master Study.", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
     }
     
     func removeItem(indexPath: NSIndexPath) {let userDefaults = NSUserDefaults.standardUserDefaults()

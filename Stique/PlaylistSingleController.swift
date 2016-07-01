@@ -82,6 +82,8 @@ class PlaylistSingleController: BaseController {
             vc.item = TableData[indexPath.row]
             vc.mainController = self
             navigationController?.pushViewController(vc, animated: true)
+//            self.addChildViewController(vc)
+//            self.view.addSubview(vc.view)
         } else {
             let vc = ViewController()
             vc.item = TableData[indexPath.row]

@@ -59,7 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let tabBarController = UITabBarController()
         let myVC1 = page(MainViewController)
-        let myVC2 = page(PlaylistController)
+        let myVC2 = page(UserPlaylistController)
         let myVC3 = page(PracticeController)
         let myVC4 = page(FilterController)
         let myVC5 = page(ShoppingController)
@@ -96,7 +96,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //            title: "Pizza",
 //            image: secondImage,
 //            tag:2)
-        
+        Fabric.with([STPAPIClient.self, Crashlytics.self])
+
         // Override point for customization after application launch.
         return true
     }
@@ -328,6 +329,11 @@ extension UIView {
             return 0.0
         }
     }
+    
+    func application(application: UIApplication, supportedInterfaceOrientationsForWindow window: UIWindow?) -> UIInterfaceOrientationMask {
+        return [.Portrait, .Landscape]
+    }
+
 }
 
 extension UIColor {

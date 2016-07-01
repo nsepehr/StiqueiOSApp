@@ -20,6 +20,8 @@ class PlaylistController: BaseController {
         TableData = [["name":"Smart Playlist","type":0],["name":"User Playlist","type":1],]
         
         title = "Playlists"
+        
+        
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

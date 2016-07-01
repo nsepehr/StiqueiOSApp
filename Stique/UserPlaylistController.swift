@@ -12,12 +12,12 @@ import PINRemoteImage
 
 class UserPlaylistController: BaseController {
     
-    var type = 0
+    var type = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.leftBarButtonItem = nil
+//        navigationItem.leftBarButtonItem = nil
         
         
         let rightButton = UIBarButtonItem(title: "MY STASH", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(rightButtonPressed))
@@ -26,7 +26,7 @@ class UserPlaylistController: BaseController {
         rightButton.title = String.fontAwesomeIconWithName(.Plus)
         
         navigationItem.rightBarButtonItem = rightButton
-        
+
         title = type == 0 ? "Smart Playlist" : "User Playlist"
         
         

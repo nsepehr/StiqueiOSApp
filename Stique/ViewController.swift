@@ -26,10 +26,11 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
         let vocab = UILabel()
         vocab.text = item["word"] as? String
         vocab.font = UIFont.systemFontOfSize(26)
+        vocab.adjustsFontSizeToFitWidth = true
         vocab.textAlignment = NSTextAlignment.Left
         view.addSubview(vocab)
         
-        vocab.widthPercent = 40
+        vocab.widthPercent = 50
         vocab.marginTop = 70
         vocab.marginLeft = 20
         vocab.height = 50
@@ -168,7 +169,7 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
         rating.text = "[Rating]"
         rating.font = UIFont.systemFontOfSize(12.0)
         rating.textAlignment = NSTextAlignment.Left
-        view.addSubview(rating)
+//        view.addSubview(rating)
         
         rating.width = 50
         rating.marginTop = 10

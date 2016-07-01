@@ -641,7 +641,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = stiqueApp.Stique;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "5d79cc9d-3578-43e8-ac6d-9714f086d87a";
+				PROVISIONING_PROFILE = "60e349ca-c195-4057-9b77-98f65c27f252";
 			};
 			name = Debug;
 		};
@@ -661,7 +661,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = stiqueApp.Stique;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "5d79cc9d-3578-43e8-ac6d-9714f086d87a";
+				PROVISIONING_PROFILE = "60e349ca-c195-4057-9b77-98f65c27f252";
 			};
 			name = Release;
 		};

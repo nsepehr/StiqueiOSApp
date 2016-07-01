@@ -9,6 +9,7 @@
 import UIKit
 import FoldingCell
 import PINRemoteImage
+import SlideMenuControllerSwift
 
 class LeftViewController: BaseController {
     
@@ -41,6 +42,7 @@ class LeftViewController: BaseController {
                 "link": "https://google.com"
             ],
         ]
+
         
         title = "Options"
     }
