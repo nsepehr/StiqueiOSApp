@@ -24,8 +24,10 @@ class UserPlaylistController: BaseController {
         let attributesRight = [NSFontAttributeName: UIFont.fontAwesomeOfSize(16)] as Dictionary!
         rightButton.setTitleTextAttributes(attributesRight, forState: .Normal)
         rightButton.title = String.fontAwesomeIconWithName(.Plus)
-        
+        rightButton.tintColor = UIColor.whiteColor()
+
         navigationItem.rightBarButtonItem = rightButton
+        navigationController?.navigationBar.tintColor = UIColor.whiteColor()
 
         title = type == 0 ? "Smart Playlist" : "User Playlist"
         
@@ -97,6 +99,10 @@ class UserPlaylistController: BaseController {
         //1. Create the alert controller.
         let alert = UIAlertController(title: "New Playlist", message: "Please enter a playlist name:", preferredStyle: .Alert)
         
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default)
+        { action -> Void in
+            // Put your code here
+        })
         //2. Add the text field. You can configure it however you need.
         alert.addTextFieldWithConfigurationHandler({ (textField) -> Void in
             textField.text = ""

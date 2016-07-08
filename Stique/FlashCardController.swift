@@ -25,6 +25,7 @@ class FlashCardController: UIViewController {
         self.tabBarController?.tabBar.addSubview(blackbar)
         self.navigationController?.navigationBar.hidden = true
         view.backgroundColor = UIColor.blackColor()
+        navigationController?.navigationBar.tintColor = UIColor.whiteColor()
     }
     
     override func viewDidLoad() {
@@ -38,10 +39,11 @@ class FlashCardController: UIViewController {
         let vocab = UILabel()
         vocab.text = item["word"] as? String
         vocab.font = UIFont.systemFontOfSize(26)
+        vocab.adjustsFontSizeToFitWidth = true
         vocab.textAlignment = NSTextAlignment.Left
         card.addSubview(vocab)
         
-        vocab.widthPercent = 40
+        vocab.widthPercent = 50
         vocab.marginTop = 70
         vocab.marginLeft = 20
         vocab.height = 50
@@ -104,7 +106,7 @@ class FlashCardController: UIViewController {
         
         let speaker = UIButton()
         speaker.setAttributedTitle(NSAttributedString(string: String.fontAwesomeIconWithName(.VolumeUp), attributes: [NSFontAttributeName: UIFont.fontAwesomeOfSize(35)]), forState: .Normal)
-        speaker.addTarget(self, action: Selector("play"), forControlEvents: UIControlEvents.TouchUpInside)
+        speaker.addTarget(self, action: #selector(play), forControlEvents: UIControlEvents.TouchUpInside)
         card.addSubview(speaker)
         
         speaker.widthPercent = 20
@@ -113,7 +115,6 @@ class FlashCardController: UIViewController {
         speaker.height = 50
         
         view.addSubview(card)
-        
     }
     
     func x() {
@@ -127,7 +128,7 @@ class FlashCardController: UIViewController {
     }
     
     func nextOrQuit() {
-        mainController.goNext = mainController.TableData.count > mainController.indexPath2.row + 1
+        mainController.goNext = true//mainController.TableData.count > 0//mainController.indexPath2.row + 1
         exitFuncWithAnimation(!mainController.goNext)
     }
     

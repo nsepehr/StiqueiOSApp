@@ -16,13 +16,20 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
     var item = [String: AnyObject]()
     var mainController = BaseController()
     var player: AVPlayer?
+    var videoPlayer = AVPlayer()
+    var playerController = PlayerViewController()
+    
+    deinit {    
+        videoPlayer.removeObserver(self, forKeyPath: "rate")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     
         view.backgroundColor = UIColor.whiteColor()
-        
+        navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+
         let vocab = UILabel()
         vocab.text = item["word"] as? String
         vocab.font = UIFont.systemFontOfSize(26)
@@ -166,10 +173,10 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
         view.addSubview(ex1)
         
         let rating = UILabel()
-        rating.text = "[Rating]"
+        rating.text = ""
         rating.font = UIFont.systemFontOfSize(12.0)
         rating.textAlignment = NSTextAlignment.Left
-//        view.addSubview(rating)
+        view.addSubview(rating)
         
         rating.width = 50
         rating.marginTop = 10
@@ -185,14 +192,15 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
         video.marginTop = 5
         video.height = view.bounds.height - rating.frame.origin.y - rating.frame.height - 50
         
-        let player = AVPlayer(URL: url!)
-        let playerController = PlayerViewController()
+        videoPlayer = AVPlayer(URL: url!)
+        playerController = PlayerViewController()
         playerController.videoGravity = AVLayerVideoGravityResizeAspectFill
         
-//        playerController.showsPlaybackControls = false
-        player.seekToTime(CMTime(seconds: 2.5, preferredTimescale: 1))
+//        playerController.showsPlaybackControls = true
+        videoPlayer.seekToTime(CMTime(seconds: 2.5, preferredTimescale: 1))
         
-        playerController.player = player
+        playerController.player = videoPlayer
+        videoPlayer.addObserver(self, forKeyPath:"rate", options:.Initial, context:nil)
         self.addChildViewController(playerController)
         video.addSubview(playerController.view)
         //        playerController.view.frame = video.frame
@@ -212,6 +220,20 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
         print("---------------------")
         print("---------------------")
 //        player.play()
+    }
+    
+    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
+        if (keyPath == "rate") {
+            if videoPlayer.rate == 1.0 { // started playing
+                let userDefaults = NSUserDefaults.standardUserDefaults()
+                var watched = [item["word"] as! String]
+                if let watched2 = userDefaults.objectForKey("watched_words") as? [String] {
+                    watched += Array(Set(watched2)) // unique it
+                }
+                userDefaults.setObject(watched, forKey: "watched_words")
+                userDefaults.synchronize()
+            }
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -252,12 +274,6 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
     }
     
     func play() {
-        let userDefaults = NSUserDefaults.standardUserDefaults()
-        if var words = userDefaults.arrayForKey("watched_words") {
-            words += [item["word"]!]
-            userDefaults.setObject(words, forKey: "watched_words")
-            userDefaults.synchronize()
-        }
         do {
             let url = NSURL(string: item["Pronounciation Audio"] as! String)!
             let playerItem = AVPlayerItem(URL: url)

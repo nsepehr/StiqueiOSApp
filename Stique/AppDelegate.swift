@@ -34,7 +34,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         rightViewController.view.backgroundColor = UIColor.whiteColor()
         
         let slideMenuController = SlideMenuController(mainViewController: navController, leftMenuViewController: leftViewController, rightMenuViewController: rightViewController)
+        slideMenuController.removeRightGestures()
         
+        
+//        UITabBar.appearance().translucent = false
+        UITabBar.appearance().barTintColor = UIColor(netHex:0x00443d)
+        UITabBar.appearance().tintColor = UIColor.whiteColor()
+        
+        
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
+        UIApplication.sharedApplication().statusBarHidden = false
+
         return slideMenuController
     }
 

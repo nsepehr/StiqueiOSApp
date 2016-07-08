@@ -16,7 +16,8 @@ class PracticeController: BaseController {
         super.viewDidLoad()
         
         navigationItem.rightBarButtonItem = nil
-        
+        navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+
         TableData = [
                 [
                     "name":"Master Practice",

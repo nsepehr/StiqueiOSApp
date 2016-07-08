@@ -27,9 +27,11 @@ class BaseController: UITableViewController, UIActionSheetDelegate, SlideMenuCon
         let attributes = [NSFontAttributeName: UIFont.fontAwesomeOfSize(16)] as Dictionary!
         leftButton.setTitleTextAttributes(attributes, forState: .Normal)
         leftButton.title = String.fontAwesomeIconWithName(.Bars)
+        leftButton.tintColor = UIColor.whiteColor()
         let attributesRight = [NSFontAttributeName: UIFont.fontAwesomeOfSize(16)] as Dictionary!
         rightButton.setTitleTextAttributes(attributesRight, forState: .Normal)
         rightButton.title = String.fontAwesomeIconWithName(.Search)
+        rightButton.tintColor = UIColor(netHex:0x00443d)
         
         navigationItem.leftBarButtonItem = leftButton
         navigationItem.rightBarButtonItem = nil//rightButton
@@ -40,9 +42,16 @@ class BaseController: UITableViewController, UIActionSheetDelegate, SlideMenuCon
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
         
+        navigationController?.navigationBar.barTintColor = UIColor(netHex:0x00443d)
+//        navigationController?.navigationBar.barStyle = UIBarStyle.Default
+        let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        navigationController?.navigationBar.titleTextAttributes = titleDict as! [String: AnyObject]
+        
         self.title = "Stique"
     }
-    
+//    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+//        return UIStatusBarStyle.LightContent
+//    }
     func leftButtonPressed() {
         slideMenuController()?.openLeft()
         view.userInteractionEnabled = false
@@ -58,9 +67,9 @@ class BaseController: UITableViewController, UIActionSheetDelegate, SlideMenuCon
         //        navigationController?.pushViewController(vc, animated: true)
     }
     
-    override func prefersStatusBarHidden() -> Bool {
-        return false
-    }
+//    override func prefersStatusBarHidden() -> Bool {
+//        return false
+//    }
     
 //    override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
 //        return 50
@@ -114,6 +123,12 @@ class BaseController: UITableViewController, UIActionSheetDelegate, SlideMenuCon
             if let playlist = userDefaults.stringForKey(playlistKey) {
                 let jsonData = try NSJSONSerialization.JSONObjectWithData(playlist.dataUsingEncoding(NSUTF8StringEncoding)!, options: .AllowFragments) as? [[String: AnyObject]]
                 if let jsonData = jsonData {
+                    for item in jsonData {
+                        if item["word"] as! String == myItem["word"] as! String {
+                            TableData2 = []
+                            break
+                        }
+                    }
                     TableData2 += jsonData
                 }
             }
@@ -172,6 +187,12 @@ class BaseController: UITableViewController, UIActionSheetDelegate, SlideMenuCon
             if let playlist = userDefaults.stringForKey("playlist1") {
                 let jsonData = try NSJSONSerialization.JSONObjectWithData(playlist.dataUsingEncoding(NSUTF8StringEncoding)!, options: .AllowFragments) as? [[String: AnyObject]]
                 if let jsonData = jsonData {
+                    for item in jsonData {
+                        if item["word"] as! String == myItem["word"] as! String {
+                            TableData2 = []
+                            break
+                        }
+                    }
                     TableData2 += jsonData
                 }
             }

@@ -26,7 +26,8 @@ class FilterController: BaseController {
                 "items":[["name":"Ascending"],["name":"Descending"]]
             ],[
                 "name":"Filter By",
-                "items":[["name":"Watched"],["name":"Purchased"],["name":"Top Rating"]]
+                "items":[["name":"Watched"]]
+//                "items":[["name":"Watched"],["name":"Purchased"],["name":"Top Rating"]]
             ]
         ]
         
@@ -76,6 +77,7 @@ class FilterController: BaseController {
         checked.text = String.fontAwesomeIconWithName(.Check)
         checked.textColor = UIColor.grayColor()
         if (shouldCheck) {
+            cell?.viewWithTag(1)?.removeFromSuperview()
             cell?.addSubview(checked)
         }
         

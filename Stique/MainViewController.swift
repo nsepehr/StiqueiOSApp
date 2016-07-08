@@ -92,23 +92,26 @@ class MainViewController: BaseController, MFMailComposeViewControllerDelegate {
 ////        navigationController?.pushViewController(vc, animated: true)
 //    }
     func reloadData() {
-        
-        
-//        let userDefaults = NSUserDefaults.standardUserDefaults()
-//        
-//        userDefaults.setBool(!userDefaults.boolForKey("watched"), forKey: "watched")
-//        userDefaults.setBool(!userDefaults.boolForKey("purchased"), forKey: "purchased")
-//        userDefaults.setBool(!userDefaults.boolForKey("top"), forKey: "top")
+        let userDefaults = NSUserDefaults.standardUserDefaults()
         do {
             let path = NSBundle.mainBundle().pathForResource("words", ofType: "json")
             let data: NSData? = NSData(contentsOfFile: path!)
             let jsonData = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as? [[String: AnyObject]]
             if let jsonData = jsonData {
                 TableData = jsonData
-                
-                let userDefaults = NSUserDefaults.standardUserDefaults()
                 if (userDefaults.boolForKey("sort")) {
                     TableData = TableData.reverse()
+                }
+                if userDefaults.boolForKey("watched") {
+                    var NewTableData = [[String: AnyObject]]()
+                    if let watched = userDefaults.objectForKey("watched_words") as? [String] {
+                        for row in TableData {
+                            if watched.contains(row["word"] as! String) {
+                                NewTableData += [row]
+                            }
+                        }
+                    }
+                    TableData = NewTableData
                 }
                 tableView.reloadData()
             }
@@ -278,27 +281,27 @@ class MainViewController: BaseController, MFMailComposeViewControllerDelegate {
     }
     
     
-    override func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        footerView = UIView(frame: CGRectMake(0, 0, tableView.frame.size.width, 50))
-        footerView.backgroundColor = UIColor.whiteColor()
-        
-        orderBtn.setTitle("View Order", forState: UIControlState.Normal)
-        orderBtn.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-        orderBtn.addTarget(self, action: #selector(orderBtnPressed), forControlEvents: UIControlEvents.TouchUpInside)
-        orderBtn.backgroundColor = UIColor(netHex: 0x2ecc71)
-        orderBtn.titleLabel?.font = UIFont.boldSystemFontOfSize(20)
-        footerView.addSubview(orderBtn)
-        
-        count = UILabel(frame: CGRectMake(0, 0, 30, 30))
-        count.textColor = UIColor.whiteColor()
-        count.backgroundColor = UIColor(netHex: 0x27ae60)
-        count.font = UIFont.boldSystemFontOfSize(20)
-        count.textAlignment = NSTextAlignment.Center
-        footerView.addSubview(count)
-        
-        footerView.hidden = true
-        return footerView
-    }
+//    override func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+//        footerView = UIView(frame: CGRectMake(0, 0, tableView.frame.size.width, 50))
+//        footerView.backgroundColor = UIColor.whiteColor()
+//        
+//        orderBtn.setTitle("View Order", forState: UIControlState.Normal)
+//        orderBtn.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+//        orderBtn.addTarget(self, action: #selector(orderBtnPressed), forControlEvents: UIControlEvents.TouchUpInside)
+//        orderBtn.backgroundColor = UIColor(netHex: 0x2ecc71)
+//        orderBtn.titleLabel?.font = UIFont.boldSystemFontOfSize(20)
+//        footerView.addSubview(orderBtn)
+//        
+//        count = UILabel(frame: CGRectMake(0, 0, 30, 30))
+//        count.textColor = UIColor.whiteColor()
+//        count.backgroundColor = UIColor(netHex: 0x27ae60)
+//        count.font = UIFont.boldSystemFontOfSize(20)
+//        count.textAlignment = NSTextAlignment.Center
+//        footerView.addSubview(count)
+//        
+//        footerView.hidden = true
+//        return footerView
+//    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

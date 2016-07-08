@@ -23,7 +23,8 @@ class UserPlaylistSingleController: BaseController {
         
         title = playlist
         
-        
+        navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+
         
         let userDefaults = NSUserDefaults.standardUserDefaults()
         if let playlist = userDefaults.stringForKey(playlist) {

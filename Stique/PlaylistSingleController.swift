@@ -17,9 +17,14 @@ class PlaylistSingleController: BaseController {
     override func viewWillAppear(animated: Bool) {
         if goNext {
             goNext = false
-            indexPath2 = NSIndexPath(forRow: indexPath2.row + 1, inSection: indexPath2.section)
-            
             let vc = FlashCardController()
+            indexPath2 = NSIndexPath(forRow: indexPath2.row + 1, inSection: indexPath2.section)
+            if indexPath2.row >= TableData.count {
+                indexPath2 = NSIndexPath(forRow: 0, inSection: 0)
+            }
+            if TableData.count == 0 {
+                return
+            }
             vc.item = TableData[indexPath2.row]
             vc.mainController = self
             navigationController?.pushViewController(vc, animated: false)
@@ -33,7 +38,8 @@ class PlaylistSingleController: BaseController {
         
         navigationItem.rightBarButtonItem = nil
         navigationItem.leftBarButtonItem = nil
-        
+        navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+
         
         title = type == 0 ? "Smart Playlist" : "Master Practice"
         
