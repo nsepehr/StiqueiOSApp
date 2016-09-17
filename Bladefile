@@ -4,12 +4,23 @@
 #
 
 blades:
-  - source: Stique/images/big.png # this image should be the only image, and the biggest image you can use (typically for icons, 1024x1024)
-    mount: /Users/soheil/code/stiqueiOS/Stique/Assets.xcassets/AppIcon.appiconset
+  - source: images/appIcon.png # this image should be the only image, and the biggest image you can use (typically for icons, 1024x1024)
+    mount: Stique/Assets.xcassets/AppIcon.appiconset
     contents: true  # use 'false' if you want to only update existing catalog, 'true' if you want to generate a full catalog every time
 #  - source: spaceship.png
 #    mount: project_name/Images.xcassets/Spaceship.imageset # you can also generate regular image sets, not just app icons
-#  - source: iTunesArtwork@2x.png
-#    template: templates/iphone-appicon.json # use a template if you want to batch build catalogs regardless of an xcode project (e.g. as part of a CI process)
-#    out: out/newiphone
-#    contents: true
+  - source: images/play.png
+    contents: true
+    mount: Stique/Assets.xcassets/play.imageset
+  - source: images/1credit.png
+    contents: true
+    mount: Stique/Assets.xcassets/1credit.imageset
+  - source: images/2credit.png
+    contents: true
+    mount: Stique/Assets.xcassets/2credit.imageset
+  - source: images/3credit.png
+    contents: true
+    mount: Stique/Assets.xcassets/3credit.imageset
+  - source: images/4credit.png
+    contents: true
+    mount: Stique/Assets.xcassets/4credit.imageset

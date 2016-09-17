@@ -26,8 +26,8 @@ class SimpleCellView : UITableViewCell {
         
         icon = UIImageView(frame: CGRectMake(5, 0, 50, 50))
         icon.contentMode = UIViewContentMode.ScaleAspectFit
-        icon.image = UIImage.fontAwesomeIconWithName(.YouTubePlay, textColor: UIColor(netHex:0x00443d), size: CGSizeMake(50, 50))
-        
+//        icon.image = UIImage.fontAwesomeIconWithName(.YouTubePlay, textColor: UIColor(netHex:0x00443d), size: CGSizeMake(50, 50))
+        icon.image = UIImage(named: "play")
         label = UILabel(frame: CGRectMake(65, 0, 180, 50))
 //        label.font = UIFont.systemFontOfSize(15.0)
         label.numberOfLines = 2
@@ -39,9 +39,12 @@ class SimpleCellView : UITableViewCell {
         let screenSize: CGRect = UIScreen.mainScreen().bounds
         rightButton = UIButton(frame: CGRectMake(screenSize.width - 50, 0, 50, 50))
         rightButton.setTitle(String.fontAwesomeIconWithName(.EllipsisV), forState: UIControlState.Normal)
-        rightButton.setTitleColor(UIColor(netHex:0x00443d), forState: UIControlState.Normal)
+        rightButton.setTitleColor(UIColor(netHex:0x01c0ad), forState: UIControlState.Normal)
         rightButton.titleLabel?.font = UIFont.fontAwesomeOfSize(18)
         contentView.addSubview(rightButton)
+        
+        textLabel?.textColor = UIColor(netHex:0x00443d)
+        backgroundColor = UIColor(netHex:0xfafdfd)
         
     }
     

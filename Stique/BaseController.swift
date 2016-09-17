@@ -22,6 +22,7 @@ class BaseController: UITableViewController, UIActionSheetDelegate, SlideMenuCon
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         let rightButton = UIBarButtonItem(title: "MY STASH", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(BaseController.rightButtonPressed))
         let leftButton = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(BaseController.leftButtonPressed))
         let attributes = [NSFontAttributeName: UIFont.fontAwesomeOfSize(16)] as Dictionary!
@@ -48,6 +49,9 @@ class BaseController: UITableViewController, UIActionSheetDelegate, SlideMenuCon
         navigationController?.navigationBar.titleTextAttributes = titleDict as! [String: AnyObject]
         
         self.title = "Stique"
+        
+        navigationController?.view.height = UIScreen.mainScreen().bounds.height + 70
+    
     }
 //    override func preferredStatusBarStyle() -> UIStatusBarStyle {
 //        return UIStatusBarStyle.LightContent

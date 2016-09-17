@@ -1,0 +1,26 @@
+{
+  "images": [
+    {
+      "filename": "play-universal-66@1x.png",
+      "idiom": "universal",
+      "scale": "1x",
+      "size": "66x48"
+    },
+    {
+      "filename": "play-universal-66@2x.png",
+      "idiom": "universal",
+      "scale": "2x",
+      "size": "66x48"
+    },
+    {
+      "filename": "play-universal-66@3x.png",
+      "idiom": "universal",
+      "scale": "3x",
+      "size": "66x48"
+    }
+  ],
+  "info": {
+    "author": "xcode",
+    "version": 1
+  }
+}

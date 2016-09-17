@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let grouped = className.classForCoder() == PracticeController.classForCoder() || className.classForCoder() == FilterController.classForCoder()
         let mainViewController = grouped ? className.init(style: UITableViewStyle.Grouped) : className.init()
         let navController = UINavigationController(rootViewController: mainViewController)
-        
+        navController.navigationBar.translucent = false
         //        let leftViewController = LeftPanelController()
         let leftViewController = LeftViewController(style: UITableViewStyle.Grouped)
         let rightViewController = UIViewController()
@@ -38,12 +38,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
 //        UITabBar.appearance().translucent = false
-        UITabBar.appearance().barTintColor = UIColor(netHex:0x00443d)
+        UITabBar.appearance().barTintColor = UIColor(netHex:0x013e38)
         UITabBar.appearance().tintColor = UIColor.whiteColor()
+        
         
         
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         UIApplication.sharedApplication().statusBarHidden = false
+        
 
         return slideMenuController
     }
@@ -61,25 +63,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window!.makeKeyAndVisible()
         
         Stripe.setDefaultPublishableKey("pk_test_gudzcwgFyNwQqGL6R2u4346G")
-        self.window?.tintColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1.0) /* Change tint color using custom RGB values copied from respective raster image editor like Photoshop or Pixelmator */
+        self.window?.tintColor = UIColor(netHex: 0x013e38)
         
         //        UIButton.appearance().font = UIFont.systemFontOfSize(11)
-        window!.tintColor = UIColor(netHex: 0x34495f)
+//        window!.tintColor = UIColor(netHex: 0x34495f)
         
         
         let tabBarController = UITabBarController()
+        tabBarController.tabBar.translucent = false
         let myVC1 = page(MainViewController)
         let myVC2 = page(UserPlaylistController)
         let myVC3 = page(PracticeController)
         let myVC4 = page(FilterController)
         let myVC5 = page(ShoppingController)
 
-        let controllers = [myVC1, myVC2, myVC3, myVC4, myVC5]
+        let controllers = [myVC3, myVC2, myVC1, myVC4, myVC5]
         tabBarController.viewControllers = controllers
+        
+
         window?.rootViewController = tabBarController
         myVC1.tabBarItem = UITabBarItem(
             title: "",
-            image: UIImage.fontAwesomeIconWithName(.Home, textColor: UIColor.blackColor(), size: CGSizeMake(30, 30)),
+            image: UIImage(named: "page1"),
             tag: 1)
         myVC2.tabBarItem = UITabBarItem(
             title: "",
@@ -102,6 +107,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         myVC3.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0)
         myVC4.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0)
         myVC5.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0)
+        
+        tabBarController.selectedIndex = 2
+        
 //        myVC2.tabBarItem = UITabBarItem(
 //            title: "Pizza",
 //            image: secondImage,

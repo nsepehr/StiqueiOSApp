@@ -21,6 +21,11 @@ class MainViewController: BaseController, MFMailComposeViewControllerDelegate {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
+        loadCart()
+        reloadData()
+    }
+    
+    func loadCart() {
         let userDefaults = NSUserDefaults.standardUserDefaults()
         var _count = 0
         if let cart = userDefaults.arrayForKey("cart") {
@@ -30,7 +35,6 @@ class MainViewController: BaseController, MFMailComposeViewControllerDelegate {
             }
         }
         count.text = String(_count)
-        reloadData()
     }
     
     override func viewDidLoad() {

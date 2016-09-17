@@ -13,15 +13,18 @@ import PINRemoteImage
 class PlaylistSingleController: BaseController {
     
     var type = 0
+    var footerView = UIView()
     
     override func viewWillAppear(animated: Bool) {
         if goNext {
             goNext = false
+//            tableView.reloadData()
             let vc = FlashCardController()
             indexPath2 = NSIndexPath(forRow: indexPath2.row + 1, inSection: indexPath2.section)
             if indexPath2.row >= TableData.count {
                 indexPath2 = NSIndexPath(forRow: 0, inSection: 0)
             }
+            footerView.hidden = TableData.count == 0
             if TableData.count == 0 {
                 return
             }
@@ -113,7 +116,7 @@ class PlaylistSingleController: BaseController {
     }
     
     override func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let footerView = UIView(frame: CGRectMake(0, 0, tableView.frame.size.width, 40))
+        footerView = UIView(frame: CGRectMake(0, 0, tableView.frame.size.width, 40))
         footerView.backgroundColor = UIColor.whiteColor()
         
         

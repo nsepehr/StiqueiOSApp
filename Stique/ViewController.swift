@@ -27,7 +27,12 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     
-        view.backgroundColor = UIColor.whiteColor()
+        //view.backgroundColor = UIColor.greenColor()
+        //view.backgroundColor = UIColor(patternImage: UIImage(named: "Vocabulary_detail_background.png")!)
+        let backgroundImage = UIImage(named: "Vocabulary_detail_background.png")
+        let backgroundImageView = UIImageView(image: backgroundImage)
+        view.addSubview(backgroundImageView)
+        
         navigationController?.navigationBar.tintColor = UIColor.whiteColor()
 
         let vocab = UILabel()
@@ -38,8 +43,8 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
         view.addSubview(vocab)
         
         vocab.widthPercent = 50
-        vocab.marginTop = 70
-        vocab.marginLeft = 20
+//        vocab.marginTop = 70
+        vocab.marginLeftAbsolute = 20
         vocab.height = 50
         
         let type = UILabel()
@@ -49,17 +54,19 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
         view.addSubview(type)
         
         type.widthPercent = 20
-        type.marginTopAbsolute = 75
+        type.marginTopAbsolute = 5
         type.marginLeft = 10
         type.height = 50
         
         let speaker = UIButton()
-        speaker.setAttributedTitle(NSAttributedString(string: String.fontAwesomeIconWithName(.VolumeUp), attributes: [NSFontAttributeName: UIFont.fontAwesomeOfSize(35)]), forState: .Normal)
+        speaker.setImage(UIImage(named: "Speaker.png"), forState: .Normal)
+//        speaker.setImage(UIImage(named: "Speaker.png"), forState: .)
+        //speaker.setAttributedTitle(NSAttributedString(string: String.fontAwesomeIconWithName(.VolumeUp), attributes: [NSFontAttributeName: UIFont.fontAwesomeOfSize(35)]), forState: .Normal)
         speaker.addTarget(self, action: Selector("play"), forControlEvents: UIControlEvents.TouchUpInside)
         view.addSubview(speaker)
         
         speaker.widthPercent = 20
-        speaker.marginTopAbsolute = 75
+        speaker.marginTopAbsolute = 5
         speaker.marginRightAbsolute = 10
         speaker.height = 50
 
@@ -71,7 +78,7 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
         view.addSubview(pronounce)
         
         pronounce.widthPercent = 50
-        pronounce.marginTopAbsolute = 120
+        pronounce.marginTopAbsolute = 50
         pronounce.marginLeftAbsolute = 20
         pronounce.height = 20
         
@@ -86,7 +93,8 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
         let iconSize = CGFloat(20)
         
         let icon1 = UIButton()
-        icon1.setAttributedTitle(NSAttributedString(string: String.fontAwesomeIconWithName(.Book), attributes: [NSFontAttributeName: UIFont.fontAwesomeOfSize(20)]), forState: .Normal)
+        icon1.setImage(UIImage(named: "book.png"), forState: .Normal)
+//        icon1.setAttributedTitle(NSAttributedString(string: String.fontAwesomeIconWithName(.Book), attributes: [NSFontAttributeName: UIFont.fontAwesomeOfSize(20)]), forState: .Normal)
         icon1.addTarget(mainController, action: Selector("addToMaster"), forControlEvents: UIControlEvents.TouchUpInside)
         icons.addSubview(icon1)
         
@@ -190,7 +198,7 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
         
         video.widthPercent = 100
         video.marginTop = 5
-        video.height = view.bounds.height - rating.frame.origin.y - rating.frame.height - 50
+        video.height = view.bounds.height - rating.frame.origin.y - rating.frame.height - 115
         
         videoPlayer = AVPlayer(URL: url!)
         playerController = PlayerViewController()
