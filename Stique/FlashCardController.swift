@@ -105,7 +105,8 @@ class FlashCardController: UIViewController {
         okBtn.marginTop = -30
         
         let speaker = UIButton()
-        speaker.setAttributedTitle(NSAttributedString(string: String.fontAwesomeIconWithName(.VolumeUp), attributes: [NSFontAttributeName: UIFont.fontAwesomeOfSize(35)]), forState: .Normal)
+        speaker.setImage(UIImage(named: "speaker"), forState: .Normal)
+        //speaker.setAttributedTitle(NSAttributedString(string: String.fontAwesomeIconWithName(.VolumeUp), attributes: [NSFontAttributeName: UIFont.fontAwesomeOfSize(35)]), forState: .Normal)
         speaker.addTarget(self, action: #selector(play), forControlEvents: UIControlEvents.TouchUpInside)
         card.addSubview(speaker)
         

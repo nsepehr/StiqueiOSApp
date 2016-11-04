@@ -59,7 +59,7 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
         type.height = 50
         
         let speaker = UIButton()
-        speaker.setImage(UIImage(named: "Speaker.png"), forState: .Normal)
+        speaker.setImage(UIImage(named: "speaker"), forState: .Normal)
 //        speaker.setImage(UIImage(named: "Speaker.png"), forState: .)
         //speaker.setAttributedTitle(NSAttributedString(string: String.fontAwesomeIconWithName(.VolumeUp), attributes: [NSFontAttributeName: UIFont.fontAwesomeOfSize(35)]), forState: .Normal)
         speaker.addTarget(self, action: Selector("play"), forControlEvents: UIControlEvents.TouchUpInside)
@@ -93,7 +93,7 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
         let iconSize = CGFloat(20)
         
         let icon1 = UIButton()
-        icon1.setImage(UIImage(named: "book.png"), forState: .Normal)
+        icon1.setImage(UIImage(named: "master_study"), forState: .Normal)
 //        icon1.setAttributedTitle(NSAttributedString(string: String.fontAwesomeIconWithName(.Book), attributes: [NSFontAttributeName: UIFont.fontAwesomeOfSize(20)]), forState: .Normal)
         icon1.addTarget(mainController, action: Selector("addToMaster"), forControlEvents: UIControlEvents.TouchUpInside)
         icons.addSubview(icon1)
@@ -102,7 +102,8 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
         icon1.height = iconSize
         
         let icon2 = UIButton()
-        icon2.setAttributedTitle(NSAttributedString(string: String.fontAwesomeIconWithName(.List), attributes: [NSFontAttributeName: UIFont.fontAwesomeOfSize(20)]), forState: .Normal)
+        icon2.setImage(UIImage(named: "playlist"), forState: .Normal)
+        //icon2.setAttributedTitle(NSAttributedString(string: String.fontAwesomeIconWithName(.List), attributes: [NSFontAttributeName: UIFont.fontAwesomeOfSize(20)]), forState: .Normal)
         icon2.addTarget(mainController, action: Selector("addToPlaylist"), forControlEvents: UIControlEvents.TouchUpInside)
         icons.addSubview(icon2)
         
@@ -111,7 +112,8 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
         icon2.height = iconSize
         
         let icon3 = UIButton()
-        icon3.setAttributedTitle(NSAttributedString(string: String.fontAwesomeIconWithName(.Share), attributes: [NSFontAttributeName: UIFont.fontAwesomeOfSize(20)]), forState: .Normal)
+        icon3.setImage(UIImage(named: "share"), forState: .Normal)
+        //icon3.setAttributedTitle(NSAttributedString(string: String.fontAwesomeIconWithName(.Share), attributes: [NSFontAttributeName: UIFont.fontAwesomeOfSize(20)]), forState: .Normal)
         icon3.addTarget(self, action: #selector(sendEmailButtonTapped), forControlEvents: UIControlEvents.TouchUpInside)
         icons.addSubview(icon3)
         

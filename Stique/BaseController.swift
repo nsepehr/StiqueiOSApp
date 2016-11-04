@@ -28,10 +28,12 @@ class BaseController: UITableViewController, UIActionSheetDelegate, SlideMenuCon
         let attributes = [NSFontAttributeName: UIFont.fontAwesomeOfSize(16)] as Dictionary!
         leftButton.setTitleTextAttributes(attributes, forState: .Normal)
         leftButton.title = String.fontAwesomeIconWithName(.Bars)
+        leftButton.image = UIImage(named: "menu")
         leftButton.tintColor = UIColor.whiteColor()
         let attributesRight = [NSFontAttributeName: UIFont.fontAwesomeOfSize(16)] as Dictionary!
         rightButton.setTitleTextAttributes(attributesRight, forState: .Normal)
         rightButton.title = String.fontAwesomeIconWithName(.Search)
+        rightButton.image = UIImage(named: "search")
         rightButton.tintColor = UIColor(netHex:0x00443d)
         
         navigationItem.leftBarButtonItem = leftButton
