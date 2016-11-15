@@ -14,12 +14,14 @@ class PlaylistSingleController: BaseController {
     
     var type = 0
     var footerView = UIView()
+    var vc = FlashCardController()
     
     override func viewWillAppear(animated: Bool) {
         if goNext {
             goNext = false
 //            tableView.reloadData()
             let vc = FlashCardController()
+            vc.nav = navigationController!
             indexPath2 = NSIndexPath(forRow: indexPath2.row + 1, inSection: indexPath2.section)
             if indexPath2.row >= TableData.count {
                 indexPath2 = NSIndexPath(forRow: 0, inSection: 0)
@@ -30,7 +32,8 @@ class PlaylistSingleController: BaseController {
             }
             vc.item = TableData[indexPath2.row]
             vc.mainController = self
-            navigationController?.pushViewController(vc, animated: false)
+            self.presentViewController(vc, animated: true, completion: nil)
+//            navigationController?.pushViewController(vc, animated: false)
         } else {
             loadData()
         }
@@ -87,10 +90,12 @@ class PlaylistSingleController: BaseController {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         indexPath2 = indexPath
         if type == 1 {
-            let vc = FlashCardController()
+            vc = FlashCardController()
             vc.item = TableData[indexPath.row]
             vc.mainController = self
-            navigationController?.pushViewController(vc, animated: true)
+            vc.nav = navigationController!
+            self.presentViewController(vc, animated: true, completion: nil)
+//            navigationController?.pushViewController(vc, animated: true)
 //            self.addChildViewController(vc)
 //            self.view.addSubview(vc.view)
         } else {
@@ -143,8 +148,11 @@ class PlaylistSingleController: BaseController {
         indexPath2 = NSIndexPath(forRow: 0, inSection: 0)
         let vc = FlashCardController()
         vc.item = TableData[indexPath2.row]
+        vc.nav = navigationController!
         vc.mainController = self
-        navigationController?.pushViewController(vc, animated: true)
+        self.presentViewController(vc, animated: true, completion: nil)
+
+//        navigationController?.pushViewController(vc, animated: true)
     }
 
 }

@@ -128,8 +128,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, supportedInterfaceOrientationsForWindow window: UIWindow?) -> UIInterfaceOrientationMask {
         
         if let currentVC = getCurrentViewController(self.window?.rootViewController) {
+            print(NSStringFromClass(currentVC.classForCoder))
             //VideoVC is the name of your class that should support landscape
-            if NSStringFromClass(currentVC.classForCoder) == "AVFullScreenViewController" {
+            if NSStringFromClass(currentVC.classForCoder) == "AVFullScreenViewController"
+             || NSStringFromClass(currentVC.classForCoder) == "Stique.FlashCardController" {
                 Globals.landscape = true
                 let value = UIInterfaceOrientation.LandscapeLeft.rawValue
                 UIDevice.currentDevice().setValue(value, forKey: "orientation")

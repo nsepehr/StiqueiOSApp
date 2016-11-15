@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Stique/AppDelegate.swift"
+            timestampString = "500882194.49986"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "135"
+            endingLineNumber = "135"
+            landmarkName = "application(_:supportedInterfaceOrientationsForWindow:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Stique/AppDelegate.swift"
+            timestampString = "500882194.49986"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
+            landmarkName = "application(_:supportedInterfaceOrientationsForWindow:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Stique.AppDelegate.application (__ObjC.UIApplication, supportedInterfaceOrientationsForWindow : Swift.Optional&lt;__ObjC.UIWindow&gt;) -&gt; __C.UIInterfaceOrientationMask"
+                  moduleName = "Stique"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Nimz/Dropbox/Nima&apos;s%20Box/Programming%20Projects/Stique%20App/stiqueiOS/Stique/AppDelegate.swift"
+                  timestampString = "500880968.15029"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "130"
+                  endingLineNumber = "130"
+                  offsetFromSymbolStart = "30">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Stique.AppDelegate.application (__ObjC.UIApplication, supportedInterfaceOrientationsForWindow : Swift.Optional&lt;__ObjC.UIWindow&gt;) -&gt; __C.UIInterfaceOrientationMask"
+                  moduleName = "Stique"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Nimz/Dropbox/Nima&apos;s%20Box/Programming%20Projects/Stique%20App/stiqueiOS/Stique/AppDelegate.swift"
+                  timestampString = "500880968.15048"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "130"
+                  endingLineNumber = "130"
+                  offsetFromSymbolStart = "223">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Stique/AppDelegate.swift"
+            timestampString = "500882194.49986"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
+            landmarkName = "application(_:supportedInterfaceOrientationsForWindow:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

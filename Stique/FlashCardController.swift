@@ -15,10 +15,10 @@ class FlashCardController: UIViewController {
     var blackbar = UIView()
     var mainController = BaseController()
     var player: AVPlayer?
+    var nav = UINavigationController()
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
         
         blackbar.backgroundColor = UIColor.blackColor()
         blackbar.frame = CGRectMake(0, 0, view.frame.width, 80)
@@ -32,7 +32,7 @@ class FlashCardController: UIViewController {
         super.viewDidLoad()
         
         let card = UIView()
-        card.frame = CGRectMake(0, 0, view.frame.width, view.frame.height)
+        card.frame = CGRectMake(0, 0, view.frame.height, view.frame.width)
         card.backgroundColor = UIColor.whiteColor()
         
         
@@ -138,24 +138,28 @@ class FlashCardController: UIViewController {
     }
     
     func exitFuncWithAnimation(animated: Bool) {
-        blackbar.removeFromSuperview()
-        self.navigationController?.navigationBar.hidden = false
+        self.dismissViewControllerAnimated(true, completion: nil)
+//        blackbar.removeFromSuperview()
+//        self.navigationController?.navigationBar.hidden = false
         
 //        let _self = self
 //        let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(1 * Double(NSEC_PER_SEC)))
 //        dispatch_after(delayTime, dispatch_get_main_queue()) {
-            navigationController?.popViewControllerAnimated(animated)
+//            navigationController?.popViewControllerAnimated(animated)
 //        }
     }
     
     func viewFunc() {
-        blackbar.removeFromSuperview()
-        self.navigationController?.navigationBar.hidden = false
+//        blackbar.removeFromSuperview()
+//        self.navigationController?.navigationBar.hidden = false
         
-        let vc = ViewController()
-        vc.item = item
-        vc.mainController = mainController
-        navigationController?.pushViewController(vc, animated: true)
+        let _self = self
+        self.dismissViewControllerAnimated(true) {
+            let vc = ViewController()
+            vc.item = _self.item
+            vc.mainController = _self.mainController
+            _self.nav.pushViewController(vc, animated: true)
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -196,8 +200,12 @@ class FlashCardController: UIViewController {
         }
     }
     
-//    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-//        return [.Landscape]
+    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+        return [.LandscapeLeft]
+    }
+    
+//    override func shouldAutorotate() -> Bool {
+//        return false
 //    }
     
 }

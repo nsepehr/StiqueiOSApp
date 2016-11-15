@@ -23,21 +23,27 @@ class BaseController: UITableViewController, UIActionSheetDelegate, SlideMenuCon
         super.viewDidLoad()
         
         
-        let rightButton = UIBarButtonItem(title: "MY STASH", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(BaseController.rightButtonPressed))
+        let rightButton = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(BaseController.rightButtonPressed))
         let leftButton = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(BaseController.leftButtonPressed))
+        
         let attributes = [NSFontAttributeName: UIFont.fontAwesomeOfSize(16)] as Dictionary!
         leftButton.setTitleTextAttributes(attributes, forState: .Normal)
-        leftButton.title = String.fontAwesomeIconWithName(.Bars)
+        leftButton.title = " "
         leftButton.image = UIImage(named: "menu")
         leftButton.tintColor = UIColor.whiteColor()
-        let attributesRight = [NSFontAttributeName: UIFont.fontAwesomeOfSize(16)] as Dictionary!
-        rightButton.setTitleTextAttributes(attributesRight, forState: .Normal)
-        rightButton.title = String.fontAwesomeIconWithName(.Search)
+        
+//        let attributesRight = [NSFontAttributeName: UIFont.fontAwesomeOfSize(16)] as Dictionary!
+//        rightButton.setTitleTextAttributes(attributesRight, forState: .Normal)
+        rightButton.title = " "
         rightButton.image = UIImage(named: "search")
-        rightButton.tintColor = UIColor(netHex:0x00443d)
+        rightButton.tintColor = UIColor.whiteColor()
+        
+//        let topInset = CGFloat(-40.0);
+//        leftButton.imageInsets = UIEdgeInsetsMake(topInset, 0.0, -topInset, 0.0);
+//        rightButton.imageInsets = UIEdgeInsetsMake(topInset, 0.0, -topInset, 0.0);
         
         navigationItem.leftBarButtonItem = leftButton
-        navigationItem.rightBarButtonItem = nil//rightButton
+        navigationItem.rightBarButtonItem = rightButton
         view.backgroundColor = UIColor.whiteColor()
         
         searchController = UISearchController(searchResultsController: nil)
