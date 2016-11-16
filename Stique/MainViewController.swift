@@ -191,8 +191,9 @@ class MainViewController: UITableViewController, UIActionSheetDelegate, SlideMen
     }
     
     func rightButtonPressed() {
-        //        let vc = RightPanelController()
-        //        navigationController?.pushViewController(vc, animated: true)
+        // Display the search bar & activate the keyboard for it
+        self.searchController.searchBar.becomeFirstResponder()
+        self.searchController.active = true
     }
     
     func addToUserPlaylist(i: Int) {
