@@ -7,326 +7,306 @@
 //
 
 import UIKit
-import FoldingCell
-import PINRemoteImage
 import MessageUI
+import SlideMenuControllerSwift
 
-class MainViewController: BaseController, MFMailComposeViewControllerDelegate {
+enum ActionSheetButtons: Int {
+    case AddToMasterStudy = 1
+    case AddToUserPlaylist = 2
+    case Share = 3
+}
+
+class MainViewController: UITableViewController, UIActionSheetDelegate, SlideMenuControllerDelegate, MFMailComposeViewControllerDelegate {
     
-    var cellHeights = [CGFloat]()
-    var orderBtn = UIButton()
-    var count = UILabel()
-    var footerView = UIView()
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        loadCart()
-        reloadData()
-    }
-    
-    func loadCart() {
-        let userDefaults = NSUserDefaults.standardUserDefaults()
-        var _count = 0
-        if let cart = userDefaults.arrayForKey("cart") {
-            footerView.hidden = cart.count == 0
-            for item in cart {
-                _count += item["count"] as! Int
-            }
-        }
-        count.text = String(_count)
-    }
+    var searchController = UISearchController()
+    var tableData = [[String: AnyObject]]()
+    var playlists = [[String: AnyObject]]()
+    var actionSheetIndexPath = NSIndexPath()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Title of the page. Appears on the navigation bar
+        self.title = "Stique"
         
-        for _ in 0...2 {
-            cellHeights.append(10.0)
-        }
+        // The buttons that appear on the navigation bar
+        let rightButton = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(MainViewController.rightButtonPressed))
+        let leftButton = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(MainViewController.leftButtonPressed))
         
+        leftButton.title = " "
+        leftButton.image = UIImage(named: "menu")
+        leftButton.tintColor = UIColor.whiteColor()
+        
+        rightButton.title = " "
+        rightButton.image = UIImage(named: "search")
+        rightButton.tintColor = UIColor.whiteColor()
+        
+        navigationItem.leftBarButtonItem = leftButton
+        navigationItem.rightBarButtonItem = rightButton
+        
+        view.backgroundColor = UIColor.whiteColor()
         tableView.separatorColor = UIColor(netHex: 0xdedede)
         
-        //        self.title = "Title"
-        //
-        //        let navigationBar = navigationController!.navigationBar
-        //        navigationBar.tintColor = UIColor.blueColor()
-        //
-        //        let leftButton =  UIBarButtonItem(title: "Left Button", style: UIBarButtonItemStyle.Plain, target: self, action: nil)
-//        let rightButton = UIBarButtonItem(title: "MY STASH", style: UIBarButtonItemStyle.Plain, target: self, action: "rightButtonPressed")
-//        let leftButton = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: self, action: "leftButtonPressed")
-//        let attributes = [NSFontAttributeName: UIFont.fontAwesomeOfSize(16)] as Dictionary!
-//        leftButton.setTitleTextAttributes(attributes, forState: .Normal)
-//        leftButton.title = String.fontAwesomeIconWithName(.Bars)
-//        let attributesRight = [NSFontAttributeName: UIFont.fontAwesomeOfSize(16)] as Dictionary!
-//        rightButton.setTitleTextAttributes(attributesRight, forState: .Normal)
-//        rightButton.title = String.fontAwesomeIconWithName(.Search)
-//        
-//        navigationItem.leftBarButtonItem = leftButton
-//        navigationItem.rightBarButtonItem = rightButton
-//        view.backgroundColor = UIColor.whiteColor()
-//        
-//        self.title = "Stique"
+        navigationController?.navigationBar.barTintColor = UIColor(netHex:0x00443d)
+        let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        navigationController?.navigationBar.titleTextAttributes = titleDict as? [String: AnyObject]
+        navigationController?.view.height = UIScreen.mainScreen().bounds.height + 70 // Nima: Why is this necessary?
         
-        //        let navigationBar = UINavigationBar(frame: CGRectMake(0, 0, self.view.frame.size.width, 44))
-        //        navigationBar.backgroundColor = UIColor.grayColor()
-        //        navigationBar.delegate = self
-        
-        
-        //        self.view.addSubview(navigationBar)
-        //        addLeftBarButtonWithImage(UIImage(named: "Icon-60")!)
-        //        addRightBarButtonWithImage(UIImage(named: "Icon-60")!)
-        //        self.slideMenuController()?.openLeft()
-        
-        //        view.addSubview(UIImageView(image: UIImage(named: "Icon")))
-        
-        
-        //        let leftButton : UIBarButtonItem = UIBarButtonItem(title: "LeftButtonTitle", style: UIBarButtonItemStyle.Plain, target: self, action: "")
-        //        navigationItem.leftBarButtonItem = leftButton
-        reloadData()
+        // Adding the search bar
+        searchController = UISearchController(searchResultsController: nil)
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar
+        
+        // This is so that the view doesn't go under tab bar
+        tableView.contentInset = UIEdgeInsetsMake(0, 0, 70, 0); // Nima: We shouldn't harcode the 70 here
+        
+        self.loadTableData()
+        tableView.reloadData()
         
     }
     
-//    func leftButtonPressed() {
-//        slideMenuController()?.openLeft()
-//    }
-//    
-//    func rightButtonPressed() {
-////        let vc = RightPanelController()
-////        navigationController?.pushViewController(vc, animated: true)
-//    }
-    func reloadData() {
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        /* Nima: Will need to consider this when we enable the search
+        if searchController.active && searchController.searchBar.text != "" {
+            return FilteredTableData.count
+        }
+        */
+        return tableData.count
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 50
+    }
+    
+    func loadTableData() {
         let userDefaults = NSUserDefaults.standardUserDefaults()
         do {
             let path = NSBundle.mainBundle().pathForResource("words", ofType: "json")
             let data: NSData? = NSData(contentsOfFile: path!)
             let jsonData = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as? [[String: AnyObject]]
             if let jsonData = jsonData {
-                TableData = jsonData
+                tableData = jsonData
                 if (userDefaults.boolForKey("sort")) {
-                    TableData = TableData.reverse()
+                    tableData = tableData.reverse()
                 }
                 if userDefaults.boolForKey("watched") {
                     var NewTableData = [[String: AnyObject]]()
                     if let watched = userDefaults.objectForKey("watched_words") as? [String] {
-                        for row in TableData {
+                        for row in tableData {
                             if watched.contains(row["word"] as! String) {
                                 NewTableData += [row]
                             }
                         }
                     }
-                    TableData = NewTableData
+                    tableData = NewTableData
                 }
                 tableView.reloadData()
             }
         } catch _ {
             // error handling
-            print("error2")
+            print("error couldn't load the data for table at MainViewController")
         }
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        
-        indexPath2 = indexPath
-        //
-        //        var duration = 0.0
-        //        if cellHeights[indexPath.row] == 10.0 { // open cell
-        //            cellHeights[indexPath.row] = 30.0
-        //            cell.selectedAnimation(true, animated: true, completion: nil)
-        //            duration = 0.5
-        //        } else {// close cell
-        //            cellHeights[indexPath.row] = 30.0
-        //            cell.selectedAnimation(false, animated: true, completion: nil)
-        //            duration = 1.1
-        //        }
-        //
-        //        UIView.animateWithDuration(duration, delay: 0, options: .CurveEaseOut, animations: { () -> Void in
-        //            tableView.beginUpdates()
-        //            tableView.endUpdates()
-        //            }, completion: nil)
-        
-//        let s = SingleItemController()
-//        s.item = TableData[indexPath.row]
+
         let vc = ViewController()
         
+        /* Will need to update this after the search
         if searchController.active && searchController.searchBar.text != "" {
             vc.item = FilteredTableData[indexPath.row]
         } else {
             vc.item = TableData[indexPath.row]
         }
+        */
+        vc.item = tableData[indexPath.row]
         vc.mainController = self
         navigationController?.pushViewController(vc, animated: true)
     }
-    
-    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        
-        if cell is FoldingCell {
-            let foldingCell = cell as! FoldingCell
-            
-            if cellHeights[indexPath.row] == 10.0 {
-                foldingCell.selectedAnimation(false, animated: false, completion:nil)
-            } else {
-                foldingCell.selectedAnimation(true, animated: false, completion: nil)
-            }
-        }
-    }
-    
-    //    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
-    //
-    //        let identifier = "Custom"
-    //
-    //        var cell: CellView! = tableView.dequeueReusableCellWithIdentifier(identifier) as? CellView
-    //
-    //        if cell == nil {
-    ////            tableView.registerNib(UINib(nibName: "CustomCell", bundle: nil), forCellReuseIdentifier: identifier)
-    ////            cell = tableView.dequeueReusableCellWithIdentifier(identifier) as? CellView
-    //            cell = CellView()
-    //        }
-    //        cell.textLabel?.text = "hi"
-    //        cell.contentView.backgroundColor = UIColor.greenColor()
-    //
-    //        return cell
-    //    }
+
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var myItem = [String: AnyObject]()
+        
         let kLCellIdentifier = "customCell"
         var cell = tableView.dequeueReusableCellWithIdentifier(kLCellIdentifier) as! SimpleCellView!
         if cell == nil {
-//            cell = SimpleCellView(style:.Default, reuseIdentifier: kLCellIdentifier)
             cell = SimpleCellView(style:.Default, reuseIdentifier: kLCellIdentifier)
         }
-        var myItem = [String: AnyObject]()
+        
+        /* Will need to update this when the search feature has been implemented
         if searchController.active && searchController.searchBar.text != "" {
             myItem = FilteredTableData[indexPath.row]
         } else {
             myItem = TableData[indexPath.row]
         }
-        //        if cell == nil {
-        //            cell = CellView()
-        //        }
+        */
         
-        //        cell.textLabel?.text = myItem["name"] as? String
+        myItem = tableData[indexPath.row]
+
         cell?.label.text = myItem["word"] as? String
-        
-//        let url = myItem["url"] as! String
-        //        cell.imageView?.pin_setImageFromURL(NSURL(string: url), placeholderImage: UIImage(), processorKey: "Ball", processor: { (result, cost) -> UIImage! in
-        //            return result.image
-        //
-        //            }, completion: { (result) -> Void in })
-        //        cell.detailTextLabel?.text = myItem["name"] as? String
-        
-        //        cell.imageView!
-        //        let v = UIImageView(frame: CGRectMake(0, 0, 90, 90))
-        //        v.backgroundColor = UIColor.yellowColor()
-        
-//        cell.icon.pin_setImageFromURL(NSURL(string: url), placeholderImage: UIImage(), processorKey: "Ball", processor: { (result, cost) -> UIImage! in
-//            return result.image
-        
-//            }, completion: { (result) -> Void in })
-        //        cell.contentView.addSubview(v)
         cell.rightButton.addTarget(self, action: #selector(rightCellButtonPressed), forControlEvents: UIControlEvents.TouchUpInside)
         
         return cell!
     }
     
     func rightCellButtonPressed(button: UIButton) {
-        indexPath2 = tableView.indexPathForCell(button.superview?.superview as! UITableViewCell)!
-        let actionSheet = UIActionSheet(title: "Choose Option", delegate: self, cancelButtonTitle: "Cancel", destructiveButtonTitle: nil, otherButtonTitles: "Add to Master Study", "Share", "Add to Playlist")
+        actionSheetIndexPath = tableView.indexPathForCell(button.superview?.superview as! UITableViewCell)!
+        let actionSheet = UIActionSheet(title: "Choose Option", delegate: self, cancelButtonTitle: "Cancel", destructiveButtonTitle: nil, otherButtonTitles: "Add to Master Study", "Add to Your Playlist", "Share")
         
         actionSheet.showInView(self.view)
-//        let controller = UIMenuController.sharedMenuController()
-//        let textItem1 = UIMenuItem(title: "Add to study", action: #selector(contextButton1))
-//        let textItem2 = UIMenuItem(title: "Share", action: #selector(contextButton2))
-//        let textItem3 = UIMenuItem(title: "Add to playlist", action: #selector(contextButton3))
-//        let image = UIImage(named: "Image")!
-//        let imageItem = UIMenuItem(image: image) { [weak self] _ in
-//            self?.showAlertWithTitle("image item tapped")
-//        }
-//        
-//        let nextItem = UIMenuItem(title: "Show More Items...") { _ in
-//            let handler: MenuItemHandler = { [weak self] in self?.showAlertWithTitle($0.title + " tapped") }
-//            let item1 = UIMenuItem(title: "1", handler: handler)
-//            let item2 = UIMenuItem(title: "2", handler: handler)
-//            let item3 = UIMenuItem(title: "3", handler: handler)
-//            controller.menuItems = [item1, item2, item3]
-//            controller.setMenuVisible(true, animated: true)
-//        }
-//        
-//        controller.menuItems = [textItem1, textItem2, textItem3]
-//        controller.setTargetRect(button.bounds, inView: button)
-//        controller.setMenuVisible(true, animated: true)
     }
     
     func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
-        if isAddingToPlaylist {
-            isAddingToPlaylist = false
-            addToUserPlaylist(buttonIndex)
-        } else {
-            if buttonIndex == 1 {
-                addToMaster()
-            } else if buttonIndex == 2 {
-                sendEmailButtonTapped()
-            } else if buttonIndex == 3 {
-                addToPlaylist()
-            }
+        if buttonIndex == ActionSheetButtons.AddToMasterStudy.rawValue {
+            addToMaster()
+        } else if buttonIndex == ActionSheetButtons.AddToUserPlaylist.rawValue {
+            addToPlaylist()
+        } else if buttonIndex == ActionSheetButtons.Share.rawValue {
+            sendEmailButtonTapped()
         }
     }
     
-    func contextButton1() {
-        
+    func leftButtonPressed() {
+        slideMenuController()?.openLeft()
+        view.userInteractionEnabled = false
+        slideMenuController()?.delegate = self
     }
     
-    func contextButton2() {
-        
+    func leftDidClose() {
+        view.userInteractionEnabled = true
     }
     
-    func contextButton3() {
-        
+    func rightButtonPressed() {
+        //        let vc = RightPanelController()
+        //        navigationController?.pushViewController(vc, animated: true)
     }
-    
-    
-//    override func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-//        footerView = UIView(frame: CGRectMake(0, 0, tableView.frame.size.width, 50))
-//        footerView.backgroundColor = UIColor.whiteColor()
-//        
-//        orderBtn.setTitle("View Order", forState: UIControlState.Normal)
-//        orderBtn.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-//        orderBtn.addTarget(self, action: #selector(orderBtnPressed), forControlEvents: UIControlEvents.TouchUpInside)
-//        orderBtn.backgroundColor = UIColor(netHex: 0x2ecc71)
-//        orderBtn.titleLabel?.font = UIFont.boldSystemFontOfSize(20)
-//        footerView.addSubview(orderBtn)
-//        
-//        count = UILabel(frame: CGRectMake(0, 0, 30, 30))
-//        count.textColor = UIColor.whiteColor()
-//        count.backgroundColor = UIColor(netHex: 0x27ae60)
-//        count.font = UIFont.boldSystemFontOfSize(20)
-//        count.textAlignment = NSTextAlignment.Center
-//        footerView.addSubview(count)
-//        
-//        footerView.hidden = true
-//        return footerView
-//    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
+    
+    func addToUserPlaylist(i: Int) {
+        // Nima: what is this i check?
+        if i == 0 {
+            return
+        }
+        let userDefaults = NSUserDefaults.standardUserDefaults()
         
-        orderBtn.widthPercent = 100
-        orderBtn.height = 50
-        orderBtn.marginBottomAbsolute = 0
-        count.marginBottomAbsolute = 10
-        count.marginLeftAbsolute = 10
+        var TableData2 = [[String: AnyObject]]()
+        var myItem = [String: AnyObject]()
+        /* Nima: will need to update once the search feature has been coded
+        if searchController.active && searchController.searchBar.text != "" {
+            myItem = FilteredTableData[indexPath2.row]
+        } else {
+            myItem = TableData[indexPath2.row]
+        }
+        */
+        
+        myItem = tableData[actionSheetIndexPath.row]
+        TableData2 = [myItem]
+        
+        
+        let myPlaylist = playlists[i-1]
+        let playlistKey = (myPlaylist["name"] as? String)!
+        
+        do {
+            if let playlist = userDefaults.stringForKey(playlistKey) {
+                let jsonData = try NSJSONSerialization.JSONObjectWithData(playlist.dataUsingEncoding(NSUTF8StringEncoding)!, options: .AllowFragments) as? [[String: AnyObject]]
+                if let jsonData = jsonData {
+                    for item in jsonData {
+                        if item["word"] as! String == myItem["word"] as! String {
+                            TableData2 = []
+                            break
+                        }
+                    }
+                    TableData2 += jsonData
+                }
+            }
+            let jsonData2 = try NSJSONSerialization.dataWithJSONObject(TableData2, options: NSJSONWritingOptions.PrettyPrinted)
+            userDefaults.setObject(NSString(data: jsonData2, encoding: NSASCIIStringEncoding), forKey: playlistKey)
+            userDefaults.synchronize()
+        } catch _ {}
     }
     
-    func orderBtnPressed() {
-//        let orderController = OrderController()
-//        let nav = UINavigationController(rootViewController: orderController)
-//        presentViewController(nav, animated: true, completion: nil)
+    func addToPlaylist() {
+        playlists = [[String: AnyObject]]()
+        let _self = self
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        if let playlists = userDefaults.stringForKey("playlists") {
+            do {
+                let jsonData = try NSJSONSerialization.JSONObjectWithData(playlists.dataUsingEncoding(NSUTF8StringEncoding)!, options: .AllowFragments) as? [[String: AnyObject]]
+                if let jsonData = jsonData {
+                    _self.playlists = jsonData
+                }
+            } catch _ {
+                // error handling
+                print("error... Failed to add data to playlist")
+            }
+        }
+        if playlists.count == 0 {
+            let alert = UIAlertController(title: "Alert", message: "Please create a user playlist first, under the playlist tab.", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        } else {
+            // isAddingToPlaylist = true // Nima: we shouldn't need this... just remove
+            let actionSheet = UIActionSheet(title: "Which Playlist To Add to?", delegate: self, cancelButtonTitle: "Cancel", destructiveButtonTitle: nil)
+            
+            for myItem in playlists {
+                let playlist = (myItem["name"] as? String)!
+                actionSheet.addButtonWithTitle(playlist)
+            }
+            if playlists.count > 0 {
+                actionSheet.showInView(self.view)
+            }
+        }
     }
+    
+    func addToMaster() {
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        var TableData2 = [[String: AnyObject]]()
+        var myItem = [String: AnyObject]()
+        /* Nima: Will have to update this once the search feature has been enabled
+        if searchController.active && searchController.searchBar.text != "" {
+            myItem = FilteredTableData[indexPath2.row]
+        } else {
+            myItem = TableData[indexPath2.row]
+        }
+        */
+        // Nima: Need to take a look into what's happening here...
+        myItem = tableData[actionSheetIndexPath.row]
+        TableData2 = [myItem]
+        do {
+            if let playlist = userDefaults.stringForKey("playlist1") {
+                let jsonData = try NSJSONSerialization.JSONObjectWithData(playlist.dataUsingEncoding(NSUTF8StringEncoding)!, options: .AllowFragments) as? [[String: AnyObject]]
+                if let jsonData = jsonData {
+                    for item in jsonData {
+                        if item["word"] as! String == myItem["word"] as! String {
+                            TableData2 = []
+                            break
+                        }
+                    }
+                    TableData2 += jsonData
+                }
+            }
+            let jsonData2 = try NSJSONSerialization.dataWithJSONObject(TableData2, options: NSJSONWritingOptions.PrettyPrinted)
+            userDefaults.setObject(NSString(data: jsonData2, encoding: NSASCIIStringEncoding), forKey: "playlist1")
+            userDefaults.synchronize()
+        } catch _ {}
+        
+        
+        let alert = UIAlertController(title: "Master Study", message: "Added to Master Study.", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
     
     func sendEmailButtonTapped() {
         let mailComposeViewController = configuredMailComposeViewController()
@@ -358,5 +338,11 @@ class MainViewController: BaseController, MFMailComposeViewControllerDelegate {
     func mailComposeController(controller: MFMailComposeViewController!, didFinishWithResult result: MFMailComposeResult, error: NSError!) {
         controller.dismissViewControllerAnimated(true, completion: nil)
         
+    }
+}
+
+extension MainViewController: UISearchResultsUpdating {
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        //filterContentForSearchText(searchController.searchBar.text!)
     }
 }

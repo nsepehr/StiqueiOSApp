@@ -13,7 +13,8 @@ class FlashCardController: UIViewController {
     
     var item = [String: AnyObject]()
     var blackbar = UIView()
-    var mainController = BaseController()
+    //var mainController = BaseController() // Nima: chaning this as we're getting rid of Base Controller
+    var mainController = MainViewController()
     var player: AVPlayer?
     var nav = UINavigationController()
     
@@ -124,13 +125,13 @@ class FlashCardController: UIViewController {
     
     func ok() {
         true
-        mainController.removeItem(mainController.indexPath2)
+        //mainController.removeItem(mainController.indexPath2)
         nextOrQuit()
     }
     
     func nextOrQuit() {
-        mainController.goNext = true//mainController.TableData.count > 0//mainController.indexPath2.row + 1
-        exitFuncWithAnimation(!mainController.goNext)
+        //mainController.goNext = true//mainController.TableData.count > 0//mainController.indexPath2.row + 1
+        //exitFuncWithAnimation(!mainController.goNext)
     }
     
     func exitFunc() {

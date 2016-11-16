@@ -14,7 +14,8 @@ import MessageUI
 class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
     
     var item = [String: AnyObject]()
-    var mainController = BaseController()
+    //var mainController = BaseController() // Nima changing this
+    var mainController = MainViewController()
     var player: AVPlayer?
     var videoPlayer = AVPlayer()
     var playerController = PlayerViewController()

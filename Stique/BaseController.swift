@@ -50,6 +50,7 @@ class BaseController: UITableViewController, UIActionSheetDelegate, SlideMenuCon
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
+        tableView.tableHeaderView = searchController.searchBar
         
         navigationController?.navigationBar.barTintColor = UIColor(netHex:0x00443d)
 //        navigationController?.navigationBar.barStyle = UIBarStyle.Default

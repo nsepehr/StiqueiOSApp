@@ -31,7 +31,7 @@ class PlaylistSingleController: BaseController {
                 return
             }
             vc.item = TableData[indexPath2.row]
-            vc.mainController = self
+            //vc.mainController = self // Nima: will have to remove for now
             self.presentViewController(vc, animated: true, completion: nil)
 //            navigationController?.pushViewController(vc, animated: false)
         } else {
@@ -92,7 +92,7 @@ class PlaylistSingleController: BaseController {
         if type == 1 {
             vc = FlashCardController()
             vc.item = TableData[indexPath.row]
-            vc.mainController = self
+            //vc.mainController = self // Nima: Will have to remove for now
             vc.nav = navigationController!
             self.presentViewController(vc, animated: true, completion: nil)
 //            navigationController?.pushViewController(vc, animated: true)
@@ -101,7 +101,7 @@ class PlaylistSingleController: BaseController {
         } else {
             let vc = ViewController()
             vc.item = TableData[indexPath.row]
-            vc.mainController = self
+            //vc.mainController = self // Nima: Will have to remove for now
             navigationController?.pushViewController(vc, animated: true)
         }
     }
@@ -149,7 +149,7 @@ class PlaylistSingleController: BaseController {
         let vc = FlashCardController()
         vc.item = TableData[indexPath2.row]
         vc.nav = navigationController!
-        vc.mainController = self
+        //vc.mainController = self // Nima: will have to remove for now
         self.presentViewController(vc, animated: true, completion: nil)
 
 //        navigationController?.pushViewController(vc, animated: true)

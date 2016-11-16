@@ -68,7 +68,7 @@ class UserPlaylistSingleController: BaseController {
 //        } else {
             let vc = ViewController()
             vc.item = TableData[indexPath.row]
-            vc.mainController = self
+            //vc.mainController = self
             navigationController?.pushViewController(vc, animated: true)
 //        }
     }

@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let grouped = className.classForCoder() == PracticeController.classForCoder() || className.classForCoder() == FilterController.classForCoder()
         let mainViewController = grouped ? className.init(style: UITableViewStyle.Grouped) : className.init()
         let navController = UINavigationController(rootViewController: mainViewController)
-        navController.navigationBar.translucent = false
+        navController.navigationBar.translucent = true
         //        let leftViewController = LeftPanelController()
         let leftViewController = LeftViewController(style: UITableViewStyle.Grouped)
         let rightViewController = UIViewController()
@@ -110,20 +110,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         tabBarController.selectedIndex = 2
         
-//        myVC2.tabBarItem = UITabBarItem(
-//            title: "Pizza",
-//            image: secondImage,
-//            tag:2)
         Fabric.with([STPAPIClient.self, Crashlytics.self])
 
         // Override point for customization after application launch.
         return true
     }
     
-//    func application (application: UIApplication, supportedInterfaceOrientationsForWindow window: UIWindow?) -> UIInterfaceOrientationMask {
-//        print(self.window?.rootViewController)
-//        return Globals.landscape ? UIInterfaceOrientationMask.AllButUpsideDown : UIInterfaceOrientationMask.Portrait
-//    }
     
     func application(application: UIApplication, supportedInterfaceOrientationsForWindow window: UIWindow?) -> UIInterfaceOrientationMask {
         
