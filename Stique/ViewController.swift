@@ -11,7 +11,7 @@ import AVKit
 import AVFoundation
 import MessageUI
 
-class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
+class VocabularyViewController: UIViewController, MFMailComposeViewControllerDelegate {
     
     var item = [String: AnyObject]()
     //var mainController = BaseController() // Nima changing this

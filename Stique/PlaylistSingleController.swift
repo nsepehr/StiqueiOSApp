@@ -99,7 +99,7 @@ class PlaylistSingleController: BaseController {
 //            self.addChildViewController(vc)
 //            self.view.addSubview(vc.view)
         } else {
-            let vc = ViewController()
+            let vc = VocabularyViewController()
             vc.item = TableData[indexPath.row]
             //vc.mainController = self // Nima: Will have to remove for now
             navigationController?.pushViewController(vc, animated: true)

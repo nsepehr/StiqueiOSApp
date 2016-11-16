@@ -66,7 +66,7 @@ class UserPlaylistSingleController: BaseController {
 //            vc.item = TableData[indexPath.row]
 //            navigationController?.pushViewController(vc, animated: true)
 //        } else {
-            let vc = ViewController()
+            let vc = VocabularyViewController()
             vc.item = TableData[indexPath.row]
             //vc.mainController = self
             navigationController?.pushViewController(vc, animated: true)

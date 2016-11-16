@@ -20,6 +20,7 @@ class MainViewController: UITableViewController, UIActionSheetDelegate, SlideMen
     
     var searchController = UISearchController()
     var tableData = [[String: AnyObject]]()
+    var filteredTableData = [[String: AnyObject]]()
     var playlists = [[String: AnyObject]]()
     var actionSheetIndexPath = NSIndexPath()
     
@@ -66,16 +67,21 @@ class MainViewController: UITableViewController, UIActionSheetDelegate, SlideMen
         
     }
     
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        /* Nima: Will need to consider this when we enable the search
+        
         if searchController.active && searchController.searchBar.text != "" {
-            return FilteredTableData.count
+            return filteredTableData.count
         }
-        */
+        
         return tableData.count
     }
     
@@ -116,18 +122,24 @@ class MainViewController: UITableViewController, UIActionSheetDelegate, SlideMen
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
 
-        let vc = ViewController()
+        let vc = VocabularyViewController()
         
-        /* Will need to update this after the search
         if searchController.active && searchController.searchBar.text != "" {
-            vc.item = FilteredTableData[indexPath.row]
+            vc.item = filteredTableData[indexPath.row]
         } else {
-            vc.item = TableData[indexPath.row]
+            vc.item = tableData[indexPath.row]
         }
-        */
-        vc.item = tableData[indexPath.row]
+
         vc.mainController = self
-        navigationController?.pushViewController(vc, animated: true)
+        // Dismiss the search bar if it's active
+        if searchController.active {
+            searchController.dismissViewControllerAnimated(true, completion: {
+                self.navigationController?.pushViewController(vc, animated: true)
+                self.searchController.searchBar.text = ""
+            })
+        } else {
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -139,15 +151,11 @@ class MainViewController: UITableViewController, UIActionSheetDelegate, SlideMen
             cell = SimpleCellView(style:.Default, reuseIdentifier: kLCellIdentifier)
         }
         
-        /* Will need to update this when the search feature has been implemented
         if searchController.active && searchController.searchBar.text != "" {
-            myItem = FilteredTableData[indexPath.row]
+            myItem = filteredTableData[indexPath.row]
         } else {
-            myItem = TableData[indexPath.row]
+            myItem = tableData[indexPath.row]
         }
-        */
-        
-        myItem = tableData[indexPath.row]
 
         cell?.label.text = myItem["word"] as? String
         cell.rightButton.addTarget(self, action: #selector(rightCellButtonPressed), forControlEvents: UIControlEvents.TouchUpInside)
@@ -187,12 +195,6 @@ class MainViewController: UITableViewController, UIActionSheetDelegate, SlideMen
         //        navigationController?.pushViewController(vc, animated: true)
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    
     func addToUserPlaylist(i: Int) {
         // Nima: what is this i check?
         if i == 0 {
@@ -202,15 +204,13 @@ class MainViewController: UITableViewController, UIActionSheetDelegate, SlideMen
         
         var TableData2 = [[String: AnyObject]]()
         var myItem = [String: AnyObject]()
-        /* Nima: will need to update once the search feature has been coded
+
         if searchController.active && searchController.searchBar.text != "" {
-            myItem = FilteredTableData[indexPath2.row]
+            myItem = filteredTableData[actionSheetIndexPath.row]
         } else {
-            myItem = TableData[indexPath2.row]
+            myItem = tableData[actionSheetIndexPath.row]
         }
-        */
         
-        myItem = tableData[actionSheetIndexPath.row]
         TableData2 = [myItem]
         
         
@@ -273,15 +273,15 @@ class MainViewController: UITableViewController, UIActionSheetDelegate, SlideMen
         let userDefaults = NSUserDefaults.standardUserDefaults()
         var TableData2 = [[String: AnyObject]]()
         var myItem = [String: AnyObject]()
-        /* Nima: Will have to update this once the search feature has been enabled
+        
         if searchController.active && searchController.searchBar.text != "" {
-            myItem = FilteredTableData[indexPath2.row]
+            myItem = filteredTableData[actionSheetIndexPath.row]
         } else {
-            myItem = TableData[indexPath2.row]
+            myItem = tableData[actionSheetIndexPath.row]
         }
-        */
+        
         // Nima: Need to take a look into what's happening here...
-        myItem = tableData[actionSheetIndexPath.row]
+        //myItem = tableData[actionSheetIndexPath.row]
         TableData2 = [myItem]
         do {
             if let playlist = userDefaults.stringForKey("playlist1") {
@@ -307,6 +307,15 @@ class MainViewController: UITableViewController, UIActionSheetDelegate, SlideMen
         self.presentViewController(alert, animated: true, completion: nil)
     }
     
+    func filterContentForSearchText(searchText: String, scope: String = "All") {
+        filteredTableData = self.tableData.filter { row in
+            return row["word"] != nil && (row["word"] as! String).lowercaseString.containsString(searchText.lowercaseString)
+        }
+        
+        tableView.reloadData()
+    }
+    
+    // MARK: MAIL methods & Delegate
     
     func sendEmailButtonTapped() {
         let mailComposeViewController = configuredMailComposeViewController()
@@ -333,8 +342,6 @@ class MainViewController: UITableViewController, UIActionSheetDelegate, SlideMen
         sendMailErrorAlert.show()
     }
     
-    // MARK: MFMailComposeViewControllerDelegate
-    
     func mailComposeController(controller: MFMailComposeViewController!, didFinishWithResult result: MFMailComposeResult, error: NSError!) {
         controller.dismissViewControllerAnimated(true, completion: nil)
         
@@ -343,6 +350,6 @@ class MainViewController: UITableViewController, UIActionSheetDelegate, SlideMen
 
 extension MainViewController: UISearchResultsUpdating {
     func updateSearchResultsForSearchController(searchController: UISearchController) {
-        //filterContentForSearchText(searchController.searchBar.text!)
+        filterContentForSearchText(searchController.searchBar.text!)
     }
 }
