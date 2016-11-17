@@ -94,7 +94,7 @@
 		5B946C851D8CFF57004D8A95 /* Vocabulary_detail_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B946C821D8CFF57004D8A95 /* Vocabulary_detail_background@2x.png */; };
 		5B946C861D8CFF57004D8A95 /* Vocabulary_detail_background@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B946C831D8CFF57004D8A95 /* Vocabulary_detail_background@3x.png */; };
 		5BA967B61C98CBEF00EDC126 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA967B51C98CBEE00EDC126 /* AppDelegate.swift */; };
-		5BA967B81C98CBF600EDC126 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA967B71C98CBF600EDC126 /* ViewController.swift */; };
+		5BA967B81C98CBF600EDC126 /* VocabularyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA967B71C98CBF600EDC126 /* VocabularyViewController.swift */; };
 		5BA967BD1C98CBF800EDC126 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BA967BC1C98CBF800EDC126 /* Assets.xcassets */; };
 		5BA967CB1C98CC0000EDC126 /* StiqueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA967CA1C98CC0000EDC126 /* StiqueTests.swift */; };
 		5BA967D61C98CC0100EDC126 /* StiqueUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA967D51C98CC0100EDC126 /* StiqueUITests.swift */; };
@@ -240,7 +240,7 @@
 		5B946C831D8CFF57004D8A95 /* Vocabulary_detail_background@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Vocabulary_detail_background@3x.png"; sourceTree = "<group>"; };
 		5BA967B21C98CBE900EDC126 /* Stique.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stique.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BA967B51C98CBEE00EDC126 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5BA967B71C98CBF600EDC126 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5BA967B71C98CBF600EDC126 /* VocabularyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyViewController.swift; sourceTree = "<group>"; };
 		5BA967BC1C98CBF800EDC126 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5BA967C11C98CBF800EDC126 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5BA967C61C98CBFF00EDC126 /* StiqueTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StiqueTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -459,7 +459,7 @@
 				5BA967C11C98CBF800EDC126 /* Info.plist */,
 				5BA967B51C98CBEE00EDC126 /* AppDelegate.swift */,
 				5BA967E31CA080B700EDC126 /* MainViewController.swift */,
-				5BA967B71C98CBF600EDC126 /* ViewController.swift */,
+				5BA967B71C98CBF600EDC126 /* VocabularyViewController.swift */,
 				5B5A94231CE912C7004F1581 /* FlashCardController.swift */,
 				5BBDCD3C1CDA8A9500CCFF08 /* ThreeImageCellView.swift */,
 				5BA9682C1CA0930600EDC126 /* SimpleCellView.swift */,
@@ -853,7 +853,7 @@
 				5B689C911CF292E60066D726 /* UserPlaylistSingleController.swift in Sources */,
 				5B689C8F1CF28BEE0066D726 /* UserPlaylistController.swift in Sources */,
 				5BF739221CB99B27008C41BD /* PlayerViewController.swift in Sources */,
-				5BA967B81C98CBF600EDC126 /* ViewController.swift in Sources */,
+				5BA967B81C98CBF600EDC126 /* VocabularyViewController.swift in Sources */,
 				5B5A94241CE912C7004F1581 /* FlashCardController.swift in Sources */,
 				5BF7392C1CB9A628008C41BD /* BaseController.swift in Sources */,
 				5BF7392A1CB9A5F1008C41BD /* FilterController.swift in Sources */,

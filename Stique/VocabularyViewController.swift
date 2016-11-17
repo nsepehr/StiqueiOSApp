@@ -28,8 +28,6 @@ class VocabularyViewController: UIViewController, MFMailComposeViewControllerDel
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     
-        //view.backgroundColor = UIColor.greenColor()
-        //view.backgroundColor = UIColor(patternImage: UIImage(named: "Vocabulary_detail_background.png")!)
         let backgroundImage = UIImage(named: "Vocabulary_detail_background.png")
         let backgroundImageView = UIImageView(image: backgroundImage)
         view.addSubview(backgroundImageView)
@@ -61,9 +59,7 @@ class VocabularyViewController: UIViewController, MFMailComposeViewControllerDel
         
         let speaker = UIButton()
         speaker.setImage(UIImage(named: "speaker"), forState: .Normal)
-//        speaker.setImage(UIImage(named: "Speaker.png"), forState: .)
-        //speaker.setAttributedTitle(NSAttributedString(string: String.fontAwesomeIconWithName(.VolumeUp), attributes: [NSFontAttributeName: UIFont.fontAwesomeOfSize(35)]), forState: .Normal)
-        speaker.addTarget(self, action: Selector("play"), forControlEvents: UIControlEvents.TouchUpInside)
+        speaker.addTarget(self, action: Selector("playPronounciation"), forControlEvents: UIControlEvents.TouchUpInside)
         view.addSubview(speaker)
         
         speaker.widthPercent = 20
@@ -284,7 +280,7 @@ class VocabularyViewController: UIViewController, MFMailComposeViewControllerDel
         
     }
     
-    func play() {
+    func playPronounciation() {
         do {
             let url = NSURL(string: item["Pronounciation Audio"] as! String)!
             let playerItem = AVPlayerItem(URL: url)

@@ -37,7 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         slideMenuController.removeRightGestures()
         
         
-//        UITabBar.appearance().translucent = false
+        UITabBar.appearance().translucent = true
         UITabBar.appearance().barTintColor = UIColor(netHex:0x013e38)
         UITabBar.appearance().tintColor = UIColor.whiteColor()
         
@@ -119,6 +119,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, supportedInterfaceOrientationsForWindow window: UIWindow?) -> UIInterfaceOrientationMask {
         
+        /*
         if let currentVC = getCurrentViewController(self.window?.rootViewController) {
             print(NSStringFromClass(currentVC.classForCoder))
             //VideoVC is the name of your class that should support landscape
@@ -130,15 +131,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 return UIInterfaceOrientationMask.All
             }
         }
+        */
         if Globals.landscape {
             Globals.landscape = false
             let value = UIInterfaceOrientation.Portrait.rawValue
             UIDevice.currentDevice().setValue(value, forKey: "orientation")
         }
+ 
         return UIInterfaceOrientationMask.Portrait
     }
     
-    func getCurrentViewController(viewController:UIViewController?)-> UIViewController?{
+    /*
+     func getCurrentViewController(viewController:UIViewController?)-> UIViewController?{
         
         if let slideMenuController = viewController as? SlideMenuController{
             
@@ -162,6 +166,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return viewController
         }
     }
+    */
+
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
