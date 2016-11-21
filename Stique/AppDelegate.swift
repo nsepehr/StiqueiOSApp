@@ -70,14 +70,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         let tabBarController = UITabBarController()
-        tabBarController.tabBar.translucent = false
+        tabBarController.tabBar.translucent = true
+        
         let myVC1 = page(MainViewController)
         let myVC2 = page(UserPlaylistController)
         let myVC3 = page(PracticeController)
         let myVC4 = page(FilterController)
         let myVC5 = page(ShoppingController)
+        /*
+        let myVC1 = MainViewController.self
+        let myVC2 = UserPlaylistController.self
+        let myVC3 = PracticeController.self
+        let myVC4 = FilterController.self
+        let myVC5 = ShoppingController.self
+        */
 
-        let controllers = [myVC3, myVC2, myVC1, myVC4, myVC5]
+        let controllers: [UIViewController] = [myVC3, myVC2, myVC1, myVC4, myVC5]
         tabBarController.viewControllers = controllers
         
 

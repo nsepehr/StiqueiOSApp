@@ -7,43 +7,30 @@
 //
 
 import UIKit
-import FoldingCell
-import PINRemoteImage
 
-class UserPlaylistController: BaseController {
+class UserPlaylistController: UITableViewController {
     
-    var type = 1
+    let dataController = DataController()
+    var tableData = [[String: AnyObject]]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        navigationItem.leftBarButtonItem = nil
+        navigationItem.leftBarButtonItem = nil
         
-        
-        let rightButton = UIBarButtonItem(title: "MY STASH", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(rightButtonPressed))
+        let rightButton = UIBarButtonItem(title: " ", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(rightButtonPressed))
         let attributesRight = [NSFontAttributeName: UIFont.fontAwesomeOfSize(16)] as Dictionary!
         rightButton.setTitleTextAttributes(attributesRight, forState: .Normal)
         rightButton.title = String.fontAwesomeIconWithName(.Plus)
         rightButton.tintColor = UIColor.whiteColor()
 
         navigationItem.rightBarButtonItem = rightButton
-        navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+        //navigationController?.navigationBar.tintColor = UIColor.whiteColor()
 
-        title = type == 0 ? "Smart Playlist" : "User Playlist"
+        title = "User Playlist"
         
-        
-        let userDefaults = NSUserDefaults.standardUserDefaults()
-        if let playlists = userDefaults.stringForKey("playlists") {
-            do {
-                let jsonData = try NSJSONSerialization.JSONObjectWithData(playlists.dataUsingEncoding(NSUTF8StringEncoding)!, options: .AllowFragments) as? [[String: AnyObject]]
-                if let jsonData = jsonData {
-                    TableData = jsonData
-                }
-            } catch _ {
-                // error handling
-                print("error2")
-            }
-        }
+        tableData = dataController.getPlaylistData()
+
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -55,11 +42,8 @@ class UserPlaylistController: BaseController {
             cell = UITableViewCell(style:.Default, reuseIdentifier: kLCellIdentifier)
             cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         }
-        let myItem = TableData[indexPath.row]
+        let myItem = tableData[indexPath.row]
         cell?.textLabel?.text = myItem["name"] as? String
-//        let type = myItem["type"] as? Int
-        
-//        cell?.icon.image = UIImage.fontAwesomeIconWithName(type == 1 ? .PlayCircle : .Cog, textColor: UIColor.blackColor(), size: CGSizeMake(50, 50))
         
         return cell!
     }
@@ -69,13 +53,13 @@ class UserPlaylistController: BaseController {
         
         let vc = UserPlaylistSingleController()
         
-        let myItem = TableData[indexPath.row]
+        let myItem = tableData[indexPath.row]
         vc.playlist = (myItem["name"] as? String)!
         navigationController?.pushViewController(vc, animated: true)
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return TableData.count
+        return tableData.count
     }
     
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
@@ -84,18 +68,13 @@ class UserPlaylistController: BaseController {
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.Delete) {
-            let userDefaults = NSUserDefaults.standardUserDefaults()
-            do {
-                TableData.removeAtIndex(indexPath.row)
-                let jsonData2 = try NSJSONSerialization.dataWithJSONObject(TableData, options: NSJSONWritingOptions.PrettyPrinted)
-                userDefaults.setObject(NSString(data: jsonData2, encoding: NSASCIIStringEncoding), forKey: "playlists")
-                userDefaults.synchronize()
-                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Left)
-            } catch _ {}
+            dataController.removePlaylistData(self.tableData, index: indexPath.row)
+            self.tableData = dataController.getPlaylistData()
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Left)
         }
     }
     
-    override func rightButtonPressed() {
+    func rightButtonPressed() {
         //1. Create the alert controller.
         let alert = UIAlertController(title: "New Playlist", message: "Please enter a playlist name:", preferredStyle: .Alert)
         
@@ -113,21 +92,9 @@ class UserPlaylistController: BaseController {
         alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
             let textField = alert.textFields![0] as UITextField
             if textField.text != "" {
-                let userDefaults = NSUserDefaults.standardUserDefaults()
-                _self.TableData = [["name": textField.text as! AnyObject]]
-                
-                do {
-                    if let playlist = userDefaults.stringForKey("playlists") {
-                        let jsonData = try NSJSONSerialization.JSONObjectWithData(playlist.dataUsingEncoding(NSUTF8StringEncoding)!, options: .AllowFragments) as? [[String: AnyObject]]
-                        if let jsonData = jsonData {
-                            _self.TableData += jsonData
-                        }
-                    }
-                    let jsonData2 = try NSJSONSerialization.dataWithJSONObject(_self.TableData, options: NSJSONWritingOptions.PrettyPrinted)
-                    userDefaults.setObject(NSString(data: jsonData2, encoding: NSASCIIStringEncoding), forKey: "playlists")
-                    userDefaults.synchronize()
-                    _self.tableView.reloadData()
-                } catch _ {}
+                _self.dataController.addToPlaylistData([["name": textField.text as! AnyObject]])
+                _self.tableData = _self.dataController.getPlaylistData()
+                _self.tableView.reloadData()
             }
         }))
         

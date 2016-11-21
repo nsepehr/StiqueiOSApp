@@ -113,10 +113,10 @@
 		5BF739201CB990C5008C41BD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BF7391F1CB990C5008C41BD /* AVFoundation.framework */; };
 		5BF739221CB99B27008C41BD /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF739211CB99B27008C41BD /* PlayerViewController.swift */; };
 		5BF739241CB9A12E008C41BD /* ShoppingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF739231CB9A12E008C41BD /* ShoppingController.swift */; };
-		5BF739261CB9A5D3008C41BD /* PlaylistController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF739251CB9A5D3008C41BD /* PlaylistController.swift */; };
 		5BF739281CB9A5E4008C41BD /* PracticeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF739271CB9A5E4008C41BD /* PracticeController.swift */; };
 		5BF7392A1CB9A5F1008C41BD /* FilterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF739291CB9A5F1008C41BD /* FilterController.swift */; };
 		5BF7392C1CB9A628008C41BD /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF7392B1CB9A628008C41BD /* BaseController.swift */; };
+		B012F4251DE2C680008FCA05 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B012F4241DE2C680008FCA05 /* DataController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -265,10 +265,10 @@
 		5BF7391F1CB990C5008C41BD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		5BF739211CB99B27008C41BD /* PlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		5BF739231CB9A12E008C41BD /* ShoppingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingController.swift; sourceTree = "<group>"; };
-		5BF739251CB9A5D3008C41BD /* PlaylistController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistController.swift; sourceTree = "<group>"; };
 		5BF739271CB9A5E4008C41BD /* PracticeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PracticeController.swift; sourceTree = "<group>"; };
 		5BF739291CB9A5F1008C41BD /* FilterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterController.swift; sourceTree = "<group>"; };
 		5BF7392B1CB9A628008C41BD /* BaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
+		B012F4241DE2C680008FCA05 /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		FE983693D02536BD15189D7C /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -458,13 +458,13 @@
 				5B5C27821CE90A5B00CACF37 /* words.json */,
 				5BA967C11C98CBF800EDC126 /* Info.plist */,
 				5BA967B51C98CBEE00EDC126 /* AppDelegate.swift */,
+				B012F4241DE2C680008FCA05 /* DataController.swift */,
 				5BA967E31CA080B700EDC126 /* MainViewController.swift */,
 				5BA967B71C98CBF600EDC126 /* VocabularyViewController.swift */,
 				5B5A94231CE912C7004F1581 /* FlashCardController.swift */,
 				5BBDCD3C1CDA8A9500CCFF08 /* ThreeImageCellView.swift */,
 				5BA9682C1CA0930600EDC126 /* SimpleCellView.swift */,
 				5BF739211CB99B27008C41BD /* PlayerViewController.swift */,
-				5BF739251CB9A5D3008C41BD /* PlaylistController.swift */,
 				5B689C8E1CF28BEE0066D726 /* UserPlaylistController.swift */,
 				5B689C901CF292E60066D726 /* UserPlaylistSingleController.swift */,
 				5B674D9A1CDF235200980E60 /* PlaylistSingleController.swift */,
@@ -853,6 +853,7 @@
 				5B689C911CF292E60066D726 /* UserPlaylistSingleController.swift in Sources */,
 				5B689C8F1CF28BEE0066D726 /* UserPlaylistController.swift in Sources */,
 				5BF739221CB99B27008C41BD /* PlayerViewController.swift in Sources */,
+				B012F4251DE2C680008FCA05 /* DataController.swift in Sources */,
 				5BA967B81C98CBF600EDC126 /* VocabularyViewController.swift in Sources */,
 				5B5A94241CE912C7004F1581 /* FlashCardController.swift in Sources */,
 				5BF7392C1CB9A628008C41BD /* BaseController.swift in Sources */,
@@ -864,7 +865,6 @@
 				5BF739241CB9A12E008C41BD /* ShoppingController.swift in Sources */,
 				5BF739281CB9A5E4008C41BD /* PracticeController.swift in Sources */,
 				5BA9682D1CA0930600EDC126 /* SimpleCellView.swift in Sources */,
-				5BF739261CB9A5D3008C41BD /* PlaylistController.swift in Sources */,
 				5BA9682B1CA085BC00EDC126 /* SingleItemController.swift in Sources */,
 				5BA9682A1CA085BC00EDC126 /* FoldingView.swift in Sources */,
 			);

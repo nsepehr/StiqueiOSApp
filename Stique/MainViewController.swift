@@ -18,8 +18,9 @@ enum ActionSheetButtons: Int {
 
 class MainViewController: UITableViewController, UIActionSheetDelegate, SlideMenuControllerDelegate, MFMailComposeViewControllerDelegate {
     
-    var searchController = UISearchController()
+    let dataController = DataController()
     var tableData = [[String: AnyObject]]()
+    var searchController = UISearchController()
     var filteredTableData = [[String: AnyObject]]()
     var playlists = [[String: AnyObject]]()
     var actionSheetIndexPath = NSIndexPath()
@@ -90,33 +91,8 @@ class MainViewController: UITableViewController, UIActionSheetDelegate, SlideMen
     }
     
     func loadTableData() {
-        let userDefaults = NSUserDefaults.standardUserDefaults()
-        do {
-            let path = NSBundle.mainBundle().pathForResource("words", ofType: "json")
-            let data: NSData? = NSData(contentsOfFile: path!)
-            let jsonData = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as? [[String: AnyObject]]
-            if let jsonData = jsonData {
-                tableData = jsonData
-                if (userDefaults.boolForKey("sort")) {
-                    tableData = tableData.reverse()
-                }
-                if userDefaults.boolForKey("watched") {
-                    var NewTableData = [[String: AnyObject]]()
-                    if let watched = userDefaults.objectForKey("watched_words") as? [String] {
-                        for row in tableData {
-                            if watched.contains(row["word"] as! String) {
-                                NewTableData += [row]
-                            }
-                        }
-                    }
-                    tableData = NewTableData
-                }
-                tableView.reloadData()
-            }
-        } catch _ {
-            // error handling
-            print("error couldn't load the data for table at MainViewController")
-        }
+        tableData = dataController.getMainViewData()
+        tableView.reloadData()
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
