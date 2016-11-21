@@ -25,7 +25,8 @@ class UserPlaylistController: UITableViewController {
         rightButton.tintColor = UIColor.whiteColor()
 
         navigationItem.rightBarButtonItem = rightButton
-        //navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+        navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+        navigationController?.navigationBar.barTintColor = UIColor(netHex:0x00443d)
 
         title = "User Playlist"
         

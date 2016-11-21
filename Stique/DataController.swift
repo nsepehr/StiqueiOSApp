@@ -90,4 +90,37 @@ class DataController {
         
         return tableData
     }
+    
+    func removePlaylistDataForTitle(data: [[String: AnyObject]], playlist: String, index: Int) -> [[String: AnyObject]] {
+        var tableData = data
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        do {
+            tableData.removeAtIndex(index)
+            let jsonData2 = try NSJSONSerialization.dataWithJSONObject(tableData, options: NSJSONWritingOptions.PrettyPrinted)
+            userDefaults.setObject(NSString(data: jsonData2, encoding: NSASCIIStringEncoding), forKey: playlist)
+            userDefaults.synchronize()
+        } catch _ {
+            print("Failed to remove data for playlist title \(playlist)")
+        }
+        
+        return tableData
+    }
+    
+    func getPlaylistDataForTitle(playlist: String) -> [[String: AnyObject]] {
+        var tableData = [[String: AnyObject]]()
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        if let playlist = userDefaults.stringForKey(playlist) {
+            do {
+                let jsonData = try NSJSONSerialization.JSONObjectWithData(playlist.dataUsingEncoding(NSUTF8StringEncoding)!, options: .AllowFragments) as? [[String: AnyObject]]
+                if let jsonData = jsonData {
+                    tableData = jsonData
+                }
+            } catch _ {
+                // error handling
+                print("Error... Unable to the playlist data for title: \(playlist)")
+            }
+        }
+        
+        return tableData
+    }
 }
