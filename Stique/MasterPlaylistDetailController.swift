@@ -7,10 +7,8 @@
 //
 
 import UIKit
-import FoldingCell
-import PINRemoteImage
 
-class PlaylistSingleController: BaseController {
+class MasterPlaylistDetailController: BaseController {
     
     var type = 0
     var footerView = UIView()

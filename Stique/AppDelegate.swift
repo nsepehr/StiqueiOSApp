@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func page(className: UITableViewController.Type) -> UIViewController {
-        let grouped = className.classForCoder() == PracticeController.classForCoder() || className.classForCoder() == FilterController.classForCoder()
+        let grouped = className.classForCoder() == MasterPlaylistController.classForCoder() || className.classForCoder() == FilterController.classForCoder()
         let mainViewController = grouped ? className.init(style: UITableViewStyle.Grouped) : className.init()
         let navController = UINavigationController(rootViewController: mainViewController)
         navController.navigationBar.translucent = true
@@ -74,7 +74,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let myVC1 = page(MainViewController)
         let myVC2 = page(UserPlaylistController)
-        let myVC3 = page(PracticeController)
+        let myVC3 = page(MasterPlaylistController)
         let myVC4 = page(FilterController)
         let myVC5 = page(ShoppingController)
         /*

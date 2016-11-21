@@ -7,28 +7,30 @@
 //
 
 import UIKit
-import FoldingCell
-import PINRemoteImage
 
-class PracticeController: BaseController {
+class MasterPlaylistController: UITableViewController {
+    
+    let masterList = [
+        [
+            "name":"Master Practice",
+            "items":[["name":"Master Practice"]]
+        ],[
+            "name":"Standard Practice",
+            "items":[["name":"GRE Practice"],["name":"GMAT Practice"],["name":"LSAT Practice"]]
+        ]
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationItem.rightBarButtonItem = nil
+        navigationItem.leftBarButtonItem  = nil
         navigationController?.navigationBar.tintColor = UIColor.whiteColor()
-
-        TableData = [
-                [
-                    "name":"Master Practice",
-                    "items":[["name":"Master Practice"]]
-                ],[
-                    "name":"Standard Practice",
-                    "items":[["name":"GRE Practice"],["name":"GMAT Practice"],["name":"LSAT Practice"]]
-                ]
-            ]
-            
-            title = "Practice Page"
+        navigationController?.navigationBar.barTintColor = UIColor(netHex:0x00443d)
+        let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        navigationController?.navigationBar.titleTextAttributes = titleDict as? [String: AnyObject]
+        
+        title = "Master Practice"
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -39,30 +41,35 @@ class PracticeController: BaseController {
         }
         let myItem = rowsInSection(indexPath.section)[indexPath.row]
         cell?.textLabel?.text = myItem["name"] as? String
+        // Let's make the second section unselectable for now
+        if (indexPath.section > 0) {
+            cell?.selectionStyle = UITableViewCellSelectionStyle.None
+            cell?.userInteractionEnabled = false
+            cell?.textLabel?.enabled = false
+        }
         
         return cell!
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        let vc = PlaylistSingleController()
-        vc.type = 1
+        let vc = MasterPlaylistDetailController()
         navigationController?.pushViewController(vc, animated: true)
     }
     
     func rowsInSection(section: Int) -> [[String:AnyObject]] {
-        return (TableData[section]["items"] as! [[String:AnyObject]])
+        return (masterList[section]["items"] as! [[String:AnyObject]])
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return TableData.count
+        return masterList.count
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return rowsInSection(section).count
     }
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return TableData[section]["name"] as? String
+        return masterList[section]["name"] as? String
     }
     
 }

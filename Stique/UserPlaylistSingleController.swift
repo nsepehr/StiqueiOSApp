@@ -27,6 +27,8 @@ class UserPlaylistSingleController: UITableViewController {
         
         navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         navigationController?.navigationBar.barTintColor = UIColor(netHex:0x00443d)
+        let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        navigationController?.navigationBar.titleTextAttributes = titleDict as? [String: AnyObject]
         
         self.tableData = dataController.getPlaylistDataForTitle(playlist)
     }
