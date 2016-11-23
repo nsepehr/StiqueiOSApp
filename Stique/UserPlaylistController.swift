@@ -81,8 +81,7 @@ class UserPlaylistController: UITableViewController {
         //1. Create the alert controller.
         let alert = UIAlertController(title: "New Playlist", message: "Please enter a playlist name:", preferredStyle: .Alert)
         
-        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default)
-        { action -> Void in
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default){ action -> Void in
             // Put your code here
         })
         //2. Add the text field. You can configure it however you need.
@@ -94,7 +93,8 @@ class UserPlaylistController: UITableViewController {
         //3. Grab the value from the text field, and print it when the user clicks OK.
         alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
             let textField = alert.textFields![0] as UITextField
-            if textField.text != "" {
+            if (textField.text != "") {
+                print("Adding new playlist " + textField.text!)
                 _self.dataController.addToPlaylistData([["name": textField.text as! AnyObject]])
                 _self.tableData = _self.dataController.getPlaylistData()
                 _self.tableView.reloadData()

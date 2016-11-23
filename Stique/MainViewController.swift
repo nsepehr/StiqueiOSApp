@@ -147,10 +147,16 @@ class MainViewController: UITableViewController, UIActionSheetDelegate, SlideMen
     }
     
     func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
+        var vocabulary: StiqueData!
+        if (self.isUserSearching()) {
+            vocabulary = self.filteredTableData[actionSheetIndexPath.row]
+        } else {
+            vocabulary = self.tableData[actionSheetIndexPath.row]
+        }
         if buttonIndex == ActionSheetButtons.AddToMasterStudy.rawValue {
-            addToMaster()
+            addToMaster(vocabulary)
         } else if buttonIndex == ActionSheetButtons.AddToUserPlaylist.rawValue {
-            addToPlaylist()
+            addToPlaylist(vocabulary)
         } else if buttonIndex == ActionSheetButtons.Share.rawValue {
             sendEmailButtonTapped()
         }
@@ -172,113 +178,39 @@ class MainViewController: UITableViewController, UIActionSheetDelegate, SlideMen
         self.searchController.active = true
     }
     
-    func addToUserPlaylist(i: Int) {
-        // Nima: what is this i check?
-        if i == 0 {
-            return
-        }
-        let userDefaults = NSUserDefaults.standardUserDefaults()
-        
-        var TableData2 = [[String: AnyObject]]()
-        var myItem = [String: AnyObject]()
-
-        if searchController.active && searchController.searchBar.text != "" {
-            myItem = filteredTableData[actionSheetIndexPath.row]
-        } else {
-            myItem = tableData[actionSheetIndexPath.row]
-        }
-        
-        TableData2 = [myItem]
-        
-        
-        let myPlaylist = playlists[i-1]
-        let playlistKey = (myPlaylist["name"] as? String)!
-        
-        do {
-            if let playlist = userDefaults.stringForKey(playlistKey) {
-                let jsonData = try NSJSONSerialization.JSONObjectWithData(playlist.dataUsingEncoding(NSUTF8StringEncoding)!, options: .AllowFragments) as? [[String: AnyObject]]
-                if let jsonData = jsonData {
-                    for item in jsonData {
-                        if item["word"] as! String == myItem["word"] as! String {
-                            TableData2 = []
-                            break
-                        }
-                    }
-                    TableData2 += jsonData
-                }
-            }
-            let jsonData2 = try NSJSONSerialization.dataWithJSONObject(TableData2, options: NSJSONWritingOptions.PrettyPrinted)
-            userDefaults.setObject(NSString(data: jsonData2, encoding: NSASCIIStringEncoding), forKey: playlistKey)
-            userDefaults.synchronize()
-        } catch _ {}
-    }
-    
-    func addToPlaylist() {
-        playlists = [[String: AnyObject]]()
+    func addToPlaylist(vocabulary: StiqueData) {
         let _self = self
-        let userDefaults = NSUserDefaults.standardUserDefaults()
-        if let playlists = userDefaults.stringForKey("playlists") {
-            do {
-                let jsonData = try NSJSONSerialization.JSONObjectWithData(playlists.dataUsingEncoding(NSUTF8StringEncoding)!, options: .AllowFragments) as? [[String: AnyObject]]
-                if let jsonData = jsonData {
-                    _self.playlists = jsonData
-                }
-            } catch _ {
-                // error handling
-                print("error... Failed to add data to playlist")
-            }
-        }
+        let playlists = dataController.getPlaylistData()
         if playlists.count == 0 {
             let alert = UIAlertController(title: "Alert", message: "Please create a user playlist first, under the playlist tab.", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)
         } else {
-            // isAddingToPlaylist = true // Nima: we shouldn't need this... just remove
-            let actionSheet = UIActionSheet(title: "Which Playlist To Add to?", delegate: self, cancelButtonTitle: "Cancel", destructiveButtonTitle: nil)
-            
+            let alert = UIAlertController(title: "Which playlist", message: "Which playlist to add to?", preferredStyle: .ActionSheet)
+            for playlist in playlists {
+                let playlistName = (playlist["name"] as? String)!
+                alert.addAction(UIAlertAction(title: playlistName, style: .Default, handler: {(alert: UIAlertAction) in
+                    print("Adding playlist with name: \(playlistName) ")
+                    _self.dataController.addToUserPlaylist(vocabulary, playlist: playlistName)
+                }))
+            }
+            alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+    
+            // Nima: Below was for before
+            //let actionSheet = UIActionSheet(title: "Which Playlist To Add to?", delegate: self, cancelButtonTitle: "Cancel", destructiveButtonTitle: nil)
+            /*
             for myItem in playlists {
-                let playlist = (myItem["name"] as? String)!
-                actionSheet.addButtonWithTitle(playlist)
+                let item = (myItem["name"] as? String)!
+                actionSheet.addButtonWithTitle(item)
             }
-            if playlists.count > 0 {
-                actionSheet.showInView(self.view)
-            }
+            actionSheet.showInView(self.view)
+            */
         }
     }
     
-    func addToMaster() {
-        let userDefaults = NSUserDefaults.standardUserDefaults()
-        var TableData2 = [[String: AnyObject]]()
-        var myItem = [String: AnyObject]()
-        
-        if searchController.active && searchController.searchBar.text != "" {
-            myItem = filteredTableData[actionSheetIndexPath.row]
-        } else {
-            myItem = tableData[actionSheetIndexPath.row]
-        }
-        
-        // Nima: Need to take a look into what's happening here...
-        //myItem = tableData[actionSheetIndexPath.row]
-        TableData2 = [myItem]
-        do {
-            if let playlist = userDefaults.stringForKey("playlist1") {
-                let jsonData = try NSJSONSerialization.JSONObjectWithData(playlist.dataUsingEncoding(NSUTF8StringEncoding)!, options: .AllowFragments) as? [[String: AnyObject]]
-                if let jsonData = jsonData {
-                    for item in jsonData {
-                        if item["word"] as! String == myItem["word"] as! String {
-                            TableData2 = []
-                            break
-                        }
-                    }
-                    TableData2 += jsonData
-                }
-            }
-            let jsonData2 = try NSJSONSerialization.dataWithJSONObject(TableData2, options: NSJSONWritingOptions.PrettyPrinted)
-            userDefaults.setObject(NSString(data: jsonData2, encoding: NSASCIIStringEncoding), forKey: "playlist1")
-            userDefaults.synchronize()
-        } catch _ {}
-        
-        
+    func addToMaster(vocabulary: StiqueData) {
+        self.dataController.addToMasterPlaylistData(vocabulary)
         let alert = UIAlertController(title: "Master Study", message: "Added to Master Study.", preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
         self.presentViewController(alert, animated: true, completion: nil)
@@ -290,6 +222,13 @@ class MainViewController: UITableViewController, UIActionSheetDelegate, SlideMen
         }
         
         tableView.reloadData()
+    }
+    
+    func isUserSearching() -> Bool {
+        if (searchController.active && searchController.searchBar.text != "") {
+            return true
+        }
+        return false
     }
     
     // MARK: MAIL methods & Delegate

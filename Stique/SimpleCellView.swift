@@ -27,6 +27,7 @@ class SimpleCellView : UITableViewCell {
         icon = UIImageView(frame: CGRectMake(5, 0, 50, 50))
         icon.contentMode = UIViewContentMode.ScaleAspectFit
 //        icon.image = UIImage.fontAwesomeIconWithName(.YouTubePlay, textColor: UIColor(netHex:0x00443d), size: CGSizeMake(50, 50))
+//        cell?.icon.image = UIImage.fontAwesomeIconWithName(type == 1 ? .PlayCircle : .Cog, textColor: UIColor.blackColor(), size: CGSizeMake(50, 50))
         icon.image = UIImage(named: "play")
         label = UILabel(frame: CGRectMake(65, 0, 180, 50))
 //        label.font = UIFont.systemFontOfSize(15.0)
