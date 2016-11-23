@@ -68,6 +68,11 @@ class MainViewController: UITableViewController, UIActionSheetDelegate, SlideMen
         
     }
     
+    override func viewWillAppear(animated: Bool) {
+        self.loadTableData()
+        tableView.reloadData()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

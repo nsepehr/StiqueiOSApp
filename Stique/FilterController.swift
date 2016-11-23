@@ -7,29 +7,40 @@
 //
 
 import UIKit
-import FoldingCell
-import PINRemoteImage
 
-class FilterController: BaseController {
+enum TableSections: Int {
+    case StandardizeExams = 0
+    case Sortings = 1
+    case Filters = 2
+}
+
+
+class FilterController: UITableViewController {
+    
+    let userDefaults = NSUserDefaults.standardUserDefaults()
+    
+    let tableData = [
+        [
+            "name":"Standardized Exams",
+            "items":[["name":"GER GMAT LSAT"]]
+        ],[
+            "name":"Alphabetical Sorting",
+            "items":[["name":"Ascending"],["name":"Descending"]]
+        ],[
+            "name":"Filter By",
+            "items":[["name":"Watched"]]
+        ]
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationItem.rightBarButtonItem = nil
-        
-        TableData = [
-            [
-                "name":"Standardized Exams",
-                "items":[["name":"GER GMAT LSAT"]]
-            ],[
-                "name":"Alphabetical Sorting",
-                "items":[["name":"Ascending"],["name":"Descending"]]
-            ],[
-                "name":"Filter By",
-                "items":[["name":"Watched"]]
-//                "items":[["name":"Watched"],["name":"Purchased"],["name":"Top Rating"]]
-            ]
-        ]
+        navigationItem.leftBarButtonItem  = nil
+        navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+        navigationController?.navigationBar.barTintColor = UIColor(netHex:0x00443d)
+        let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        navigationController?.navigationBar.titleTextAttributes = titleDict as? [String: AnyObject]
         
         title = "Filter Page"
     }
@@ -38,53 +49,33 @@ class FilterController: BaseController {
         let kLCellIdentifier = "customCell"
         var cell = tableView.dequeueReusableCellWithIdentifier(kLCellIdentifier)
         if cell == nil {
-            if indexPath.section == 0 && indexPath.row == 0 {
+            if indexPath.section == TableSections.StandardizeExams.rawValue && indexPath.row == 0 {
                 cell = ThreeImageCellView(style:.Default, reuseIdentifier: kLCellIdentifier)
             } else {
                 cell = UITableViewCell(style:.Default, reuseIdentifier: kLCellIdentifier)
             }
         }
         let myItem = rowsInSection(indexPath.section)[indexPath.row]
-        if indexPath.section == 0 && indexPath.row == 0 {
+        if indexPath.section == TableSections.StandardizeExams.rawValue && indexPath.row == 0 {
         } else {
+            // Below we will handle having a checkmark based on users previous selection of sorting and filters
+            // Filter is easy: if there's a filer watched set in userDefaults, we checkmark the cell
+            // Sorting is grouped: 
+            //    If the sorting is Ascending first cell index must be checkmarked
+            //    else the Decending cell index (second one) should be checkmarked
             cell?.textLabel?.text = myItem["name"] as? String
-        }
-        var shouldCheck = false
-        let userDefaults = NSUserDefaults.standardUserDefaults()
-        if (indexPath.section == 1) {
-            if (indexPath.row == 0) {
-                shouldCheck = !userDefaults.boolForKey("sort")
-            }
-            if (indexPath.row == 1) {
-                shouldCheck = userDefaults.boolForKey("sort")
-            }
-        }
-        if (indexPath.section == 2) {
-            if (indexPath.row == 0) {
-                shouldCheck = userDefaults.boolForKey("watched")
-            }
-            if (indexPath.row == 1) {
-                shouldCheck = userDefaults.boolForKey("purchased")
-            }
-            if (indexPath.row == 2) {
-                shouldCheck = userDefaults.boolForKey("top")
+            if (indexPath.section == TableSections.Sortings.rawValue) {
+                if (indexPath.row == 0 && !userDefaults.boolForKey("sort")) {
+                    cell?.accessoryType = .Checkmark
+                } else if (indexPath.row == 1 && userDefaults.boolForKey("sort")) {
+                    cell?.accessoryType = .Checkmark
+                }
+            } else if (indexPath.section == TableSections.Filters.rawValue) {
+                if (userDefaults.boolForKey("watched")) {
+                    cell?.accessoryType = .Checkmark
+                }
             }
         }
-        
-        let checked = UILabel()
-        checked.tag = 1
-        checked.font = UIFont.fontAwesomeOfSize(20)
-        checked.text = String.fontAwesomeIconWithName(.Check)
-        checked.textColor = UIColor.grayColor()
-        if (shouldCheck) {
-            cell?.viewWithTag(1)?.removeFromSuperview()
-            cell?.addSubview(checked)
-        }
-        
-        checked.width = 20
-        checked.marginTopAbsolute = 15
-        checked.marginRightAbsolute = 15
-        checked.height = 20
         
         return cell!
     }
@@ -92,49 +83,42 @@ class FilterController: BaseController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
-        let userDefaults = NSUserDefaults.standardUserDefaults()
-        
-        if (indexPath.section == 1) {
-            tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 1))?.viewWithTag(1)?.removeFromSuperview()
-            tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 1, inSection: 1))?.viewWithTag(1)?.removeFromSuperview()
+        let cell = tableView.cellForRowAtIndexPath(indexPath)!
+        if (indexPath.section == TableSections.Sortings.rawValue) {
+            var otherCell: UITableViewCell!
             if (indexPath.row == 0) {
+                otherCell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 1, inSection: indexPath.section))
                 userDefaults.setBool(false, forKey: "sort")
             }
             if (indexPath.row == 1) {
+                otherCell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: indexPath.section))
                 userDefaults.setBool(true, forKey: "sort")
             }
+            // Below will check the selected cell and uncheck the other one in the group. We only have two cells so above harcoding we can deal with
+            cell.accessoryType = .Checkmark
+            otherCell.accessoryType = .None
         }
-        if (indexPath.section == 2) {
-            tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 2))?.viewWithTag(1)?.removeFromSuperview()
-            tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 1, inSection: 2))?.viewWithTag(1)?.removeFromSuperview()
-            tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 2, inSection: 2))?.viewWithTag(1)?.removeFromSuperview()
-            if (indexPath.row == 0) {
-                userDefaults.setBool(!userDefaults.boolForKey("watched"), forKey: "watched")
-            }
-            if (indexPath.row == 1) {
-                userDefaults.setBool(!userDefaults.boolForKey("purchased"), forKey: "purchased")
-            }
-            if (indexPath.row == 2) {
-                userDefaults.setBool(!userDefaults.boolForKey("top"), forKey: "top")
-            }
+        if (indexPath.section == TableSections.Filters.rawValue) {
+            if (cell.accessoryType == .Checkmark) {cell.accessoryType = .None}
+            else {cell.accessoryType = .Checkmark}
+            userDefaults.setBool(!userDefaults.boolForKey("watched"), forKey: "watched")
         }
         userDefaults.synchronize()
-        tableView.reloadData()
     }
     
-    func rowsInSection(section: Int) -> [[String:AnyObject]] {
-        return (TableData[section]["items"] as! [[String:AnyObject]])
+    func rowsInSection(section: Int) -> [StiqueData] {
+        return (tableData[section]["items"] as! [StiqueData])
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return TableData.count
+        return tableData.count
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return rowsInSection(section).count
     }
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return TableData[section]["name"] as? String
+        return tableData[section]["name"] as? String
     }
     
 }

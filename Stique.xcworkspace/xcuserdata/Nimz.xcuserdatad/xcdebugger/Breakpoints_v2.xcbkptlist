@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Stique/MainViewController.swift"
-            timestampString = "501572202.42979"
+            timestampString = "501579731.388486"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "181"
-            endingLineNumber = "181"
+            startingLineNumber = "186"
+            endingLineNumber = "186"
             landmarkName = "addToPlaylist(_:)"
             landmarkType = "5">
          </BreakpointContent>
