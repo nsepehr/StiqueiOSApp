@@ -110,6 +110,7 @@ class FilterController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return rowsInSection(section).count
     }
+    
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return tableData[section]["name"] as? String
     }
