@@ -19,16 +19,7 @@ class UserPlaylistSingleController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.rightBarButtonItem = nil
-        navigationItem.leftBarButtonItem = nil
-        
-        
-        title = playlist
-        
-        navigationController?.navigationBar.tintColor = UIColor.whiteColor()
-        navigationController?.navigationBar.barTintColor = UIColor(netHex:0x00443d)
-        let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
-        navigationController?.navigationBar.titleTextAttributes = titleDict as? [String: AnyObject]
+        setNavigationBar()
         
         self.tableData = dataController.getPlaylistDataForTitle(playlist)
     }
@@ -69,6 +60,18 @@ class UserPlaylistSingleController: UITableViewController {
             self.tableData = dataController.removePlaylistDataForTitle(self.tableData, playlist: self.playlist, index: indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Left)
          }
+    }
+    
+    func setNavigationBar() {
+        navigationItem.title = playlist
+        let backImage = UIImage(named: "back")
+        let leftButton = UIBarButtonItem(image: backImage, style: .Plain, target: self, action: #selector(VocabularyViewController.backButtonPressed))
+        leftButton.title = " "
+        navigationItem.leftBarButtonItem = leftButton
+    }
+    
+    func backButtonPressed(sender: UIButton) {
+        navigationController?.popViewControllerAnimated(true)
     }
 
 }

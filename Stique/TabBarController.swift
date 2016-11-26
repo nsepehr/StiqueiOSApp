@@ -30,11 +30,11 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         
         // Define the Tab Bar items
         setTabBarItems()
-        let mainNav = UINavigationController(rootViewController: myVC1)
-        let playlistNav = UINavigationController(rootViewController: myVC2)
-        let masterNav = UINavigationController(rootViewController: myVC3)
-        let filterNav = UINavigationController(rootViewController: myVC4)
-        let shopNav = UINavigationController(rootViewController: myVC5)
+        let mainNav     = NavigationController(rootViewController: myVC1)
+        let playlistNav = NavigationController(rootViewController: myVC2)
+        let masterNav   = NavigationController(rootViewController: myVC3)
+        let filterNav   = NavigationController(rootViewController: myVC4)
+        let shopNav     = NavigationController(rootViewController: myVC5)
         let controllers: [UIViewController] = [masterNav, playlistNav, mainNav, filterNav, shopNav]
         self.viewControllers = controllers
         

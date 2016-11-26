@@ -14,14 +14,22 @@ class NavigationController: UINavigationController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        navigationController?.navigationBar.barTintColor = UIColor(netHex:0x00443d)
+        // Set the color of the bar
+        self.navigationBar.barTintColor = UIColor(netHex:0x00443d)
+        self.navigationBar.tintColor = UIColor.whiteColor()
+        // Set the back button the design arrow
+        let backButton = UIBarButtonItem()
+        backButton.setBackgroundImage(UIImage(named: "back"), forState: .Normal, barMetrics: .Default)
+        backButton.title = " "
+        
+        //UIBarButtonItem.setBackButtonBackgroundImage(backButton)
+ 
+        // Set the title attributes
         let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
-        navigationController?.navigationBar.titleTextAttributes = titleDict as? [String: AnyObject]
+        self.navigationBar.titleTextAttributes = titleDict as? [String: AnyObject]
         //navigationController.view.height = UIScreen.mainScreen().bounds.height + 70 // Nima: Why is this necessary?
     }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

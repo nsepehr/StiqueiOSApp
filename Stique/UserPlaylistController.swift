@@ -15,9 +15,7 @@ class UserPlaylistController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        navigationItem.leftBarButtonItem = nil
-        
+                
         let rightButton = UIBarButtonItem(title: " ", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(rightButtonPressed))
         let attributesRight = [NSFontAttributeName: UIFont.fontAwesomeOfSize(16)] as Dictionary!
         rightButton.setTitleTextAttributes(attributesRight, forState: .Normal)
@@ -25,12 +23,7 @@ class UserPlaylistController: UITableViewController {
         rightButton.tintColor = UIColor.whiteColor()
 
         navigationItem.rightBarButtonItem = rightButton
-        navigationController?.navigationBar.tintColor = UIColor.whiteColor()
-        navigationController?.navigationBar.barTintColor = UIColor(netHex:0x00443d)
-        let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
-        navigationController?.navigationBar.titleTextAttributes = titleDict as? [String: AnyObject]
-
-        title = "User Playlist"
+        navigationItem.title = "User Playlist"
         
         tableData = dataController.getPlaylistData()
 

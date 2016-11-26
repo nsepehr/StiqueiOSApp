@@ -16,6 +16,7 @@ class MasterPlaylistDetailController: UITableViewController {
     var vc = FlashCardController()
     
     override func viewWillAppear(animated: Bool) {
+        setNavigationBar()
         loadData()
         footerView.hidden = tableData.count == 0
     }
@@ -23,11 +24,7 @@ class MasterPlaylistDetailController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.rightBarButtonItem = nil
-        navigationItem.leftBarButtonItem = nil
-        navigationController?.navigationBar.tintColor = UIColor.whiteColor()
-        
-        title = "Master Practice"
+        navigationItem.title = "Master Practice"
         
         loadData()
     }
@@ -98,6 +95,18 @@ class MasterPlaylistDetailController: UITableViewController {
     
     override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 40.0
+    }
+    
+    func setNavigationBar() {
+        //navigationItem.title = playlist
+        let backImage = UIImage(named: "back")
+        let leftButton = UIBarButtonItem(image: backImage, style: .Plain, target: self, action: #selector(VocabularyViewController.backButtonPressed))
+        leftButton.title = " "
+        navigationItem.leftBarButtonItem = leftButton
+    }
+    
+    func backButtonPressed(sender: UIButton) {
+        navigationController?.popViewControllerAnimated(true)
     }
     
     func startFunc() {

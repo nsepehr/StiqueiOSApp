@@ -35,14 +35,7 @@ class FilterController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.rightBarButtonItem = nil
-        navigationItem.leftBarButtonItem  = nil
-        navigationController?.navigationBar.tintColor = UIColor.whiteColor()
-        navigationController?.navigationBar.barTintColor = UIColor(netHex:0x00443d)
-        let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
-        navigationController?.navigationBar.titleTextAttributes = titleDict as? [String: AnyObject]
-        
-        title = "Filter Page"
+        navigationItem.title = "Filter Page"
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

@@ -13,13 +13,7 @@ class ShoppingController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.rightBarButtonItem = nil
-        navigationController?.navigationBar.tintColor = UIColor.whiteColor()
-        navigationController?.navigationBar.barTintColor = UIColor(netHex:0x00443d)
-        let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
-        navigationController?.navigationBar.titleTextAttributes = titleDict as? [String: AnyObject]
-        
-        title = "Shopping"
+        navigationItem.title = "Shopping"
         
         tableView.separatorColor = UIColor(netHex: 0x01c0ad)
         tableView.backgroundColor = UIColor(netHex: 0x01c0ad)

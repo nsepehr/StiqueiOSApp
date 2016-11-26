@@ -27,8 +27,7 @@ class MainViewController: UITableViewController, UIActionSheetDelegate, MFMailCo
     override func viewDidLoad() {
         super.viewDidLoad()
         // Navigation bar settings
-        //self.navigationItem.title = "Stique"
-        
+        navigationItem.title = "Stique"
         
         // The buttons that appear on the navigation bar
         let rightButton = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(MainViewController.rightButtonPressed))
@@ -48,9 +47,9 @@ class MainViewController: UITableViewController, UIActionSheetDelegate, MFMailCo
         view.backgroundColor = UIColor.whiteColor()
         tableView.separatorColor = UIColor(netHex: 0xdedede)
         
-        navigationController?.navigationBar.barTintColor = UIColor(netHex:0x00443d)
-        let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
-        navigationController?.navigationBar.titleTextAttributes = titleDict as? [String: AnyObject]
+        //navigationController?.navigationBar.barTintColor = UIColor(netHex:0x00443d)
+        //let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        //navigationController?.navigationBar.titleTextAttributes = titleDict as? [String: AnyObject]
         //navigationController.view.height = UIScreen.mainScreen().bounds.height + 70 // Nima: Why is this necessary?
         
         // Adding the search bar

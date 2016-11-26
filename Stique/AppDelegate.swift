@@ -35,26 +35,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         application.statusBarHidden = false
         application.statusBarStyle  = .LightContent
+        
+        // Sets the back button image
+        //let backImage = UIImage(named: "back")
+        //UIBarButtonItem.appearance().setBackButtonBackgroundImage(backImage, forState: .Normal, barMetrics: .Default)
+        
 
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         window!.backgroundColor = UIColor.whiteColor()
         self.window?.tintColor = UIColor(netHex: 0x013e38)
         
-        // Define the Tab Bar items
+        // Define the root of the app to be the tab bar
         let tabBarController = TabBarController()
-        let navController = UINavigationController(rootViewController: myVC1)
-        let controllers: [UIViewController] = [myVC3, myVC2, navController, myVC4, myVC5]
-        tabBarController.viewControllers = controllers
-        
-        // Select the main view controller as the first view to be shown
-        tabBarController.selectedIndex = 2
-        
-        // Fixes for the appearance of the tab bar to match the design
-        tabBarController.tabBar.translucent = true
-        tabBarController.tabBar.barTintColor = UIColor(netHex:0x013e38)
-        tabBarController.tabBar.tintColor = UIColor.whiteColor()
-        
-        
         self.window?.rootViewController = tabBarController
         
         window!.makeKeyAndVisible()

@@ -27,13 +27,13 @@ class VocabularyViewController: UIViewController, MFMailComposeViewControllerDel
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        // We're setting the Navigation settings
+        setNavigationBar()
     
         let backgroundImage = UIImage(named: "Vocabulary_detail_background.png")
         let backgroundImageView = UIImageView(image: backgroundImage)
         view.addSubview(backgroundImageView)
         
-        navigationController?.navigationBar.tintColor = UIColor.whiteColor()
-
         let vocab = UILabel()
         vocab.text = item["word"] as? String
         vocab.font = UIFont.systemFontOfSize(26)
@@ -246,6 +246,17 @@ class VocabularyViewController: UIViewController, MFMailComposeViewControllerDel
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func setNavigationBar() {
+        let backImage = UIImage(named: "back")
+        let leftButton = UIBarButtonItem(image: backImage, style: .Plain, target: self, action: #selector(VocabularyViewController.backButtonPressed))
+        leftButton.title = " "
+        navigationItem.leftBarButtonItem = leftButton
+    }
+    
+    func backButtonPressed(sender: UIButton) {
+        navigationController?.popViewControllerAnimated(true)
     }
     
     func sendEmailButtonTapped() {
