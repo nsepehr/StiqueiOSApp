@@ -8,7 +8,6 @@
 
 import UIKit
 import MessageUI
-import SlideMenuControllerSwift
 
 enum ActionSheetButtons: Int {
     case AddToMasterStudy = 1
@@ -16,7 +15,7 @@ enum ActionSheetButtons: Int {
     case Share = 3
 }
 
-class MainViewController: UITableViewController, UIActionSheetDelegate, SlideMenuControllerDelegate, MFMailComposeViewControllerDelegate {
+class MainViewController: UITableViewController, UIActionSheetDelegate, MFMailComposeViewControllerDelegate {
     
     let dataController = DataController()
     var tableData = [[String: AnyObject]]()
@@ -27,8 +26,11 @@ class MainViewController: UITableViewController, UIActionSheetDelegate, SlideMen
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Navigation bar
+        //let navigationController = UINavigationController()
+
         // Title of the page. Appears on the navigation bar
-        self.title = "Stique"
+        //self.title = "Stique"
         
         // The buttons that appear on the navigation bar
         let rightButton = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(MainViewController.rightButtonPressed))
@@ -51,7 +53,7 @@ class MainViewController: UITableViewController, UIActionSheetDelegate, SlideMen
         navigationController?.navigationBar.barTintColor = UIColor(netHex:0x00443d)
         let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         navigationController?.navigationBar.titleTextAttributes = titleDict as? [String: AnyObject]
-        navigationController?.view.height = UIScreen.mainScreen().bounds.height + 70 // Nima: Why is this necessary?
+        //navigationController.view.height = UIScreen.mainScreen().bounds.height + 70 // Nima: Why is this necessary?
         
         // Adding the search bar
         searchController = UISearchController(searchResultsController: nil)
@@ -168,9 +170,11 @@ class MainViewController: UITableViewController, UIActionSheetDelegate, SlideMen
     }
     
     func leftButtonPressed() {
+        /*
         slideMenuController()?.openLeft()
         view.userInteractionEnabled = false
         slideMenuController()?.delegate = self
+        */
     }
     
     func leftDidClose() {

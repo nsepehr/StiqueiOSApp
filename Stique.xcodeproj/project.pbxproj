@@ -117,6 +117,7 @@
 		5BF7392A1CB9A5F1008C41BD /* FilterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF739291CB9A5F1008C41BD /* FilterController.swift */; };
 		5BF7392C1CB9A628008C41BD /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF7392B1CB9A628008C41BD /* BaseController.swift */; };
 		B012F4251DE2C680008FCA05 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B012F4241DE2C680008FCA05 /* DataController.swift */; };
+		B012F4271DE6E618008FCA05 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B012F4261DE6E618008FCA05 /* TabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -269,6 +270,7 @@
 		5BF739291CB9A5F1008C41BD /* FilterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterController.swift; sourceTree = "<group>"; };
 		5BF7392B1CB9A628008C41BD /* BaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
 		B012F4241DE2C680008FCA05 /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		B012F4261DE6E618008FCA05 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		FE983693D02536BD15189D7C /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -458,6 +460,7 @@
 				5B5C27821CE90A5B00CACF37 /* words.json */,
 				5BA967C11C98CBF800EDC126 /* Info.plist */,
 				5BA967B51C98CBEE00EDC126 /* AppDelegate.swift */,
+				B012F4261DE6E618008FCA05 /* TabBarController.swift */,
 				B012F4241DE2C680008FCA05 /* DataController.swift */,
 				5BA967E31CA080B700EDC126 /* MainViewController.swift */,
 				5BA967B71C98CBF600EDC126 /* VocabularyViewController.swift */,
@@ -861,6 +864,7 @@
 				5B8A25EC1CBC081000AFEAF8 /* LeftViewController.swift in Sources */,
 				5BA9680E1CA085BC00EDC126 /* CheckoutCellView.swift in Sources */,
 				5BA967B61C98CBEF00EDC126 /* AppDelegate.swift in Sources */,
+				B012F4271DE6E618008FCA05 /* TabBarController.swift in Sources */,
 				5BBDCD3D1CDA8A9500CCFF08 /* ThreeImageCellView.swift in Sources */,
 				5BF739241CB9A12E008C41BD /* ShoppingController.swift in Sources */,
 				5BF739281CB9A5E4008C41BD /* MasterPlaylistController.swift in Sources */,

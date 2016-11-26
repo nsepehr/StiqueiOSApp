@@ -8,9 +8,7 @@
 
 import UIKit
 import SlideMenuControllerSwift
-import Stripe
 import FontAwesome_swift
-import Fabric
 import Crashlytics
 import AVFoundation
 
@@ -42,7 +40,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITabBar.appearance().tintColor = UIColor.whiteColor()
         
         
-        
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         UIApplication.sharedApplication().statusBarHidden = false
         
@@ -54,36 +51,47 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
 //        application.setStatusBarHidden(false, withAnimation: UIStatusBarAnimation.Fade)
 
-        Fabric.with([STPAPIClient.self, Crashlytics.self])
-
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
 //        window!.rootViewController = slideMenuController
         window!.backgroundColor = UIColor.whiteColor()
-        window!.makeKeyAndVisible()
         
-        Stripe.setDefaultPublishableKey("pk_test_gudzcwgFyNwQqGL6R2u4346G")
         self.window?.tintColor = UIColor(netHex: 0x013e38)
+        let tabBarController = TabBarController()
+        let navController = UINavigationController(rootViewController: tabBarController)
+        self.window?.rootViewController = navController
+        
+        //let navController = UINavigationController(rootViewController: )
+        //self.window?.addSubview(navController.view)
+        
+        window!.makeKeyAndVisible()
+
+        //let mainViewController = MainViewController()
+        //let navController = UINavigationController(rootViewController: tabBarController)
+        //navController.navigationBar.translucent = true
+
         
         //        UIButton.appearance().font = UIFont.systemFontOfSize(11)
 //        window!.tintColor = UIColor(netHex: 0x34495f)
+        //UIApplication.sharedApplication().statusBarStyle = .LightContent
+        //UIApplication.sharedApplication().statusBarHidden = false
         
-        
+        /*
         let tabBarController = UITabBarController()
         tabBarController.tabBar.translucent = true
-        
+ 
         let myVC1 = page(MainViewController)
         let myVC2 = page(UserPlaylistController)
         let myVC3 = page(MasterPlaylistController)
         let myVC4 = page(FilterController)
         let myVC5 = page(ShoppingController)
-        /*
-        let myVC1 = MainViewController.self
-        let myVC2 = UserPlaylistController.self
-        let myVC3 = PracticeController.self
-        let myVC4 = FilterController.self
-        let myVC5 = ShoppingController.self
-        */
+
+        let myVC1 = MainViewController()
+        let myVC2 = UserPlaylistController()
+        let myVC3 = MasterPlaylistController()
+        let myVC4 = FilterController()
+        let myVC5 = ShoppingController()
+ 
 
         let controllers: [UIViewController] = [myVC3, myVC2, myVC1, myVC4, myVC5]
         tabBarController.viewControllers = controllers
@@ -117,9 +125,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         myVC5.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0)
         
         tabBarController.selectedIndex = 2
+        */
         
-        Fabric.with([STPAPIClient.self, Crashlytics.self])
-
         // Override point for customization after application launch.
         return true
     }
