@@ -26,11 +26,9 @@ class MainViewController: UITableViewController, UIActionSheetDelegate, MFMailCo
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Navigation bar
-        //let navigationController = UINavigationController()
-
-        // Title of the page. Appears on the navigation bar
-        //self.title = "Stique"
+        // Navigation bar settings
+        //self.navigationItem.title = "Stique"
+        
         
         // The buttons that appear on the navigation bar
         let rightButton = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(MainViewController.rightButtonPressed))

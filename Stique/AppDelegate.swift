@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SlideMenuControllerSwift
 import FontAwesome_swift
 import Crashlytics
 import AVFoundation
@@ -21,111 +20,45 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
-    func page(className: UITableViewController.Type) -> UIViewController {
-        let grouped = className.classForCoder() == MasterPlaylistController.classForCoder() || className.classForCoder() == FilterController.classForCoder()
-        let mainViewController = grouped ? className.init(style: UITableViewStyle.Grouped) : className.init()
-        let navController = UINavigationController(rootViewController: mainViewController)
-        navController.navigationBar.translucent = true
-        //        let leftViewController = LeftPanelController()
-        let leftViewController = LeftViewController(style: UITableViewStyle.Grouped)
-        let rightViewController = UIViewController()
-        rightViewController.view.backgroundColor = UIColor.whiteColor()
-        
-        let slideMenuController = SlideMenuController(mainViewController: navController, leftMenuViewController: leftViewController, rightMenuViewController: rightViewController)
-        slideMenuController.removeRightGestures()
-        
-        
-        UITabBar.appearance().translucent = true
-        UITabBar.appearance().barTintColor = UIColor(netHex:0x013e38)
-        UITabBar.appearance().tintColor = UIColor.whiteColor()
-        
-        
-        UIApplication.sharedApplication().statusBarStyle = .LightContent
-        UIApplication.sharedApplication().statusBarHidden = false
-        
+    // View controllers to be shown on the tab bar
+    let myVC1 = MainViewController()
+    let myVC2 = UserPlaylistController()
+    let myVC3 = MasterPlaylistController()
+    let myVC4 = FilterController()
+    let myVC5 = ShoppingController()
+    
+    // Navigation controller
+    let myVCnav = NavigationController()
 
-        return slideMenuController
-    }
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-//        application.setStatusBarHidden(false, withAnimation: UIStatusBarAnimation.Fade)
+        application.statusBarHidden = false
+        application.statusBarStyle  = .LightContent
 
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        
-//        window!.rootViewController = slideMenuController
         window!.backgroundColor = UIColor.whiteColor()
-        
         self.window?.tintColor = UIColor(netHex: 0x013e38)
-        let tabBarController = TabBarController()
-        let navController = UINavigationController(rootViewController: tabBarController)
-        self.window?.rootViewController = navController
         
-        //let navController = UINavigationController(rootViewController: )
-        //self.window?.addSubview(navController.view)
+        // Define the Tab Bar items
+        let tabBarController = TabBarController()
+        let navController = UINavigationController(rootViewController: myVC1)
+        let controllers: [UIViewController] = [myVC3, myVC2, navController, myVC4, myVC5]
+        tabBarController.viewControllers = controllers
+        
+        // Select the main view controller as the first view to be shown
+        tabBarController.selectedIndex = 2
+        
+        // Fixes for the appearance of the tab bar to match the design
+        tabBarController.tabBar.translucent = true
+        tabBarController.tabBar.barTintColor = UIColor(netHex:0x013e38)
+        tabBarController.tabBar.tintColor = UIColor.whiteColor()
+        
+        
+        self.window?.rootViewController = tabBarController
         
         window!.makeKeyAndVisible()
 
-        //let mainViewController = MainViewController()
-        //let navController = UINavigationController(rootViewController: tabBarController)
-        //navController.navigationBar.translucent = true
-
-        
-        //        UIButton.appearance().font = UIFont.systemFontOfSize(11)
-//        window!.tintColor = UIColor(netHex: 0x34495f)
-        //UIApplication.sharedApplication().statusBarStyle = .LightContent
-        //UIApplication.sharedApplication().statusBarHidden = false
-        
-        /*
-        let tabBarController = UITabBarController()
-        tabBarController.tabBar.translucent = true
- 
-        let myVC1 = page(MainViewController)
-        let myVC2 = page(UserPlaylistController)
-        let myVC3 = page(MasterPlaylistController)
-        let myVC4 = page(FilterController)
-        let myVC5 = page(ShoppingController)
-
-        let myVC1 = MainViewController()
-        let myVC2 = UserPlaylistController()
-        let myVC3 = MasterPlaylistController()
-        let myVC4 = FilterController()
-        let myVC5 = ShoppingController()
- 
-
-        let controllers: [UIViewController] = [myVC3, myVC2, myVC1, myVC4, myVC5]
-        tabBarController.viewControllers = controllers
-        
-
-        window?.rootViewController = tabBarController
-        myVC1.tabBarItem = UITabBarItem(
-            title: "",
-            image: UIImage(named: "home"),
-            tag: 1)
-        myVC2.tabBarItem = UITabBarItem(
-            title: "",
-            image: UIImage(named: "playlist"),
-            tag: 1)
-        myVC3.tabBarItem = UITabBarItem(
-            title: "",
-            image: UIImage(named: "master_study"),
-            tag: 1)
-        myVC4.tabBarItem = UITabBarItem(
-            title: "",
-            image: UIImage(named: "filter"),
-            tag: 1)
-        myVC5.tabBarItem = UITabBarItem(
-            title: "",
-            image: UIImage(named: "shopping_cart"),
-            tag: 1)
-        myVC1.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0)
-        myVC2.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0)
-        myVC3.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0)
-        myVC4.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0)
-        myVC5.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0)
-        
-        tabBarController.selectedIndex = 2
-        */
         
         // Override point for customization after application launch.
         return true
@@ -155,33 +88,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
  
         return UIInterfaceOrientationMask.Portrait
     }
-    
-    /*
-     func getCurrentViewController(viewController:UIViewController?)-> UIViewController?{
-        
-        if let slideMenuController = viewController as? SlideMenuController{
-            
-            return getCurrentViewController(slideMenuController.mainViewController)
-        }
-        if let tabBarController = viewController as? UITabBarController{
-            
-            return getCurrentViewController(tabBarController.selectedViewController)
-        }
-        
-        if let navigationController = viewController as? UINavigationController{
-            return getCurrentViewController(navigationController.visibleViewController)
-        }
-        
-        if let viewController = viewController?.presentedViewController {
-            
-            return getCurrentViewController(viewController)
-            
-        }else{
-            
-            return viewController
-        }
-    }
-    */
+
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

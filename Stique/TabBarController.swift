@@ -17,6 +17,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
     let myVC4 = FilterController()
     let myVC5 = ShoppingController()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,12 +30,18 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         
         // Define the Tab Bar items
         setTabBarItems()
-        let controllers: [UIViewController] = [myVC3, myVC2, myVC1, myVC4, myVC5]
+        let mainNav = UINavigationController(rootViewController: myVC1)
+        let playlistNav = UINavigationController(rootViewController: myVC2)
+        let masterNav = UINavigationController(rootViewController: myVC3)
+        let filterNav = UINavigationController(rootViewController: myVC4)
+        let shopNav = UINavigationController(rootViewController: myVC5)
+        let controllers: [UIViewController] = [masterNav, playlistNav, mainNav, filterNav, shopNav]
         self.viewControllers = controllers
         
         // Select the main view controller as the first view to be shown
         self.selectedIndex = 2
         
+        // Fixes for the appearance of the tab bar to match the design
         self.tabBar.translucent = true
         self.tabBar.barTintColor = UIColor(netHex:0x013e38)
         self.tabBar.tintColor = UIColor.whiteColor()

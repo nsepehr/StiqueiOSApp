@@ -118,6 +118,7 @@
 		5BF7392C1CB9A628008C41BD /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF7392B1CB9A628008C41BD /* BaseController.swift */; };
 		B012F4251DE2C680008FCA05 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B012F4241DE2C680008FCA05 /* DataController.swift */; };
 		B012F4271DE6E618008FCA05 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B012F4261DE6E618008FCA05 /* TabBarController.swift */; };
+		B012F42B1DE97595008FCA05 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B012F42A1DE97595008FCA05 /* NavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -271,6 +272,7 @@
 		5BF7392B1CB9A628008C41BD /* BaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
 		B012F4241DE2C680008FCA05 /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		B012F4261DE6E618008FCA05 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		B012F42A1DE97595008FCA05 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		FE983693D02536BD15189D7C /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -460,8 +462,9 @@
 				5B5C27821CE90A5B00CACF37 /* words.json */,
 				5BA967C11C98CBF800EDC126 /* Info.plist */,
 				5BA967B51C98CBEE00EDC126 /* AppDelegate.swift */,
-				B012F4261DE6E618008FCA05 /* TabBarController.swift */,
 				B012F4241DE2C680008FCA05 /* DataController.swift */,
+				B012F42A1DE97595008FCA05 /* NavigationController.swift */,
+				B012F4261DE6E618008FCA05 /* TabBarController.swift */,
 				5BA967E31CA080B700EDC126 /* MainViewController.swift */,
 				5BA967B71C98CBF600EDC126 /* VocabularyViewController.swift */,
 				5BBDCD3C1CDA8A9500CCFF08 /* ThreeImageCellView.swift */,
@@ -869,6 +872,7 @@
 				5BF739241CB9A12E008C41BD /* ShoppingController.swift in Sources */,
 				5BF739281CB9A5E4008C41BD /* MasterPlaylistController.swift in Sources */,
 				5BA9682D1CA0930600EDC126 /* SimpleCellView.swift in Sources */,
+				B012F42B1DE97595008FCA05 /* NavigationController.swift in Sources */,
 				5BA9682B1CA085BC00EDC126 /* SingleItemController.swift in Sources */,
 				5BA9682A1CA085BC00EDC126 /* FoldingView.swift in Sources */,
 			);
