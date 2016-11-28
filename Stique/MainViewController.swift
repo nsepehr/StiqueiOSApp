@@ -26,6 +26,11 @@ class MainViewController: UITableViewController, UIActionSheetDelegate, MFMailCo
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Set the correct orientation
+        let value = UIInterfaceOrientation.Portrait.rawValue
+        UIDevice.currentDevice().setValue(value, forKey: "orientation")
+        
         // Navigation bar settings
         navigationItem.title = "Stique"
         
@@ -267,6 +272,15 @@ class MainViewController: UITableViewController, UIActionSheetDelegate, MFMailCo
     func mailComposeController(controller: MFMailComposeViewController!, didFinishWithResult result: MFMailComposeResult, error: NSError!) {
         controller.dismissViewControllerAnimated(true, completion: nil)
         
+    }
+    
+    // The orientation of the view
+    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.Portrait
+    }
+    
+    override func shouldAutorotate() -> Bool {
+        return true
     }
 }
 

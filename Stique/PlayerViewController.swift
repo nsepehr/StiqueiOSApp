@@ -12,6 +12,6 @@ import AVFoundation
 
 class PlayerViewController: AVPlayerViewController {
     override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-        return [.Landscape]
+        return UIInterfaceOrientationMask.All
     }
 }

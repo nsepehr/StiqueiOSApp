@@ -27,26 +27,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let myVC4 = FilterController()
     let myVC5 = ShoppingController()
     
-    // Navigation controller
-    let myVCnav = NavigationController()
-
+    let tabBarController = TabBarController()
+    
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         application.statusBarHidden = false
         application.statusBarStyle  = .LightContent
-        
-        // Sets the back button image
-        //let backImage = UIImage(named: "back")
-        //UIBarButtonItem.appearance().setBackButtonBackgroundImage(backImage, forState: .Normal, barMetrics: .Default)
-        
 
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         window!.backgroundColor = UIColor.whiteColor()
         self.window?.tintColor = UIColor(netHex: 0x013e38)
         
         // Define the root of the app to be the tab bar
-        let tabBarController = TabBarController()
         self.window?.rootViewController = tabBarController
         
         window!.makeKeyAndVisible()
@@ -72,13 +65,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         */
+        /*
         if Globals.landscape {
             Globals.landscape = false
             let value = UIInterfaceOrientation.Portrait.rawValue
             UIDevice.currentDevice().setValue(value, forKey: "orientation")
         }
+        */
  
-        return UIInterfaceOrientationMask.Portrait
+        //return UIInterfaceOrientationMask.Portrait
+        return UIInterfaceOrientationMask.All
     }
 
 
