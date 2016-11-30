@@ -158,7 +158,7 @@ class FlashCardController: UIViewController {
         self.dismissViewControllerAnimated(true) {
             let vc = VocabularyViewController()
             vc.item = _self.item
-            vc.mainController = _self.mainController
+            //vc.mainController = _self.mainController
             _self.nav.pushViewController(vc, animated: true)
         }
     }

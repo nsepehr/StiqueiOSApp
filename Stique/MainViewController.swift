@@ -15,6 +15,8 @@ enum ActionSheetButtons: Int {
     case Share = 3
 }
 
+let vocabularySeque = "toVocabularyDetail"
+
 class MainViewController: UITableViewController, UIActionSheetDelegate, MFMailComposeViewControllerDelegate {
     
     let dataController = DataController()
@@ -103,38 +105,36 @@ class MainViewController: UITableViewController, UIActionSheetDelegate, MFMailCo
         tableData = dataController.getMainViewData()
         tableView.reloadData()
     }
+   
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
 
-        let vc = VocabularyViewController()
+        var item: StiqueData!
         
         if searchController.active && searchController.searchBar.text != "" {
-            vc.item = filteredTableData[indexPath.row]
+            item = filteredTableData[indexPath.row]
         } else {
-            vc.item = tableData[indexPath.row]
+            item = tableData[indexPath.row]
         }
 
-        vc.mainController = self
         // Dismiss the search bar if it's active
         if searchController.active {
             searchController.dismissViewControllerAnimated(true, completion: {
-                self.navigationController?.pushViewController(vc, animated: true)
+                //self.navigationController?.pushViewController(vc, animated: true) // Nima: remove?
                 self.searchController.searchBar.text = ""
             })
         } else {
-            navigationController?.pushViewController(vc, animated: true)
+            //navigationController?.pushViewController(vc, animated: true) // Nima: remove?
         }
     }
+    
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var myItem = [String: AnyObject]()
         
         let kLCellIdentifier = "customCell"
-        var cell = tableView.dequeueReusableCellWithIdentifier(kLCellIdentifier) as! SimpleCellView!
-        if cell == nil {
-            cell = SimpleCellView(style:.Default, reuseIdentifier: kLCellIdentifier)
-        }
+        let cell = tableView.dequeueReusableCellWithIdentifier(kLCellIdentifier) as! MainTableViewCell!
         
         if searchController.active && searchController.searchBar.text != "" {
             myItem = filteredTableData[indexPath.row]
@@ -142,8 +142,8 @@ class MainViewController: UITableViewController, UIActionSheetDelegate, MFMailCo
             myItem = tableData[indexPath.row]
         }
 
-        cell?.label.text = myItem["word"] as? String
-        cell.rightButton.addTarget(self, action: #selector(rightCellButtonPressed), forControlEvents: UIControlEvents.TouchUpInside)
+        cell.vocabularyLabel.text = myItem["word"] as? String
+        cell.optionsButton.addTarget(self, action: #selector(rightCellButtonPressed), forControlEvents: UIControlEvents.TouchUpInside)
         
         return cell!
     }
@@ -281,6 +281,29 @@ class MainViewController: UITableViewController, UIActionSheetDelegate, MFMailCo
     
     override func shouldAutorotate() -> Bool {
         return true
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        var item: StiqueData!
+
+        let indexPath: NSIndexPath? = tableView.indexPathForSelectedRow
+        if segue.identifier == vocabularySeque {
+            if searchController.active && searchController.searchBar.text != "" {
+                item = filteredTableData[indexPath!.row]
+            } else {
+                item = tableData[indexPath!.row]
+            }
+            
+            // Dismiss the search bar if it's active
+            if searchController.active {
+                searchController.dismissViewControllerAnimated(true, completion: {
+                    self.searchController.searchBar.text = ""
+                })
+            }
+            
+            let vc = segue.destinationViewController as! VocabularyViewController
+            vc.item = item
+        }
     }
 }
 
