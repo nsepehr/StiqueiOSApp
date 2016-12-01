@@ -11,12 +11,13 @@ import AVKit
 import AVFoundation
 import MessageUI
 
+let segueToAVPlayer = "toAVController"
+
 class VocabularyViewController: UIViewController, MFMailComposeViewControllerDelegate {
     
-    var item = [String: AnyObject]()
+    var item = StiqueData()
     var player: AVPlayer?
     var videoPlayer = AVPlayer()
-    var playerController = PlayerViewController()
     
     // The UI Outlet Objects
     @IBOutlet weak var backgroundImageView: UIImageView!
@@ -34,6 +35,9 @@ class VocabularyViewController: UIViewController, MFMailComposeViewControllerDel
     
     
     // The UI Action Objects
+    @IBAction func backPressed(sender: AnyObject) {
+        self.navigationController?.popViewControllerAnimated(true)
+    }
     @IBAction func speakerAction(sender: AnyObject) {
     }
     @IBAction func masterStudyPressed(sender: AnyObject) {
@@ -78,58 +82,19 @@ class VocabularyViewController: UIViewController, MFMailComposeViewControllerDel
             videoImageView.image = UIImage(named: "cell_gear")
         }
         playButton.setImage(UIImage(named: "cell_play"), forState: .Normal)
-        
-
-        /*
-        let video = UIView()
-        let url = NSURL(string: item["Video URL"] as! String)
-        video.backgroundColor = UIColor.grayColor()
-        view.addSubview(video)
-        
-        video.widthPercent = 100
-        video.height = 150
-        video.sizeToFit()
-        video.frame.origin = CGPointMake(0, 370)
-        //video.height = view.bounds.height - rating.frame.origin.y - rating.frame.height - 115
-        
-        videoPlayer = AVPlayer(URL: url!)
-        playerController = PlayerViewController()
-        playerController.videoGravity = AVLayerVideoGravityResizeAspectFill
-        
-//        playerController.showsPlaybackControls = true
-        videoPlayer.seekToTime(CMTime(seconds: 2.5, preferredTimescale: 1))
-        
-        playerController.player = videoPlayer
-        videoPlayer.addObserver(self, forKeyPath:"rate", options:.Initial, context:nil)
-        self.addChildViewController(playerController)
-        video.addSubview(playerController.view)
-        //        playerController.view.frame = video.frame
-        playerController.view.widthPercent = 100
-        playerController.view.heightPercent = 100
- 
-        */
- 
     }
     
-    /*
-    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
-        if (keyPath == "rate") {
-            if videoPlayer.rate == 1.0 { // started playing
-                let userDefaults = NSUserDefaults.standardUserDefaults()
-                var watched = [item["word"] as! String]
-                if let watched2 = userDefaults.objectForKey("watched_words") as? [String] {
-                    watched += Array(Set(watched2)) // unique it
-                }
-                userDefaults.setObject(watched, forKey: "watched_words")
-                userDefaults.synchronize()
-            }
-        }
-    }
-    */
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        // Set the correct orientation
+        let value = UIInterfaceOrientation.Portrait.rawValue
+        UIDevice.currentDevice().setValue(value, forKey: "orientation")
     }
     
     func setNavigationBar() {
@@ -188,6 +153,13 @@ class VocabularyViewController: UIViewController, MFMailComposeViewControllerDel
             print(error.localizedDescription)
         } catch {
             print("AVAudioPlayer init failed")
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == segueToAVPlayer {
+            let vc = segue.destinationViewController as! StiqueVideoPlayer
+            vc.item = self.item
         }
     }
 }

@@ -24,14 +24,21 @@ class MainViewController: UITableViewController, UIActionSheetDelegate, MFMailCo
     var searchController = UISearchController()
     var filteredTableData = [[String: AnyObject]]()
     var playlists = [[String: AnyObject]]()
-    var actionSheetIndexPath = NSIndexPath()
+    var actionSheetIndexPath: NSIndexPath!
+    
+    
+    // UI Action Objects
+    @IBAction func optionsActions(sender: AnyObject) {
+        // Below method will get the position of the button and based on that the index row
+        let buttonPosition: CGPoint = sender.convertPoint(CGPointZero, toView: self.tableView)
+        actionSheetIndexPath = tableView.indexPathForRowAtPoint(buttonPosition)
+        print("Selected row: \(actionSheetIndexPath.row) ")
+        self.rightCellButtonPressed()
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Set the correct orientation
-        let value = UIInterfaceOrientation.Portrait.rawValue
-        UIDevice.currentDevice().setValue(value, forKey: "orientation")
         
         // Navigation bar settings
         navigationItem.title = "Stique"
@@ -48,16 +55,16 @@ class MainViewController: UITableViewController, UIActionSheetDelegate, MFMailCo
         rightButton.image = UIImage(named: "search")
         rightButton.tintColor = UIColor.whiteColor()
         
+        let backButton = UIBarButtonItem()
+        backButton.setBackgroundImage(UIImage(named: "Navigation Back Button"), forState: .Normal, barMetrics: .Default)
+        backButton.title = " "
+        
+        navigationItem.backBarButtonItem = backButton
         navigationItem.leftBarButtonItem = leftButton
         navigationItem.rightBarButtonItem = rightButton
         
-        view.backgroundColor = UIColor.whiteColor()
         tableView.separatorColor = UIColor(netHex: 0xdedede)
         
-        //navigationController?.navigationBar.barTintColor = UIColor(netHex:0x00443d)
-        //let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
-        //navigationController?.navigationBar.titleTextAttributes = titleDict as? [String: AnyObject]
-        //navigationController.view.height = UIScreen.mainScreen().bounds.height + 70 // Nima: Why is this necessary?
         
         // Adding the search bar
         searchController = UISearchController(searchResultsController: nil)
@@ -66,8 +73,6 @@ class MainViewController: UITableViewController, UIActionSheetDelegate, MFMailCo
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar
         
-        // This is so that the view doesn't go under tab bar
-        tableView.contentInset = UIEdgeInsetsMake(0, 0, 70, 0); // Nima: We shouldn't harcode the 70 here
         
         self.loadTableData()
         tableView.reloadData()
@@ -75,8 +80,12 @@ class MainViewController: UITableViewController, UIActionSheetDelegate, MFMailCo
     }
     
     override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         self.loadTableData()
         tableView.reloadData()
+        // Set the correct orientation
+        let value = UIInterfaceOrientation.Portrait.rawValue
+        UIDevice.currentDevice().setValue(value, forKey: "orientation")
     }
     
     override func didReceiveMemoryWarning() {
@@ -97,36 +106,10 @@ class MainViewController: UITableViewController, UIActionSheetDelegate, MFMailCo
         return tableData.count
     }
     
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 50
-    }
     
     func loadTableData() {
         tableData = dataController.getMainViewData()
         tableView.reloadData()
-    }
-   
-    
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-
-        var item: StiqueData!
-        
-        if searchController.active && searchController.searchBar.text != "" {
-            item = filteredTableData[indexPath.row]
-        } else {
-            item = tableData[indexPath.row]
-        }
-
-        // Dismiss the search bar if it's active
-        if searchController.active {
-            searchController.dismissViewControllerAnimated(true, completion: {
-                //self.navigationController?.pushViewController(vc, animated: true) // Nima: remove?
-                self.searchController.searchBar.text = ""
-            })
-        } else {
-            //navigationController?.pushViewController(vc, animated: true) // Nima: remove?
-        }
     }
     
 
@@ -143,13 +126,11 @@ class MainViewController: UITableViewController, UIActionSheetDelegate, MFMailCo
         }
 
         cell.vocabularyLabel.text = myItem["word"] as? String
-        cell.optionsButton.addTarget(self, action: #selector(rightCellButtonPressed), forControlEvents: UIControlEvents.TouchUpInside)
         
         return cell!
     }
     
-    func rightCellButtonPressed(button: UIButton) {
-        actionSheetIndexPath = tableView.indexPathForCell(button.superview?.superview as! UITableViewCell)!
+    func rightCellButtonPressed() {
         let actionSheet = UIActionSheet(title: "Choose Option", delegate: self, cancelButtonTitle: "Cancel", destructiveButtonTitle: nil, otherButtonTitles: "Add to Master Study", "Add to Your Playlist", "Share")
         
         actionSheet.showInView(self.view)
@@ -177,10 +158,6 @@ class MainViewController: UITableViewController, UIActionSheetDelegate, MFMailCo
         view.userInteractionEnabled = false
         slideMenuController()?.delegate = self
         */
-    }
-    
-    func leftDidClose() {
-        view.userInteractionEnabled = true
     }
     
     func rightButtonPressed() {
@@ -283,12 +260,13 @@ class MainViewController: UITableViewController, UIActionSheetDelegate, MFMailCo
         return true
     }
     
+    // MARK: Segue
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         var item: StiqueData!
 
         let indexPath: NSIndexPath? = tableView.indexPathForSelectedRow
         if segue.identifier == vocabularySeque {
-            if searchController.active && searchController.searchBar.text != "" {
+            if isUserSearching() {
                 item = filteredTableData[indexPath!.row]
             } else {
                 item = tableData[indexPath!.row]

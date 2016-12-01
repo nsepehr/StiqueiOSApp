@@ -23,6 +23,7 @@ class NavigationController: UINavigationController {
         backButton.title = " "
         
         //UIBarButtonItem.setBackButtonBackgroundImage(backButton)
+        
  
         // Set the title attributes
         let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
