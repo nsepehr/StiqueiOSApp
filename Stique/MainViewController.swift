@@ -20,12 +20,14 @@ let vocabularySeque = "toVocabularyDetail"
 class MainViewController: UITableViewController, UIActionSheetDelegate, MFMailComposeViewControllerDelegate {
     
     let dataController = DataController()
-    var tableData = [[String: AnyObject]]()
+    var tableData = [StiqueData]()
     var searchController = UISearchController()
-    var filteredTableData = [[String: AnyObject]]()
-    var playlists = [[String: AnyObject]]()
+    var filteredTableData = [StiqueData]()
+    var playlists = [StiqueData]()
     var actionSheetIndexPath: NSIndexPath!
+
     
+    // UI Outlet Objects
     
     // UI Action Objects
     @IBAction func optionsActions(sender: AnyObject) {
@@ -73,10 +75,14 @@ class MainViewController: UITableViewController, UIActionSheetDelegate, MFMailCo
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar
         
-        
         self.loadTableData()
         tableView.reloadData()
         
+    }
+    
+    func loadTableData() {
+        tableData = dataController.getMainViewData()
+        tableView.reloadData()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -99,27 +105,20 @@ class MainViewController: UITableViewController, UIActionSheetDelegate, MFMailCo
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if searchController.active && searchController.searchBar.text != "" {
+        if searchController.active {
             return filteredTableData.count
         }
         
         return tableData.count
     }
     
-    
-    func loadTableData() {
-        tableData = dataController.getMainViewData()
-        tableView.reloadData()
-    }
-    
-
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var myItem = [String: AnyObject]()
         
         let kLCellIdentifier = "customCell"
         let cell = tableView.dequeueReusableCellWithIdentifier(kLCellIdentifier) as! MainTableViewCell!
         
-        if searchController.active && searchController.searchBar.text != "" {
+        if searchController.active {
             myItem = filteredTableData[indexPath.row]
         } else {
             myItem = tableData[indexPath.row]
@@ -130,6 +129,24 @@ class MainViewController: UITableViewController, UIActionSheetDelegate, MFMailCo
         return cell!
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        var item: StiqueData!
+
+        if searchController.active {
+            print("Search is active...")
+            item = filteredTableData[indexPath.row]
+            self.searchController.searchBar.text = ""
+            searchController.dismissViewControllerAnimated(true, completion: {() -> Void in
+                self.performSegueWithIdentifier(vocabularySeque, sender: item)
+            })
+        } else {
+            item = tableData[indexPath.row]
+            performSegueWithIdentifier(vocabularySeque, sender: item)
+        }
+    }
+    
+    
     func rightCellButtonPressed() {
         let actionSheet = UIActionSheet(title: "Choose Option", delegate: self, cancelButtonTitle: "Cancel", destructiveButtonTitle: nil, otherButtonTitles: "Add to Master Study", "Add to Your Playlist", "Share")
         
@@ -138,7 +155,7 @@ class MainViewController: UITableViewController, UIActionSheetDelegate, MFMailCo
     
     func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
         var vocabulary: StiqueData!
-        if (self.isUserSearching()) {
+        if (self.searchController.active) {
             vocabulary = self.filteredTableData[actionSheetIndexPath.row]
         } else {
             vocabulary = self.tableData[actionSheetIndexPath.row]
@@ -205,18 +222,15 @@ class MainViewController: UITableViewController, UIActionSheetDelegate, MFMailCo
     }
     
     func filterContentForSearchText(searchText: String, scope: String = "All") {
-        filteredTableData = self.tableData.filter { row in
-            return row["word"] != nil && (row["word"] as! String).lowercaseString.containsString(searchText.lowercaseString)
+        if searchText == "" {
+            filteredTableData = self.tableData
+        } else {
+            filteredTableData = self.tableData.filter { row in
+                return row["word"] != nil && (row["word"] as! String).lowercaseString.containsString(searchText.lowercaseString)
+            }
         }
         
         tableView.reloadData()
-    }
-    
-    func isUserSearching() -> Bool {
-        if (searchController.active && searchController.searchBar.text != "") {
-            return true
-        }
-        return false
     }
     
     // MARK: MAIL methods & Delegate
@@ -251,6 +265,7 @@ class MainViewController: UITableViewController, UIActionSheetDelegate, MFMailCo
         
     }
     
+
     // The orientation of the view
     override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
         return UIInterfaceOrientationMask.Portrait
@@ -262,26 +277,11 @@ class MainViewController: UITableViewController, UIActionSheetDelegate, MFMailCo
     
     // MARK: Segue
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        var item: StiqueData!
 
-        let indexPath: NSIndexPath? = tableView.indexPathForSelectedRow
-        if segue.identifier == vocabularySeque {
-            if isUserSearching() {
-                item = filteredTableData[indexPath!.row]
-            } else {
-                item = tableData[indexPath!.row]
-            }
-            
-            // Dismiss the search bar if it's active
-            if searchController.active {
-                searchController.dismissViewControllerAnimated(true, completion: {
-                    self.searchController.searchBar.text = ""
-                })
-            }
-            
-            let vc = segue.destinationViewController as! VocabularyViewController
-            vc.item = item
-        }
+        //let indexPath: NSIndexPath? = tableView.indexPathForSelectedRow
+        let item = sender as! StiqueData
+        let vc = segue.destinationViewController as! VocabularyViewController
+        vc.item = item
     }
 }
 

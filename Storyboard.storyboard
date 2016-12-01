@@ -81,7 +81,6 @@
                                     <outlet property="optionsButton" destination="eZm-9S-uBr" id="YaJ-Nx-SfK"/>
                                     <outlet property="playImageView" destination="ie0-zK-rFM" id="3ZB-fD-ZM5"/>
                                     <outlet property="vocabularyLabel" destination="h42-MA-gdt" id="xuO-KH-ltC"/>
-                                    <segue destination="ODG-TP-yX8" kind="show" identifier="toVocabularyDetail" id="5bt-xj-bbl"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -91,15 +90,18 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Stique" id="Mnc-YL-dc4"/>
+                    <connections>
+                        <segue destination="ODG-TP-yX8" kind="show" identifier="toVocabularyDetail" id="FYV-at-0m9"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eG8-A7-IXT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2280" y="-135"/>
         </scene>
-        <!--Title-->
+        <!--Vocabulary detail-->
         <scene sceneID="jqv-xf-3Ze">
             <objects>
-                <viewController id="ODG-TP-yX8" customClass="VocabularyViewController" customModule="Stique" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Vocabulary detail" id="ODG-TP-yX8" customClass="VocabularyViewController" customModule="Stique" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9cb-1Y-tVW"/>
                         <viewControllerLayoutGuide type="bottom" id="2S9-KJ-370"/>
