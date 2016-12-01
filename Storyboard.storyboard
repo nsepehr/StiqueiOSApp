@@ -273,7 +273,6 @@
                                         </constraints>
                                         <state key="normal" title=" " image="cell_play.png"/>
                                         <connections>
-                                            <action selector="playAction:" destination="ODG-TP-yX8" eventType="touchUpInside" id="XPc-Zo-o1D"/>
                                             <segue destination="9IG-9t-yfd" kind="presentation" identifier="toAVController" id="4Hf-VR-vkv"/>
                                         </connections>
                                     </button>

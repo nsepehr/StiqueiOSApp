@@ -16,8 +16,8 @@ let segueToAVPlayer = "toAVController"
 class VocabularyViewController: UIViewController, MFMailComposeViewControllerDelegate {
     
     var item = StiqueData()
+    let dataController = DataController()
     var player: AVPlayer?
-    var videoPlayer = AVPlayer()
     
     // The UI Outlet Objects
     @IBOutlet weak var backgroundImageView: UIImageView!
@@ -39,22 +39,18 @@ class VocabularyViewController: UIViewController, MFMailComposeViewControllerDel
         self.navigationController?.popViewControllerAnimated(true)
     }
     @IBAction func speakerAction(sender: AnyObject) {
+        playPronounciation()
     }
     @IBAction func masterStudyPressed(sender: AnyObject) {
+        addToMaster(item)
     }
     @IBAction func sharePressed(sender: AnyObject) {
+        sendEmailButtonTapped()
     }
     @IBAction func playlistPressed(sender: AnyObject) {
+        addToPlaylist(item)
     }
-    @IBAction func playAction(sender: AnyObject) {
-    }
-    
-    
-    /*
-    deinit {    
-        videoPlayer.removeObserver(self, forKeyPath: "rate")
-    }
-    */
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -106,6 +102,44 @@ class VocabularyViewController: UIViewController, MFMailComposeViewControllerDel
     
     func backButtonPressed(sender: UIButton) {
         navigationController?.popViewControllerAnimated(true)
+    }
+    
+    func addToMaster(vocabulary: StiqueData) {
+        self.dataController.addToMasterPlaylistData(vocabulary)
+        let alert = UIAlertController(title: "Master Study", message: "Added to Master Study.", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    func addToPlaylist(vocabulary: StiqueData) {
+        let _self = self
+        let playlists = dataController.getPlaylistData()
+        if playlists.count == 0 {
+            let alert = UIAlertController(title: "Alert", message: "Please create a user playlist first, under the playlist tab.", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        } else {
+            let alert = UIAlertController(title: "Which playlist", message: "Which playlist to add to?", preferredStyle: .ActionSheet)
+            for playlist in playlists {
+                let playlistName = (playlist["name"] as? String)!
+                alert.addAction(UIAlertAction(title: playlistName, style: .Default, handler: {(alert: UIAlertAction) in
+                    print("Adding playlist with name: \(playlistName) ")
+                    _self.dataController.addToUserPlaylist(vocabulary, playlist: playlistName)
+                }))
+            }
+            alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+            
+            // Nima: Below was for before
+            //let actionSheet = UIActionSheet(title: "Which Playlist To Add to?", delegate: self, cancelButtonTitle: "Cancel", destructiveButtonTitle: nil)
+            /*
+             for myItem in playlists {
+             let item = (myItem["name"] as? String)!
+             actionSheet.addButtonWithTitle(item)
+             }
+             actionSheet.showInView(self.view)
+             */
+        }
     }
     
     func sendEmailButtonTapped() {

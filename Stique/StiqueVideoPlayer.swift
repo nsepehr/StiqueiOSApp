@@ -57,6 +57,11 @@ class StiqueVideoPlayer: AVPlayerViewController {
 
 
 
+/*
+ deinit {
+ videoPlayer.removeObserver(self, forKeyPath: "rate")
+ }
+ */
 
 
 /*
