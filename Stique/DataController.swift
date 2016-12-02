@@ -196,9 +196,14 @@ class DataController {
         }
     }
     
-    func removeMasterPlaylistData(data: [[String: AnyObject]], index: Int) -> [[String: AnyObject]] {
+    func removeMasterPlaylistData(data: [StiqueData]?, index: Int) -> [StiqueData] {
         let userDefaults = NSUserDefaults.standardUserDefaults()
-        var tableData = data
+        var tableData = [StiqueData]()
+        if data == nil {
+            tableData = getMasterPlaylistData()
+        } else {
+            tableData = data!
+        }
         do {
             tableData.removeAtIndex(index)
             let jsonData2 = try NSJSONSerialization.dataWithJSONObject(tableData, options: NSJSONWritingOptions.PrettyPrinted)
@@ -211,7 +216,7 @@ class DataController {
         return tableData
     }
     
-    func getMasterPlaylistData() -> [[String: AnyObject]] {
+    func getMasterPlaylistData() -> [StiqueData] {
         var tableData = [[String: AnyObject]]()
         let userDefaults = NSUserDefaults.standardUserDefaults()
         if let playlist = userDefaults.stringForKey(Playlists.MasterPlaylist.rawValue) {

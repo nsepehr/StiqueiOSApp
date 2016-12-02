@@ -57,11 +57,13 @@ class MainViewController: UITableViewController, UIActionSheetDelegate, MFMailCo
         rightButton.image = UIImage(named: "search")
         rightButton.tintColor = UIColor.whiteColor()
         
+        /* Nima: This doesn't seem to do anything
         let backButton = UIBarButtonItem()
         backButton.setBackgroundImage(UIImage(named: "Navigation Back Button"), forState: .Normal, barMetrics: .Default)
         backButton.title = " "
-        
         navigationItem.backBarButtonItem = backButton
+        */
+        
         navigationItem.leftBarButtonItem = leftButton
         navigationItem.rightBarButtonItem = rightButton
         
@@ -136,8 +138,9 @@ class MainViewController: UITableViewController, UIActionSheetDelegate, MFMailCo
         if searchController.active {
             print("Search is active...")
             item = filteredTableData[indexPath.row]
-            self.searchController.searchBar.text = ""
             searchController.dismissViewControllerAnimated(true, completion: {() -> Void in
+                self.searchController.searchBar.text = ""
+                self.searchController.active = false
                 self.performSegueWithIdentifier(vocabularySeque, sender: item)
             })
         } else {

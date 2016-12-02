@@ -8,6 +8,7 @@
 
 import UIKit
 
+/* Nima: this is not needed now
 class TabBarController: UITabBarController, UITabBarControllerDelegate {
     
     // View controllers to be shown on the tab bar
@@ -92,3 +93,4 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
     */
 
 }
+ */

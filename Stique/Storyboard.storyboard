@@ -533,7 +533,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="ODG-TP-yX8" kind="show" identifier="toVocabularyDetails" id="p4J-xe-Rbv"/>
+                                    <segue destination="9IG-9t-yfd" kind="presentation" identifier="showVideo" id="qim-Ig-rTT"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -760,6 +760,6 @@
         <image name="share.png" width="22" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="p4J-xe-Rbv"/>
+        <segue reference="4Hf-VR-vkv"/>
     </inferredMetricsTieBreakers>
 </document>
