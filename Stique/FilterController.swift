@@ -27,11 +27,17 @@ class FilterController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = "Filter Page"
+        // Setting the tableview background image
+        let tempImgView = UIImageView(image: UIImage(named: "Background"))
+        tempImgView.alpha = 0.5
+        tempImgView.frame = self.tableView.frame
+        self.tableView.backgroundView = tempImgView
+        
         ascendingCheck.hidden = true
         descendingCheck.hidden = true
         watchedCheck.hidden = true
     }
+    
     
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         // Below we will handle having a checkmark based on users previous selection of sorting and filters
@@ -79,4 +85,14 @@ class FilterController: UITableViewController {
         }
         userDefaults.synchronize()
     }
+    
+    
+    override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        guard let header = view as? UITableViewHeaderFooterView else { return }
+        header.textLabel?.textColor = UIColor.whiteColor()
+        //header.textLabel?.font = UIFont.boldSystemFontOfSize(18.0)
+        //header.textLabel?.frame = header.frame
+        //header.textLabel?.textAlignment = .Center
+    }
+    
 }
