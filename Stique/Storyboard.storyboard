@@ -19,6 +19,7 @@
                     <connections>
                         <segue destination="wcG-cD-ou8" kind="relationship" relationship="viewControllers" id="mTp-XY-EQc"/>
                         <segue destination="2Iw-Su-WQT" kind="relationship" relationship="viewControllers" id="5TP-nh-2g4"/>
+                        <segue destination="6G8-Im-Eys" kind="relationship" relationship="viewControllers" id="brb-bZ-dN5"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u19-XK-DJx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -716,6 +717,196 @@
             </objects>
             <point key="canvasLocation" x="2280" y="592"/>
         </scene>
+        <!--Filter View Controller-->
+        <scene sceneID="ziL-Gy-s0f">
+            <objects>
+                <tableViewController title="Filter View Controller" id="reM-ye-IUz" customClass="FilterController" customModule="Stique" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="bmK-TJ-CnR">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="separatorColor" red="0.0" green="0.2666666667" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <sections>
+                            <tableViewSection headerTitle="Standard Exams" id="x5N-In-cHV">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="filterTableCell" rowHeight="70" id="WuV-NL-F6Q">
+                                        <rect key="frame" x="0.0" y="113.5" width="600" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WuV-NL-F6Q" id="FEM-7E-vh4">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="69.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PJ9-Ic-aRZ" userLabel="GRE">
+                                                    <rect key="frame" x="149" y="20" width="87" height="29"/>
+                                                    <state key="normal" image="GRE">
+                                                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KPy-dg-1yK" userLabel="GMAT">
+                                                    <rect key="frame" x="256" y="20" width="87" height="29"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="87" id="4Mg-9M-ruc"/>
+                                                        <constraint firstAttribute="height" constant="29" id="5kH-f9-bmv"/>
+                                                    </constraints>
+                                                    <state key="normal" image="GMAT">
+                                                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="esZ-ks-WAj" userLabel="LSAT">
+                                                    <rect key="frame" x="363" y="20" width="87" height="29"/>
+                                                    <state key="normal" image="LSAT">
+                                                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="esZ-ks-WAj" firstAttribute="height" secondItem="KPy-dg-1yK" secondAttribute="height" id="4oS-kA-AEW"/>
+                                                <constraint firstItem="esZ-ks-WAj" firstAttribute="width" secondItem="KPy-dg-1yK" secondAttribute="width" id="Bzu-vK-Exz"/>
+                                                <constraint firstItem="PJ9-Ic-aRZ" firstAttribute="height" secondItem="KPy-dg-1yK" secondAttribute="height" id="Ja8-yy-Qxf"/>
+                                                <constraint firstItem="esZ-ks-WAj" firstAttribute="top" secondItem="KPy-dg-1yK" secondAttribute="top" id="LxG-6t-d1e"/>
+                                                <constraint firstItem="PJ9-Ic-aRZ" firstAttribute="width" secondItem="KPy-dg-1yK" secondAttribute="width" id="SPZ-Gl-deR"/>
+                                                <constraint firstItem="KPy-dg-1yK" firstAttribute="leading" secondItem="PJ9-Ic-aRZ" secondAttribute="trailing" constant="20" id="cDH-I3-2NA"/>
+                                                <constraint firstItem="PJ9-Ic-aRZ" firstAttribute="top" secondItem="KPy-dg-1yK" secondAttribute="top" id="d0b-2Q-IFc"/>
+                                                <constraint firstItem="KPy-dg-1yK" firstAttribute="centerY" secondItem="FEM-7E-vh4" secondAttribute="centerY" id="pdQ-oN-9dw"/>
+                                                <constraint firstItem="esZ-ks-WAj" firstAttribute="leading" secondItem="KPy-dg-1yK" secondAttribute="trailing" constant="20" id="qhC-eb-hOf"/>
+                                                <constraint firstItem="KPy-dg-1yK" firstAttribute="centerX" secondItem="FEM-7E-vh4" secondAttribute="centerX" id="zJO-3j-gwO"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Alphabetical Sorting" id="zHT-iA-tQZ">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="filterTableCell" id="RKA-76-oUL">
+                                        <rect key="frame" x="0.0" y="233.5" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RKA-76-oUL" id="YXc-08-gyS">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xNr-vd-how">
+                                                    <rect key="frame" x="555" y="12" width="27" height="22"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="22" id="IjO-NY-ERX"/>
+                                                        <constraint firstAttribute="width" constant="27" id="YFB-cx-J3G"/>
+                                                    </constraints>
+                                                    <state key="normal" image="Filter Checkmark"/>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ascending" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w3V-hQ-hgQ">
+                                                    <rect key="frame" x="18" y="11" width="81" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="81" id="Lef-XI-Eal"/>
+                                                        <constraint firstAttribute="height" constant="21" id="lbk-Kh-3xS"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="w3V-hQ-hgQ" firstAttribute="leading" secondItem="YXc-08-gyS" secondAttribute="leadingMargin" constant="10" id="Eke-Qd-mmc"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="w3V-hQ-hgQ" secondAttribute="bottom" constant="3.5" id="hUj-GT-s30"/>
+                                                <constraint firstItem="xNr-vd-how" firstAttribute="top" secondItem="YXc-08-gyS" secondAttribute="topMargin" constant="4" id="jGu-gn-23r"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="xNr-vd-how" secondAttribute="trailing" constant="10" id="lnC-sc-gdt"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="xNr-vd-how" secondAttribute="bottom" constant="1.5" id="mGn-sY-1RJ"/>
+                                                <constraint firstItem="w3V-hQ-hgQ" firstAttribute="top" secondItem="YXc-08-gyS" secondAttribute="topMargin" constant="3" id="sDZ-Um-pbJ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="filterTableCell" id="tlw-1y-7sh">
+                                        <rect key="frame" x="0.0" y="277.5" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tlw-1y-7sh" id="DNV-JJ-ii2">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HdX-g0-mjs">
+                                                    <rect key="frame" x="555" y="9.5" width="27" height="22"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="27" id="mo6-qT-MuR"/>
+                                                        <constraint firstAttribute="height" constant="22" id="sCi-qk-r8V"/>
+                                                    </constraints>
+                                                    <state key="normal" image="Filter Checkmark"/>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descending" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zwf-lg-1Sp">
+                                                    <rect key="frame" x="17" y="11" width="92" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="1KJ-GL-5bk"/>
+                                                        <constraint firstAttribute="width" constant="92" id="hQW-JY-W4u"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="HdX-g0-mjs" firstAttribute="top" secondItem="DNV-JJ-ii2" secondAttribute="topMargin" constant="1.5" id="4hQ-DC-KWq"/>
+                                                <constraint firstItem="zwf-lg-1Sp" firstAttribute="top" secondItem="DNV-JJ-ii2" secondAttribute="topMargin" constant="3" id="5iQ-ng-HxY"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="zwf-lg-1Sp" secondAttribute="bottom" constant="4" id="cRk-eM-Ohc"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="HdX-g0-mjs" secondAttribute="bottom" constant="4" id="fAX-Kk-bKh"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="HdX-g0-mjs" secondAttribute="trailing" constant="10" id="gV5-xl-8GL"/>
+                                                <constraint firstItem="zwf-lg-1Sp" firstAttribute="leading" secondItem="DNV-JJ-ii2" secondAttribute="leadingMargin" constant="9" id="y3h-i7-q5F"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Filter By" id="aaG-uK-Wjq">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="filterTableCell" id="qtW-34-xva">
+                                        <rect key="frame" x="0.0" y="371.5" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qtW-34-xva" id="z5m-Y6-Li8">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Watched" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AP0-Sb-Q45">
+                                                    <rect key="frame" x="18" y="11" width="69" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="69" id="N0o-TR-XIZ"/>
+                                                        <constraint firstAttribute="height" constant="21" id="yN5-D3-PpU"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OdF-wD-FL1">
+                                                    <rect key="frame" x="555" y="9.5" width="27" height="22"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="27" id="1Iu-n2-rQH"/>
+                                                        <constraint firstAttribute="height" constant="22" id="4jt-cz-oZh"/>
+                                                    </constraints>
+                                                    <state key="normal" image="Filter Checkmark"/>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="OdF-wD-FL1" secondAttribute="trailing" constant="10" id="INB-QY-i6a"/>
+                                                <constraint firstItem="OdF-wD-FL1" firstAttribute="top" secondItem="z5m-Y6-Li8" secondAttribute="topMargin" constant="1.5" id="TEb-QT-4Tk"/>
+                                                <constraint firstItem="AP0-Sb-Q45" firstAttribute="top" secondItem="z5m-Y6-Li8" secondAttribute="topMargin" constant="3" id="WjU-e4-a0o"/>
+                                                <constraint firstItem="AP0-Sb-Q45" firstAttribute="leading" secondItem="z5m-Y6-Li8" secondAttribute="leadingMargin" constant="10" id="cDN-4s-ycd"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="OdF-wD-FL1" secondAttribute="bottom" constant="4" id="duk-su-bDG"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="reM-ye-IUz" id="dFt-Gm-hwe"/>
+                            <outlet property="delegate" destination="reM-ye-IUz" id="OYO-Tc-HT4"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Filter" id="M8W-K7-Y20"/>
+                    <connections>
+                        <outlet property="ascendingCheck" destination="xNr-vd-how" id="cZr-Nn-xpe"/>
+                        <outlet property="descendingCheck" destination="HdX-g0-mjs" id="kOB-qP-rEa"/>
+                        <outlet property="watchedCheck" destination="OdF-wD-FL1" id="3RY-lc-msG"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zyx-Rk-7Hj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2280" y="1344"/>
+        </scene>
         <!--Navigation to Master Study-->
         <scene sceneID="aqV-r5-vam">
             <objects>
@@ -739,9 +930,37 @@
             </objects>
             <point key="canvasLocation" x="1468" y="592"/>
         </scene>
+        <!--Filter Navigation-->
+        <scene sceneID="byd-bg-VGh">
+            <objects>
+                <navigationController title="Filter Navigation" automaticallyAdjustsScrollViewInsets="NO" id="6G8-Im-Eys" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="Filter" id="cMU-fs-JMv"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gUX-Qm-C7b">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.0" green="0.2666666667" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="reM-ye-IUz" kind="relationship" relationship="rootViewController" id="61n-5E-y1m"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a20-YI-3LV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1468" y="1344"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="Filter" width="23" height="30"/>
+        <image name="Filter Checkmark" width="27" height="22"/>
+        <image name="GMAT" width="87" height="29"/>
+        <image name="GRE" width="68" height="27"/>
         <image name="Home" width="24" height="29"/>
+        <image name="LSAT" width="80" height="25"/>
         <image name="Master Study" width="44" height="35"/>
         <image name="Master Study 2" width="38" height="39"/>
         <image name="Master Study Back Button" width="51" height="15"/>
