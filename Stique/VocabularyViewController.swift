@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  Stique
 //
-//  Created by Soheil Yasrebi on 3/15/16.
+//  Created by Nima Sepehr 2016
 //  Copyright © 2016 StiqueApp. All rights reserved.
 //
 
@@ -58,7 +58,8 @@ class VocabularyViewController: UIViewController, MFMailComposeViewControllerDel
         title = item["word"] as? String
         // Do any additional setup after loading the view, typically from a nib.
 
-        backgroundImageView.image = UIImage(named: "vocabulary_detail_background")
+        //backgroundImageView.image = UIImage(named: "vocabulary_detail_background")
+        backgroundImageView.alpha = 0.25
         vocabularyLabel.text = item["word"] as? String
         suffixLabel.text = item["Suffix"] as? String
         pronounciationLabel.text = item["Pronounciation Text"] as? String

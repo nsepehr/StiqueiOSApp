@@ -119,7 +119,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m75-Wa-OSL" userLabel="Top View">
                                 <rect key="frame" x="0.0" y="64" width="600" height="149"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Vocabulary_detail_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="APU-Q1-Pxw">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Master Study Background" translatesAutoresizingMaskIntoConstraints="NO" id="APU-Q1-Pxw">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="149"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vocabulary" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pTB-Vt-Hfh">
@@ -1181,6 +1181,7 @@
         <image name="Master Study 2" width="38" height="39"/>
         <image name="Master Study Back Button" width="51" height="15"/>
         <image name="Master Study Back Shape" width="38" height="39"/>
+        <image name="Master Study Background" width="736" height="414"/>
         <image name="Master Study Check" width="41" height="42"/>
         <image name="Master Study Minus" width="41" height="42"/>
         <image name="Master Study Show Button" width="108" height="53"/>

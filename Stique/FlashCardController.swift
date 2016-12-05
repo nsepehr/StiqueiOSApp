@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  Stique
 //
-//  Created by Soheil Yasrebi on 3/15/16.
+//  Created by Nima Sepehr 2016.
 //  Copyright © 2016 StiqueApp. All rights reserved.
 //
 
