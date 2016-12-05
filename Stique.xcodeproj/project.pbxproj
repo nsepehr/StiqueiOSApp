@@ -82,7 +82,7 @@
 		5B5C27831CE90A5B00CACF37 /* words.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B5C27821CE90A5B00CACF37 /* words.json */; };
 		5B674D9B1CDF235200980E60 /* MasterPlaylistDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B674D9A1CDF235200980E60 /* MasterPlaylistDetailController.swift */; };
 		5B689C8F1CF28BEE0066D726 /* PlaylistController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B689C8E1CF28BEE0066D726 /* PlaylistController.swift */; };
-		5B689C911CF292E60066D726 /* UserPlaylistSingleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B689C901CF292E60066D726 /* UserPlaylistSingleController.swift */; };
+		5B689C911CF292E60066D726 /* PlaylistDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B689C901CF292E60066D726 /* PlaylistDetailController.swift */; };
 		5B8A25EC1CBC081000AFEAF8 /* LeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8A25EB1CBC081000AFEAF8 /* LeftViewController.swift */; };
 		5B946C7D1D8CFAD0004D8A95 /* Speaker.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B946C7A1D8CFAD0004D8A95 /* Speaker.png */; };
 		5B946C7E1D8CFAD0004D8A95 /* Speaker@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B946C7B1D8CFAD0004D8A95 /* Speaker@2x.png */; };
@@ -104,7 +104,6 @@
 		5BBDCD391CDA8A1700CCFF08 /* gmat.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BBDCD361CDA8A1700CCFF08 /* gmat.png */; };
 		5BBDCD3A1CDA8A1700CCFF08 /* gre.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BBDCD371CDA8A1700CCFF08 /* gre.png */; };
 		5BBDCD3B1CDA8A1700CCFF08 /* lsat.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BBDCD381CDA8A1700CCFF08 /* lsat.png */; };
-		5BBDCD3D1CDA8A9500CCFF08 /* ThreeImageCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBDCD3C1CDA8A9500CCFF08 /* ThreeImageCellView.swift */; };
 		5BF7391E1CB9908C008C41BD /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BF7391D1CB9908C008C41BD /* AVKit.framework */; };
 		5BF739201CB990C5008C41BD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BF7391F1CB990C5008C41BD /* AVFoundation.framework */; };
 		5BF739241CB9A12E008C41BD /* ShoppingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF739231CB9A12E008C41BD /* ShoppingController.swift */; };
@@ -114,6 +113,7 @@
 		B012F4251DE2C680008FCA05 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B012F4241DE2C680008FCA05 /* DataController.swift */; };
 		B012F4271DE6E618008FCA05 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B012F4261DE6E618008FCA05 /* TabBarController.swift */; };
 		B012F42B1DE97595008FCA05 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B012F42A1DE97595008FCA05 /* NavigationController.swift */; };
+		B01853951DF5333A00F10C0A /* PlaylistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01853941DF5333A00F10C0A /* PlaylistTableViewCell.swift */; };
 		B01C5CE01DEFF7BF00307857 /* StiqueVideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01C5CDF1DEFF7BF00307857 /* StiqueVideoPlayer.swift */; };
 		B06EB5D81DEA31200023C271 /* credits_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B06EB5D51DEA31200023C271 /* credits_background@2x.png */; };
 		B06EB5D91DEA31200023C271 /* credits_background@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B06EB5D61DEA31200023C271 /* credits_background@3x.png */; };
@@ -236,7 +236,7 @@
 		5B5C27821CE90A5B00CACF37 /* words.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = words.json; sourceTree = "<group>"; };
 		5B674D9A1CDF235200980E60 /* MasterPlaylistDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterPlaylistDetailController.swift; sourceTree = "<group>"; };
 		5B689C8E1CF28BEE0066D726 /* PlaylistController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistController.swift; sourceTree = "<group>"; };
-		5B689C901CF292E60066D726 /* UserPlaylistSingleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPlaylistSingleController.swift; sourceTree = "<group>"; };
+		5B689C901CF292E60066D726 /* PlaylistDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistDetailController.swift; sourceTree = "<group>"; };
 		5B8A25EB1CBC081000AFEAF8 /* LeftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftViewController.swift; sourceTree = "<group>"; };
 		5B946C7A1D8CFAD0004D8A95 /* Speaker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Speaker.png; sourceTree = "<group>"; };
 		5B946C7B1D8CFAD0004D8A95 /* Speaker@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Speaker@2x.png"; sourceTree = "<group>"; };
@@ -264,7 +264,6 @@
 		5BBDCD361CDA8A1700CCFF08 /* gmat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gmat.png; sourceTree = "<group>"; };
 		5BBDCD371CDA8A1700CCFF08 /* gre.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gre.png; sourceTree = "<group>"; };
 		5BBDCD381CDA8A1700CCFF08 /* lsat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lsat.png; sourceTree = "<group>"; };
-		5BBDCD3C1CDA8A9500CCFF08 /* ThreeImageCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreeImageCellView.swift; sourceTree = "<group>"; };
 		5BF7391B1CB98E55008C41BD /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		5BF7391D1CB9908C008C41BD /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		5BF7391F1CB990C5008C41BD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -275,6 +274,7 @@
 		B012F4241DE2C680008FCA05 /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		B012F4261DE6E618008FCA05 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		B012F42A1DE97595008FCA05 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		B01853941DF5333A00F10C0A /* PlaylistTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistTableViewCell.swift; sourceTree = "<group>"; };
 		B01C5CDF1DEFF7BF00307857 /* StiqueVideoPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StiqueVideoPlayer.swift; sourceTree = "<group>"; };
 		B06EB5D51DEA31200023C271 /* credits_background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "credits_background@2x.png"; sourceTree = "<group>"; };
 		B06EB5D61DEA31200023C271 /* credits_background@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "credits_background@3x.png"; sourceTree = "<group>"; };
@@ -481,15 +481,15 @@
 				B012F42A1DE97595008FCA05 /* NavigationController.swift */,
 				B012F4261DE6E618008FCA05 /* TabBarController.swift */,
 				5BA967E31CA080B700EDC126 /* MainViewController.swift */,
-				B0AC39A71DF2CD1300D591FC /* MasterStudyTableViewController.swift */,
 				B099148F1DED4D4E0028BAC9 /* MainTableViewCell.swift */,
 				5BA967B71C98CBF600EDC126 /* VocabularyViewController.swift */,
 				B01C5CDF1DEFF7BF00307857 /* StiqueVideoPlayer.swift */,
-				5BBDCD3C1CDA8A9500CCFF08 /* ThreeImageCellView.swift */,
-				5B689C8E1CF28BEE0066D726 /* PlaylistController.swift */,
-				5B689C901CF292E60066D726 /* UserPlaylistSingleController.swift */,
+				B0AC39A71DF2CD1300D591FC /* MasterStudyTableViewController.swift */,
 				5B674D9A1CDF235200980E60 /* MasterPlaylistDetailController.swift */,
 				5B5A94231CE912C7004F1581 /* FlashCardController.swift */,
+				5B689C8E1CF28BEE0066D726 /* PlaylistController.swift */,
+				5B689C901CF292E60066D726 /* PlaylistDetailController.swift */,
+				B01853941DF5333A00F10C0A /* PlaylistTableViewCell.swift */,
 				5BF739291CB9A5F1008C41BD /* FilterController.swift */,
 				5BF739231CB9A12E008C41BD /* ShoppingController.swift */,
 				5BF7392B1CB9A628008C41BD /* BaseController.swift */,
@@ -892,7 +892,7 @@
 			files = (
 				5BA967E41CA080B700EDC126 /* MainViewController.swift in Sources */,
 				5B674D9B1CDF235200980E60 /* MasterPlaylistDetailController.swift in Sources */,
-				5B689C911CF292E60066D726 /* UserPlaylistSingleController.swift in Sources */,
+				5B689C911CF292E60066D726 /* PlaylistDetailController.swift in Sources */,
 				5B689C8F1CF28BEE0066D726 /* PlaylistController.swift in Sources */,
 				B012F4251DE2C680008FCA05 /* DataController.swift in Sources */,
 				5BA967B81C98CBF600EDC126 /* VocabularyViewController.swift in Sources */,
@@ -901,11 +901,11 @@
 				5BF7392C1CB9A628008C41BD /* BaseController.swift in Sources */,
 				B01C5CE01DEFF7BF00307857 /* StiqueVideoPlayer.swift in Sources */,
 				5BF7392A1CB9A5F1008C41BD /* FilterController.swift in Sources */,
+				B01853951DF5333A00F10C0A /* PlaylistTableViewCell.swift in Sources */,
 				5B8A25EC1CBC081000AFEAF8 /* LeftViewController.swift in Sources */,
 				5BA9680E1CA085BC00EDC126 /* CheckoutCellView.swift in Sources */,
 				5BA967B61C98CBEF00EDC126 /* AppDelegate.swift in Sources */,
 				B012F4271DE6E618008FCA05 /* TabBarController.swift in Sources */,
-				5BBDCD3D1CDA8A9500CCFF08 /* ThreeImageCellView.swift in Sources */,
 				5BF739241CB9A12E008C41BD /* ShoppingController.swift in Sources */,
 				B012F42B1DE97595008FCA05 /* NavigationController.swift in Sources */,
 				5BA9682B1CA085BC00EDC126 /* SingleItemController.swift in Sources */,

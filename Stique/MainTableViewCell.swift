@@ -18,8 +18,8 @@ class MainTableViewCell: UITableViewCell {
         super.awakeFromNib()
         
         // Initialization code
-        playImageView.image = UIImage(named: "cell_play")
-        optionsButton.setImage(UIImage(named: "cell_options_oval"), forState: .Normal)
+        //playImageView.image = UIImage(named: "cell_play")
+        //optionsButton.setImage(UIImage(named: "cell_options_oval"), forState: .Normal)
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
