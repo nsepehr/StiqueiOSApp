@@ -65,7 +65,7 @@ class VocabularyViewController: UIViewController, MFMailComposeViewControllerDel
         speakerButton.setImage(UIImage(named: "Speaker"), forState: .Normal)
         masterStudyButton.setImage(UIImage(named: "master_study"), forState: .Normal)
         shareButton.setImage(UIImage(named: "share"), forState: .Normal)
-        playlistButton.setImage(UIImage(named: "playlist"), forState: .Normal)
+        playlistButton.setImage(UIImage(named: "Playlist"), forState: .Normal)
         definitionTextArea.text = item["Definition"] as? String
         exampleTextArea.text = item["Example"] as? String
         // Getting the image of the video thumbnail from URL

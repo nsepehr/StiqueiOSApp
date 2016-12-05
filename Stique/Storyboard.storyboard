@@ -20,6 +20,7 @@
                         <segue destination="wcG-cD-ou8" kind="relationship" relationship="viewControllers" id="mTp-XY-EQc"/>
                         <segue destination="2Iw-Su-WQT" kind="relationship" relationship="viewControllers" id="5TP-nh-2g4"/>
                         <segue destination="6G8-Im-Eys" kind="relationship" relationship="viewControllers" id="brb-bZ-dN5"/>
+                        <segue destination="s0n-uK-FdY" kind="relationship" relationship="viewControllers" id="6qs-wP-yXz"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u19-XK-DJx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -617,7 +618,7 @@
         <!--Master Study-->
         <scene sceneID="TFH-Ac-hTw">
             <objects>
-                <tableViewController title="Master Study" id="1EF-7O-QDK" sceneMemberID="viewController">
+                <tableViewController title="Master Study" id="1EF-7O-QDK" customClass="MasterStudyTableViewController" customModule="Stique" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="q2E-AD-UjM">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -931,10 +932,54 @@
             </objects>
             <point key="canvasLocation" x="1468" y="592"/>
         </scene>
-        <!--Filter Navigation-->
+        <!--Playlist-->
+        <scene sceneID="Fby-RU-xYC">
+            <objects>
+                <tableViewController title="Playlist" id="yuK-41-zYe" customClass="PlaylistController" customModule="Stique" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="0kQ-76-loR">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="playlistCell" textLabel="gCA-O8-ud6" style="IBUITableViewCellStyleDefault" id="TRB-da-ae5">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TRB-da-ae5" id="wRE-pB-ifX">
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gCA-O8-ud6">
+                                            <rect key="frame" x="15" y="0.0" width="550" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="yuK-41-zYe" id="OX5-Cw-tNJ"/>
+                            <outlet property="delegate" destination="yuK-41-zYe" id="E5Y-8q-eer"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Playlist" id="8ZV-V4-pZm">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="MDj-xJ-UMv">
+                            <connections>
+                                <action selector="addPressed:" destination="yuK-41-zYe" id="bmI-K8-Bzd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kjc-mo-0us" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2280" y="2128"/>
+        </scene>
+        <!--Navigation to Filter-->
         <scene sceneID="byd-bg-VGh">
             <objects>
-                <navigationController title="Filter Navigation" automaticallyAdjustsScrollViewInsets="NO" id="6G8-Im-Eys" sceneMemberID="viewController">
+                <navigationController title="Navigation to Filter" automaticallyAdjustsScrollViewInsets="NO" id="6G8-Im-Eys" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="Filter" id="cMU-fs-JMv"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gUX-Qm-C7b">
@@ -954,6 +999,26 @@
             </objects>
             <point key="canvasLocation" x="1468" y="1344"/>
         </scene>
+        <!--Navigation to Playlist-->
+        <scene sceneID="vUr-db-u0W">
+            <objects>
+                <navigationController title="Navigation to Playlist" automaticallyAdjustsScrollViewInsets="NO" id="s0n-uK-FdY" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="Playlist" id="ppK-hm-UPH"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gqJ-TX-Rwd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.0" green="0.2666666667" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="yuK-41-zYe" kind="relationship" relationship="rootViewController" id="8g1-Ob-hrG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Gp-8F-uEJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1468" y="2128"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Filter" width="23" height="30"/>
@@ -971,6 +1036,7 @@
         <image name="Master Study Show Button" width="108" height="53"/>
         <image name="Master Study Text" width="137" height="26"/>
         <image name="Navigation Back Button" width="20" height="28"/>
+        <image name="Playlist" width="31" height="30"/>
         <image name="Speaker.png" width="68" height="64"/>
         <image name="Vocabulary_detail_background.png" width="414" height="300"/>
         <image name="cell_options_oval.png" width="5" height="25"/>
