@@ -108,7 +108,6 @@
 		5BF739201CB990C5008C41BD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BF7391F1CB990C5008C41BD /* AVFoundation.framework */; };
 		5BF739241CB9A12E008C41BD /* ShoppingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF739231CB9A12E008C41BD /* ShoppingController.swift */; };
 		5BF7392A1CB9A5F1008C41BD /* FilterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF739291CB9A5F1008C41BD /* FilterController.swift */; };
-		5BF7392C1CB9A628008C41BD /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF7392B1CB9A628008C41BD /* BaseController.swift */; };
 		B003C10A1DF17C560051C6A3 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B003C1091DF17C560051C6A3 /* Storyboard.storyboard */; };
 		B012F4251DE2C680008FCA05 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B012F4241DE2C680008FCA05 /* DataController.swift */; };
 		B012F4271DE6E618008FCA05 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B012F4261DE6E618008FCA05 /* TabBarController.swift */; };
@@ -269,7 +268,6 @@
 		5BF7391F1CB990C5008C41BD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		5BF739231CB9A12E008C41BD /* ShoppingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingController.swift; sourceTree = "<group>"; };
 		5BF739291CB9A5F1008C41BD /* FilterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterController.swift; sourceTree = "<group>"; };
-		5BF7392B1CB9A628008C41BD /* BaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
 		B003C1091DF17C560051C6A3 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		B012F4241DE2C680008FCA05 /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		B012F4261DE6E618008FCA05 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -492,7 +490,6 @@
 				B01853941DF5333A00F10C0A /* PlaylistTableViewCell.swift */,
 				5BF739291CB9A5F1008C41BD /* FilterController.swift */,
 				5BF739231CB9A12E008C41BD /* ShoppingController.swift */,
-				5BF7392B1CB9A628008C41BD /* BaseController.swift */,
 				5B8A25EB1CBC081000AFEAF8 /* LeftViewController.swift */,
 			);
 			path = Stique;
@@ -898,7 +895,6 @@
 				5BA967B81C98CBF600EDC126 /* VocabularyViewController.swift in Sources */,
 				5B5A94241CE912C7004F1581 /* FlashCardController.swift in Sources */,
 				B0AC39A81DF2CD1300D591FC /* MasterStudyTableViewController.swift in Sources */,
-				5BF7392C1CB9A628008C41BD /* BaseController.swift in Sources */,
 				B01C5CE01DEFF7BF00307857 /* StiqueVideoPlayer.swift in Sources */,
 				5BF7392A1CB9A5F1008C41BD /* FilterController.swift in Sources */,
 				B01853951DF5333A00F10C0A /* PlaylistTableViewCell.swift in Sources */,

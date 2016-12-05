@@ -11,6 +11,7 @@ import FoldingCell
 import PINRemoteImage
 import SlideMenuControllerSwift
 
+/*
 class LeftViewController: BaseController {
     
     override func viewDidLoad() {
@@ -79,3 +80,4 @@ class LeftViewController: BaseController {
     }
 
 }
+ */
