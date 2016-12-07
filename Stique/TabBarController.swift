@@ -8,6 +8,22 @@
 
 import UIKit
 
+class TabBarController: UITabBarController, UITabBarControllerDelegate {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Do any additional setup after loading the view.
+        self.delegate = self
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        // Select the main view controller as the first view to be shown
+        self.selectedIndex = 2
+    }
+}
+
 /* Nima: this is not needed now
 class TabBarController: UITabBarController, UITabBarControllerDelegate {
     
