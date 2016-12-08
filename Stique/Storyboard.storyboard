@@ -96,7 +96,18 @@
                             <outlet property="delegate" destination="uW9-ds-0yT" id="bXy-G8-IdQ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Stique" id="Mnc-YL-dc4"/>
+                    <navigationItem key="navigationItem" title="Stique" id="Mnc-YL-dc4">
+                        <barButtonItem key="leftBarButtonItem" image="Menu" id="yQ1-Z4-Iaj" userLabel="Menu">
+                            <connections>
+                                <action selector="menuPressed:" destination="uW9-ds-0yT" id="n7x-Vj-Be7"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="Search" id="ID9-bs-npf" userLabel="Search">
+                            <connections>
+                                <action selector="searchPressed:" destination="uW9-ds-0yT" id="sYq-0w-Olx"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="EGJ-Sp-v9X" kind="show" identifier="toVocabularyDetail" id="tbX-L9-GfB"/>
                     </connections>
@@ -668,7 +679,7 @@
                 </avPlayerViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Om5-8L-Mn2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4076" y="-135"/>
+            <point key="canvasLocation" x="4084" y="-89"/>
         </scene>
         <!--Navigation to Main View -->
         <scene sceneID="8Bn-EW-ljL">
@@ -1289,9 +1300,11 @@
         <image name="Master Study Minus" width="41" height="42"/>
         <image name="Master Study Show Button" width="108" height="53"/>
         <image name="Master Study Text" width="137" height="26"/>
+        <image name="Menu" width="19" height="17"/>
         <image name="Navigation Back Button" width="20" height="28"/>
         <image name="Playlist" width="31" height="30"/>
         <image name="Playlist Cell" width="38" height="39"/>
+        <image name="Search" width="28" height="28"/>
         <image name="Shopping Cart" width="42" height="30"/>
         <image name="Speaker.png" width="68" height="64"/>
         <image name="Star" width="20" height="19"/>
@@ -1302,7 +1315,7 @@
         <image name="share.png" width="22" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="vrh-Xu-7nA"/>
+        <segue reference="tbX-L9-GfB"/>
         <segue reference="4Hf-VR-vkv"/>
     </inferredMetricsTieBreakers>
 </document>

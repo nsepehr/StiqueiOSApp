@@ -38,37 +38,19 @@ class MainViewController: UITableViewController, UIActionSheetDelegate, MFMailCo
         self.rightCellButtonPressed()
     }
     
+    @IBAction func menuPressed(sender: AnyObject) {
+        leftButtonPressed()
+    }
+    
+    @IBAction func searchPressed(sender: AnyObject) {
+        rightButtonPressed()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Navigation bar settings
         navigationItem.title = "Stique"
-        
-        // The buttons that appear on the navigation bar
-        let rightButton = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(MainViewController.rightButtonPressed))
-        let leftButton = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(MainViewController.leftButtonPressed))
-        
-        leftButton.title = " "
-        leftButton.image = UIImage(named: "menu")
-        leftButton.tintColor = UIColor.whiteColor()
-        
-        rightButton.title = " "
-        rightButton.image = UIImage(named: "search")
-        rightButton.tintColor = UIColor.whiteColor()
-        
-        /* Nima: This doesn't seem to do anything
-        let backButton = UIBarButtonItem()
-        backButton.setBackgroundImage(UIImage(named: "Navigation Back Button"), forState: .Normal, barMetrics: .Default)
-        backButton.title = " "
-        navigationItem.backBarButtonItem = backButton
-        */
-        
-        navigationItem.leftBarButtonItem = leftButton
-        navigationItem.rightBarButtonItem = rightButton
-        
-        tableView.separatorColor = UIColor(netHex: 0xdedede)
-        
         
         // Adding the search bar
         searchController = UISearchController(searchResultsController: nil)
