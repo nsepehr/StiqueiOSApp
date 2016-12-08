@@ -91,7 +91,6 @@
 		5B946C851D8CFF57004D8A95 /* Vocabulary_detail_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B946C821D8CFF57004D8A95 /* Vocabulary_detail_background@2x.png */; };
 		5B946C861D8CFF57004D8A95 /* Vocabulary_detail_background@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B946C831D8CFF57004D8A95 /* Vocabulary_detail_background@3x.png */; };
 		5BA967B61C98CBEF00EDC126 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA967B51C98CBEE00EDC126 /* AppDelegate.swift */; };
-		5BA967B81C98CBF600EDC126 /* VocabularyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA967B71C98CBF600EDC126 /* VocabularyViewController.swift */; };
 		5BA967BD1C98CBF800EDC126 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BA967BC1C98CBF800EDC126 /* Assets.xcassets */; };
 		5BA967CB1C98CC0000EDC126 /* StiqueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA967CA1C98CC0000EDC126 /* StiqueTests.swift */; };
 		5BA967D61C98CC0100EDC126 /* StiqueUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA967D51C98CC0100EDC126 /* StiqueUITests.swift */; };
@@ -114,6 +113,7 @@
 		B012F42B1DE97595008FCA05 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B012F42A1DE97595008FCA05 /* NavigationController.swift */; };
 		B01853951DF5333A00F10C0A /* PlaylistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01853941DF5333A00F10C0A /* PlaylistTableViewCell.swift */; };
 		B01C5CE01DEFF7BF00307857 /* StiqueVideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01C5CDF1DEFF7BF00307857 /* StiqueVideoPlayer.swift */; };
+		B03CC2261DF93C7A00DAE22D /* VocabularyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03CC2251DF93C7A00DAE22D /* VocabularyTableViewController.swift */; };
 		B06EB5D81DEA31200023C271 /* credits_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B06EB5D51DEA31200023C271 /* credits_background@2x.png */; };
 		B06EB5D91DEA31200023C271 /* credits_background@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B06EB5D61DEA31200023C271 /* credits_background@3x.png */; };
 		B06EB5DA1DEA31200023C271 /* credits_background.png in Resources */ = {isa = PBXBuildFile; fileRef = B06EB5D71DEA31200023C271 /* credits_background.png */; };
@@ -245,7 +245,6 @@
 		5B946C831D8CFF57004D8A95 /* Vocabulary_detail_background@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Vocabulary_detail_background@3x.png"; sourceTree = "<group>"; };
 		5BA967B21C98CBE900EDC126 /* Stique.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stique.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BA967B51C98CBEE00EDC126 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5BA967B71C98CBF600EDC126 /* VocabularyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyViewController.swift; sourceTree = "<group>"; };
 		5BA967BC1C98CBF800EDC126 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5BA967C11C98CBF800EDC126 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5BA967C61C98CBFF00EDC126 /* StiqueTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StiqueTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -274,6 +273,7 @@
 		B012F42A1DE97595008FCA05 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		B01853941DF5333A00F10C0A /* PlaylistTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistTableViewCell.swift; sourceTree = "<group>"; };
 		B01C5CDF1DEFF7BF00307857 /* StiqueVideoPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StiqueVideoPlayer.swift; sourceTree = "<group>"; };
+		B03CC2251DF93C7A00DAE22D /* VocabularyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VocabularyTableViewController.swift; sourceTree = "<group>"; };
 		B06EB5D51DEA31200023C271 /* credits_background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "credits_background@2x.png"; sourceTree = "<group>"; };
 		B06EB5D61DEA31200023C271 /* credits_background@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "credits_background@3x.png"; sourceTree = "<group>"; };
 		B06EB5D71DEA31200023C271 /* credits_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = credits_background.png; sourceTree = "<group>"; };
@@ -480,7 +480,7 @@
 				B012F4261DE6E618008FCA05 /* TabBarController.swift */,
 				5BA967E31CA080B700EDC126 /* MainViewController.swift */,
 				B099148F1DED4D4E0028BAC9 /* MainTableViewCell.swift */,
-				5BA967B71C98CBF600EDC126 /* VocabularyViewController.swift */,
+				B03CC2251DF93C7A00DAE22D /* VocabularyTableViewController.swift */,
 				B01C5CDF1DEFF7BF00307857 /* StiqueVideoPlayer.swift */,
 				B0AC39A71DF2CD1300D591FC /* MasterStudyTableViewController.swift */,
 				5B674D9A1CDF235200980E60 /* MasterPlaylistDetailController.swift */,
@@ -889,10 +889,10 @@
 			files = (
 				5BA967E41CA080B700EDC126 /* MainViewController.swift in Sources */,
 				5B674D9B1CDF235200980E60 /* MasterPlaylistDetailController.swift in Sources */,
+				B03CC2261DF93C7A00DAE22D /* VocabularyTableViewController.swift in Sources */,
 				5B689C911CF292E60066D726 /* PlaylistDetailController.swift in Sources */,
 				5B689C8F1CF28BEE0066D726 /* PlaylistController.swift in Sources */,
 				B012F4251DE2C680008FCA05 /* DataController.swift in Sources */,
-				5BA967B81C98CBF600EDC126 /* VocabularyViewController.swift in Sources */,
 				5B5A94241CE912C7004F1581 /* FlashCardController.swift in Sources */,
 				B0AC39A81DF2CD1300D591FC /* MasterStudyTableViewController.swift in Sources */,
 				B01C5CE01DEFF7BF00307857 /* StiqueVideoPlayer.swift in Sources */,

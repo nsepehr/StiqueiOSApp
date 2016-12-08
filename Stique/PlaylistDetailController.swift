@@ -76,7 +76,7 @@ class PlaylistDetailController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let indexPath: NSIndexPath? = tableView.indexPathForSelectedRow
         let myItem = tableData[indexPath!.row]
-        let vc = segue.destinationViewController as! VocabularyViewController
+        let vc = segue.destinationViewController as! VocabularyTableViewController
         vc.item = myItem
     }
 }

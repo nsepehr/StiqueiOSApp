@@ -1,8 +1,8 @@
 //
-//  ViewController.swift
+//  VocabularyTableViewController.swift
 //  Stique
 //
-//  Created by Nima Sepehr 2016
+//  Created by Nima Sepehr on 12/7/16.
 //  Copyright © 2016 StiqueApp. All rights reserved.
 //
 
@@ -13,8 +13,8 @@ import MessageUI
 
 let segueToAVPlayer = "toAVController"
 
-class VocabularyViewController: UIViewController, MFMailComposeViewControllerDelegate {
-    
+class VocabularyTableViewController: UITableViewController, MFMailComposeViewControllerDelegate {
+
     var item = StiqueData()
     let dataController = DataController()
     var player: AVPlayer?
@@ -50,22 +50,22 @@ class VocabularyViewController: UIViewController, MFMailComposeViewControllerDel
     @IBAction func playlistPressed(sender: AnyObject) {
         addToPlaylist(item)
     }
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         title = item["word"] as? String
         // Do any additional setup after loading the view, typically from a nib.
-
+        
         //backgroundImageView.image = UIImage(named: "vocabulary_detail_background")
-        backgroundImageView.alpha = 0.25
+        //backgroundImageView.alpha = 0.25
         vocabularyLabel.text = item["word"] as? String
         suffixLabel.text = item["Suffix"] as? String
         pronounciationLabel.text = item["Pronounciation Text"] as? String
         speakerButton.setImage(UIImage(named: "Speaker"), forState: .Normal)
-        masterStudyButton.setImage(UIImage(named: "master_study"), forState: .Normal)
-        shareButton.setImage(UIImage(named: "share"), forState: .Normal)
+        masterStudyButton.setImage(UIImage(named: "Master Study"), forState: .Normal)
+        shareButton.setImage(UIImage(named: "Share"), forState: .Normal)
         playlistButton.setImage(UIImage(named: "Playlist"), forState: .Normal)
         definitionTextArea.text = item["Definition"] as? String
         exampleTextArea.text = item["Example"] as? String
@@ -76,9 +76,9 @@ class VocabularyViewController: UIViewController, MFMailComposeViewControllerDel
         if imageData != nil {
             videoImageView.image = UIImage(data: imageData!)
         } else {
-            videoImageView.image = UIImage(named: "cell_gear")
+            videoImageView.image = UIImage(named: "Cell Gear")
         }
-        playButton.setImage(UIImage(named: "cell_play"), forState: .Normal)
+        playButton.setImage(UIImage(named: "Cell Play"), forState: .Normal)
     }
     
     
@@ -96,7 +96,7 @@ class VocabularyViewController: UIViewController, MFMailComposeViewControllerDel
     
     func setNavigationBar() {
         let backImage = UIImage(named: "back")
-        let leftButton = UIBarButtonItem(image: backImage, style: .Plain, target: self, action: #selector(VocabularyViewController.backButtonPressed))
+        let leftButton = UIBarButtonItem(image: backImage, style: .Plain, target: self, action: #selector(VocabularyTableViewController.backButtonPressed))
         leftButton.title = " "
         navigationItem.leftBarButtonItem = leftButton
     }
@@ -197,5 +197,5 @@ class VocabularyViewController: UIViewController, MFMailComposeViewControllerDel
             vc.item = self.item
         }
     }
-}
 
+}

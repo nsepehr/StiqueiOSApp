@@ -283,7 +283,7 @@ class MainViewController: UITableViewController, UIActionSheetDelegate, MFMailCo
 
         //let indexPath: NSIndexPath? = tableView.indexPathForSelectedRow
         let item = sender as! StiqueData
-        let vc = segue.destinationViewController as! VocabularyViewController
+        let vc = segue.destinationViewController as! VocabularyTableViewController
         vc.item = item
     }
 }
