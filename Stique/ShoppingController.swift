@@ -16,6 +16,6 @@ class ShoppingController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        backgroundImageView.alpha = 0.5
+        backgroundImageView.alpha = 0.75
     }
 }

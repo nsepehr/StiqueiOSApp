@@ -263,10 +263,13 @@ class MainViewController: UITableViewController, UIActionSheetDelegate, MFMailCo
     // MARK: Segue
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 
-        //let indexPath: NSIndexPath? = tableView.indexPathForSelectedRow
-        let item = sender as! StiqueData
-        let vc = segue.destinationViewController as! VocabularyTableViewController
-        vc.item = item
+        if segue.identifier == "toVocabularyDetail" {
+            let item = sender as! StiqueData
+            let vc = segue.destinationViewController as! VocabularyTableViewController
+            vc.item = item
+        } else if segue.identifier == "toMenu" {
+        }
+
     }
 }
 

@@ -114,6 +114,7 @@
 		B01853951DF5333A00F10C0A /* PlaylistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01853941DF5333A00F10C0A /* PlaylistTableViewCell.swift */; };
 		B01C5CE01DEFF7BF00307857 /* StiqueVideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01C5CDF1DEFF7BF00307857 /* StiqueVideoPlayer.swift */; };
 		B03CC2261DF93C7A00DAE22D /* VocabularyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03CC2251DF93C7A00DAE22D /* VocabularyTableViewController.swift */; };
+		B03CC2281DF94A8A00DAE22D /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03CC2271DF94A8A00DAE22D /* MenuViewController.swift */; };
 		B06EB5D81DEA31200023C271 /* credits_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B06EB5D51DEA31200023C271 /* credits_background@2x.png */; };
 		B06EB5D91DEA31200023C271 /* credits_background@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B06EB5D61DEA31200023C271 /* credits_background@3x.png */; };
 		B06EB5DA1DEA31200023C271 /* credits_background.png in Resources */ = {isa = PBXBuildFile; fileRef = B06EB5D71DEA31200023C271 /* credits_background.png */; };
@@ -274,6 +275,7 @@
 		B01853941DF5333A00F10C0A /* PlaylistTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistTableViewCell.swift; sourceTree = "<group>"; };
 		B01C5CDF1DEFF7BF00307857 /* StiqueVideoPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StiqueVideoPlayer.swift; sourceTree = "<group>"; };
 		B03CC2251DF93C7A00DAE22D /* VocabularyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VocabularyTableViewController.swift; sourceTree = "<group>"; };
+		B03CC2271DF94A8A00DAE22D /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		B06EB5D51DEA31200023C271 /* credits_background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "credits_background@2x.png"; sourceTree = "<group>"; };
 		B06EB5D61DEA31200023C271 /* credits_background@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "credits_background@3x.png"; sourceTree = "<group>"; };
 		B06EB5D71DEA31200023C271 /* credits_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = credits_background.png; sourceTree = "<group>"; };
@@ -478,6 +480,7 @@
 				B012F4241DE2C680008FCA05 /* DataController.swift */,
 				B012F42A1DE97595008FCA05 /* NavigationController.swift */,
 				B012F4261DE6E618008FCA05 /* TabBarController.swift */,
+				B03CC2271DF94A8A00DAE22D /* MenuViewController.swift */,
 				5BA967E31CA080B700EDC126 /* MainViewController.swift */,
 				B099148F1DED4D4E0028BAC9 /* MainTableViewCell.swift */,
 				B03CC2251DF93C7A00DAE22D /* VocabularyTableViewController.swift */,
@@ -897,6 +900,7 @@
 				B0AC39A81DF2CD1300D591FC /* MasterStudyTableViewController.swift in Sources */,
 				B01C5CE01DEFF7BF00307857 /* StiqueVideoPlayer.swift in Sources */,
 				5BF7392A1CB9A5F1008C41BD /* FilterController.swift in Sources */,
+				B03CC2281DF94A8A00DAE22D /* MenuViewController.swift in Sources */,
 				B01853951DF5333A00F10C0A /* PlaylistTableViewCell.swift in Sources */,
 				5B8A25EC1CBC081000AFEAF8 /* LeftViewController.swift in Sources */,
 				5BA9680E1CA085BC00EDC126 /* CheckoutCellView.swift in Sources */,

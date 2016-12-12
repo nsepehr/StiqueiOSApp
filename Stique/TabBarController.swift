@@ -15,12 +15,15 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         
         // Do any additional setup after loading the view.
         self.delegate = self
+        
+        // Select the main view controller as the first view to be shown
+        self.selectedIndex = 2
+        
+        self.tabBar.tintColor = UIColor.whiteColor()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        // Select the main view controller as the first view to be shown
-        self.selectedIndex = 2
     }
 }
 

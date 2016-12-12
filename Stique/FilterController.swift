@@ -29,7 +29,7 @@ class FilterController: UITableViewController {
         
         // Setting the tableview background image
         let tempImgView = UIImageView(image: UIImage(named: "Background"))
-        tempImgView.alpha = 0.5
+        tempImgView.alpha = 0.75
         tempImgView.frame = self.tableView.frame
         self.tableView.backgroundView = tempImgView
         
