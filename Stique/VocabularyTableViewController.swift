@@ -19,6 +19,10 @@ class VocabularyTableViewController: UITableViewController, MFMailComposeViewCon
     let dataController = DataController()
     var player: AVPlayer?
     
+    // Image for the ratings
+    let starImage = UIImage(named: "Star")
+    let starBlankImage = UIImage(named: "Star Blank")
+    
     // The UI Outlet Objects
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var vocabularyLabel: UILabel!
@@ -32,6 +36,8 @@ class VocabularyTableViewController: UITableViewController, MFMailComposeViewCon
     @IBOutlet weak var exampleTextArea: UITextView!
     @IBOutlet weak var videoImageView: UIImageView!
     @IBOutlet weak var playButton: UIButton!
+    // Stars Outlet Collection
+    @IBOutlet var starRatings: [UIButton]!
     
     
     // The UI Action Objects
@@ -50,6 +56,11 @@ class VocabularyTableViewController: UITableViewController, MFMailComposeViewCon
     @IBAction func playlistPressed(sender: AnyObject) {
         addToPlaylist(item)
     }
+    @IBAction func ratingAction(sender: AnyObject) {
+        let rating: Int = sender.tag
+        rateVideo(rating)
+    }
+    
     
     
     override func viewDidLoad() {
@@ -79,6 +90,7 @@ class VocabularyTableViewController: UITableViewController, MFMailComposeViewCon
             videoImageView.image = UIImage(named: "Cell Gear")
         }
         playButton.setImage(UIImage(named: "Cell Play"), forState: .Normal)
+        
     }
     
     
@@ -166,6 +178,18 @@ class VocabularyTableViewController: UITableViewController, MFMailComposeViewCon
     func showSendMailErrorAlert() {
         let sendMailErrorAlert = UIAlertView(title: "Could Not Send Email", message: "Your device could not send e-mail.  Please check e-mail configuration and try again.", delegate: self, cancelButtonTitle: "OK")
         sendMailErrorAlert.show()
+    }
+    
+    func rateVideo(rating: Int) {
+        // Loop through the needed stars to change image to full rated image
+        for i in 0...starRatings.count-1 {
+            let starButton = starRatings[i]
+            if (i <= rating) {
+                starButton.setImage(starImage, forState: .Normal)
+            } else {
+                starButton.setImage(starBlankImage, forState: .Normal)
+            }
+        }
     }
     
     // MARK: MFMailComposeViewControllerDelegate

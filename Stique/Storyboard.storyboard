@@ -237,7 +237,7 @@
                                                         <constraint firstAttribute="height" constant="45" id="T2c-XE-vrK"/>
                                                         <constraint firstAttribute="width" constant="60" id="zIl-Mc-bNB"/>
                                                     </constraints>
-                                                    <state key="normal" image="Speaker.png"/>
+                                                    <state key="normal" image="Speaker"/>
                                                     <connections>
                                                         <action selector="speakerAction:" destination="EGJ-Sp-v9X" eventType="touchUpInside" id="m5a-XO-FbT"/>
                                                     </connections>
@@ -248,7 +248,7 @@
                                                         <constraint firstAttribute="height" constant="20" id="0KP-Y8-aTM"/>
                                                         <constraint firstAttribute="width" constant="20" id="EB7-6e-jwQ"/>
                                                     </constraints>
-                                                    <state key="normal" image="share.png"/>
+                                                    <state key="normal" image="Share"/>
                                                     <connections>
                                                         <action selector="sharePressed:" destination="EGJ-Sp-v9X" eventType="touchUpInside" id="mok-Ky-Dof"/>
                                                     </connections>
@@ -259,7 +259,7 @@
                                                         <constraint firstAttribute="height" constant="20" id="TfU-B3-Qf9"/>
                                                         <constraint firstAttribute="width" constant="20" id="alo-iU-PUO"/>
                                                     </constraints>
-                                                    <state key="normal" image="playlist.png"/>
+                                                    <state key="normal" image="Playlist"/>
                                                     <connections>
                                                         <action selector="playlistPressed:" destination="EGJ-Sp-v9X" eventType="touchUpInside" id="w87-dN-5NX"/>
                                                     </connections>
@@ -270,7 +270,7 @@
                                                         <constraint firstAttribute="height" constant="20" id="4xe-dh-oz5"/>
                                                         <constraint firstAttribute="width" constant="20" id="hjd-b3-DcU"/>
                                                     </constraints>
-                                                    <state key="normal" image="master_study.png"/>
+                                                    <state key="normal" image="Master Study"/>
                                                     <connections>
                                                         <action selector="masterStudyPressed:" destination="EGJ-Sp-v9X" eventType="touchUpInside" id="Inq-vA-hnq"/>
                                                     </connections>
@@ -379,38 +379,65 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="25"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Star" translatesAutoresizingMaskIntoConstraints="NO" id="wFD-be-IYG">
-                                                    <rect key="frame" x="430" y="1" width="24" height="24"/>
-                                                </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Star" translatesAutoresizingMaskIntoConstraints="NO" id="8fg-Xp-Fyy">
-                                                    <rect key="frame" x="462" y="1" width="24" height="24"/>
-                                                </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Star" translatesAutoresizingMaskIntoConstraints="NO" id="N2U-UJ-atW">
-                                                    <rect key="frame" x="494" y="1" width="24" height="24"/>
-                                                </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Star" translatesAutoresizingMaskIntoConstraints="NO" id="Gns-LR-1DW">
-                                                    <rect key="frame" x="526" y="0.0" width="24" height="24"/>
-                                                </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star" translatesAutoresizingMaskIntoConstraints="NO" id="KTV-Nz-L8W">
-                                                    <rect key="frame" x="562" y="1" width="20" height="24"/>
-                                                </imageView>
+                                                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="08Y-TU-mpf" userLabel="Star5">
+                                                    <rect key="frame" x="552" y="-2" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="IQS-Dx-MRJ"/>
+                                                        <constraint firstAttribute="height" constant="30" id="nay-nl-dVc"/>
+                                                    </constraints>
+                                                    <state key="normal" image="Star Blank"/>
+                                                    <connections>
+                                                        <action selector="ratingAction:" destination="EGJ-Sp-v9X" eventType="touchUpInside" id="Scw-yd-AZE"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OIt-f2-QtC" userLabel="Star4">
+                                                    <rect key="frame" x="521" y="-2" width="30" height="30"/>
+                                                    <state key="normal" image="Star Blank"/>
+                                                    <connections>
+                                                        <action selector="ratingAction:" destination="EGJ-Sp-v9X" eventType="touchUpInside" id="PWR-l6-FY0"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F39-JE-y7O" userLabel="Star3">
+                                                    <rect key="frame" x="490" y="-2" width="30" height="30"/>
+                                                    <state key="normal" image="Star Blank"/>
+                                                    <connections>
+                                                        <action selector="ratingAction:" destination="EGJ-Sp-v9X" eventType="touchUpInside" id="lD4-k8-tfH"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mcf-42-fBv" userLabel="Star2">
+                                                    <rect key="frame" x="459" y="-2" width="30" height="30"/>
+                                                    <state key="normal" image="Star Blank"/>
+                                                    <connections>
+                                                        <action selector="ratingAction:" destination="EGJ-Sp-v9X" eventType="touchUpInside" id="N0Q-3C-VID"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ity-8S-r0Z" userLabel="Star1">
+                                                    <rect key="frame" x="428" y="-2" width="30" height="30"/>
+                                                    <state key="normal" image="Star Blank"/>
+                                                    <connections>
+                                                        <action selector="ratingAction:" destination="EGJ-Sp-v9X" eventType="touchUpInside" id="MHZ-dC-wuZ"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="wFD-be-IYG" firstAttribute="top" secondItem="8fg-Xp-Fyy" secondAttribute="top" id="4Xb-cx-0Fw"/>
-                                                <constraint firstItem="8fg-Xp-Fyy" firstAttribute="bottom" secondItem="N2U-UJ-atW" secondAttribute="bottom" id="Dji-iK-LKC"/>
-                                                <constraint firstItem="Gns-LR-1DW" firstAttribute="bottom" secondItem="KTV-Nz-L8W" secondAttribute="bottom" id="G3S-Qg-m5N"/>
-                                                <constraint firstItem="Gns-LR-1DW" firstAttribute="leading" secondItem="N2U-UJ-atW" secondAttribute="trailing" constant="5" id="GZg-XZ-SF3"/>
-                                                <constraint firstItem="Gns-LR-1DW" firstAttribute="top" secondItem="KTV-Nz-L8W" secondAttribute="top" id="Jvf-f0-MER"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="KTV-Nz-L8W" secondAttribute="trailing" constant="10" id="Llg-8n-UMC"/>
-                                                <constraint firstItem="8fg-Xp-Fyy" firstAttribute="leading" secondItem="wFD-be-IYG" secondAttribute="trailing" constant="5" id="Nk7-Tv-9JN"/>
-                                                <constraint firstItem="N2U-UJ-atW" firstAttribute="leading" secondItem="8fg-Xp-Fyy" secondAttribute="trailing" constant="5" id="T8J-Fc-cB7"/>
-                                                <constraint firstItem="wFD-be-IYG" firstAttribute="bottom" secondItem="8fg-Xp-Fyy" secondAttribute="bottom" id="hkS-sq-5Zp"/>
-                                                <constraint firstItem="KTV-Nz-L8W" firstAttribute="leading" secondItem="Gns-LR-1DW" secondAttribute="trailing" constant="5" id="if0-jd-avc"/>
-                                                <constraint firstItem="8fg-Xp-Fyy" firstAttribute="top" secondItem="N2U-UJ-atW" secondAttribute="top" id="pwc-gD-Y7z"/>
-                                                <constraint firstItem="N2U-UJ-atW" firstAttribute="bottom" secondItem="Gns-LR-1DW" secondAttribute="bottom" id="uJ4-4f-ynw"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="KTV-Nz-L8W" secondAttribute="bottom" constant="-8.5" id="uzX-LC-3m7"/>
-                                                <constraint firstItem="KTV-Nz-L8W" firstAttribute="top" secondItem="vgg-Xh-ixx" secondAttribute="topMargin" constant="-7" id="wcH-HP-JBt"/>
-                                                <constraint firstItem="N2U-UJ-atW" firstAttribute="top" secondItem="Gns-LR-1DW" secondAttribute="top" id="z62-Us-vUu"/>
+                                                <constraint firstItem="ity-8S-r0Z" firstAttribute="top" secondItem="Mcf-42-fBv" secondAttribute="top" id="1fb-qf-OYf"/>
+                                                <constraint firstItem="OIt-f2-QtC" firstAttribute="top" secondItem="08Y-TU-mpf" secondAttribute="top" id="4zO-AY-hix"/>
+                                                <constraint firstItem="Mcf-42-fBv" firstAttribute="leading" secondItem="ity-8S-r0Z" secondAttribute="trailing" constant="1" id="5GT-6K-QWS"/>
+                                                <constraint firstItem="F39-JE-y7O" firstAttribute="width" secondItem="OIt-f2-QtC" secondAttribute="width" id="6KI-Yv-Z7D"/>
+                                                <constraint firstItem="08Y-TU-mpf" firstAttribute="top" secondItem="vgg-Xh-ixx" secondAttribute="topMargin" constant="-10" id="6fK-kQ-Ckh"/>
+                                                <constraint firstItem="OIt-f2-QtC" firstAttribute="height" secondItem="08Y-TU-mpf" secondAttribute="height" id="7pq-Ot-S8c"/>
+                                                <constraint firstItem="OIt-f2-QtC" firstAttribute="width" secondItem="08Y-TU-mpf" secondAttribute="width" id="9NF-7P-7Wz"/>
+                                                <constraint firstItem="08Y-TU-mpf" firstAttribute="leading" secondItem="OIt-f2-QtC" secondAttribute="trailing" constant="1" id="AQ9-Sv-4J5"/>
+                                                <constraint firstItem="ity-8S-r0Z" firstAttribute="height" secondItem="Mcf-42-fBv" secondAttribute="height" id="HP6-Ps-rhb"/>
+                                                <constraint firstItem="F39-JE-y7O" firstAttribute="leading" secondItem="Mcf-42-fBv" secondAttribute="trailing" constant="1" id="OOs-cX-OWo"/>
+                                                <constraint firstItem="OIt-f2-QtC" firstAttribute="leading" secondItem="F39-JE-y7O" secondAttribute="trailing" constant="1" id="S0d-v9-GRS"/>
+                                                <constraint firstItem="F39-JE-y7O" firstAttribute="top" secondItem="OIt-f2-QtC" secondAttribute="top" id="V1N-zs-1k7"/>
+                                                <constraint firstItem="Mcf-42-fBv" firstAttribute="height" secondItem="F39-JE-y7O" secondAttribute="height" id="WqZ-zZ-AL5"/>
+                                                <constraint firstItem="ity-8S-r0Z" firstAttribute="width" secondItem="Mcf-42-fBv" secondAttribute="width" id="aOo-H0-t1d"/>
+                                                <constraint firstItem="F39-JE-y7O" firstAttribute="height" secondItem="OIt-f2-QtC" secondAttribute="height" id="b4z-mq-GoU"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="08Y-TU-mpf" secondAttribute="trailing" constant="10" id="j86-Hn-BFJ"/>
+                                                <constraint firstItem="Mcf-42-fBv" firstAttribute="width" secondItem="F39-JE-y7O" secondAttribute="width" id="mNI-pg-2QI"/>
+                                                <constraint firstItem="Mcf-42-fBv" firstAttribute="top" secondItem="F39-JE-y7O" secondAttribute="top" id="znp-0q-1ev"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -435,7 +462,7 @@
                                                         <constraint firstAttribute="width" constant="113" id="ivf-EG-6f8"/>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="kt2-to-cG1"/>
                                                     </constraints>
-                                                    <state key="normal" title=" " image="cell_play.png"/>
+                                                    <state key="normal" title=" " image="Cell Play"/>
                                                     <connections>
                                                         <segue destination="9IG-9t-yfd" kind="presentation" identifier="toAVController" id="4Hf-VR-vkv"/>
                                                     </connections>
@@ -480,6 +507,11 @@
                         <outlet property="suffixLabel" destination="ez7-vA-do5" id="sta-3Y-uWf"/>
                         <outlet property="videoImageView" destination="z8R-EO-f5t" id="K3Y-gy-MDe"/>
                         <outlet property="vocabularyLabel" destination="bKi-ME-vtG" id="Vds-BU-caU"/>
+                        <outletCollection property="starRatings" destination="ity-8S-r0Z" collectionClass="NSMutableArray" id="iBE-8M-UfA"/>
+                        <outletCollection property="starRatings" destination="Mcf-42-fBv" collectionClass="NSMutableArray" id="9p5-uH-pFr"/>
+                        <outletCollection property="starRatings" destination="F39-JE-y7O" collectionClass="NSMutableArray" id="STe-tN-ifm"/>
+                        <outletCollection property="starRatings" destination="OIt-f2-QtC" collectionClass="NSMutableArray" id="qZa-lW-nXS"/>
+                        <outletCollection property="starRatings" destination="08Y-TU-mpf" collectionClass="NSMutableArray" id="Wd3-vj-daO"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="54K-JS-cwh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1352,6 +1384,7 @@
     </scenes>
     <resources>
         <image name="Background" width="414" height="736"/>
+        <image name="Cell Play" width="58" height="42"/>
         <image name="Credits" width="184" height="220"/>
         <image name="Filter" width="23" height="30"/>
         <image name="Filter Checkmark" width="27" height="22"/>
@@ -1376,14 +1409,11 @@
         <image name="Playlist" width="31" height="30"/>
         <image name="Playlist Cell" width="38" height="39"/>
         <image name="Search" width="28" height="28"/>
+        <image name="Share" width="22" height="24"/>
         <image name="Shopping Cart" width="42" height="30"/>
-        <image name="Speaker.png" width="68" height="64"/>
-        <image name="Star" width="20" height="19"/>
+        <image name="Speaker" width="68" height="64"/>
+        <image name="Star Blank" width="20" height="19"/>
         <image name="Start" width="162" height="23"/>
-        <image name="cell_play.png" width="58" height="42"/>
-        <image name="master_study.png" width="44" height="35"/>
-        <image name="playlist.png" width="31" height="30"/>
-        <image name="share.png" width="22" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="tbX-L9-GfB"/>
