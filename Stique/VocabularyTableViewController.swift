@@ -17,6 +17,7 @@ class VocabularyTableViewController: UITableViewController, MFMailComposeViewCon
 
     var item = StiqueData()
     let dataController = DataController()
+    var ratings: StiqueRating?
     var player: AVPlayer?
     
     // Image for the ratings
@@ -59,6 +60,9 @@ class VocabularyTableViewController: UITableViewController, MFMailComposeViewCon
     @IBAction func ratingAction(sender: AnyObject) {
         let rating: Int = sender.tag
         rateVideo(rating)
+        let title = item["word"] as! String
+        ratings![title] = rating
+        dataController.updateRatings(ratings!)
     }
     
     
@@ -90,7 +94,6 @@ class VocabularyTableViewController: UITableViewController, MFMailComposeViewCon
             videoImageView.image = UIImage(named: "Cell Gear")
         }
         playButton.setImage(UIImage(named: "Cell Play"), forState: .Normal)
-        
     }
     
     
@@ -101,9 +104,18 @@ class VocabularyTableViewController: UITableViewController, MFMailComposeViewCon
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
         // Set the correct orientation
         let value = UIInterfaceOrientation.Portrait.rawValue
         UIDevice.currentDevice().setValue(value, forKey: "orientation")
+        
+        // Set the ratings
+        ratings = dataController.getRatings()
+        let title = item["word"] as! String
+        if (ratings != nil && ratings![title] != nil) {
+            let thisRating: Int = ratings![title]!
+            rateVideo(thisRating)
+        }
     }
     
     func setNavigationBar() {

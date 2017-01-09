@@ -15,11 +15,13 @@ enum Playlists: String {
 
 // Let's define an alias for the type of object we'll use everywhere
 typealias StiqueData = [String: AnyObject]
+typealias StiqueRating = [String: Int]
 
 
 class DataController {
     
     let userDefaults = NSUserDefaults.standardUserDefaults()
+    let ratingsKey = "Ratings"
 
     func getMainViewData() -> [[String: AnyObject]] {
         var tableData = [[String: AnyObject]]()
@@ -232,5 +234,32 @@ class DataController {
         }
         
         return tableData
+    }
+    
+    func getRatings() -> StiqueRating {
+        var ratings : StiqueRating = [:]
+        if let ratingData = userDefaults.stringForKey(ratingsKey) {
+            do {
+                let jsonData = try NSJSONSerialization.JSONObjectWithData(ratingData.dataUsingEncoding(NSUTF8StringEncoding)!, options: .AllowFragments) as? StiqueRating
+                if let jsonData = jsonData {
+                    ratings = jsonData
+                }
+            } catch _ {
+                // Error handling
+                print("Error... Failed to get ratings data")
+            }
+        }
+        
+        return ratings
+    }
+    
+    func updateRatings(ratings: StiqueRating) {
+        do {
+            let jsonData = try NSJSONSerialization.dataWithJSONObject(ratings, options: .PrettyPrinted)
+            userDefaults.setObject(NSString(data: jsonData, encoding: NSASCIIStringEncoding), forKey: ratingsKey)
+            userDefaults.synchronize()
+        } catch _ {
+            print("Failed to update ratings data")
+        }
     }
 }
