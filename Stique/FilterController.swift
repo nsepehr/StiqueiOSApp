@@ -9,15 +9,15 @@
 import UIKit
 
 enum TableSections: Int {
-    case StandardizeExams = 0
-    case Sortings = 1
-    case Filters = 2
+    case standardizeExams = 0
+    case sortings = 1
+    case filters = 2
 }
 
 
 class FilterController: UITableViewController {
     
-    let userDefaults = NSUserDefaults.standardUserDefaults()
+    let userDefaults = UserDefaults.standard
     
     // UI Outlet Object
     @IBOutlet weak var ascendingCheck: UIButton!
@@ -33,63 +33,63 @@ class FilterController: UITableViewController {
         tempImgView.frame = self.tableView.frame
         self.tableView.backgroundView = tempImgView
         
-        ascendingCheck.hidden = true
-        descendingCheck.hidden = true
-        watchedCheck.hidden = true
+        ascendingCheck.isHidden = true
+        descendingCheck.isHidden = true
+        watchedCheck.isHidden = true
     }
     
     
-    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         // Below we will handle having a checkmark based on users previous selection of sorting and filters
         // Filter is easy: if there's a filer watched set in userDefaults, we checkmark the cell
         // Sorting is grouped:
         //    If the sorting is Ascending first cell index must be checkmarked
         //    else the Decending cell index (second one) should be checkmarked
-        if indexPath.section == TableSections.StandardizeExams.rawValue {
+        if indexPath.section == TableSections.standardizeExams.rawValue {
             // Do nothing
-        } else if indexPath.section == TableSections.Sortings.rawValue {
-            if (indexPath.row == 0 && !userDefaults.boolForKey("sort")) {
-                ascendingCheck.hidden = false
-                descendingCheck.hidden = true
-            } else if (indexPath.row == 1 && userDefaults.boolForKey("sort")) {
-                ascendingCheck.hidden = true
-                ascendingCheck.hidden = false
+        } else if indexPath.section == TableSections.sortings.rawValue {
+            if (indexPath.row == 0 && !userDefaults.bool(forKey: "sort")) {
+                ascendingCheck.isHidden = false
+                descendingCheck.isHidden = true
+            } else if (indexPath.row == 1 && userDefaults.bool(forKey: "sort")) {
+                ascendingCheck.isHidden = true
+                ascendingCheck.isHidden = false
             }
         } else {
-            if (userDefaults.boolForKey("watched")) {
-                watchedCheck.hidden = false
+            if (userDefaults.bool(forKey: "watched")) {
+                watchedCheck.isHidden = false
             } else {
-                watchedCheck.hidden = true
+                watchedCheck.isHidden = true
             }
         }
     }
     
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         
-        if (indexPath.section == TableSections.Sortings.rawValue) {
+        if (indexPath.section == TableSections.sortings.rawValue) {
             if (indexPath.row == 0) {
-                userDefaults.setBool(false, forKey: "sort")
-                ascendingCheck.hidden = false
-                descendingCheck.hidden = true
+                userDefaults.set(false, forKey: "sort")
+                ascendingCheck.isHidden = false
+                descendingCheck.isHidden = true
             }
             if (indexPath.row == 1) {
-                userDefaults.setBool(true, forKey: "sort")
-                ascendingCheck.hidden = true
-                descendingCheck.hidden = false
+                userDefaults.set(true, forKey: "sort")
+                ascendingCheck.isHidden = true
+                descendingCheck.isHidden = false
             }
-        } else if (indexPath.section == TableSections.Filters.rawValue) {
-            watchedCheck.hidden = !watchedCheck.hidden
-            userDefaults.setBool(!userDefaults.boolForKey("watched"), forKey: "watched")
+        } else if (indexPath.section == TableSections.filters.rawValue) {
+            watchedCheck.isHidden = !watchedCheck.isHidden
+            userDefaults.set(!userDefaults.bool(forKey: "watched"), forKey: "watched")
         }
         userDefaults.synchronize()
     }
     
     
-    override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         guard let header = view as? UITableViewHeaderFooterView else { return }
-        header.textLabel?.textColor = UIColor.whiteColor()
+        header.textLabel?.textColor = UIColor.white
         //header.textLabel?.font = UIFont.boldSystemFontOfSize(18.0)
         //header.textLabel?.frame = header.frame
         //header.textLabel?.textAlignment = .Center

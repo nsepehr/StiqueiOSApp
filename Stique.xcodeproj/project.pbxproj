@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3B52A0F5A6C879264D7B493A /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE983693D02536BD15189D7C /* Pods.framework */; };
 		5B0A22041CA83A1100F3CA08 /* Default-568h@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B0A22001CA83A1100F3CA08 /* Default-568h@2x~iphone.png */; };
 		5B0A22051CA83A1100F3CA08 /* Default-667h@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B0A22011CA83A1100F3CA08 /* Default-667h@2x~iphone.png */; };
 		5B0A22061CA83A1100F3CA08 /* Default-736h@3x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B0A22021CA83A1100F3CA08 /* Default-736h@3x~iphone.png */; };
@@ -17,7 +16,6 @@
 		5B674D9B1CDF235200980E60 /* MasterPlaylistDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B674D9A1CDF235200980E60 /* MasterPlaylistDetailController.swift */; };
 		5B689C8F1CF28BEE0066D726 /* PlaylistController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B689C8E1CF28BEE0066D726 /* PlaylistController.swift */; };
 		5B689C911CF292E60066D726 /* PlaylistDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B689C901CF292E60066D726 /* PlaylistDetailController.swift */; };
-		5B8A25EC1CBC081000AFEAF8 /* LeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8A25EB1CBC081000AFEAF8 /* LeftViewController.swift */; };
 		5BA967B61C98CBEF00EDC126 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA967B51C98CBEE00EDC126 /* AppDelegate.swift */; };
 		5BA967BD1C98CBF800EDC126 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BA967BC1C98CBF800EDC126 /* Assets.xcassets */; };
 		5BA967CB1C98CC0000EDC126 /* StiqueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA967CA1C98CC0000EDC126 /* StiqueTests.swift */; };
@@ -70,19 +68,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0CC7030A217AEBB824BFDE92 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		58D3D35904F04B62401FEE6F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		5B0A22001CA83A1100F3CA08 /* Default-568h@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x~iphone.png"; sourceTree = "<group>"; };
 		5B0A22011CA83A1100F3CA08 /* Default-667h@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-667h@2x~iphone.png"; sourceTree = "<group>"; };
 		5B0A22021CA83A1100F3CA08 /* Default-736h@3x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-736h@3x~iphone.png"; sourceTree = "<group>"; };
 		5B0A22031CA83A1100F3CA08 /* Default@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x~iphone.png"; sourceTree = "<group>"; };
-		5B0A22091CA8412500F3CA08 /* MenuItemKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MenuItemKit.framework; path = "MenuItemKit/build/Debug-iphoneos/MenuItemKit.framework"; sourceTree = "<group>"; };
 		5B5A94231CE912C7004F1581 /* FlashCardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashCardController.swift; sourceTree = "<group>"; };
 		5B5C27821CE90A5B00CACF37 /* words.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = words.json; sourceTree = "<group>"; };
 		5B674D9A1CDF235200980E60 /* MasterPlaylistDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterPlaylistDetailController.swift; sourceTree = "<group>"; };
 		5B689C8E1CF28BEE0066D726 /* PlaylistController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistController.swift; sourceTree = "<group>"; };
 		5B689C901CF292E60066D726 /* PlaylistDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistDetailController.swift; sourceTree = "<group>"; };
-		5B8A25EB1CBC081000AFEAF8 /* LeftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftViewController.swift; sourceTree = "<group>"; };
 		5BA967B21C98CBE900EDC126 /* Stique.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stique.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BA967B51C98CBEE00EDC126 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5BA967BC1C98CBF800EDC126 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -109,7 +103,6 @@
 		B03CC2271DF94A8A00DAE22D /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		B099148F1DED4D4E0028BAC9 /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		B0AC39A71DF2CD1300D591FC /* MasterStudyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterStudyTableViewController.swift; sourceTree = "<group>"; };
-		FE983693D02536BD15189D7C /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,7 +112,6 @@
 			files = (
 				5BF739201CB990C5008C41BD /* AVFoundation.framework in Frameworks */,
 				5BF7391E1CB9908C008C41BD /* AVKit.framework in Frameworks */,
-				3B52A0F5A6C879264D7B493A /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,7 +139,6 @@
 				5BA967C91C98CC0000EDC126 /* StiqueTests */,
 				5BA967D41C98CC0100EDC126 /* StiqueUITests */,
 				5BA967B31C98CBEA00EDC126 /* Products */,
-				9B777ED90FD14E1CD87265D7 /* Pods */,
 				8B7CD2DF2CE7742DCAB23D0F /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -187,7 +178,6 @@
 				B01853941DF5333A00F10C0A /* PlaylistTableViewCell.swift */,
 				5BF739291CB9A5F1008C41BD /* FilterController.swift */,
 				5BF739231CB9A12E008C41BD /* ShoppingController.swift */,
-				5B8A25EB1CBC081000AFEAF8 /* LeftViewController.swift */,
 			);
 			path = Stique;
 			sourceTree = "<group>";
@@ -243,19 +233,8 @@
 				5BF7391F1CB990C5008C41BD /* AVFoundation.framework */,
 				5BF7391D1CB9908C008C41BD /* AVKit.framework */,
 				5BF7391B1CB98E55008C41BD /* MediaPlayer.framework */,
-				5B0A22091CA8412500F3CA08 /* MenuItemKit.framework */,
-				FE983693D02536BD15189D7C /* Pods.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		9B777ED90FD14E1CD87265D7 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				58D3D35904F04B62401FEE6F /* Pods.debug.xcconfig */,
-				0CC7030A217AEBB824BFDE92 /* Pods.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,13 +244,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5BA967DA1C98CC0100EDC126 /* Build configuration list for PBXNativeTarget "Stique" */;
 			buildPhases = (
-				2B5331EF0824D7E665C97409 /* Check Pods Manifest.lock */,
 				5BA967AE1C98CBE700EDC126 /* Sources */,
 				5BA967AF1C98CBE700EDC126 /* Frameworks */,
 				5BA967B01C98CBE700EDC126 /* Resources */,
-				AF571BFFC9D96C8A6CA9E7DA /* Embed Pods Frameworks */,
-				31B77618297A77F824300D3B /* Copy Pods Resources */,
-				5B0A220C1CA8471500F3CA08 /* Fabric */,
 				5B0A22101CA84F8A00F3CA08 /* Embed Frameworks */,
 			);
 			buildRules = (
@@ -332,13 +307,16 @@
 					5BA967B11C98CBE700EDC126 = {
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = 5GLENQ9K7B;
+						LastSwiftMigration = 0820;
 					};
 					5BA967C51C98CBFF00EDC126 = {
 						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0820;
 						TestTargetID = 5BA967B11C98CBE700EDC126;
 					};
 					5BA967D01C98CC0000EDC126 = {
 						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0820;
 						TestTargetID = 5BA967B11C98CBE700EDC126;
 					};
 				};
@@ -394,68 +372,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		2B5331EF0824D7E665C97409 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		31B77618297A77F824300D3B /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5B0A220C1CA8471500F3CA08 /* Fabric */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = Fabric;
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\" aabf87b4faa580a8f684be097a86bdb097558b41 47eb6f7d63b3013e8a8723fcf451e24c945c96f7648615e45aa9ff2b456b9e9f";
-		};
-		AF571BFFC9D96C8A6CA9E7DA /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		5BA967AE1C98CBE700EDC126 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -473,7 +389,6 @@
 				5BF7392A1CB9A5F1008C41BD /* FilterController.swift in Sources */,
 				B03CC2281DF94A8A00DAE22D /* MenuViewController.swift in Sources */,
 				B01853951DF5333A00F10C0A /* PlaylistTableViewCell.swift in Sources */,
-				5B8A25EC1CBC081000AFEAF8 /* LeftViewController.swift in Sources */,
 				5BA967B61C98CBEF00EDC126 /* AppDelegate.swift in Sources */,
 				B012F4271DE6E618008FCA05 /* TabBarController.swift in Sources */,
 				5BF739241CB9A12E008C41BD /* ShoppingController.swift in Sources */,
@@ -599,7 +514,6 @@
 		};
 		5BA967DB1C98CC0100EDC126 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 58D3D35904F04B62401FEE6F /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -614,12 +528,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = stiqueApp.Stique;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "60e349ca-c195-4057-9b77-98f65c27f252";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		5BA967DC1C98CC0100EDC126 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0CC7030A217AEBB824BFDE92 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -634,6 +548,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = stiqueApp.Stique;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "60e349ca-c195-4057-9b77-98f65c27f252";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -645,6 +560,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = stiqueApp.StiqueTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Stique.app/Stique";
 			};
 			name = Debug;
@@ -657,6 +573,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = stiqueApp.StiqueTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Stique.app/Stique";
 			};
 			name = Release;
@@ -668,6 +585,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = stiqueApp.StiqueUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = Stique;
 				USES_XCTRUNNER = YES;
 			};
@@ -680,6 +598,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = stiqueApp.StiqueUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = Stique;
 				USES_XCTRUNNER = YES;
 			};

@@ -15,8 +15,8 @@ class PlaylistDetailController: UITableViewController {
     let dataController = DataController()
     
     // UI Action Object
-    @IBAction func backPressed(sender: AnyObject) {
-        navigationController?.popViewControllerAnimated(true)
+    @IBAction func backPressed(_ sender: AnyObject) {
+        navigationController?.popViewController(animated: true)
     }
     
     
@@ -35,18 +35,18 @@ class PlaylistDetailController: UITableViewController {
         navigationItem.title = playlist
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tableData.count
     }
     
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let kLCellIdentifier = "playlistDetailCell"
         
-        let cell = tableView.dequeueReusableCellWithIdentifier(kLCellIdentifier)! as UITableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: kLCellIdentifier)! as UITableViewCell
         
         let myItem = tableData[indexPath.row]
         cell.textLabel?.text = myItem["word"] as? String
@@ -54,29 +54,29 @@ class PlaylistDetailController: UITableViewController {
         return cell
     }
     
-    override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         guard let header = view as? UITableViewHeaderFooterView else { return }
-        header.textLabel?.textColor = UIColor.whiteColor()
+        header.textLabel?.textColor = UIColor.white
         //header.textLabel?.font = UIFont.boldSystemFontOfSize(18.0)
         //header.textLabel?.frame = header.frame
         //header.textLabel?.textAlignment = .Center
     }
     
-    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "\(playlist) Playlist"
     }
     
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if (editingStyle == UITableViewCellEditingStyle.Delete) {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.delete) {
             self.tableData = dataController.removePlaylistDataForTitle(self.tableData, playlist: self.playlist, index: indexPath.row)
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Left)
+            tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.left)
         }
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let indexPath: NSIndexPath? = tableView.indexPathForSelectedRow
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let indexPath: IndexPath? = tableView.indexPathForSelectedRow
         let myItem = tableData[indexPath!.row]
-        let vc = segue.destinationViewController as! VocabularyTableViewController
+        let vc = segue.destination as! VocabularyTableViewController
         vc.item = myItem
     }
 }

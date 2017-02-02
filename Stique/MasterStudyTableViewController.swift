@@ -25,9 +25,9 @@ class MasterStudyTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         guard let header = view as? UITableViewHeaderFooterView else { return }
-        header.textLabel?.textColor = UIColor.whiteColor()
+        header.textLabel?.textColor = UIColor.white
         //header.textLabel?.font = UIFont.boldSystemFontOfSize(18.0)
         //header.textLabel?.frame = header.frame
         //header.textLabel?.textAlignment = .Center

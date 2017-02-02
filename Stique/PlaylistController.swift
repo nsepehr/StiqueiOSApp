@@ -17,7 +17,7 @@ class PlaylistController: UITableViewController {
     @IBOutlet weak var cellLabel: UILabel!
     
     // UI Action Object
-    @IBAction func addPressed(sender: AnyObject) {
+    @IBAction func addPressed(_ sender: AnyObject) {
         createNewPlaylist()
     }
     
@@ -34,14 +34,14 @@ class PlaylistController: UITableViewController {
         self.tableView.backgroundView = tempImgView
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tableData.count
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let kLCellIdentifier = "playlistCell"
         
-        let cell = tableView.dequeueReusableCellWithIdentifier(kLCellIdentifier) as! PlaylistTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: kLCellIdentifier) as! PlaylistTableViewCell
         
         let myItem = tableData[indexPath.row]
         cell.playlistLabel.text =  myItem["name"] as? String
@@ -49,45 +49,45 @@ class PlaylistController: UITableViewController {
         return cell
     }
     
-    override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         guard let header = view as? UITableViewHeaderFooterView else { return }
-        header.textLabel?.textColor = UIColor.whiteColor()
+        header.textLabel?.textColor = UIColor.white
         //header.textLabel?.font = UIFont.boldSystemFontOfSize(18.0)
         //header.textLabel?.frame = header.frame
         //header.textLabel?.textAlignment = .Center
     }
     
-    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "Your Playlists"
     }
     
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
     
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if (editingStyle == UITableViewCellEditingStyle.Delete) {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.delete) {
             dataController.removePlaylistData(self.tableData, index: indexPath.row)
             self.tableData = dataController.getPlaylistData()
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Left)
+            tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.left)
         }
     }
     
     func createNewPlaylist() {
         //1. Create the alert controller.
-        let alert = UIAlertController(title: "New Playlist", message: "Please enter a playlist name:", preferredStyle: .Alert)
+        let alert = UIAlertController(title: "New Playlist", message: "Please enter a playlist name:", preferredStyle: .alert)
         
-        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default){ action -> Void in
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default){ action -> Void in
             // Put your code here
             })
         //2. Add the text field. You can configure it however you need.
-        alert.addTextFieldWithConfigurationHandler({ (textField) -> Void in
+        alert.addTextField(configurationHandler: { (textField) -> Void in
             textField.text = ""
         })
         let _self = self
         
         //3. Grab the value from the text field, and print it when the user clicks OK.
-        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
             let textField = alert.textFields![0] as UITextField
             if (textField.text != "") {
                 print("Adding new playlist " + textField.text!)
@@ -98,15 +98,15 @@ class PlaylistController: UITableViewController {
         }))
         
         // 4. Present the alert.
-        self.presentViewController(alert, animated: true, completion: nil)
+        self.present(alert, animated: true, completion: nil)
     }
     
     // MARK: Segue
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        let indexPath: NSIndexPath? = tableView.indexPathForSelectedRow
+        let indexPath: IndexPath? = tableView.indexPathForSelectedRow
         let playlistName: String = tableData[indexPath!.row]["name"] as! String
-        let vc = segue.destinationViewController as! PlaylistDetailController
+        let vc = segue.destination as! PlaylistDetailController
         vc.playlist = playlistName
     }
     

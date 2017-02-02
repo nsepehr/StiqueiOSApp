@@ -16,17 +16,17 @@ class NavigationController: UINavigationController {
         // Do any additional setup after loading the view.
         // Set the color of the bar
         self.navigationBar.barTintColor = UIColor(netHex:0x00443d)
-        self.navigationBar.tintColor = UIColor.whiteColor()
+        self.navigationBar.tintColor = UIColor.white
         // Set the back button the design arrow
         let backButton = UIBarButtonItem()
-        backButton.setBackgroundImage(UIImage(named: "back"), forState: .Normal, barMetrics: .Default)
+        backButton.setBackgroundImage(UIImage(named: "back"), for: UIControlState(), barMetrics: .default)
         backButton.title = " "
         
         //UIBarButtonItem.setBackButtonBackgroundImage(backButton)
         
  
         // Set the title attributes
-        let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.white]
         self.navigationBar.titleTextAttributes = titleDict as? [String: AnyObject]
         //navigationController.view.height = UIScreen.mainScreen().bounds.height + 70 // Nima: Why is this necessary?
     }

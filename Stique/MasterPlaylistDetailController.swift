@@ -18,8 +18,8 @@ class MasterPlaylistDetailController: UIViewController, UITableViewDelegate, UIT
     @IBOutlet weak var tableView: UITableView!
     
     // UI Action Object
-    @IBAction func backPressed(sender: AnyObject) {
-        navigationController?.popViewControllerAnimated(true)
+    @IBAction func backPressed(_ sender: AnyObject) {
+        navigationController?.popViewController(animated: true)
     }
     
     override func viewDidLoad() {
@@ -29,11 +29,11 @@ class MasterPlaylistDetailController: UIViewController, UITableViewDelegate, UIT
         self.tableView.delegate = self
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         // Setting the correct orientation for this view
-        let value = UIInterfaceOrientation.Portrait.rawValue
-        UIDevice.currentDevice().setValue(value, forKey: "orientation")
+        let value = UIInterfaceOrientation.portrait.rawValue
+        UIDevice.current.setValue(value, forKey: "orientation")
         // Load data
         loadData()
     }
@@ -43,14 +43,14 @@ class MasterPlaylistDetailController: UIViewController, UITableViewDelegate, UIT
         tableView.reloadData()
     }
 
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tableData.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let kLCellIdentifier = "masterStudyDetailCell"
         
-        let cell = tableView.dequeueReusableCellWithIdentifier(kLCellIdentifier) as UITableViewCell!
+        let cell = tableView.dequeueReusableCell(withIdentifier: kLCellIdentifier) as UITableViewCell!
         
         let myItem = tableData[indexPath.row]
         cell?.textLabel?.text = myItem["word"] as? String
@@ -58,9 +58,9 @@ class MasterPlaylistDetailController: UIViewController, UITableViewDelegate, UIT
         return cell!
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toFlashcardView" {
-            let vc = segue.destinationViewController as! FlashCardController
+            let vc = segue.destination as! FlashCardController
             vc.items = tableData
         }
     }

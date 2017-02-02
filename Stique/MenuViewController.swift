@@ -11,8 +11,8 @@ import UIKit
 class MenuViewController: UIViewController {
 
     // UI Action Object
-    @IBAction func closePressed(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func closePressed(_ sender: AnyObject) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     override func viewDidLoad() {

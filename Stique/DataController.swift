@@ -20,24 +20,24 @@ typealias StiqueRating = [String: Int]
 
 class DataController {
     
-    let userDefaults = NSUserDefaults.standardUserDefaults()
+    let userDefaults = UserDefaults.standard
     let ratingsKey = "Ratings"
 
     func getMainViewData() -> [[String: AnyObject]] {
         var tableData = [[String: AnyObject]]()
-        let userDefaults = NSUserDefaults.standardUserDefaults()
+        let userDefaults = UserDefaults.standard
         do {
-            let path = NSBundle.mainBundle().pathForResource("words", ofType: "json")
-            let data: NSData? = NSData(contentsOfFile: path!)
-            let jsonData = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as? [[String: AnyObject]]
+            let path = Bundle.main.path(forResource: "words", ofType: "json")
+            let data: Data? = try? Data(contentsOf: URL(fileURLWithPath: path!))
+            let jsonData = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [[String: AnyObject]]
             if let jsonData = jsonData {
                 tableData = jsonData
-                if (userDefaults.boolForKey("sort")) {
-                    tableData = tableData.reverse()
+                if (userDefaults.bool(forKey: "sort")) {
+                    tableData = tableData.reversed()
                 }
-                if userDefaults.boolForKey("watched") {
+                if userDefaults.bool(forKey: "watched") {
                     var NewTableData = [[String: AnyObject]]()
-                    if let watched = userDefaults.objectForKey("watched_words") as? [String] {
+                    if let watched = userDefaults.object(forKey: "watched_words") as? [String] {
                         for row in tableData {
                             if watched.contains(row["word"] as! String) {
                                 NewTableData += [row]
@@ -55,31 +55,31 @@ class DataController {
         return tableData
     }
     
-    func addToPlaylistData(data: [[String: AnyObject]]) {
+    func addToPlaylistData(_ data: [[String: AnyObject]]) {
         var tableData = data
-        let userDefaults = NSUserDefaults.standardUserDefaults()
+        let userDefaults = UserDefaults.standard
         do {
-            if let playlist = userDefaults.stringForKey(Playlists.UserPlaylist.rawValue) {
-                let jsonData = try NSJSONSerialization.JSONObjectWithData(playlist.dataUsingEncoding(NSUTF8StringEncoding)!, options: .AllowFragments) as? [[String: AnyObject]]
+            if let playlist = userDefaults.string(forKey: Playlists.UserPlaylist.rawValue) {
+                let jsonData = try JSONSerialization.jsonObject(with: playlist.data(using: String.Encoding.utf8)!, options: .allowFragments) as? [[String: AnyObject]]
                 if let jsonData = jsonData {
                     tableData += jsonData
                 }
             }
-            let jsonData2 = try NSJSONSerialization.dataWithJSONObject(tableData, options: NSJSONWritingOptions.PrettyPrinted)
-            userDefaults.setObject(NSString(data: jsonData2, encoding: NSASCIIStringEncoding), forKey: Playlists.UserPlaylist.rawValue)
+            let jsonData2 = try JSONSerialization.data(withJSONObject: tableData, options: JSONSerialization.WritingOptions.prettyPrinted)
+            userDefaults.set(NSString(data: jsonData2, encoding: String.Encoding.ascii.rawValue), forKey: Playlists.UserPlaylist.rawValue)
             userDefaults.synchronize()
         } catch _ {
             print("Failed to add user playlist")
         }
     }
     
-    func removePlaylistData(data: [[String: AnyObject]], index: Int) {
+    func removePlaylistData(_ data: [[String: AnyObject]], index: Int) {
         var tableData: [[String: AnyObject]] = data
-        let userDefaults = NSUserDefaults.standardUserDefaults()
+        let userDefaults = UserDefaults.standard
         do {
-            tableData.removeAtIndex(index)
-            let jsonData2 = try NSJSONSerialization.dataWithJSONObject(tableData, options: NSJSONWritingOptions.PrettyPrinted)
-            userDefaults.setObject(NSString(data: jsonData2, encoding: NSASCIIStringEncoding), forKey: Playlists.UserPlaylist.rawValue)
+            tableData.remove(at: index)
+            let jsonData2 = try JSONSerialization.data(withJSONObject: tableData, options: JSONSerialization.WritingOptions.prettyPrinted)
+            userDefaults.set(NSString(data: jsonData2, encoding: String.Encoding.ascii.rawValue), forKey: Playlists.UserPlaylist.rawValue)
             userDefaults.synchronize()
         } catch _ {
             print("Failed to remove playlist")
@@ -88,10 +88,10 @@ class DataController {
     
     func getPlaylistData() -> [[String: AnyObject]] {
         var tableData = [[String: AnyObject]]()
-        let userDefaults = NSUserDefaults.standardUserDefaults()
-        if let playlists = userDefaults.stringForKey(Playlists.UserPlaylist.rawValue) {
+        let userDefaults = UserDefaults.standard
+        if let playlists = userDefaults.string(forKey: Playlists.UserPlaylist.rawValue) {
             do {
-                let jsonData = try NSJSONSerialization.JSONObjectWithData(playlists.dataUsingEncoding(NSUTF8StringEncoding)!, options: .AllowFragments) as? [[String: AnyObject]]
+                let jsonData = try JSONSerialization.jsonObject(with: playlists.data(using: String.Encoding.utf8)!, options: .allowFragments) as? [[String: AnyObject]]
                 if let jsonData = jsonData {
                     tableData = jsonData
                 }
@@ -104,7 +104,7 @@ class DataController {
         return tableData
     }
     
-    func addToUserPlaylist(data: StiqueData, playlist: String) {
+    func addToUserPlaylist(_ data: StiqueData, playlist: String) {
         var tableData: [StiqueData] = [data]
         var isUnique: Bool = true
         let playlistKey: String = getUserPlaylistKey(playlist)
@@ -123,8 +123,8 @@ class DataController {
                 tableData += jsonData
                 print("Inside the addToUserPlaylist and table data is: ")
                 print(tableData)
-                let jsonData2 = try NSJSONSerialization.dataWithJSONObject(tableData, options: NSJSONWritingOptions.PrettyPrinted)
-                userDefaults.setObject(NSString(data: jsonData2, encoding: NSASCIIStringEncoding), forKey: playlistKey)
+                let jsonData2 = try JSONSerialization.data(withJSONObject: tableData, options: JSONSerialization.WritingOptions.prettyPrinted)
+                userDefaults.set(NSString(data: jsonData2, encoding: String.Encoding.ascii.rawValue), forKey: playlistKey)
                 userDefaults.synchronize()
             }
         } catch _ {
@@ -132,19 +132,19 @@ class DataController {
         }
     }
     
-    func getUserPlaylistKey(playlistName: String) -> String {
+    func getUserPlaylistKey(_ playlistName: String) -> String {
         let playlistKey: String = Playlists.UserPlaylist.rawValue + playlistName
         return playlistKey
     }
     
-    func removePlaylistDataForTitle(data: [[String: AnyObject]], playlist: String, index: Int) -> [[String: AnyObject]] {
+    func removePlaylistDataForTitle(_ data: [[String: AnyObject]], playlist: String, index: Int) -> [[String: AnyObject]] {
         let playlistKey = getUserPlaylistKey(playlist)
         var tableData = data
-        let userDefaults = NSUserDefaults.standardUserDefaults()
+        let userDefaults = UserDefaults.standard
         do {
-            tableData.removeAtIndex(index)
-            let jsonData2 = try NSJSONSerialization.dataWithJSONObject(tableData, options: NSJSONWritingOptions.PrettyPrinted)
-            userDefaults.setObject(NSString(data: jsonData2, encoding: NSASCIIStringEncoding), forKey: playlistKey)
+            tableData.remove(at: index)
+            let jsonData2 = try JSONSerialization.data(withJSONObject: tableData, options: JSONSerialization.WritingOptions.prettyPrinted)
+            userDefaults.set(NSString(data: jsonData2, encoding: String.Encoding.ascii.rawValue), forKey: playlistKey)
             userDefaults.synchronize()
         } catch _ {
             print("Failed to remove data for playlist title \(playlistKey)")
@@ -153,13 +153,13 @@ class DataController {
         return tableData
     }
     
-    func getPlaylistDataForTitle(playlist: String) -> [StiqueData] {
+    func getPlaylistDataForTitle(_ playlist: String) -> [StiqueData] {
         let playlistKey = getUserPlaylistKey(playlist)
         print("Getting playlist data for key: " + playlistKey)
         var tableData = [StiqueData]()
         do {
-            if let _playlist = userDefaults.stringForKey(playlistKey) {
-                let jsonData = try NSJSONSerialization.JSONObjectWithData(_playlist.dataUsingEncoding(NSUTF8StringEncoding)!, options: .AllowFragments) as? [StiqueData]
+            if let _playlist = userDefaults.string(forKey: playlistKey) {
+                let jsonData = try JSONSerialization.jsonObject(with: _playlist.data(using: String.Encoding.utf8)!, options: .allowFragments) as? [StiqueData]
                 print("jsonData for that key is: ")
                 print(jsonData)
                 if let jsonData = jsonData {
@@ -174,12 +174,12 @@ class DataController {
         return tableData
     }
     
-    func addToMasterPlaylistData(data: StiqueData) {
+    func addToMasterPlaylistData(_ data: StiqueData) {
         
         var tableData = [data]
         do {
-            if let playlist = userDefaults.stringForKey(Playlists.MasterPlaylist.rawValue) {
-                let jsonData = try NSJSONSerialization.JSONObjectWithData(playlist.dataUsingEncoding(NSUTF8StringEncoding)!, options: .AllowFragments) as? [StiqueData]
+            if let playlist = userDefaults.string(forKey: Playlists.MasterPlaylist.rawValue) {
+                let jsonData = try JSONSerialization.jsonObject(with: playlist.data(using: String.Encoding.utf8)!, options: .allowFragments) as? [StiqueData]
                 if let jsonData = jsonData {
                     for item in jsonData {
                         if item["word"] as! String == (data["word"] as! String) {
@@ -190,16 +190,16 @@ class DataController {
                     tableData += jsonData
                 }
             }
-            let jsonData2 = try NSJSONSerialization.dataWithJSONObject(tableData, options: NSJSONWritingOptions.PrettyPrinted)
-            userDefaults.setObject(NSString(data: jsonData2, encoding: NSASCIIStringEncoding), forKey: Playlists.MasterPlaylist.rawValue)
+            let jsonData2 = try JSONSerialization.data(withJSONObject: tableData, options: JSONSerialization.WritingOptions.prettyPrinted)
+            userDefaults.set(NSString(data: jsonData2, encoding: String.Encoding.ascii.rawValue), forKey: Playlists.MasterPlaylist.rawValue)
             userDefaults.synchronize()
         } catch _ {
             print("Unable to add to master playlist")
         }
     }
     
-    func removeMasterPlaylistData(data: [StiqueData]?, index: Int) -> [StiqueData] {
-        let userDefaults = NSUserDefaults.standardUserDefaults()
+    func removeMasterPlaylistData(_ data: [StiqueData]?, index: Int) -> [StiqueData] {
+        let userDefaults = UserDefaults.standard
         var tableData = [StiqueData]()
         if data == nil {
             tableData = getMasterPlaylistData()
@@ -207,9 +207,9 @@ class DataController {
             tableData = data!
         }
         do {
-            tableData.removeAtIndex(index)
-            let jsonData2 = try NSJSONSerialization.dataWithJSONObject(tableData, options: NSJSONWritingOptions.PrettyPrinted)
-            userDefaults.setObject(NSString(data: jsonData2, encoding: NSASCIIStringEncoding), forKey: Playlists.MasterPlaylist.rawValue)
+            tableData.remove(at: index)
+            let jsonData2 = try JSONSerialization.data(withJSONObject: tableData, options: JSONSerialization.WritingOptions.prettyPrinted)
+            userDefaults.set(NSString(data: jsonData2, encoding: String.Encoding.ascii.rawValue), forKey: Playlists.MasterPlaylist.rawValue)
             userDefaults.synchronize()
         } catch _ {
             print("Failed to remove master playlist detail data")
@@ -220,10 +220,10 @@ class DataController {
     
     func getMasterPlaylistData() -> [StiqueData] {
         var tableData = [[String: AnyObject]]()
-        let userDefaults = NSUserDefaults.standardUserDefaults()
-        if let playlist = userDefaults.stringForKey(Playlists.MasterPlaylist.rawValue) {
+        let userDefaults = UserDefaults.standard
+        if let playlist = userDefaults.string(forKey: Playlists.MasterPlaylist.rawValue) {
             do {
-                let jsonData = try NSJSONSerialization.JSONObjectWithData(playlist.dataUsingEncoding(NSUTF8StringEncoding)!, options: .AllowFragments) as? [[String: AnyObject]]
+                let jsonData = try JSONSerialization.jsonObject(with: playlist.data(using: String.Encoding.utf8)!, options: .allowFragments) as? [[String: AnyObject]]
                 if let jsonData = jsonData {
                     tableData = jsonData
                 }
@@ -238,9 +238,9 @@ class DataController {
     
     func getRatings() -> StiqueRating {
         var ratings : StiqueRating = [:]
-        if let ratingData = userDefaults.stringForKey(ratingsKey) {
+        if let ratingData = userDefaults.string(forKey: ratingsKey) {
             do {
-                let jsonData = try NSJSONSerialization.JSONObjectWithData(ratingData.dataUsingEncoding(NSUTF8StringEncoding)!, options: .AllowFragments) as? StiqueRating
+                let jsonData = try JSONSerialization.jsonObject(with: ratingData.data(using: String.Encoding.utf8)!, options: .allowFragments) as? StiqueRating
                 if let jsonData = jsonData {
                     ratings = jsonData
                 }
@@ -253,10 +253,10 @@ class DataController {
         return ratings
     }
     
-    func updateRatings(ratings: StiqueRating) {
+    func updateRatings(_ ratings: StiqueRating) {
         do {
-            let jsonData = try NSJSONSerialization.dataWithJSONObject(ratings, options: .PrettyPrinted)
-            userDefaults.setObject(NSString(data: jsonData, encoding: NSASCIIStringEncoding), forKey: ratingsKey)
+            let jsonData = try JSONSerialization.data(withJSONObject: ratings, options: .prettyPrinted)
+            userDefaults.set(NSString(data: jsonData, encoding: String.Encoding.ascii.rawValue), forKey: ratingsKey)
             userDefaults.synchronize()
         } catch _ {
             print("Failed to update ratings data")

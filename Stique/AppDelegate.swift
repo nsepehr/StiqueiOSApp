@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import FontAwesome_swift
 
 
 @UIApplicationMain
@@ -16,30 +15,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true
     }
     
-    func applicationWillResignActive(application: UIApplication) {
+    func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
     }
     
-    func applicationDidEnterBackground(application: UIApplication) {
+    func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     }
     
-    func applicationWillEnterForeground(application: UIApplication) {
+    func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
     }
     
-    func applicationDidBecomeActive(application: UIApplication) {
+    func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
     
-    func applicationWillTerminate(application: UIApplication) {
+    func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
@@ -77,7 +76,7 @@ extension UIView {
                     y += prevView.frame.origin.y + prevView.frame.height
                 }
             }
-            frame = CGRectMake(frame.origin.x, y, frame.width, frame.height)
+            frame = CGRect(x: frame.origin.x, y: y, width: frame.width, height: frame.height)
         }
         get {
             return 0.0
@@ -86,7 +85,7 @@ extension UIView {
     var marginTopAbsolute:CGFloat {
         set {
             let y:CGFloat = newValue
-            frame = CGRectMake(frame.origin.x, y, frame.width, frame.height)
+            frame = CGRect(x: frame.origin.x, y: y, width: frame.width, height: frame.height)
         }
         get {
             return 0.0
@@ -112,7 +111,7 @@ extension UIView {
                         y = nextView.frame.origin.y - newValue
                     }
                 }
-                frame = CGRectMake(frame.origin.x, y, frame.width, frame.height)
+                frame = CGRect(x: frame.origin.x, y: y, width: frame.width, height: frame.height)
             }
         }
         get {
@@ -123,7 +122,7 @@ extension UIView {
         set {
             if let _superview = superview {
                 let y:CGFloat = _superview.frame.height - newValue - frame.height
-                frame = CGRectMake(frame.origin.x, y, frame.width, frame.height)
+                frame = CGRect(x: frame.origin.x, y: y, width: frame.width, height: frame.height)
             }
         }
         get {
@@ -133,7 +132,7 @@ extension UIView {
     var marginLeftAbsolute:CGFloat {
         set {
             if let _superview = superview {
-                frame = CGRectMake(newValue, frame.origin.y, frame.width, frame.height)
+                frame = CGRect(x: newValue, y: frame.origin.y, width: frame.width, height: frame.height)
             }
         }
         get {
@@ -145,7 +144,7 @@ extension UIView {
         set {
             if let _superview = superview {
                 let x:CGFloat = _superview.frame.width - newValue - frame.width
-                frame = CGRectMake(x, frame.origin.y, frame.width, frame.height)
+                frame = CGRect(x: x, y: frame.origin.y, width: frame.width, height: frame.height)
             }
         }
         get {
@@ -167,7 +166,7 @@ extension UIView {
                     x += prevView.frame.origin.x + prevView.frame.width
                 }
             }
-            frame = CGRectMake(x, frame.origin.y, frame.width, frame.height)
+            frame = CGRect(x: x, y: frame.origin.y, width: frame.width, height: frame.height)
         }
         get {
             return 0.0
@@ -178,7 +177,7 @@ extension UIView {
             if let superview = superview {
                 let width = superview.frame.width * newValue / 100
                 let x = (superview.frame.width - width) / 2
-                frame = CGRectMake(x, frame.origin.y, width, frame.height)
+                frame = CGRect(x: x, y: frame.origin.y, width: width, height: frame.height)
             }
         }
         get {
@@ -190,7 +189,7 @@ extension UIView {
             if let superview = superview {
                 let height = superview.frame.height * newValue / 100
                 let y = (superview.frame.height - height) / 2
-                frame = CGRectMake(frame.origin.x, y, frame.width, height)
+                frame = CGRect(x: frame.origin.x, y: y, width: frame.width, height: height)
             }
         }
         get {
@@ -199,7 +198,7 @@ extension UIView {
     }
     var width:CGFloat {
         set {
-            frame = CGRectMake(frame.origin.x, frame.origin.y, newValue, frame.height)
+            frame = CGRect(x: frame.origin.x, y: frame.origin.y, width: newValue, height: frame.height)
         }
         get {
             return 0.0
@@ -207,15 +206,15 @@ extension UIView {
     }
     var height:CGFloat {
         set {
-            frame = CGRectMake(frame.origin.x, frame.origin.y, frame.width, newValue)
+            frame = CGRect(x: frame.origin.x, y: frame.origin.y, width: frame.width, height: newValue)
         }
         get {
             return 0.0
         }
     }
     
-    func application(application: UIApplication, supportedInterfaceOrientationsForWindow window: UIWindow?) -> UIInterfaceOrientationMask {
-        return [.Portrait, .Landscape]
+    func application(_ application: UIApplication, supportedInterfaceOrientationsForWindow window: UIWindow?) -> UIInterfaceOrientationMask {
+        return [.portrait, .landscape]
     }
     
 }

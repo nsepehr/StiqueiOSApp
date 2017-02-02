@@ -42,22 +42,22 @@ class VocabularyTableViewController: UITableViewController, MFMailComposeViewCon
     
     
     // The UI Action Objects
-    @IBAction func backPressed(sender: AnyObject) {
-        self.navigationController?.popViewControllerAnimated(true)
+    @IBAction func backPressed(_ sender: AnyObject) {
+        self.navigationController?.popViewController(animated: true)
     }
-    @IBAction func speakerAction(sender: AnyObject) {
+    @IBAction func speakerAction(_ sender: AnyObject) {
         playPronounciation()
     }
-    @IBAction func masterStudyPressed(sender: AnyObject) {
+    @IBAction func masterStudyPressed(_ sender: AnyObject) {
         addToMaster(item)
     }
-    @IBAction func sharePressed(sender: AnyObject) {
+    @IBAction func sharePressed(_ sender: AnyObject) {
         sendEmailButtonTapped()
     }
-    @IBAction func playlistPressed(sender: AnyObject) {
+    @IBAction func playlistPressed(_ sender: AnyObject) {
         addToPlaylist(item)
     }
-    @IBAction func ratingAction(sender: AnyObject) {
+    @IBAction func ratingAction(_ sender: AnyObject) {
         let rating: Int = sender.tag
         rateVideo(rating)
         let title = item["word"] as! String
@@ -78,22 +78,22 @@ class VocabularyTableViewController: UITableViewController, MFMailComposeViewCon
         vocabularyLabel.text = item["word"] as? String
         suffixLabel.text = item["Suffix"] as? String
         pronounciationLabel.text = item["Pronounciation Text"] as? String
-        speakerButton.setImage(UIImage(named: "Speaker"), forState: .Normal)
-        masterStudyButton.setImage(UIImage(named: "Master Study"), forState: .Normal)
-        shareButton.setImage(UIImage(named: "Share"), forState: .Normal)
-        playlistButton.setImage(UIImage(named: "Playlist"), forState: .Normal)
+        speakerButton.setImage(UIImage(named: "Speaker"), for: UIControlState())
+        masterStudyButton.setImage(UIImage(named: "Master Study"), for: UIControlState())
+        shareButton.setImage(UIImage(named: "Share"), for: UIControlState())
+        playlistButton.setImage(UIImage(named: "Playlist"), for: UIControlState())
         definitionTextArea.text = item["Definition"] as? String
         exampleTextArea.text = item["Example"] as? String
         // Getting the image of the video thumbnail from URL
         let imageURL: String = item["Video Thumbnail"] as! String
-        let imageNSURL: NSURL = NSURL(string: imageURL)!
-        let imageData: NSData? = NSData(contentsOfURL: imageNSURL)
+        let imageNSURL: URL = URL(string: imageURL)!
+        let imageData: Data? = try? Data(contentsOf: imageNSURL)
         if imageData != nil {
             videoImageView.image = UIImage(data: imageData!)
         } else {
             videoImageView.image = UIImage(named: "Cell Gear")
         }
-        playButton.setImage(UIImage(named: "Cell Play"), forState: .Normal)
+        playButton.setImage(UIImage(named: "Cell Play"), for: UIControlState())
     }
     
     
@@ -102,12 +102,12 @@ class VocabularyTableViewController: UITableViewController, MFMailComposeViewCon
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         // Set the correct orientation
-        let value = UIInterfaceOrientation.Portrait.rawValue
-        UIDevice.currentDevice().setValue(value, forKey: "orientation")
+        let value = UIInterfaceOrientation.portrait.rawValue
+        UIDevice.current.setValue(value, forKey: "orientation")
         
         // Set the ratings
         ratings = dataController.getRatings()
@@ -120,40 +120,40 @@ class VocabularyTableViewController: UITableViewController, MFMailComposeViewCon
     
     func setNavigationBar() {
         let backImage = UIImage(named: "back")
-        let leftButton = UIBarButtonItem(image: backImage, style: .Plain, target: self, action: #selector(VocabularyTableViewController.backButtonPressed))
+        let leftButton = UIBarButtonItem(image: backImage, style: .plain, target: self, action: #selector(VocabularyTableViewController.backButtonPressed))
         leftButton.title = " "
         navigationItem.leftBarButtonItem = leftButton
     }
     
-    func backButtonPressed(sender: UIButton) {
-        navigationController?.popViewControllerAnimated(true)
+    func backButtonPressed(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
     }
     
-    func addToMaster(vocabulary: StiqueData) {
+    func addToMaster(_ vocabulary: StiqueData) {
         self.dataController.addToMasterPlaylistData(vocabulary)
-        let alert = UIAlertController(title: "Master Study", message: "Added to Master Study.", preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
-        self.presentViewController(alert, animated: true, completion: nil)
+        let alert = UIAlertController(title: "Master Study", message: "Added to Master Study.", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
-    func addToPlaylist(vocabulary: StiqueData) {
+    func addToPlaylist(_ vocabulary: StiqueData) {
         let _self = self
         let playlists = dataController.getPlaylistData()
         if playlists.count == 0 {
-            let alert = UIAlertController(title: "Alert", message: "Please create a user playlist first, under the playlist tab.", preferredStyle: UIAlertControllerStyle.Alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
-            self.presentViewController(alert, animated: true, completion: nil)
+            let alert = UIAlertController(title: "Alert", message: "Please create a user playlist first, under the playlist tab.", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         } else {
-            let alert = UIAlertController(title: "Which playlist", message: "Which playlist to add to?", preferredStyle: .ActionSheet)
+            let alert = UIAlertController(title: "Which playlist", message: "Which playlist to add to?", preferredStyle: .actionSheet)
             for playlist in playlists {
                 let playlistName = (playlist["name"] as? String)!
-                alert.addAction(UIAlertAction(title: playlistName, style: .Default, handler: {(alert: UIAlertAction) in
+                alert.addAction(UIAlertAction(title: playlistName, style: .default, handler: {(alert: UIAlertAction) in
                     print("Adding playlist with name: \(playlistName) ")
                     _self.dataController.addToUserPlaylist(vocabulary, playlist: playlistName)
                 }))
             }
-            alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
-            self.presentViewController(alert, animated: true, completion: nil)
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            self.present(alert, animated: true, completion: nil)
             
             // Nima: Below was for before
             //let actionSheet = UIActionSheet(title: "Which Playlist To Add to?", delegate: self, cancelButtonTitle: "Cancel", destructiveButtonTitle: nil)
@@ -170,7 +170,7 @@ class VocabularyTableViewController: UITableViewController, MFMailComposeViewCon
     func sendEmailButtonTapped() {
         let mailComposeViewController = configuredMailComposeViewController()
         if MFMailComposeViewController.canSendMail() {
-            self.presentViewController(mailComposeViewController, animated: true, completion: nil)
+            self.present(mailComposeViewController, animated: true, completion: nil)
         } else {
             self.showSendMailErrorAlert()
         }
@@ -192,29 +192,29 @@ class VocabularyTableViewController: UITableViewController, MFMailComposeViewCon
         sendMailErrorAlert.show()
     }
     
-    func rateVideo(rating: Int) {
+    func rateVideo(_ rating: Int) {
         // Loop through the needed stars to change image to full rated image
         for i in 0...starRatings.count-1 {
             let starButton = starRatings[i]
             if (i <= rating) {
-                starButton.setImage(starImage, forState: .Normal)
+                starButton.setImage(starImage, for: UIControlState())
             } else {
-                starButton.setImage(starBlankImage, forState: .Normal)
+                starButton.setImage(starBlankImage, for: UIControlState())
             }
         }
     }
     
     // MARK: MFMailComposeViewControllerDelegate
     
-    func mailComposeController(controller: MFMailComposeViewController!, didFinishWithResult result: MFMailComposeResult, error: NSError!) {
-        controller.dismissViewControllerAnimated(true, completion: nil)
+    func mailComposeController(_ controller: MFMailComposeViewController!, didFinishWith result: MFMailComposeResult, error: Error!) {
+        controller.dismiss(animated: true, completion: nil)
         
     }
     
     func playPronounciation() {
         do {
-            let url = NSURL(string: item["Pronounciation Audio"] as! String)!
-            let playerItem = AVPlayerItem(URL: url)
+            let url = URL(string: item["Pronounciation Audio"] as! String)!
+            let playerItem = AVPlayerItem(url: url)
             
             self.player = try AVPlayer(playerItem:playerItem)
             player!.volume = 1.0
@@ -227,9 +227,9 @@ class VocabularyTableViewController: UITableViewController, MFMailComposeViewCon
         }
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == segueToAVPlayer {
-            let vc = segue.destinationViewController as! StiqueVideoPlayer
+            let vc = segue.destination as! StiqueVideoPlayer
             vc.item = self.item
         }
     }

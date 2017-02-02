@@ -19,9 +19,9 @@ class StiqueVideoPlayer: AVPlayerViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        let url = NSURL(string: item["Video URL"] as! String)
-        let videoPlayer = AVPlayer(URL: url!)
-        videoPlayer.seekToTime(CMTime(seconds: 2, preferredTimescale: 1))
+        let url = URL(string: item["Video URL"] as! String)
+        let videoPlayer = AVPlayer(url: url!)
+        videoPlayer.seek(to: CMTime(seconds: 2, preferredTimescale: 1))
         self.player = videoPlayer
     }
 
@@ -30,25 +30,25 @@ class StiqueVideoPlayer: AVPlayerViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         // Set the correct orientation
-        let value = UIInterfaceOrientation.LandscapeLeft.rawValue
-        UIDevice.currentDevice().setValue(value, forKey: "orientation")
+        let value = UIInterfaceOrientation.landscapeLeft.rawValue
+        UIDevice.current.setValue(value, forKey: "orientation")
         
         navigationController?.hidesBarsOnTap = true
-        tabBarController?.tabBar.hidden = true
+        tabBarController?.tabBar.isHidden = true
     }
     
 
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         navigationController?.hidesBarsOnTap = false
-        tabBarController?.tabBar.hidden = false
+        tabBarController?.tabBar.isHidden = false
     }
 
 }

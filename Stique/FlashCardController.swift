@@ -21,16 +21,16 @@ class FlashCardController: UIViewController {
     @IBOutlet weak var vocabularyLabel: UILabel!
     
     // UI Action Object
-    @IBAction func checkPressed(sender: AnyObject) {
+    @IBAction func checkPressed(_ sender: AnyObject) {
         removeVocabulary()
         goNext()
     }
-    @IBAction func minusPressed(sender: AnyObject) {
+    @IBAction func minusPressed(_ sender: AnyObject) {
         keepVocabulary()
         goNext()
     }
-    @IBAction func backPressed(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func backPressed(_ sender: AnyObject) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     
@@ -42,12 +42,12 @@ class FlashCardController: UIViewController {
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Master Study Background")!)
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         // Setting the correct orientation for this view
-        let value = UIInterfaceOrientation.LandscapeLeft.rawValue
-        UIDevice.currentDevice().setValue(value, forKey: "orientation")
+        let value = UIInterfaceOrientation.landscapeLeft.rawValue
+        UIDevice.current.setValue(value, forKey: "orientation")
         vocabularyLabel.text = items[count]["word"] as? String
     }
     
@@ -64,15 +64,15 @@ class FlashCardController: UIViewController {
     
     func goNext () {
         if count == items.count {
-            self.dismissViewControllerAnimated(true, completion: nil)
+            self.dismiss(animated: true, completion: nil)
         } else {
             vocabularyLabel.text = items[count]["word"] as? String
         }
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showVideo" {
-            let vc = segue.destinationViewController as! StiqueVideoPlayer
+            let vc = segue.destination as! StiqueVideoPlayer
             vc.item = items[count]
         }
     }

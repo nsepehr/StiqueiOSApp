@@ -10,9 +10,9 @@ import UIKit
 import MessageUI
 
 enum ActionSheetButtons: Int {
-    case AddToMasterStudy = 1
-    case AddToUserPlaylist = 2
-    case Share = 3
+    case addToMasterStudy = 1
+    case addToUserPlaylist = 2
+    case share = 3
 }
 
 let vocabularySeque = "toVocabularyDetail"
@@ -24,25 +24,25 @@ class MainViewController: UITableViewController, UIActionSheetDelegate, MFMailCo
     var searchController = UISearchController()
     var filteredTableData = [StiqueData]()
     var playlists = [StiqueData]()
-    var actionSheetIndexPath: NSIndexPath!
+    var actionSheetIndexPath: IndexPath!
 
     
     // UI Outlet Objects
     
     // UI Action Objects
-    @IBAction func optionsActions(sender: AnyObject) {
+    @IBAction func optionsActions(_ sender: AnyObject) {
         // Below method will get the position of the button and based on that the index row
-        let buttonPosition: CGPoint = sender.convertPoint(CGPointZero, toView: self.tableView)
-        actionSheetIndexPath = tableView.indexPathForRowAtPoint(buttonPosition)
+        let buttonPosition: CGPoint = sender.convert(CGPoint.zero, to: self.tableView)
+        actionSheetIndexPath = tableView.indexPathForRow(at: buttonPosition)
         print("Selected row: \(actionSheetIndexPath.row) ")
         self.rightCellButtonPressed()
     }
     
-    @IBAction func menuPressed(sender: AnyObject) {
+    @IBAction func menuPressed(_ sender: AnyObject) {
         leftButtonPressed()
     }
     
-    @IBAction func searchPressed(sender: AnyObject) {
+    @IBAction func searchPressed(_ sender: AnyObject) {
         rightButtonPressed()
     }
     
@@ -69,13 +69,13 @@ class MainViewController: UITableViewController, UIActionSheetDelegate, MFMailCo
         tableView.reloadData()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.loadTableData()
         tableView.reloadData()
         // Set the correct orientation
-        let value = UIInterfaceOrientation.Portrait.rawValue
-        UIDevice.currentDevice().setValue(value, forKey: "orientation")
+        let value = UIInterfaceOrientation.portrait.rawValue
+        UIDevice.current.setValue(value, forKey: "orientation")
     }
     
     override func didReceiveMemoryWarning() {
@@ -83,51 +83,51 @@ class MainViewController: UITableViewController, UIActionSheetDelegate, MFMailCo
         // Dispose of any resources that can be recreated.
     }
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if searchController.active {
+        if searchController.isActive {
             return filteredTableData.count
         }
         
         return tableData.count
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var myItem = [String: AnyObject]()
         
         let kLCellIdentifier = "customCell"
-        let cell = tableView.dequeueReusableCellWithIdentifier(kLCellIdentifier) as! MainTableViewCell!
+        let cell = tableView.dequeueReusableCell(withIdentifier: kLCellIdentifier) as! MainTableViewCell!
         
-        if searchController.active {
+        if searchController.isActive {
             myItem = filteredTableData[indexPath.row]
         } else {
             myItem = tableData[indexPath.row]
         }
 
-        cell.vocabularyLabel.text = myItem["word"] as? String
+        cell?.vocabularyLabel.text = myItem["word"] as? String
         
         return cell!
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         var item: StiqueData!
 
-        if searchController.active {
+        if searchController.isActive {
             print("Search is active...")
             item = filteredTableData[indexPath.row]
-            searchController.dismissViewControllerAnimated(true, completion: {() -> Void in
+            searchController.dismiss(animated: true, completion: {() -> Void in
                 self.searchController.searchBar.text = ""
-                self.searchController.active = false
-                self.performSegueWithIdentifier(vocabularySeque, sender: item)
+                self.searchController.isActive = false
+                self.performSegue(withIdentifier: vocabularySeque, sender: item)
             })
         } else {
             item = tableData[indexPath.row]
-            performSegueWithIdentifier(vocabularySeque, sender: item)
+            performSegue(withIdentifier: vocabularySeque, sender: item)
         }
     }
     
@@ -135,21 +135,21 @@ class MainViewController: UITableViewController, UIActionSheetDelegate, MFMailCo
     func rightCellButtonPressed() {
         let actionSheet = UIActionSheet(title: "Choose Option", delegate: self, cancelButtonTitle: "Cancel", destructiveButtonTitle: nil, otherButtonTitles: "Add to Master Study", "Add to Your Playlist", "Share")
         
-        actionSheet.showInView(self.view)
+        actionSheet.show(in: self.view)
     }
     
-    func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
+    func actionSheet(_ actionSheet: UIActionSheet, clickedButtonAt buttonIndex: Int) {
         var vocabulary: StiqueData!
-        if (self.searchController.active) {
+        if (self.searchController.isActive) {
             vocabulary = self.filteredTableData[actionSheetIndexPath.row]
         } else {
             vocabulary = self.tableData[actionSheetIndexPath.row]
         }
-        if buttonIndex == ActionSheetButtons.AddToMasterStudy.rawValue {
+        if buttonIndex == ActionSheetButtons.addToMasterStudy.rawValue {
             addToMaster(vocabulary)
-        } else if buttonIndex == ActionSheetButtons.AddToUserPlaylist.rawValue {
+        } else if buttonIndex == ActionSheetButtons.addToUserPlaylist.rawValue {
             addToPlaylist(vocabulary)
-        } else if buttonIndex == ActionSheetButtons.Share.rawValue {
+        } else if buttonIndex == ActionSheetButtons.share.rawValue {
             sendEmailButtonTapped()
         }
     }
@@ -165,27 +165,27 @@ class MainViewController: UITableViewController, UIActionSheetDelegate, MFMailCo
     func rightButtonPressed() {
         // Display the search bar & activate the keyboard for it
         self.searchController.searchBar.becomeFirstResponder()
-        self.searchController.active = true
+        self.searchController.isActive = true
     }
     
-    func addToPlaylist(vocabulary: StiqueData) {
+    func addToPlaylist(_ vocabulary: StiqueData) {
         let _self = self
         let playlists = dataController.getPlaylistData()
         if playlists.count == 0 {
-            let alert = UIAlertController(title: "Alert", message: "Please create a user playlist first, under the playlist tab.", preferredStyle: UIAlertControllerStyle.Alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
-            self.presentViewController(alert, animated: true, completion: nil)
+            let alert = UIAlertController(title: "Alert", message: "Please create a user playlist first, under the playlist tab.", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         } else {
-            let alert = UIAlertController(title: "Which playlist", message: "Which playlist to add to?", preferredStyle: .ActionSheet)
+            let alert = UIAlertController(title: "Which playlist", message: "Which playlist to add to?", preferredStyle: .actionSheet)
             for playlist in playlists {
                 let playlistName = (playlist["name"] as? String)!
-                alert.addAction(UIAlertAction(title: playlistName, style: .Default, handler: {(alert: UIAlertAction) in
+                alert.addAction(UIAlertAction(title: playlistName, style: .default, handler: {(alert: UIAlertAction) in
                     print("Adding playlist with name: \(playlistName) ")
                     _self.dataController.addToUserPlaylist(vocabulary, playlist: playlistName)
                 }))
             }
-            alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
-            self.presentViewController(alert, animated: true, completion: nil)
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            self.present(alert, animated: true, completion: nil)
     
             // Nima: Below was for before
             //let actionSheet = UIActionSheet(title: "Which Playlist To Add to?", delegate: self, cancelButtonTitle: "Cancel", destructiveButtonTitle: nil)
@@ -199,19 +199,19 @@ class MainViewController: UITableViewController, UIActionSheetDelegate, MFMailCo
         }
     }
     
-    func addToMaster(vocabulary: StiqueData) {
+    func addToMaster(_ vocabulary: StiqueData) {
         self.dataController.addToMasterPlaylistData(vocabulary)
-        let alert = UIAlertController(title: "Master Study", message: "Added to Master Study.", preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
-        self.presentViewController(alert, animated: true, completion: nil)
+        let alert = UIAlertController(title: "Master Study", message: "Added to Master Study.", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
-    func filterContentForSearchText(searchText: String, scope: String = "All") {
+    func filterContentForSearchText(_ searchText: String, scope: String = "All") {
         if searchText == "" {
             filteredTableData = self.tableData
         } else {
             filteredTableData = self.tableData.filter { row in
-                return row["word"] != nil && (row["word"] as! String).lowercaseString.containsString(searchText.lowercaseString)
+                return row["word"] != nil && (row["word"] as! String).lowercased().contains(searchText.lowercased())
             }
         }
         
@@ -223,7 +223,7 @@ class MainViewController: UITableViewController, UIActionSheetDelegate, MFMailCo
     func sendEmailButtonTapped() {
         let mailComposeViewController = configuredMailComposeViewController()
         if MFMailComposeViewController.canSendMail() {
-            self.presentViewController(mailComposeViewController, animated: true, completion: nil)
+            self.present(mailComposeViewController, animated: true, completion: nil)
         } else {
             self.showSendMailErrorAlert()
         }
@@ -245,27 +245,27 @@ class MainViewController: UITableViewController, UIActionSheetDelegate, MFMailCo
         sendMailErrorAlert.show()
     }
     
-    func mailComposeController(controller: MFMailComposeViewController!, didFinishWithResult result: MFMailComposeResult, error: NSError!) {
-        controller.dismissViewControllerAnimated(true, completion: nil)
+    func mailComposeController(_ controller: MFMailComposeViewController!, didFinishWith result: MFMailComposeResult, error: Error!) {
+        controller.dismiss(animated: true, completion: nil)
         
     }
     
 
     // The orientation of the view
-    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-        return UIInterfaceOrientationMask.Portrait
+    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.portrait
     }
     
-    override func shouldAutorotate() -> Bool {
+    override var shouldAutorotate : Bool {
         return true
     }
     
     // MARK: Segue
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
         if segue.identifier == "toVocabularyDetail" {
             let item = sender as! StiqueData
-            let vc = segue.destinationViewController as! VocabularyTableViewController
+            let vc = segue.destination as! VocabularyTableViewController
             vc.item = item
         } else if segue.identifier == "toMenu" {
         }
@@ -274,7 +274,7 @@ class MainViewController: UITableViewController, UIActionSheetDelegate, MFMailCo
 }
 
 extension MainViewController: UISearchResultsUpdating {
-    func updateSearchResultsForSearchController(searchController: UISearchController) {
+    func updateSearchResults(for searchController: UISearchController) {
         filterContentForSearchText(searchController.searchBar.text!)
     }
 }
