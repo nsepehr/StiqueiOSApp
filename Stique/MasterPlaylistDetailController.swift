@@ -16,6 +16,7 @@ class MasterPlaylistDetailController: UIViewController, UITableViewDelegate, UIT
     
     // UI Oulet Object
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var startButton: UIButton!
     
     // UI Action Object
     @IBAction func backPressed(_ sender: AnyObject) {
@@ -36,6 +37,11 @@ class MasterPlaylistDetailController: UIViewController, UITableViewDelegate, UIT
         UIDevice.current.setValue(value, forKey: "orientation")
         // Load data
         loadData()
+        // Enable|Disable the start button
+        startButton.isEnabled = false
+        if tableData.count > 0 {
+            startButton.isEnabled = true
+        }
     }
     
     func loadData() {

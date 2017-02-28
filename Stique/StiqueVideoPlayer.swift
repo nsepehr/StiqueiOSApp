@@ -21,7 +21,7 @@ class StiqueVideoPlayer: AVPlayerViewController {
         // Do any additional setup after loading the view.
         let url = URL(string: item["Video URL"] as! String)
         let videoPlayer = AVPlayer(url: url!)
-        videoPlayer.seek(to: CMTime(seconds: 2, preferredTimescale: 1))
+        videoPlayer.seek(to: CMTime(seconds: 0, preferredTimescale: 1))
         self.player = videoPlayer
     }
 
@@ -38,6 +38,7 @@ class StiqueVideoPlayer: AVPlayerViewController {
         
         navigationController?.hidesBarsOnTap = true
         tabBarController?.tabBar.isHidden = true
+        self.player?.play()
     }
     
 

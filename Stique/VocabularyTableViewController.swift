@@ -30,7 +30,7 @@ class VocabularyTableViewController: UITableViewController, MFMailComposeViewCon
     @IBOutlet weak var suffixLabel: UILabel!
     @IBOutlet weak var pronounciationLabel: UILabel!
     @IBOutlet weak var speakerButton: UIButton!
-    @IBOutlet weak var masterStudyButton: UIButton!
+    //@IBOutlet weak var masterStudyButton: UIButton!
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var playlistButton: UIButton!
     @IBOutlet weak var definitionTextArea: UITextView!
@@ -79,7 +79,7 @@ class VocabularyTableViewController: UITableViewController, MFMailComposeViewCon
         suffixLabel.text = item["Suffix"] as? String
         pronounciationLabel.text = item["Pronounciation Text"] as? String
         speakerButton.setImage(UIImage(named: "Speaker"), for: UIControlState())
-        masterStudyButton.setImage(UIImage(named: "Master Study"), for: UIControlState())
+        //masterStudyButton.setImage(UIImage(named: "Master Study"), for: UIControlState())
         shareButton.setImage(UIImage(named: "Share"), for: UIControlState())
         playlistButton.setImage(UIImage(named: "Playlist"), for: UIControlState())
         definitionTextArea.text = item["Definition"] as? String
@@ -231,6 +231,7 @@ class VocabularyTableViewController: UITableViewController, MFMailComposeViewCon
         if segue.identifier == segueToAVPlayer {
             let vc = segue.destination as! StiqueVideoPlayer
             vc.item = self.item
+            self.dataController.addToMasterPlaylistData(self.item)
         }
     }
 
