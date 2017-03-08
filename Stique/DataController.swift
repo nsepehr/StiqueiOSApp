@@ -55,9 +55,18 @@ class DataController {
         return tableData
     }
     
+    func addToWatchedList(_ vocabulary: String) {
+        var watched = [vocabulary]
+        if let watched2 = userDefaults.object(forKey: "watched_words") as? [String] {
+            watched += Array(Set(watched2)) // unique it
+        }
+        userDefaults.set(watched, forKey: "watched_words")
+        userDefaults.synchronize()
+    }
+    
     func addToPlaylistData(_ data: [[String: AnyObject]]) {
         var tableData = data
-        let userDefaults = UserDefaults.standard
+        //let userDefaults = UserDefaults.standard
         do {
             if let playlist = userDefaults.string(forKey: Playlists.UserPlaylist.rawValue) {
                 let jsonData = try JSONSerialization.jsonObject(with: playlist.data(using: String.Encoding.utf8)!, options: .allowFragments) as? [[String: AnyObject]]

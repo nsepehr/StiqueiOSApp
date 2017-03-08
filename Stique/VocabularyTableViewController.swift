@@ -48,9 +48,11 @@ class VocabularyTableViewController: UITableViewController, MFMailComposeViewCon
     @IBAction func speakerAction(_ sender: AnyObject) {
         playPronounciation()
     }
+    /* NOTE: Taking this out and making automated when a user watches a video
     @IBAction func masterStudyPressed(_ sender: AnyObject) {
         addToMaster(item)
     }
+    */
     @IBAction func sharePressed(_ sender: AnyObject) {
         sendEmailButtonTapped()
     }
@@ -131,9 +133,11 @@ class VocabularyTableViewController: UITableViewController, MFMailComposeViewCon
     
     func addToMaster(_ vocabulary: StiqueData) {
         self.dataController.addToMasterPlaylistData(vocabulary)
+        /* No need to display an alert anymore
         let alert = UIAlertController(title: "Master Study", message: "Added to Master Study.", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
+        */
     }
     
     func addToPlaylist(_ vocabulary: StiqueData) {
@@ -232,6 +236,7 @@ class VocabularyTableViewController: UITableViewController, MFMailComposeViewCon
             let vc = segue.destination as! StiqueVideoPlayer
             vc.item = self.item
             self.dataController.addToMasterPlaylistData(self.item)
+            self.dataController.addToWatchedList(self.item["word"] as! String)
         }
     }
 

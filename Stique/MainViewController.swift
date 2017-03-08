@@ -30,6 +30,7 @@ class MainViewController: UITableViewController, UIActionSheetDelegate, MFMailCo
     // UI Outlet Objects
     
     // UI Action Objects
+    /* NOTE: Decision is to remove the option for cell
     @IBAction func optionsActions(_ sender: AnyObject) {
         // Below method will get the position of the button and based on that the index row
         let buttonPosition: CGPoint = sender.convert(CGPoint.zero, to: self.tableView)
@@ -37,14 +38,17 @@ class MainViewController: UITableViewController, UIActionSheetDelegate, MFMailCo
         print("Selected row: \(actionSheetIndexPath.row) ")
         self.rightCellButtonPressed()
     }
+    */
     
     @IBAction func menuPressed(_ sender: AnyObject) {
         leftButtonPressed()
     }
     
+    /* Removed the search icon
     @IBAction func searchPressed(_ sender: AnyObject) {
         rightButtonPressed()
     }
+    */
     
     override func viewDidLoad() {
         super.viewDidLoad()

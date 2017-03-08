@@ -21,8 +21,15 @@ class StiqueVideoPlayer: AVPlayerViewController {
         // Do any additional setup after loading the view.
         let url = URL(string: item["Video URL"] as! String)
         let videoPlayer = AVPlayer(url: url!)
-        videoPlayer.seek(to: CMTime(seconds: 0, preferredTimescale: 1))
+        //videoPlayer.seek(to: CMTime(seconds: 3, preferredTimescale: 1)) --> We're starting from beginning of video
         self.player = videoPlayer
+        
+        // Below is a snippet taken from online for ignoring the mute switch for video/audio playback
+        do{
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+        } catch {
+            //Didn't work
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,6 +45,10 @@ class StiqueVideoPlayer: AVPlayerViewController {
         
         navigationController?.hidesBarsOnTap = true
         tabBarController?.tabBar.isHidden = true
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         self.player?.play()
     }
     
