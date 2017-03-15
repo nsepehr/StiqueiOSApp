@@ -33,6 +33,7 @@
 		B01C5CE01DEFF7BF00307857 /* StiqueVideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01C5CDF1DEFF7BF00307857 /* StiqueVideoPlayer.swift */; };
 		B03CC2261DF93C7A00DAE22D /* VocabularyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03CC2251DF93C7A00DAE22D /* VocabularyTableViewController.swift */; };
 		B03CC2281DF94A8A00DAE22D /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03CC2271DF94A8A00DAE22D /* MenuViewController.swift */; };
+		B09151951E6FEBF6004D4102 /* Appirater.m in Sources */ = {isa = PBXBuildFile; fileRef = B09151941E6FEBF6004D4102 /* Appirater.m */; };
 		B09914901DED4D4E0028BAC9 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B099148F1DED4D4E0028BAC9 /* MainTableViewCell.swift */; };
 		B0AC39A81DF2CD1300D591FC /* MasterStudyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AC39A71DF2CD1300D591FC /* MasterStudyTableViewController.swift */; };
 /* End PBXBuildFile section */
@@ -101,6 +102,10 @@
 		B01C5CDF1DEFF7BF00307857 /* StiqueVideoPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StiqueVideoPlayer.swift; sourceTree = "<group>"; };
 		B03CC2251DF93C7A00DAE22D /* VocabularyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VocabularyTableViewController.swift; sourceTree = "<group>"; };
 		B03CC2271DF94A8A00DAE22D /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		B09151931E6FEBF5004D4102 /* Stique-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Stique-Bridging-Header.h"; sourceTree = "<group>"; };
+		B09151941E6FEBF6004D4102 /* Appirater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Appirater.m; sourceTree = "<group>"; };
+		B09151961E6FEC2C004D4102 /* Appirater.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Appirater.h; sourceTree = "<group>"; };
+		B09151971E6FEC5F004D4102 /* AppiraterDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppiraterDelegate.h; sourceTree = "<group>"; };
 		B099148F1DED4D4E0028BAC9 /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		B0AC39A71DF2CD1300D591FC /* MasterStudyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterStudyTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -156,6 +161,7 @@
 		5BA967B41C98CBED00EDC126 /* Stique */ = {
 			isa = PBXGroup;
 			children = (
+				B09151921E6FEBC2004D4102 /* Appirater */,
 				5BA967E71CA085BB00EDC126 /* images */,
 				5BA967BC1C98CBF800EDC126 /* Assets.xcassets */,
 				5B5C27821CE90A5B00CACF37 /* words.json */,
@@ -235,6 +241,17 @@
 				5BF7391B1CB98E55008C41BD /* MediaPlayer.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B09151921E6FEBC2004D4102 /* Appirater */ = {
+			isa = PBXGroup;
+			children = (
+				B09151941E6FEBF6004D4102 /* Appirater.m */,
+				B09151961E6FEC2C004D4102 /* Appirater.h */,
+				B09151971E6FEC5F004D4102 /* AppiraterDelegate.h */,
+				B09151931E6FEBF5004D4102 /* Stique-Bridging-Header.h */,
+			);
+			name = Appirater;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -378,6 +395,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B09151951E6FEBF6004D4102 /* Appirater.m in Sources */,
 				5BA967E41CA080B700EDC126 /* MainViewController.swift in Sources */,
 				5B674D9B1CDF235200980E60 /* MasterPlaylistDetailController.swift in Sources */,
 				B03CC2261DF93C7A00DAE22D /* VocabularyTableViewController.swift in Sources */,
@@ -517,6 +535,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = G87T54MP99;
@@ -531,6 +550,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = stiqueApp.Stique;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Stique/Stique-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -539,6 +560,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = G87T54MP99;
@@ -553,6 +575,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = stiqueApp.Stique;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Stique/Stique-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

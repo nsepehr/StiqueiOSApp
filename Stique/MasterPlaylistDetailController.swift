@@ -39,8 +39,10 @@ class MasterPlaylistDetailController: UIViewController, UITableViewDelegate, UIT
         loadData()
         // Enable|Disable the start button
         startButton.isEnabled = false
+        tableView.isUserInteractionEnabled = false
         if tableData.count > 0 {
             startButton.isEnabled = true
+            tableView.isUserInteractionEnabled = true
         }
     }
     
@@ -62,6 +64,11 @@ class MasterPlaylistDetailController: UIViewController, UITableViewDelegate, UIT
         cell?.textLabel?.text = myItem["word"] as? String
         
         return cell!
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // It doesn't matter what row they select we gonna start the flashcard page
+        performSegue(withIdentifier: "toFlashcardView", sender: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
