@@ -118,6 +118,9 @@ class VocabularyTableViewController: UITableViewController, MFMailComposeViewCon
             let thisRating: Int = ratings![title]!
             rateVideo(thisRating)
         }
+        
+        // For popping the app rater
+        Appirater.userDidSignificantEvent(true)
     }
     
     func setNavigationBar() {

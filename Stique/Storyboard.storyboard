@@ -190,7 +190,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="175"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" alpha="0.75" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Master Study Background" translatesAutoresizingMaskIntoConstraints="NO" id="HpT-vR-xev">
+                                                <imageView userInteractionEnabled="NO" alpha="0.75" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Menu Background" translatesAutoresizingMaskIntoConstraints="NO" id="HpT-vR-xev">
                                                     <rect key="frame" x="-2" y="-2" width="418" height="179"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vocabulary" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKi-ME-vtG">
@@ -331,75 +331,48 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OIt-f2-QtC" userLabel="Star4">
+                                                <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OIt-f2-QtC" userLabel="Star4">
                                                     <rect key="frame" x="122" y="0.0" width="30" height="30"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="30" id="JRC-Yt-Iz1"/>
-                                                        <constraint firstAttribute="height" constant="30" id="WmR-XL-qXu"/>
-                                                    </constraints>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" image="Star Blank"/>
                                                     <connections>
                                                         <action selector="ratingAction:" destination="EGJ-Sp-v9X" eventType="touchUpInside" id="PWR-l6-FY0"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F39-JE-y7O" userLabel="Star3">
+                                                <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F39-JE-y7O" userLabel="Star3">
                                                     <rect key="frame" x="84" y="0.0" width="30" height="30"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="30" id="5lB-ZU-hGV"/>
-                                                        <constraint firstAttribute="width" constant="30" id="fyy-w8-EmS"/>
-                                                    </constraints>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" image="Star Blank"/>
                                                     <connections>
                                                         <action selector="ratingAction:" destination="EGJ-Sp-v9X" eventType="touchUpInside" id="lD4-k8-tfH"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mcf-42-fBv" userLabel="Star2">
+                                                <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mcf-42-fBv" userLabel="Star2">
                                                     <rect key="frame" x="46" y="0.0" width="30" height="30"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="30" id="w2p-bP-wMA"/>
-                                                        <constraint firstAttribute="width" constant="30" id="wKk-dc-Lcu"/>
-                                                    </constraints>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" image="Star Blank"/>
                                                     <connections>
                                                         <action selector="ratingAction:" destination="EGJ-Sp-v9X" eventType="touchUpInside" id="N0Q-3C-VID"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ity-8S-r0Z" userLabel="Star1">
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ity-8S-r0Z" userLabel="Star1">
                                                     <rect key="frame" x="8" y="0.0" width="30" height="30"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="30" id="FQC-Cq-F1r"/>
-                                                        <constraint firstAttribute="width" constant="30" id="vlq-0e-ykV"/>
-                                                    </constraints>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <state key="normal" image="Star Blank"/>
                                                     <connections>
                                                         <action selector="ratingAction:" destination="EGJ-Sp-v9X" eventType="touchUpInside" id="MHZ-dC-wuZ"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="08Y-TU-mpf" userLabel="Star5">
+                                                <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="08Y-TU-mpf" userLabel="Star5">
                                                     <rect key="frame" x="160" y="0.0" width="30" height="30"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="30" id="TjZ-a9-2jJ"/>
-                                                        <constraint firstAttribute="width" constant="30" id="qGU-56-714"/>
-                                                    </constraints>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" image="Star Blank"/>
                                                     <connections>
                                                         <action selector="ratingAction:" destination="EGJ-Sp-v9X" eventType="touchUpInside" id="Scw-yd-AZE"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstItem="OIt-f2-QtC" firstAttribute="top" secondItem="vgg-Xh-ixx" secondAttribute="top" id="8Em-TP-EyU"/>
-                                                <constraint firstItem="08Y-TU-mpf" firstAttribute="leading" secondItem="OIt-f2-QtC" secondAttribute="trailing" constant="8" id="Byk-ov-ODU"/>
-                                                <constraint firstItem="F39-JE-y7O" firstAttribute="top" secondItem="vgg-Xh-ixx" secondAttribute="top" id="PYL-hm-Agz"/>
-                                                <constraint firstItem="08Y-TU-mpf" firstAttribute="top" secondItem="vgg-Xh-ixx" secondAttribute="top" id="RHE-Xl-5YA"/>
-                                                <constraint firstItem="Mcf-42-fBv" firstAttribute="top" secondItem="vgg-Xh-ixx" secondAttribute="top" id="WsX-nF-MLB"/>
-                                                <constraint firstItem="Mcf-42-fBv" firstAttribute="leading" secondItem="ity-8S-r0Z" secondAttribute="trailing" constant="8" id="Wsq-IT-dcc"/>
-                                                <constraint firstItem="ity-8S-r0Z" firstAttribute="leading" secondItem="vgg-Xh-ixx" secondAttribute="leading" constant="8" id="Xeq-ln-ecb"/>
-                                                <constraint firstItem="ity-8S-r0Z" firstAttribute="top" secondItem="vgg-Xh-ixx" secondAttribute="top" id="dDO-92-S7E"/>
-                                                <constraint firstItem="OIt-f2-QtC" firstAttribute="leading" secondItem="F39-JE-y7O" secondAttribute="trailing" constant="8" id="dyT-eY-g10"/>
-                                                <constraint firstItem="F39-JE-y7O" firstAttribute="leading" secondItem="Mcf-42-fBv" secondAttribute="trailing" constant="8" id="k4r-Do-xPA"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -1384,7 +1357,6 @@
         <image name="Master Study" width="44" height="35"/>
         <image name="Master Study Back Button" width="51" height="15"/>
         <image name="Master Study Back Shape" width="38" height="39"/>
-        <image name="Master Study Background" width="736" height="414"/>
         <image name="Master Study Check" width="41" height="42"/>
         <image name="Master Study Minus" width="41" height="42"/>
         <image name="Master Study Show Button" width="108" height="53"/>

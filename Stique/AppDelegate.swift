@@ -19,10 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         Appirater.setAppId("1234")
-        Appirater.setDaysUntilPrompt(1)
-        Appirater.setUsesUntilPrompt(0)
-        Appirater.setSignificantEventsUntilPrompt(-1)
-        Appirater.setTimeBeforeReminding(2)
+        Appirater.setDaysUntilPrompt(0)
+        Appirater.setUsesUntilPrompt(2)
+        Appirater.setSignificantEventsUntilPrompt(4)
+        Appirater.setTimeBeforeReminding(0)
         Appirater.setDebug(false)
         Appirater.appLaunched(true)
         

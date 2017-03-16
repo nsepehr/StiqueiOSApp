@@ -49,6 +49,8 @@ class FlashCardController: UIViewController {
         let value = UIInterfaceOrientation.landscapeLeft.rawValue
         UIDevice.current.setValue(value, forKey: "orientation")
         vocabularyLabel.text = items[count]["word"] as? String
+        // For popping the app rater
+        Appirater.userDidSignificantEvent(true)
     }
     
     func removeVocabulary () {
