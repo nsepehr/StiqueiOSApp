@@ -36,6 +36,7 @@
 		B09151951E6FEBF6004D4102 /* Appirater.m in Sources */ = {isa = PBXBuildFile; fileRef = B09151941E6FEBF6004D4102 /* Appirater.m */; };
 		B09914901DED4D4E0028BAC9 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B099148F1DED4D4E0028BAC9 /* MainTableViewCell.swift */; };
 		B0AC39A81DF2CD1300D591FC /* MasterStudyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AC39A71DF2CD1300D591FC /* MasterStudyTableViewController.swift */; };
+		B0E9CAC31E7A71C600E34254 /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E9CAC21E7A71C600E34254 /* AboutUsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +109,7 @@
 		B09151971E6FEC5F004D4102 /* AppiraterDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppiraterDelegate.h; sourceTree = "<group>"; };
 		B099148F1DED4D4E0028BAC9 /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		B0AC39A71DF2CD1300D591FC /* MasterStudyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterStudyTableViewController.swift; sourceTree = "<group>"; };
+		B0E9CAC21E7A71C600E34254 /* AboutUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +174,7 @@
 				B012F42A1DE97595008FCA05 /* NavigationController.swift */,
 				B012F4261DE6E618008FCA05 /* TabBarController.swift */,
 				B03CC2271DF94A8A00DAE22D /* MenuViewController.swift */,
+				B0E9CAC21E7A71C600E34254 /* AboutUsViewController.swift */,
 				5BA967E31CA080B700EDC126 /* MainViewController.swift */,
 				B099148F1DED4D4E0028BAC9 /* MainTableViewCell.swift */,
 				B03CC2251DF93C7A00DAE22D /* VocabularyTableViewController.swift */,
@@ -399,6 +402,7 @@
 				5BA967E41CA080B700EDC126 /* MainViewController.swift in Sources */,
 				5B674D9B1CDF235200980E60 /* MasterPlaylistDetailController.swift in Sources */,
 				B03CC2261DF93C7A00DAE22D /* VocabularyTableViewController.swift in Sources */,
+				B0E9CAC31E7A71C600E34254 /* AboutUsViewController.swift in Sources */,
 				5B689C911CF292E60066D726 /* PlaylistDetailController.swift in Sources */,
 				5B689C8F1CF28BEE0066D726 /* PlaylistController.swift in Sources */,
 				B012F4251DE2C680008FCA05 /* DataController.swift in Sources */,

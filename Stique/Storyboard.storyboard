@@ -50,14 +50,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5o6-wr-Iwl">
-                                <rect key="frame" x="35" y="35" width="30" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5o6-wr-Iwl">
+                                <rect key="frame" x="25" y="35" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Bgf-bg-ElJ"/>
                                     <constraint firstAttribute="width" constant="30" id="UL6-wC-Il9"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="X">
+                                <state key="normal" image="X">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -70,6 +69,9 @@
                                 <state key="normal" title="About us">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="sxO-4A-ytX" kind="show" id="tIv-V8-hvZ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3hJ-jG-63F">
                                 <rect key="frame" x="35" y="212" width="200" height="42"/>
@@ -92,7 +94,7 @@
                             <constraint firstItem="3hJ-jG-63F" firstAttribute="top" secondItem="4Cv-IN-moo" secondAttribute="bottom" constant="25" id="BVW-od-7Fh"/>
                             <constraint firstItem="4Cv-IN-moo" firstAttribute="top" secondItem="5o6-wr-Iwl" secondAttribute="bottom" constant="80" id="Lrq-YP-7TE"/>
                             <constraint firstItem="5o6-wr-Iwl" firstAttribute="top" secondItem="DJR-ff-EGh" secondAttribute="bottom" constant="15" id="Xgo-Qd-07v"/>
-                            <constraint firstItem="5o6-wr-Iwl" firstAttribute="leading" secondItem="PKW-5N-rP0" secondAttribute="leadingMargin" constant="15" id="uDn-WX-Ylm"/>
+                            <constraint firstItem="5o6-wr-Iwl" firstAttribute="leading" secondItem="PKW-5N-rP0" secondAttribute="leadingMargin" constant="5" id="uDn-WX-Ylm"/>
                             <constraint firstItem="CaB-Bk-bDr" firstAttribute="top" secondItem="3hJ-jG-63F" secondAttribute="bottom" constant="25" id="uOm-Lx-xRZ"/>
                             <constraint firstItem="4Cv-IN-moo" firstAttribute="leading" secondItem="PKW-5N-rP0" secondAttribute="leadingMargin" constant="15" id="vBG-N9-3QQ"/>
                             <constraint firstItem="CaB-Bk-bDr" firstAttribute="leading" secondItem="3hJ-jG-63F" secondAttribute="leading" id="w1g-gc-21Q"/>
@@ -102,6 +104,51 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1rV-j4-Qhn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2272" y="-855"/>
+        </scene>
+        <!--About Us -->
+        <scene sceneID="c5d-6Q-NJf">
+            <objects>
+                <viewController title="About Us " id="sxO-4A-ytX" customClass="AboutUsViewController" customModule="Stique" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tr2-uw-SNG"/>
+                        <viewControllerLayoutGuide type="bottom" id="ueb-Qd-LvE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fH7-Pb-m7j">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Menu Background" translatesAutoresizingMaskIntoConstraints="NO" id="2tl-XI-Rmi">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dwM-FL-oun" userLabel="Back Button">
+                                <rect key="frame" x="25" y="35" width="20" height="28"/>
+                                <state key="normal" image="Navigation Back Button"/>
+                                <connections>
+                                    <action selector="goBack:" destination="sxO-4A-ytX" eventType="touchUpInside" id="PXa-xp-aou"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="12" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yFh-t4-V2s">
+                                <rect key="frame" x="56" y="122" width="303" height="243.66666666666669"/>
+                                <string key="text">Stique utilizes mnemonic memorization techniques crafted by Dominic O’Brien. Drawing from O'Brien's How to Develop a Perfect Memory, we came up with a solution to retain vocabulary words not just in time for the exam, but forever. Situating words in context, our techniques allow you to stretch beyond rote memorization. The words become a part of your everyday life. As you live, these memories and words live on with you.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dwM-FL-oun" firstAttribute="top" secondItem="tr2-uw-SNG" secondAttribute="bottom" constant="15" id="38k-U8-4sc"/>
+                            <constraint firstItem="yFh-t4-V2s" firstAttribute="top" secondItem="tr2-uw-SNG" secondAttribute="bottom" constant="102" id="PjX-eq-16a"/>
+                            <constraint firstItem="yFh-t4-V2s" firstAttribute="leading" secondItem="fH7-Pb-m7j" secondAttribute="leadingMargin" constant="36" id="hIb-JV-uS9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yFh-t4-V2s" secondAttribute="trailing" constant="35" id="rYr-sL-lKE"/>
+                            <constraint firstItem="dwM-FL-oun" firstAttribute="leading" secondItem="fH7-Pb-m7j" secondAttribute="leadingMargin" constant="5" id="zpa-M9-gHo"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dSf-Uc-YgQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3144.9275362318845" y="-1188.5869565217392"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="QJK-NC-o58">
@@ -757,18 +804,18 @@
                                         <rect key="frame" x="0.0" y="155.5" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MMl-ac-CMZ" id="fmO-EL-WZe">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="GRE Practice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" id="heQ-M1-Y2z">
-                                                    <rect key="frame" x="15" y="5" width="100" height="20.333333333333332"/>
+                                                    <rect key="frame" x="15" y="4" width="100" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="(Coming Soon)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EDO-t0-s15">
-                                                    <rect key="frame" x="15" y="25.333333333333332" width="84.333333333333329" height="14.333333333333334"/>
+                                                    <rect key="frame" x="15" y="25" width="85" height="15"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -781,18 +828,18 @@
                                         <rect key="frame" x="0.0" y="199.5" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cNP-8x-8Uc" id="l7e-7Z-pjz">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="GMAT Practice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" id="jpO-N4-p8E">
-                                                    <rect key="frame" x="14.999999999999993" y="5" width="114.33333333333333" height="20.333333333333332"/>
+                                                    <rect key="frame" x="15" y="4" width="115" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="(Coming Soon)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rLc-hh-Kzy">
-                                                    <rect key="frame" x="15" y="25.333333333333332" width="84.333333333333329" height="14.333333333333334"/>
+                                                    <rect key="frame" x="15" y="25" width="85" height="15"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -805,18 +852,18 @@
                                         <rect key="frame" x="0.0" y="243.5" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="geJ-Lw-WGA" id="jur-hP-3Ai">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="LSAT Practice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" id="9f1-Xl-nto">
-                                                    <rect key="frame" x="15" y="5" width="107" height="20.333333333333332"/>
+                                                    <rect key="frame" x="15" y="4" width="107" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="(Coming Soon)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5ZH-mg-7nm">
-                                                    <rect key="frame" x="15" y="25.333333333333332" width="84.333333333333329" height="14.333333333333334"/>
+                                                    <rect key="frame" x="15" y="25" width="85" height="15"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1362,6 +1409,7 @@
         <image name="Speaker" width="68" height="64"/>
         <image name="Star Blank New" width="20" height="20"/>
         <image name="Start" width="162" height="23"/>
+        <image name="X" width="29" height="28"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="tbX-L9-GfB"/>
