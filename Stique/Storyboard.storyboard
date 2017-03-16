@@ -103,7 +103,7 @@
             </objects>
             <point key="canvasLocation" x="2272" y="-855"/>
         </scene>
-        <!--Stique-->
+        <!--Main View Controller-->
         <scene sceneID="QJK-NC-o58">
             <objects>
                 <tableViewController id="uW9-ds-0yT" customClass="MainViewController" customModule="Stique" customModuleProvider="target" sceneMemberID="viewController">
@@ -156,7 +156,7 @@
                             <outlet property="delegate" destination="uW9-ds-0yT" id="bXy-G8-IdQ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Stique" id="Mnc-YL-dc4">
+                    <navigationItem key="navigationItem" id="Mnc-YL-dc4">
                         <barButtonItem key="leftBarButtonItem" image="Menu" id="yQ1-Z4-Iaj" userLabel="Menu">
                             <connections>
                                 <action selector="menuPressed:" destination="uW9-ds-0yT" id="n7x-Vj-Be7"/>
@@ -248,10 +248,10 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="CU8-vM-FsV">
-                                                    <rect key="frame" x="16" y="140" width="125" height="22"/>
+                                                    <rect key="frame" x="16" y="140" width="140" height="22"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ity-8S-r0Z" userLabel="Star1">
-                                                            <rect key="frame" x="0.0" y="0.0" width="17" height="22"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="20" height="22"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                             <state key="normal" image="Star Blank New"/>
                                                             <connections>
@@ -259,28 +259,28 @@
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mcf-42-fBv" userLabel="Star2">
-                                                            <rect key="frame" x="27" y="0.0" width="17" height="22"/>
+                                                            <rect key="frame" x="30" y="0.0" width="20" height="22"/>
                                                             <state key="normal" image="Star Blank New"/>
                                                             <connections>
                                                                 <action selector="ratingAction:" destination="EGJ-Sp-v9X" eventType="touchUpInside" id="N0Q-3C-VID"/>
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F39-JE-y7O" userLabel="Star3">
-                                                            <rect key="frame" x="54" y="0.0" width="17" height="22"/>
+                                                            <rect key="frame" x="60" y="0.0" width="20" height="22"/>
                                                             <state key="normal" image="Star Blank New"/>
                                                             <connections>
                                                                 <action selector="ratingAction:" destination="EGJ-Sp-v9X" eventType="touchUpInside" id="lD4-k8-tfH"/>
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OIt-f2-QtC" userLabel="Star4">
-                                                            <rect key="frame" x="81" y="0.0" width="17" height="22"/>
+                                                            <rect key="frame" x="90" y="0.0" width="20" height="22"/>
                                                             <state key="normal" image="Star Blank New"/>
                                                             <connections>
                                                                 <action selector="ratingAction:" destination="EGJ-Sp-v9X" eventType="touchUpInside" id="PWR-l6-FY0"/>
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="08Y-TU-mpf" userLabel="Star5">
-                                                            <rect key="frame" x="108" y="0.0" width="17" height="22"/>
+                                                            <rect key="frame" x="120" y="0.0" width="20" height="22"/>
                                                             <state key="normal" image="Star Blank New"/>
                                                             <connections>
                                                                 <action selector="ratingAction:" destination="EGJ-Sp-v9X" eventType="touchUpInside" id="Scw-yd-AZE"/>
@@ -483,11 +483,11 @@
                                         <rect key="frame" x="0.0" y="28" width="414" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="l8g-Q8-kcX" id="WGr-ii-tzO">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="49.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ryb-gy-hBu">
-                                                    <rect key="frame" x="15" y="0.0" width="384" height="49"/>
+                                                    <rect key="frame" x="15" y="0.0" width="384" height="49.666666666666664"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -757,18 +757,18 @@
                                         <rect key="frame" x="0.0" y="155.5" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MMl-ac-CMZ" id="fmO-EL-WZe">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="GRE Practice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" id="heQ-M1-Y2z">
-                                                    <rect key="frame" x="15" y="4" width="100" height="21"/>
+                                                    <rect key="frame" x="15" y="5" width="100" height="20.333333333333332"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="(Coming Soon)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EDO-t0-s15">
-                                                    <rect key="frame" x="15" y="25" width="85" height="15"/>
+                                                    <rect key="frame" x="15" y="25.333333333333332" width="84.333333333333329" height="14.333333333333334"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -781,18 +781,18 @@
                                         <rect key="frame" x="0.0" y="199.5" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cNP-8x-8Uc" id="l7e-7Z-pjz">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="GMAT Practice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" id="jpO-N4-p8E">
-                                                    <rect key="frame" x="15" y="4" width="115" height="21"/>
+                                                    <rect key="frame" x="14.999999999999993" y="5" width="114.33333333333333" height="20.333333333333332"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="(Coming Soon)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rLc-hh-Kzy">
-                                                    <rect key="frame" x="15" y="25" width="85" height="15"/>
+                                                    <rect key="frame" x="15" y="25.333333333333332" width="84.333333333333329" height="14.333333333333334"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -805,18 +805,18 @@
                                         <rect key="frame" x="0.0" y="243.5" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="geJ-Lw-WGA" id="jur-hP-3Ai">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="LSAT Practice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" id="9f1-Xl-nto">
-                                                    <rect key="frame" x="15" y="4" width="107" height="21"/>
+                                                    <rect key="frame" x="15" y="5" width="107" height="20.333333333333332"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="(Coming Soon)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5ZH-mg-7nm">
-                                                    <rect key="frame" x="15" y="25" width="85" height="15"/>
+                                                    <rect key="frame" x="15" y="25.333333333333332" width="84.333333333333329" height="14.333333333333334"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1360,7 +1360,7 @@
         <image name="Share" width="22" height="24"/>
         <image name="Shopping Cart" width="42" height="30"/>
         <image name="Speaker" width="68" height="64"/>
-        <image name="Star Blank New" width="17" height="17"/>
+        <image name="Star Blank New" width="20" height="20"/>
         <image name="Start" width="162" height="23"/>
     </resources>
     <inferredMetricsTieBreakers>

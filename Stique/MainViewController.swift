@@ -54,7 +54,11 @@ class MainViewController: UITableViewController, UIActionSheetDelegate, MFMailCo
         super.viewDidLoad()
         
         // Navigation bar settings
-        navigationItem.title = "Stique"
+        // navigationItem.title = "Stique"
+        let titleImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        titleImageView.image = UIImage(named: "Logo")
+        titleImageView.contentMode = .scaleAspectFit
+        navigationItem.titleView = titleImageView
         
         // Adding the search bar
         searchController = UISearchController(searchResultsController: nil)
