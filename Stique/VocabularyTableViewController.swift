@@ -21,8 +21,8 @@ class VocabularyTableViewController: UITableViewController, MFMailComposeViewCon
     var player: AVPlayer?
     
     // Image for the ratings
-    let starImage = UIImage(named: "Star")
-    let starBlankImage = UIImage(named: "Star Blank")
+    let starImage = UIImage(named: "Star New")
+    let starBlankImage = UIImage(named: "Star Blank New")
     
     // The UI Outlet Objects
     @IBOutlet weak var backgroundImageView: UIImageView!
