@@ -13,6 +13,7 @@ enum Playlists: String {
     case UserPlaylist   = "userPlaylist"
 }
 
+
 // Let's define an alias for the type of object we'll use everywhere
 typealias StiqueData = [String: AnyObject]
 typealias StiqueRating = [String: Int]
