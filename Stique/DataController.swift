@@ -278,7 +278,7 @@ class DataController {
         // Update the web database for the rating
         let id = userDefaults.integer(forKey: AppDefaultKeys.ID.rawValue)
         print("id from user defaults is \(id)")
-        let baseURLString = "https://7t48nu4m33.execute-api.us-west-1.amazonaws.com/Development/testingPythonRDS"
+        let baseURLString = "https://7t48nu4m33.execute-api.us-west-1.amazonaws.com/stiqueapi/setrating"
         let postString = "{\"APIKey\": \"NayaTooBaba\", \"GUID\": \"\(id)\", \"Vocabulary\": \"\(vocabulary)\", \"Rating\": \"\(rating)\"}"
         let url = URL(string: baseURLString)!
         var request = URLRequest(url: url)
