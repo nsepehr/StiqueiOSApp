@@ -15,6 +15,7 @@ enum ActionSheetButtons: Int {
     case share = 3
 }
 
+
 let vocabularySeque = "toVocabularyDetail"
 
 class MainViewController: UITableViewController, UIActionSheetDelegate, MFMailComposeViewControllerDelegate {
@@ -25,7 +26,6 @@ class MainViewController: UITableViewController, UIActionSheetDelegate, MFMailCo
     var filteredTableData = [StiqueData]()
     var playlists = [StiqueData]()
     var actionSheetIndexPath: IndexPath!
-
     
     // UI Outlet Objects
     
@@ -83,8 +83,11 @@ class MainViewController: UITableViewController, UIActionSheetDelegate, MFMailCo
         tableView.reloadData()
         // Set the correct orientation
         let value = UIInterfaceOrientation.portrait.rawValue
-        UIDevice.current.setValue(value, forKey: "orientation")
+        UIDevice.current.setValue(value, forKey: "orientation") //Nima testing
     }
+    
+    
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

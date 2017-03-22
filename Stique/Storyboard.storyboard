@@ -51,10 +51,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5o6-wr-Iwl">
-                                <rect key="frame" x="25" y="35" width="30" height="30"/>
+                                <rect key="frame" x="25" y="35" width="60" height="60"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Bgf-bg-ElJ"/>
-                                    <constraint firstAttribute="width" constant="30" id="UL6-wC-Il9"/>
+                                    <constraint firstAttribute="height" constant="60" id="Bgf-bg-ElJ"/>
+                                    <constraint firstAttribute="width" constant="60" id="UL6-wC-Il9"/>
                                 </constraints>
                                 <state key="normal" image="X">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -64,7 +64,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Cv-IN-moo">
-                                <rect key="frame" x="35" y="145" width="100" height="42"/>
+                                <rect key="frame" x="35" y="175" width="100" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="About us">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -74,14 +74,14 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3hJ-jG-63F">
-                                <rect key="frame" x="35" y="212" width="200" height="42"/>
+                                <rect key="frame" x="35" y="242" width="200" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Send us feedback">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CaB-Bk-bDr">
-                                <rect key="frame" x="35" y="279" width="65" height="42"/>
+                                <rect key="frame" x="35" y="309" width="65" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Share">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -122,14 +122,18 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dwM-FL-oun" userLabel="Back Button">
-                                <rect key="frame" x="25" y="35" width="20" height="28"/>
+                                <rect key="frame" x="25" y="35" width="58" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="58" id="KtL-QX-Rx2"/>
+                                    <constraint firstAttribute="height" constant="47" id="k8I-2m-emh"/>
+                                </constraints>
                                 <state key="normal" image="Navigation Back Button"/>
                                 <connections>
                                     <action selector="goBack:" destination="sxO-4A-ytX" eventType="touchUpInside" id="PXa-xp-aou"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="12" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yFh-t4-V2s">
-                                <rect key="frame" x="56" y="122" width="303" height="243.66666666666669"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yFh-t4-V2s">
+                                <rect key="frame" x="35" y="122" width="344" height="223.33333333333331"/>
                                 <string key="text">Stique utilizes mnemonic memorization techniques crafted by Dominic O’Brien. Drawing from O'Brien's How to Develop a Perfect Memory, we came up with a solution to retain vocabulary words not just in time for the exam, but forever. Situating words in context, our techniques allow you to stretch beyond rote memorization. The words become a part of your everyday life. As you live, these memories and words live on with you.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -140,8 +144,8 @@
                         <constraints>
                             <constraint firstItem="dwM-FL-oun" firstAttribute="top" secondItem="tr2-uw-SNG" secondAttribute="bottom" constant="15" id="38k-U8-4sc"/>
                             <constraint firstItem="yFh-t4-V2s" firstAttribute="top" secondItem="tr2-uw-SNG" secondAttribute="bottom" constant="102" id="PjX-eq-16a"/>
-                            <constraint firstItem="yFh-t4-V2s" firstAttribute="leading" secondItem="fH7-Pb-m7j" secondAttribute="leadingMargin" constant="36" id="hIb-JV-uS9"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="yFh-t4-V2s" secondAttribute="trailing" constant="35" id="rYr-sL-lKE"/>
+                            <constraint firstItem="yFh-t4-V2s" firstAttribute="leading" secondItem="fH7-Pb-m7j" secondAttribute="leadingMargin" constant="15" id="hIb-JV-uS9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yFh-t4-V2s" secondAttribute="trailing" constant="15" id="rYr-sL-lKE"/>
                             <constraint firstItem="dwM-FL-oun" firstAttribute="leading" secondItem="fH7-Pb-m7j" secondAttribute="leadingMargin" constant="5" id="zpa-M9-gHo"/>
                         </constraints>
                     </view>
@@ -223,7 +227,7 @@
         <scene sceneID="RSm-il-IE5">
             <objects>
                 <tableViewController title="Vocabulary Detail" id="EGJ-Sp-v9X" customClass="VocabularyTableViewController" customModule="Stique" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="XcM-su-ZDJ">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" directionalLockEnabled="YES" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="XcM-su-ZDJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -294,11 +298,11 @@
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="CU8-vM-FsV">
-                                                    <rect key="frame" x="16" y="140" width="140" height="22"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="CU8-vM-FsV">
+                                                    <rect key="frame" x="16" y="132" width="160" height="30"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ity-8S-r0Z" userLabel="Star1">
-                                                            <rect key="frame" x="0.0" y="0.0" width="20" height="22"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="20" height="30"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                             <state key="normal" image="Star Blank New"/>
                                                             <connections>
@@ -306,28 +310,28 @@
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mcf-42-fBv" userLabel="Star2">
-                                                            <rect key="frame" x="30" y="0.0" width="20" height="22"/>
+                                                            <rect key="frame" x="35" y="0.0" width="20" height="30"/>
                                                             <state key="normal" image="Star Blank New"/>
                                                             <connections>
                                                                 <action selector="ratingAction:" destination="EGJ-Sp-v9X" eventType="touchUpInside" id="N0Q-3C-VID"/>
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F39-JE-y7O" userLabel="Star3">
-                                                            <rect key="frame" x="60" y="0.0" width="20" height="22"/>
+                                                            <rect key="frame" x="70" y="0.0" width="20" height="30"/>
                                                             <state key="normal" image="Star Blank New"/>
                                                             <connections>
                                                                 <action selector="ratingAction:" destination="EGJ-Sp-v9X" eventType="touchUpInside" id="lD4-k8-tfH"/>
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OIt-f2-QtC" userLabel="Star4">
-                                                            <rect key="frame" x="90" y="0.0" width="20" height="22"/>
+                                                            <rect key="frame" x="105" y="0.0" width="20" height="30"/>
                                                             <state key="normal" image="Star Blank New"/>
                                                             <connections>
                                                                 <action selector="ratingAction:" destination="EGJ-Sp-v9X" eventType="touchUpInside" id="PWR-l6-FY0"/>
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="08Y-TU-mpf" userLabel="Star5">
-                                                            <rect key="frame" x="120" y="0.0" width="20" height="22"/>
+                                                            <rect key="frame" x="140" y="0.0" width="20" height="30"/>
                                                             <state key="normal" image="Star Blank New"/>
                                                             <connections>
                                                                 <action selector="ratingAction:" destination="EGJ-Sp-v9X" eventType="touchUpInside" id="Scw-yd-AZE"/>
@@ -335,7 +339,7 @@
                                                         </button>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="22" id="ljf-4h-lVG"/>
+                                                        <constraint firstAttribute="height" constant="30" id="ljf-4h-lVG"/>
                                                     </constraints>
                                                 </stackView>
                                             </subviews>

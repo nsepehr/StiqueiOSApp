@@ -24,6 +24,7 @@ class DataController {
     let userDefaults = UserDefaults.standard
     let ratingsKey = "Ratings"
 
+
     func getMainViewData() -> [[String: AnyObject]] {
         var tableData = [[String: AnyObject]]()
         let userDefaults = UserDefaults.standard
@@ -271,5 +272,32 @@ class DataController {
         } catch _ {
             print("Failed to update ratings data")
         }
+    }
+    
+    func updateWebRatings(_ vocabulary: String, rating: Int) {
+        // Update the web database for the rating
+        let id = userDefaults.integer(forKey: AppDefaultKeys.ID.rawValue)
+        print("id from user defaults is \(id)")
+        let baseURLString = "https://7t48nu4m33.execute-api.us-west-1.amazonaws.com/Development/testingPythonRDS"
+        let postString = "{\"APIKey\": \"NayaTooBaba\", \"GUID\": \"\(id)\", \"Vocabulary\": \"\(vocabulary)\", \"Rating\": \"\(rating)\"}"
+        let url = URL(string: baseURLString)!
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.httpBody = postString.data(using: .utf8)
+        let session = URLSession(configuration: .default)
+        let task = session.dataTask(with: request) {
+            (data, response, error) in
+            if let jsonData = data {
+                if let jsonString = String(data: jsonData, encoding: .utf8) {
+                    print("My returned data from web is: ")
+                    print(jsonString)
+                }
+            } else if let requestError = error {
+                print("Error fetching interesting photos: \(requestError)")
+            } else {
+                print("Unexpected error with request")
+            }
+        }
+        task.resume()
     }
 }

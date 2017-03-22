@@ -8,6 +8,12 @@
 
 import UIKit
 
+enum AppDefaultKeys: String {
+    case ID = "UID"
+}
+
+let UID = arc4random()
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -25,6 +31,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Appirater.setTimeBeforeReminding(0)
         Appirater.setDebug(false)
         Appirater.appLaunched(true)
+        
+        // Testing UID generator
+        print("In Application launch... My UID is \(UID)")
+        if 0 == UserDefaults.standard.integer(forKey: AppDefaultKeys.ID.rawValue) {
+            // This means we don't have a UID set for this application
+            //   So we want to save the UID for later retriving
+            UserDefaults.standard.set(UID, forKey: AppDefaultKeys.ID.rawValue)
+        }
         
         return true
     }
