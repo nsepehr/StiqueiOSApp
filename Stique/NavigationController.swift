@@ -70,7 +70,6 @@ extension UINavigationController {
         get {
             if let visibleVC = visibleViewController {
                 if visibleVC.isKind(of: FlashCardController.classForCoder()) {
-                    print("Supported interface for flash should only be landscape")
                     return UIInterfaceOrientationMask.landscape
                 } else {
                     return UIInterfaceOrientationMask.portrait
