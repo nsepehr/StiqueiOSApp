@@ -37,6 +37,10 @@
 		B09914901DED4D4E0028BAC9 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B099148F1DED4D4E0028BAC9 /* MainTableViewCell.swift */; };
 		B0AC39A81DF2CD1300D591FC /* MasterStudyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AC39A71DF2CD1300D591FC /* MasterStudyTableViewController.swift */; };
 		B0E9CAC31E7A71C600E34254 /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E9CAC21E7A71C600E34254 /* AboutUsViewController.swift */; };
+		B0EE2ECB1E83AB0D008B4AC3 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0EE2EC71E83AB0D008B4AC3 /* Bolts.framework */; };
+		B0EE2ECC1E83AB0D008B4AC3 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0EE2EC81E83AB0D008B4AC3 /* FBSDKCoreKit.framework */; };
+		B0EE2ECD1E83AB0D008B4AC3 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0EE2EC91E83AB0D008B4AC3 /* FBSDKLoginKit.framework */; };
+		B0EE2ECE1E83AB0D008B4AC3 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0EE2ECA1E83AB0D008B4AC3 /* FBSDKShareKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +114,10 @@
 		B099148F1DED4D4E0028BAC9 /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		B0AC39A71DF2CD1300D591FC /* MasterStudyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterStudyTableViewController.swift; sourceTree = "<group>"; };
 		B0E9CAC21E7A71C600E34254 /* AboutUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
+		B0EE2EC71E83AB0D008B4AC3 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		B0EE2EC81E83AB0D008B4AC3 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		B0EE2EC91E83AB0D008B4AC3 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		B0EE2ECA1E83AB0D008B4AC3 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +125,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0EE2ECB1E83AB0D008B4AC3 /* Bolts.framework in Frameworks */,
+				B0EE2ECC1E83AB0D008B4AC3 /* FBSDKCoreKit.framework in Frameworks */,
+				B0EE2ECE1E83AB0D008B4AC3 /* FBSDKShareKit.framework in Frameworks */,
+				B0EE2ECD1E83AB0D008B4AC3 /* FBSDKLoginKit.framework in Frameworks */,
 				5BF739201CB990C5008C41BD /* AVFoundation.framework in Frameworks */,
 				5BF7391E1CB9908C008C41BD /* AVKit.framework in Frameworks */,
 			);
@@ -239,6 +251,10 @@
 		8B7CD2DF2CE7742DCAB23D0F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B0EE2EC71E83AB0D008B4AC3 /* Bolts.framework */,
+				B0EE2EC81E83AB0D008B4AC3 /* FBSDKCoreKit.framework */,
+				B0EE2EC91E83AB0D008B4AC3 /* FBSDKLoginKit.framework */,
+				B0EE2ECA1E83AB0D008B4AC3 /* FBSDKShareKit.framework */,
 				5BF7391F1CB990C5008C41BD /* AVFoundation.framework */,
 				5BF7391D1CB9908C008C41BD /* AVKit.framework */,
 				5BF7391B1CB98E55008C41BD /* MediaPlayer.framework */,
@@ -547,6 +563,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MenuItemKit/build/Debug-iphoneos",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Stique/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -572,6 +589,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MenuItemKit/build/Debug-iphoneos",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Stique/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;

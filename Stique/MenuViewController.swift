@@ -8,6 +8,8 @@
 
 import UIKit
 import MessageUI
+import FBSDKCoreKit
+import FBSDKShareKit
 
 
 class MenuViewController: UIViewController, MFMailComposeViewControllerDelegate {
@@ -24,6 +26,15 @@ class MenuViewController: UIViewController, MFMailComposeViewControllerDelegate 
         } else {
             self.showSendMailErrorAlert()
         }
+    }
+    
+    @IBAction func shareTapped(_ sender: Any) {
+        let content = FBSDKShareLinkContent()
+        content.contentURL = URL(string: "https://www.facebook.com/Stique-327318674336062/")
+        content.contentTitle = "StiqueApp"
+        content.imageURL = URL(string: "https://www.facebook.com/327318674336062/photos/347047769029819/")
+        content.contentDescription = "Fun, Easy & Sticks. Learn vocabulary in a new way"
+        FBSDKShareDialog.show(from: self, with: content, delegate: nil)
     }
     
     override func viewDidLoad() {
