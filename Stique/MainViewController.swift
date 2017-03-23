@@ -50,6 +50,7 @@ class MainViewController: UITableViewController, UIActionSheetDelegate, MFMailCo
     }
     */
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -70,6 +71,7 @@ class MainViewController: UITableViewController, UIActionSheetDelegate, MFMailCo
         self.loadTableData()
         tableView.reloadData()
         
+        
     }
     
     func loadTableData() {
@@ -85,8 +87,6 @@ class MainViewController: UITableViewController, UIActionSheetDelegate, MFMailCo
         let value = UIInterfaceOrientation.portrait.rawValue
         UIDevice.current.setValue(value, forKey: "orientation") //Nima testing
     }
-    
-    
     
     
     override func didReceiveMemoryWarning() {
@@ -262,14 +262,6 @@ class MainViewController: UITableViewController, UIActionSheetDelegate, MFMailCo
     }
     
 
-    // The orientation of the view
-    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
-        return UIInterfaceOrientationMask.portrait
-    }
-    
-    override var shouldAutorotate : Bool {
-        return true
-    }
     
     // MARK: Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -280,7 +272,6 @@ class MainViewController: UITableViewController, UIActionSheetDelegate, MFMailCo
             vc.item = item
         } else if segue.identifier == "toMenu" {
         }
-
     }
 }
 

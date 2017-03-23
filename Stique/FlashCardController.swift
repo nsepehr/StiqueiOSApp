@@ -33,7 +33,17 @@ class FlashCardController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    override open var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation{
+        get {
+            return UIInterfaceOrientation.landscapeLeft
+        }
+    }
     
+    override open var supportedInterfaceOrientations: UIInterfaceOrientationMask{
+        get {
+            return UIInterfaceOrientationMask.landscape
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
