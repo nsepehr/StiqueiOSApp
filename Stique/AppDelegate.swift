@@ -13,6 +13,8 @@ enum AppDefaultKeys: String {
 }
 
 let UID = arc4random()
+var appEnteredForegroundCount = 0
+var appEnteredShoppingCart = 0
 
 
 @UIApplicationMain
@@ -24,13 +26,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        Appirater.setAppId("1234")
-        Appirater.setDaysUntilPrompt(0)
-        Appirater.setUsesUntilPrompt(2)
-        Appirater.setSignificantEventsUntilPrompt(4)
-        Appirater.setTimeBeforeReminding(0)
+        Appirater.setAppId("1218692957")
+        Appirater.setDaysUntilPrompt(-1)
+        Appirater.setUsesUntilPrompt(1)
+        Appirater.setSignificantEventsUntilPrompt(1)
+        Appirater.setTimeBeforeReminding(-1)
         Appirater.setDebug(false)
         Appirater.appLaunched(true)
+        Appirater.setCustomAlertTitle("We're in Beta mode and your feedback can help us greatly")
+        Appirater.setCustomAlertMessage("Please consider rating us!")
         
         // Testing UID generator
         print("In Application launch... My UID is \(UID)")
@@ -57,6 +61,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
         //Appirater.userDidSignificantEvent(true)
         Appirater.appEnteredForeground(true)
+        appEnteredForegroundCount += 1
+        if appEnteredForegroundCount == 10 {
+            Appirater.forceShowPrompt(false)
+        }
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {

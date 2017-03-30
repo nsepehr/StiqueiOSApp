@@ -10,6 +10,8 @@ import UIKit
 import AVKit
 import AVFoundation
 import MessageUI
+import FBSDKCoreKit
+import FBSDKShareKit
 
 let segueToAVPlayer = "toAVController"
 
@@ -54,7 +56,23 @@ class VocabularyTableViewController: UITableViewController, MFMailComposeViewCon
     }
     */
     @IBAction func sharePressed(_ sender: AnyObject) {
-        sendEmailButtonTapped()
+        let word = item["word"]!
+        let content = FBSDKShareLinkContent()
+        content.contentURL = URL(string: "https://www.facebook.com/Stique-327318674336062/")
+        content.contentTitle = "StiqueApp"
+        content.hashtag = FBSDKHashtag(string: "#StiqueApp")
+        //content.imageURL = URL(string: "https://www.facebook.com/327318674336062/photos/347047769029819/")
+        content.contentDescription = "I just learned the meaning of \(word)"
+        //FBSDKShareDialog.show(from: self, with: content, delegate: nil)
+        let dialog : FBSDKShareDialog = FBSDKShareDialog()
+        dialog.mode = FBSDKShareDialogMode.native
+        dialog.shareContent = content
+        // if you don't set this before canShow call, canShow would always return YES
+        if !dialog.canShow() {
+            // fallback presentation when there is no FB app
+            dialog.mode = FBSDKShareDialogMode.feedBrowser
+        }
+        dialog.show()
     }
     @IBAction func playlistPressed(_ sender: AnyObject) {
         addToPlaylist(item)
@@ -119,9 +137,6 @@ class VocabularyTableViewController: UITableViewController, MFMailComposeViewCon
             let thisRating: Int = ratings![title]!
             rateVideo(thisRating)
         }
-        
-        // For popping the app rater
-        Appirater.userDidSignificantEvent(true)
     }
     
     func setNavigationBar() {
@@ -175,31 +190,6 @@ class VocabularyTableViewController: UITableViewController, MFMailComposeViewCon
         }
     }
     
-    func sendEmailButtonTapped() {
-        let mailComposeViewController = configuredMailComposeViewController()
-        if MFMailComposeViewController.canSendMail() {
-            self.present(mailComposeViewController, animated: true, completion: nil)
-        } else {
-            self.showSendMailErrorAlert()
-        }
-    }
-    
-    func configuredMailComposeViewController() -> MFMailComposeViewController {
-        let mailComposerVC = MFMailComposeViewController()
-        mailComposerVC.mailComposeDelegate = self // Extremely important to set the --mailComposeDelegate-- property, NOT the --delegate-- property
-        
-        //        mailComposerVC.setToRecipients(["nurdin@gmail.com"])
-        mailComposerVC.setSubject("Sharing a Video With You")
-        mailComposerVC.setMessageBody("Download the Stique app on iOS to view this cool video.", isHTML: false)
-        
-        return mailComposerVC
-    }
-    
-    func showSendMailErrorAlert() {
-        let sendMailErrorAlert = UIAlertView(title: "Could Not Send Email", message: "Your device could not send e-mail.  Please check e-mail configuration and try again.", delegate: self, cancelButtonTitle: "OK")
-        sendMailErrorAlert.show()
-    }
-    
     func rateVideo(_ rating: Int) {
         // Loop through the needed stars to change image to full rated image
         for i in 0...starRatings.count-1 {
@@ -245,3 +235,31 @@ class VocabularyTableViewController: UITableViewController, MFMailComposeViewCon
     }
 
 }
+
+/* Back Up 
+ func sendEmailButtonTapped() {
+ let mailComposeViewController = configuredMailComposeViewController()
+ if MFMailComposeViewController.canSendMail() {
+ self.present(mailComposeViewController, animated: true, completion: nil)
+ } else {
+ self.showSendMailErrorAlert()
+ }
+ }
+ 
+ func configuredMailComposeViewController() -> MFMailComposeViewController {
+ let mailComposerVC = MFMailComposeViewController()
+ mailComposerVC.mailComposeDelegate = self // Extremely important to set the --mailComposeDelegate-- property, NOT the --delegate-- property
+ 
+ //        mailComposerVC.setToRecipients(["nurdin@gmail.com"])
+ mailComposerVC.setSubject("Sharing a Video With You")
+ mailComposerVC.setMessageBody("Download the Stique app on iOS to view this cool video.", isHTML: false)
+ 
+ return mailComposerVC
+ }
+ 
+ func showSendMailErrorAlert() {
+ let sendMailErrorAlert = UIAlertView(title: "Could Not Send Email", message: "Your device could not send e-mail.  Please check e-mail configuration and try again.", delegate: self, cancelButtonTitle: "OK")
+ sendMailErrorAlert.show()
+ }
+ 
+ */

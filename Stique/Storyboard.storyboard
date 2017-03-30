@@ -148,9 +148,9 @@
                                     <action selector="goBack:" destination="sxO-4A-ytX" eventType="touchUpInside" id="PXa-xp-aou"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yFh-t4-V2s">
-                                <rect key="frame" x="35" y="122" width="344" height="223.33333333333331"/>
-                                <string key="text">Stique utilizes mnemonic memorization techniques crafted by Dominic O’Brien. Drawing from O'Brien's How to Develop a Perfect Memory, we came up with a solution to retain vocabulary words not just in time for the exam, but forever. Situating words in context, our techniques allow you to stretch beyond rote memorization. The words become a part of your everyday life. As you live, these memories and words live on with you.</string>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="30" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yFh-t4-V2s">
+                                <rect key="frame" x="35" y="121.99999999999997" width="344" height="304.33333333333326"/>
+                                <mutableString key="text">Founded in January of 2015 and located in the heart of San Francisco, Stique was created based on the concept of mnemonics to assist in educational memorization retention. Stique engages students and professionals in learning difficult definitions for various tests that incorporate a wide range of vocabulary terms. Stique wants to make the process interesting and appealing to its users by using animated characters and storylines to break down the conceptual meaning of words. Our ultimate goal is to create a massive word bank that contains essential vocabulary terms for any kind of standardized test on the market.</mutableString>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -542,7 +542,7 @@
                                 <rect key="frame" x="0.0" y="64" width="414" height="668"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cuG-IB-O5i">
-                                <rect key="frame" x="0.0" y="64" width="414" height="517"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="488"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="separatorColor" red="0.0" green="0.2666666667" blue="0.23921568630000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
@@ -570,7 +570,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I00-Z8-aCt">
-                                <rect key="frame" x="126" y="628" width="162" height="23"/>
+                                <rect key="frame" x="110" y="599" width="195" height="52"/>
                                 <state key="normal" backgroundImage="Start"/>
                                 <connections>
                                     <segue destination="bLw-Og-wmv" kind="presentation" identifier="toFlashcardView" id="WE9-wC-kDS"/>
@@ -1428,7 +1428,7 @@
         <image name="Shopping Cart" width="42" height="30"/>
         <image name="Speaker" width="68" height="64"/>
         <image name="Star Blank New" width="20" height="20"/>
-        <image name="Start" width="162" height="23"/>
+        <image name="Start" width="195" height="52"/>
         <image name="X" width="29" height="28"/>
     </resources>
     <inferredMetricsTieBreakers>

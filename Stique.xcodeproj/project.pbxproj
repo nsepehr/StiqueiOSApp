@@ -107,6 +107,9 @@
 		B01C5CDF1DEFF7BF00307857 /* StiqueVideoPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StiqueVideoPlayer.swift; sourceTree = "<group>"; };
 		B03CC2251DF93C7A00DAE22D /* VocabularyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VocabularyTableViewController.swift; sourceTree = "<group>"; };
 		B03CC2271DF94A8A00DAE22D /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		B05411361E8CD25D002C9E07 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		B05411371E8CD25D002C9E07 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		B05411381E8CD25D002C9E07 /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
 		B09151931E6FEBF5004D4102 /* Stique-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Stique-Bridging-Header.h"; sourceTree = "<group>"; };
 		B09151941E6FEBF6004D4102 /* Appirater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Appirater.m; sourceTree = "<group>"; };
 		B09151961E6FEC2C004D4102 /* Appirater.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Appirater.h; sourceTree = "<group>"; };
@@ -251,6 +254,9 @@
 		8B7CD2DF2CE7742DCAB23D0F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B05411361E8CD25D002C9E07 /* NotificationCenter.framework */,
+				B05411371E8CD25D002C9E07 /* UserNotifications.framework */,
+				B05411381E8CD25D002C9E07 /* UserNotificationsUI.framework */,
 				B0EE2EC71E83AB0D008B4AC3 /* Bolts.framework */,
 				B0EE2EC81E83AB0D008B4AC3 /* FBSDKCoreKit.framework */,
 				B0EE2EC91E83AB0D008B4AC3 /* FBSDKLoginKit.framework */,
@@ -345,6 +351,11 @@
 						DevelopmentTeam = G87T54MP99;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 0;
+							};
+						};
 					};
 					5BA967C51C98CBFF00EDC126 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -568,7 +579,7 @@
 				INFOPLIST_FILE = Stique/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = stiqueApp.Stique;
+				PRODUCT_BUNDLE_IDENTIFIER = stiqueApp.StiqueVocab;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Stique/Stique-Bridging-Header.h";
@@ -594,7 +605,7 @@
 				INFOPLIST_FILE = Stique/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = stiqueApp.Stique;
+				PRODUCT_BUNDLE_IDENTIFIER = stiqueApp.StiqueVocab;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Stique/Stique-Bridging-Header.h";
