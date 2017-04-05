@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 enum AppDefaultKeys: String {
     case ID = "UID"
@@ -17,11 +18,13 @@ var appEnteredForegroundCount = 0
 var appEnteredShoppingCart = 0
 
 
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
+    let notificationCenter = UNUserNotificationCenter.current()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -30,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Appirater.setDaysUntilPrompt(-1)
         Appirater.setUsesUntilPrompt(1)
         Appirater.setSignificantEventsUntilPrompt(1)
-        Appirater.setTimeBeforeReminding(-1)
+        Appirater.setTimeBeforeReminding(1)
         Appirater.setDebug(false)
         Appirater.appLaunched(true)
         Appirater.setCustomAlertTitle("We're in Beta mode and your feedback can help us greatly")
@@ -44,6 +47,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UserDefaults.standard.set(UID, forKey: AppDefaultKeys.ID.rawValue)
         }
         
+        
+        notificationCenter.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
+            if (error != nil) {
+                print("Failed to get authorization for Notification")
+                return
+            }
+            if (granted) {
+                print("Cool the user has granted notification to the application")
+            }
+        }
+        
         return true
     }
     
@@ -55,6 +69,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        
+        // We're creating a notification for user to return to app after a long time
+        StiqueNotification().createNotification(notificationCenter: notificationCenter)
     }
     
     func applicationWillEnterForeground(_ application: UIApplication) {
@@ -65,6 +82,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if appEnteredForegroundCount == 10 {
             Appirater.forceShowPrompt(false)
         }
+        
+        // We want to delete reminder notifications as the user has opened the application
+        StiqueNotification().removePendingReminderNotification(notificationCenter: notificationCenter)
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
@@ -74,9 +94,96 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-    
-    
 }
+
+class StiqueNotification {
+    
+    // This class will create the notification for the application
+    private let Category = "REMINDER"
+    private let Request  = "ComeAgain"
+    private enum Actions: String {
+        case dismiss = "DISMISS"
+        case openApp = "OPENAPP"
+    }
+    
+    func createNotification(notificationCenter center: UNUserNotificationCenter) {
+        print("Creating notification")
+        
+        // Create actions and categories and apply to the notification center
+        let actions  = getActions()
+        let category = getCategory(actions)
+        center.setNotificationCategories([category])
+        
+        // Create the content and trigger for the notification
+        let content  = getContent()
+        let trigger  = getTrigger()
+        let request  = UNNotificationRequest(identifier: Request,
+                                             content: content,
+                                             trigger: trigger)
+        
+        // Add the notification with created request
+        center.add(request) { (error: Error?) in
+            if let theError = error {
+                print("There was an error in adding the request")
+                print(theError.localizedDescription)
+            }
+        }
+    }
+    
+    func removePendingReminderNotification(notificationCenter center: UNUserNotificationCenter) {
+        print("Removing \(Request) notification")
+        center.removePendingNotificationRequests(withIdentifiers: [Request])
+    }
+    
+    // Creates a category for the notification 
+    // Categories will help identify the type of actions to be sent for particular notification
+    private func getCategory(_ actions: [UNNotificationAction]) -> UNNotificationCategory {
+        let category = UNNotificationCategory(identifier: Category,
+                                              actions: actions,
+                                              intentIdentifiers: [],
+                                              options: .customDismissAction)
+        return category
+    }
+    
+    private func getActions() -> [UNNotificationAction] {
+         let dismissAction = UNNotificationAction(identifier: Actions.dismiss.rawValue,
+                                           title: "Ignore",
+                                           options:.init(rawValue: 0))
+        let openAction = UNNotificationAction(identifier: Actions.openApp.rawValue,
+                                              title: "Open",
+                                              options: .foreground)
+        
+        return [dismissAction, openAction]
+    }
+    
+    private func getContent() -> UNMutableNotificationContent {
+        let content = UNMutableNotificationContent()
+        content.title = NSString.localizedUserNotificationString(forKey: "We've missed you!", arguments: nil)
+        content.body = NSString.localizedUserNotificationString(forKey: "Come oonnnn... stique to it", arguments: nil)
+        content.categoryIdentifier = Category
+        content.sound = UNNotificationSound.default()
+        
+        return content
+        
+    }
+    
+    private func getTrigger() -> UNNotificationTrigger {
+        // We're setting a popup to show up once after the set interval
+        let timeInterval = TimeInterval(60*60*24) // 1-day
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: true)
+        
+        return trigger
+    }
+}
+
+
+
+
+
+
+
+
+
 
 
 extension UIColor {

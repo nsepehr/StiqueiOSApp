@@ -25,7 +25,7 @@ class ShoppingController: UIViewController {
         appEnteredShoppingCart += 1
         if appEnteredShoppingCart == 1 {
             // Increment the counter for rating popup uses
-            Appirater.userDidSignificantEvent(true)
+            Appirater.forceShowPrompt(true)
         }
     }
 }
