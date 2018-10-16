@@ -25,6 +25,8 @@
 		5BF739201CB990C5008C41BD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BF7391F1CB990C5008C41BD /* AVFoundation.framework */; };
 		5BF739241CB9A12E008C41BD /* ShoppingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF739231CB9A12E008C41BD /* ShoppingController.swift */; };
 		5BF7392A1CB9A5F1008C41BD /* FilterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF739291CB9A5F1008C41BD /* FilterController.swift */; };
+		B00218A41E9601F7001BFF53 /* Nexa-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = B00218A31E9601F7001BFF53 /* Nexa-Book.otf */; };
+		B00218A61E960201001BFF53 /* Nexa_Free_Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B00218A51E960201001BFF53 /* Nexa_Free_Bold.otf */; };
 		B003C10A1DF17C560051C6A3 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B003C1091DF17C560051C6A3 /* Storyboard.storyboard */; };
 		B012F4251DE2C680008FCA05 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B012F4241DE2C680008FCA05 /* DataController.swift */; };
 		B012F4271DE6E618008FCA05 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B012F4261DE6E618008FCA05 /* TabBarController.swift */; };
@@ -102,6 +104,8 @@
 		5BF7391F1CB990C5008C41BD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		5BF739231CB9A12E008C41BD /* ShoppingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingController.swift; sourceTree = "<group>"; };
 		5BF739291CB9A5F1008C41BD /* FilterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterController.swift; sourceTree = "<group>"; };
+		B00218A31E9601F7001BFF53 /* Nexa-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nexa-Book.otf"; sourceTree = "<group>"; };
+		B00218A51E960201001BFF53 /* Nexa_Free_Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Nexa_Free_Bold.otf; sourceTree = "<group>"; };
 		B003C1091DF17C560051C6A3 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		B012F4241DE2C680008FCA05 /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		B012F4261DE6E618008FCA05 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -186,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				B054113C1E8CD686002C9E07 /* Stique.entitlements */,
+				B00218A21E9601D3001BFF53 /* Fonts */,
 				B09151921E6FEBC2004D4102 /* Appirater */,
 				5BA967E71CA085BB00EDC126 /* images */,
 				5BA967BC1C98CBF800EDC126 /* Assets.xcassets */,
@@ -274,6 +279,15 @@
 				5BF7391B1CB98E55008C41BD /* MediaPlayer.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B00218A21E9601D3001BFF53 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				B00218A31E9601F7001BFF53 /* Nexa-Book.otf */,
+				B00218A51E960201001BFF53 /* Nexa_Free_Bold.otf */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 		B09151921E6FEBC2004D4102 /* Appirater */ = {
@@ -402,6 +416,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B00218A41E9601F7001BFF53 /* Nexa-Book.otf in Resources */,
+				B00218A61E960201001BFF53 /* Nexa_Free_Bold.otf in Resources */,
 				5B0A22051CA83A1100F3CA08 /* Default-667h@2x~iphone.png in Resources */,
 				5B0A22061CA83A1100F3CA08 /* Default-736h@3x~iphone.png in Resources */,
 				B003C10A1DF17C560051C6A3 /* Storyboard.storyboard in Resources */,
